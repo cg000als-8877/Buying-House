@@ -3,7 +3,9 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Helper functions
+    // =========================================================================
+    // SECURITY HELPER FUNCTIONS
+    // =========================================================================
     function isAuthenticated() {
       return request.auth != null;
     }
@@ -12,48 +14,73 @@ service cloud.firestore {
       return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
     }
 
+    function isAccountActive() {
+      return isAuthenticated() && getUserData().status == 'active';
+    }
+
     function isSuperAdmin() {
-      return isAuthenticated() && getUserData().role == 'Super Admin';
+      return isAccountActive() && getUserData().role == 'Super Admin';
     }
 
     function isStaff() {
-      return isAuthenticated() && (
+      return isAccountActive() && (
         getUserData().role in ['Super Admin', 'Admin', 'Operations Manager', 'Merchandiser', 'Production Staff', 'QC Staff']
       );
     }
 
     function isBuyer() {
-      return isAuthenticated() && getUserData().role == 'Buyer';
+      return isAccountActive() && getUserData().role == 'Buyer';
     }
 
     function belongsToBuyerOrg(buyerOrgId) {
-      return isAuthenticated() && isBuyer() && getUserData().buyerOrganizationId == buyerOrgId;
+      return isBuyer() && getUserData().buyerOrganizationId == buyerOrgId;
     }
 
-    // Default: Deny all
+    // =========================================================================
+    // DEFAULT: DENY ALL
+    // =========================================================================
     match /{document=**} {
       allow read, write: if false;
     }
 
-    // Users Collection
+    // =========================================================================
+    // USERS COLLECTION
+    // Privileged fields (role, buyerOrganizationId, status) are strictly
+    // non-writable by standard client accounts.
+    // =========================================================================
     match /users/{userId} {
-      allow read: if isAuthenticated() && (request.auth.uid == userId || isStaff());
+      allow read: if isAccountActive() && (request.auth.uid == userId || isStaff());
+      
+      // Self profile edit: Only displayName and photoURL can be updated
+      allow update: if isAccountActive() && request.auth.uid == userId &&
+        !request.resource.data.diff(resource.data).affectedKeys().hasAny(['role', 'buyerOrganizationId', 'status', 'permissions']);
+
+      // Administrative user management
       allow write: if isSuperAdmin();
     }
 
-    // Buyer Organizations
+    // =========================================================================
+    // BUYER ORGANIZATIONS
+    // Tenant boundaries for all buyer accounts.
+    // =========================================================================
     match /buyerOrganizations/{orgId} {
       allow read: if isStaff() || belongsToBuyerOrg(orgId);
       allow write: if isStaff();
     }
 
-    // Orders Collection
+    // =========================================================================
+    // ORDERS COLLECTION
+    // Enforces strict tenant isolation per buyerOrganizationId.
+    // =========================================================================
     match /orders/{orderId} {
-      allow read: if isStaff() || (isBuyer() && belongsToBuyerOrg(resource.data.buyerOrganizationId));
+      allow read: if isStaff() || belongsToBuyerOrg(resource.data.buyerOrganizationId);
       allow write: if isStaff();
     }
 
-    // Production Updates (Only published updates visible to buyers)
+    // =========================================================================
+    // PRODUCTION UPDATES
+    // Buyers can only read published updates for orders belonging to their org.
+    // =========================================================================
     match /productionUpdates/{updateId} {
       allow read: if isStaff() || (
         isBuyer() && 
@@ -63,7 +90,18 @@ service cloud.firestore {
       allow write: if isStaff();
     }
 
-    // Documents Collection (Check visibility & buyer org)
+    // =========================================================================
+    // SAMPLES & COMMENTS
+    // =========================================================================
+    match /samples/{sampleId} {
+      allow read: if isStaff() || belongsToBuyerOrg(get(/databases/$(database)/documents/orders/$(resource.data.orderId)).data.buyerOrganizationId);
+      allow write: if isStaff();
+    }
+
+    // =========================================================================
+    // DOCUMENTS COLLECTION
+    // Enforces buyer-visibility flag and buyer organization match.
+    // =========================================================================
     match /documents/{docId} {
       allow read: if isStaff() || (
         isBuyer() &&
@@ -73,16 +111,29 @@ service cloud.firestore {
       allow write: if isStaff();
     }
 
-    // Inquiries Collection (Public write, Staff read/write)
+    // =========================================================================
+    // PUBLIC INQUIRIES & CONTACT
+    // =========================================================================
     match /inquiries/{inquiryId} {
       allow create: if true;
       allow read, update, delete: if isStaff();
     }
 
-    // Audit Logs (Super Admin only read, Append-only via server/admin)
+    // =========================================================================
+    // AUDIT LOGS
+    // Append-only, readable only by Super Admin.
+    // =========================================================================
     match /auditLogs/{logId} {
       allow read: if isSuperAdmin();
-      allow write: if false; // Cloud Functions / Server Admin only
+      allow write: if false; // Cloud Functions / Admin SDK only in production
+    }
+
+    // =========================================================================
+    // SYSTEM SETTINGS
+    // =========================================================================
+    match /settings/{settingId} {
+      allow read: if isStaff();
+      allow write: if isSuperAdmin();
     }
   }
 }

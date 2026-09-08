@@ -8,7 +8,13 @@ service firebase.storage {
     }
 
     function isStaff() {
-      return isAuthenticated() && request.auth.token.role in ['Super Admin', 'Admin', 'Operations Manager', 'Merchandiser', 'Production Staff', 'QC Staff'];
+      return isAuthenticated() && request.auth.token.role in [
+        'Super Admin', 'Admin', 'Operations Manager', 'Merchandiser', 'Production Staff', 'QC Staff'
+      ];
+    }
+
+    function isBuyer() {
+      return isAuthenticated() && request.auth.token.role == 'Buyer';
     }
 
     // Default: Deny all
@@ -16,7 +22,7 @@ service firebase.storage {
       allow read, write: if false;
     }
 
-    // Public inquiry attachments
+    // Public inquiry attachments (e.g. tech packs submitted via RFQ form)
     match /inquiries/{inquiryId}/{fileName} {
       allow create: if request.resource.size < 50 * 1024 * 1024; // 50MB max
       allow read: if isStaff();
@@ -28,10 +34,16 @@ service firebase.storage {
       allow write: if isStaff() && request.resource.size < 50 * 1024 * 1024;
     }
 
-    // Production Photos
+    // Production Photos (Inspection / inline progress images)
     match /orders/{orderId}/photos/{fileName} {
       allow read: if isAuthenticated();
       allow write: if isStaff() && request.resource.size < 20 * 1024 * 1024;
+    }
+
+    // User Avatar Images
+    match /users/{userId}/avatar/{fileName} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && request.auth.uid == userId && request.resource.size < 5 * 1024 * 1024;
     }
   }
 }

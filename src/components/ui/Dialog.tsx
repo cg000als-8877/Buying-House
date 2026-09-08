@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { modalBackdrop, modalContent } from '@/lib/animations/variants';
 
 export interface DialogProps {
   isOpen: boolean;
@@ -22,6 +23,10 @@ export function Dialog({
   children,
   maxWidth = 'md',
 }: DialogProps) {
+  const dialogId = React.useId();
+  const titleId = `${dialogId}-title`;
+  const descId = `${dialogId}-description`;
+
   const maxWidths = {
     sm: 'max-w-sm',
     md: 'max-w-lg',
@@ -29,41 +34,79 @@ export function Dialog({
     xl: 'max-w-4xl',
   };
 
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    },
+    [onClose]
+  );
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, handleKeyDown]);
+
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={title ? titleId : undefined}
+          aria-describedby={description ? descId : undefined}
+        >
           {/* Backdrop overlay */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            variants={modalBackdrop}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
             onClick={onClose}
-            className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm"
+            className="fixed inset-0 bg-background/80 backdrop-blur-sm"
           />
 
           {/* Modal Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 15 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 15 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            variants={modalContent}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
             className={cn(
-              'relative z-10 w-full rounded-3xl bg-slate-900 border border-slate-700 p-6 sm:p-8 shadow-2xl space-y-6',
+              'relative z-10 w-full rounded-lg bg-surface border border-border p-6 sm:p-7 shadow-elevated space-y-5',
               maxWidths[maxWidth]
             )}
           >
-            <div className="flex items-start justify-between">
+            <div className="flex items-start justify-between gap-4">
               <div className="space-y-1">
-                {title && <h3 className="text-xl font-serif font-bold text-white">{title}</h3>}
-                {description && <p className="text-xs text-slate-400">{description}</p>}
+                {title && (
+                  <h3 id={titleId} className="text-lg font-semibold text-foreground tracking-tight">
+                    {title}
+                  </h3>
+                )}
+                {description && (
+                  <p id={descId} className="text-xs sm:text-sm text-muted-foreground">
+                    {description}
+                  </p>
+                )}
               </div>
               <button
+                type="button"
                 onClick={onClose}
-                className="p-1.5 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                aria-label="Close dialog"
+                className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-surface-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
             </div>
 
