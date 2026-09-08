@@ -1,0 +1,39 @@
+import type { Metadata } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
+import "./globals.css";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Atelier & Co. | Premier Global Apparel Sourcing & Buying House",
+  description: "End-to-end luxury garment manufacturing, certified sustainable fabrics, AQL 1.5 quality assurance, and global export for international fashion brands.",
+  keywords: ["apparel sourcing", "buying house", "garment export", "clothing manufacturer", "GOTS certified", "OEKO-TEX", "private label apparel"],
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className="dark scroll-smooth">
+      <body
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-slate-950 text-slate-100 min-h-screen flex flex-col`}
+      >
+        <Navbar />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
