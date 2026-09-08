@@ -43,3 +43,28 @@ export interface Order {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface BuyerDashboardStats {
+  activeOrdersCount: number;
+  inProductionCount: number;
+  upcomingShipmentsCount: number;
+  unreadNotificationsCount: number;
+}
+
+export interface AdminDashboardStats {
+  activeOrdersCount: number;
+  inProductionCount: number;
+  delayedOrdersCount: number;
+  pendingSampleApprovalsCount: number;
+  upcomingExFactoryCount: number;
+  qcIssuesCount: number;
+  upcomingShipmentsCount: number;
+}
+
+export interface OrderMilestone {
+  stage: OrderStatus;
+  label: string;
+  description: string;
+  status: 'completed' | 'in_progress' | 'upcoming';
+  date?: string;
+}

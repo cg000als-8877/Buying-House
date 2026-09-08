@@ -75,6 +75,11 @@ service cloud.firestore {
     match /orders/{orderId} {
       allow read: if isStaff() || belongsToBuyerOrg(resource.data.buyerOrganizationId);
       allow write: if isStaff();
+
+      match /productionStages/{stageId} {
+        allow read: if isStaff() || belongsToBuyerOrg(get(/databases/$(database)/documents/orders/$(orderId)).data.buyerOrganizationId);
+        allow write: if isStaff();
+      }
     }
 
     // =========================================================================
@@ -85,6 +90,17 @@ service cloud.firestore {
       allow read: if isStaff() || (
         isBuyer() && 
         resource.data.status == 'published' &&
+        belongsToBuyerOrg(resource.data.buyerOrganizationId)
+      );
+      allow write: if isStaff();
+    }
+
+    // =========================================================================
+    // PRODUCTION PHOTOS
+    // =========================================================================
+    match /productionPhotos/{photoId} {
+      allow read: if isStaff() || (
+        isBuyer() && 
         belongsToBuyerOrg(get(/databases/$(database)/documents/orders/$(resource.data.orderId)).data.buyerOrganizationId)
       );
       allow write: if isStaff();
@@ -94,8 +110,14 @@ service cloud.firestore {
     // SAMPLES & COMMENTS
     // =========================================================================
     match /samples/{sampleId} {
-      allow read: if isStaff() || belongsToBuyerOrg(get(/databases/$(database)/documents/orders/$(resource.data.orderId)).data.buyerOrganizationId);
-      allow write: if isStaff();
+      allow read: if isStaff() || belongsToBuyerOrg(resource.data.buyerOrganizationId);
+      allow create, delete: if isStaff();
+      allow update: if isStaff() || (
+        isBuyer() &&
+        belongsToBuyerOrg(resource.data.buyerOrganizationId) &&
+        resource.data.status == 'submitted' &&
+        request.resource.data.status in ['approved', 'changes_requested', 'rejected']
+      );
     }
 
     // =========================================================================
@@ -108,6 +130,83 @@ service cloud.firestore {
         resource.data.visibility == 'buyer' &&
         belongsToBuyerOrg(resource.data.buyerOrganizationId)
       );
+      allow write: if isStaff();
+    }
+
+    // =========================================================================
+    // INSPECTIONS & QUALITY REPORTS
+    // =========================================================================
+    match /inspections/{inspectionId} {
+      allow read: if isStaff() || (
+        isBuyer() &&
+        resource.data.published == true &&
+        belongsToBuyerOrg(resource.data.buyerOrganizationId)
+      );
+      allow write: if isStaff();
+    }
+
+    // =========================================================================
+    // LAB TEST REPORTS
+    // =========================================================================
+    match /labReports/{reportId} {
+      allow read: if isStaff() || (
+        isBuyer() &&
+        resource.data.published == true &&
+        resource.data.visibility == 'buyer' &&
+        belongsToBuyerOrg(resource.data.buyerOrganizationId)
+      );
+      allow write: if isStaff();
+    }
+
+    // =========================================================================
+    // SHIPMENTS & LOGISTICS
+    // =========================================================================
+    match /shipments/{shipmentId} {
+      allow read: if isStaff() || belongsToBuyerOrg(resource.data.buyerOrganizationId);
+      allow create, delete: if isStaff();
+      allow update: if isStaff() || (
+        isBuyer() &&
+        belongsToBuyerOrg(resource.data.buyerOrganizationId) &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['deliveryConfirmation', 'updatedAt'])
+      );
+
+      match /packingItems/{itemId} {
+        allow read: if isStaff() || belongsToBuyerOrg(get(/databases/$(database)/documents/shipments/$(shipmentId)).data.buyerOrganizationId);
+        allow write: if isStaff();
+      }
+
+      match /events/{eventId} {
+        allow read: if isStaff() || belongsToBuyerOrg(get(/databases/$(database)/documents/shipments/$(shipmentId)).data.buyerOrganizationId);
+        allow write: if isStaff();
+      }
+
+      match /documentChecklist/{docId} {
+        allow read: if isStaff() || belongsToBuyerOrg(get(/databases/$(database)/documents/shipments/$(shipmentId)).data.buyerOrganizationId);
+        allow write: if isStaff();
+      }
+    }
+
+    // =========================================================================
+    // NOTIFICATIONS & COMMUNICATION
+    // Recipient user can read and update 'read'/'isRead' status.
+    // =========================================================================
+    match /notifications/{notificationId} {
+      allow read: if isAuthenticated() && (resource.data.recipientUserId == request.auth.uid || isStaff());
+      allow update: if isAuthenticated() && resource.data.recipientUserId == request.auth.uid &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read', 'isRead', 'readAt']);
+      allow create, delete: if isStaff();
+    }
+
+    match /notificationPreferences/{userId} {
+      allow read, write: if isAuthenticated() && (request.auth.uid == userId || isStaff());
+    }
+
+    match /notificationEvents/{eventId} {
+      allow read, write: if isStaff();
+    }
+
+    match /emailDeliveryLogs/{deliveryId} {
+      allow read: if isStaff();
       allow write: if isStaff();
     }
 
@@ -129,6 +228,22 @@ service cloud.firestore {
     }
 
     // =========================================================================
+    // REPORTING & ANALYTICS SNAPSHOTS
+    // =========================================================================
+    match /reportSnapshots/{snapshotId} {
+      allow read: if isStaff() || (
+        isBuyer() &&
+        resource.data.buyerOrganizationId == request.auth.token.buyerOrganizationId
+      );
+      allow create, update, delete: if isStaff();
+    }
+
+    match /reportConfigurations/{configId} {
+      allow read: if isStaff();
+      allow write: if isSuperAdmin() || isAdmin();
+    }
+
+    // =========================================================================
     // SYSTEM SETTINGS
     // =========================================================================
     match /settings/{settingId} {
@@ -137,3 +252,4 @@ service cloud.firestore {
     }
   }
 }
+

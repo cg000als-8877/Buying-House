@@ -34,10 +34,28 @@ service firebase.storage {
       allow write: if isStaff() && request.resource.size < 50 * 1024 * 1024;
     }
 
+    // Tenant Document Vault (Scoped by buyer organization and document ID)
+    match /documents/{buyerOrgId}/{docId}/{fileName} {
+      allow read: if isStaff() || (isAuthenticated() && request.auth.token.buyerOrganizationId == buyerOrgId);
+      allow write: if isStaff() && request.resource.size < 50 * 1024 * 1024;
+    }
+
     // Production Photos (Inspection / inline progress images)
     match /orders/{orderId}/photos/{fileName} {
       allow read: if isAuthenticated();
       allow write: if isStaff() && request.resource.size < 20 * 1024 * 1024;
+    }
+
+    // Sample Attachments (Tech specs, fitting images, shade approvals)
+    match /orders/{orderId}/samples/{allPaths=**} {
+      allow read: if isAuthenticated();
+      allow write: if isStaff() && request.resource.size < 20 * 1024 * 1024;
+    }
+
+    // Quality & Inspection Attachments (Reports, defect photos, lab tests)
+    match /orders/{orderId}/inspections/{allPaths=**} {
+      allow read: if isAuthenticated();
+      allow write: if isStaff() && request.resource.size < 50 * 1024 * 1024;
     }
 
     // User Avatar Images

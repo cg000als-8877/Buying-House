@@ -5,23 +5,49 @@ export type SampleType =
   | 'Salesman Sample'
   | 'Pre-Production (PP)'
   | 'Top of Production (TOP)'
-  | 'Shipment Sample';
+  | 'Shipment Sample'
+  | 'Lab Dip / Strike-Off';
 
-export type SampleStatus = 'pending' | 'submitted' | 'approved' | 'rejected' | 'revision_requested';
+export type SampleStatus =
+  | 'draft'
+  | 'in_development'
+  | 'submitted'
+  | 'approved'
+  | 'changes_requested'
+  | 'rejected';
 
-export interface Sample {
+export interface SampleAttachment {
   id: string;
-  orderId: string;
-  sampleType: SampleType;
+  sampleId: string;
+  revisionNumber: number;
+  fileName: string;
+  fileSize: string;
+  fileType: string;
+  storagePath: string;
+  url?: string;
+  caption?: string;
+  visibility: 'buyer' | 'internal';
+  uploadedBy: string;
+  createdAt: string;
+}
+
+export interface SampleRevisionHistory {
+  id: string;
+  revisionNumber: number;
   status: SampleStatus;
   submittedAt?: string;
-  approvedAt?: string;
-  rejectedAt?: string;
-  revisionNumber: number;
-  remarks?: string;
-  storagePath?: string;
+  decidedAt?: string;
+  decidedBy?: string;
+  decisionRole?: string;
+  decision?: 'approved' | 'changes_requested' | 'rejected' | 'submitted';
+  notes?: string;
+  revisionNotes?: string;
+  feedback?: string;
+  buyerFeedback?: string;
+  courierName?: string;
+  trackingNumber?: string;
+  attachments?: SampleAttachment[];
   createdAt: string;
-  updatedAt: string;
 }
 
 export interface SampleComment {
@@ -29,7 +55,40 @@ export interface SampleComment {
   sampleId: string;
   authorUid: string;
   authorRole: string;
+  authorName?: string;
   comment: string;
-  actionTaken?: 'approved' | 'revision_requested' | 'comment_only';
+  actionTaken?: 'approved' | 'changes_requested' | 'rejected' | 'comment_only';
+  isInternalOnly: boolean;
   createdAt: string;
+}
+
+export interface Sample {
+  id: string;
+  orderId: string;
+  buyerOrganizationId: string;
+  sampleType: SampleType;
+  status: SampleStatus;
+  revisionNumber: number;
+  targetDate?: string;
+  submittedAt?: string;
+  reviewedAt?: string;
+  decidedAt?: string;
+  decidedBy?: string;
+  approvedAt?: string;
+  rejectedAt?: string;
+  courierName?: string;
+  trackingNumber?: string;
+  courierDispatchedAt?: string;
+  internalRemarks?: string;
+  buyerRemarks?: string;
+  remarks?: string; // Compatibility alias
+  buyerFeedback?: string;
+  storagePath?: string; // Compatibility alias
+  attachments?: SampleAttachment[];
+  history?: SampleRevisionHistory[];
+  comments?: SampleComment[];
+  createdBy: string;
+  updatedBy?: string;
+  createdAt: string;
+  updatedAt: string;
 }

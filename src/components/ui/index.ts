@@ -14,3 +14,4 @@ export * from './Skeleton';
 export * from './Tooltip';
 export * from './Alert';
 export * from './EmptyState';
+export * from './Modal';
