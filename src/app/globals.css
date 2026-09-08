@@ -4,8 +4,36 @@
 
 @layer base {
   :root {
-    --background: #fafaf9;
-    --foreground: #1c1917;
+    --background: #090d10;
+    --foreground: #f1f5f9;
+
+    --surface: #0f171d;
+    --surface-muted: #162028;
+    --surface-elevated: #1e2c37;
+
+    --border: #243542;
+    --border-muted: #1b2832;
+
+    --primary: #f59e0b;
+    --primary-foreground: #090d10;
+
+    --secondary: #1e293b;
+    --secondary-foreground: #f8fafc;
+
+    --muted: #64748b;
+    --muted-foreground: #94a3b8;
+
+    --success: #10b981;
+    --success-foreground: #022c22;
+
+    --warning: #f59e0b;
+    --warning-foreground: #451a03;
+
+    --error: #f43f5e;
+    --error-foreground: #4c0519;
+
+    --info: #0ea5e9;
+    --info-foreground: #082f49;
   }
 }
 
@@ -16,27 +44,20 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-  background: #275551;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #1b3534;
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
-.text-gold-gradient {
-  background: linear-gradient(135deg, #f0c975 0%, #d4a343 50%, #b3802e 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.bg-emerald-gradient {
-  background: linear-gradient(135deg, #0b1c1c 0%, #1b3534 50%, #275551 100%);
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

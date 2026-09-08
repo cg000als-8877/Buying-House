@@ -1,0 +1,88 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function isSuperAdmin() {
+      return isAuthenticated() && getUserData().role == 'Super Admin';
+    }
+
+    function isStaff() {
+      return isAuthenticated() && (
+        getUserData().role in ['Super Admin', 'Admin', 'Operations Manager', 'Merchandiser', 'Production Staff', 'QC Staff']
+      );
+    }
+
+    function isBuyer() {
+      return isAuthenticated() && getUserData().role == 'Buyer';
+    }
+
+    function belongsToBuyerOrg(buyerOrgId) {
+      return isAuthenticated() && isBuyer() && getUserData().buyerOrganizationId == buyerOrgId;
+    }
+
+    // Default: Deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Users Collection
+    match /users/{userId} {
+      allow read: if isAuthenticated() && (request.auth.uid == userId || isStaff());
+      allow write: if isSuperAdmin();
+    }
+
+    // Buyer Organizations
+    match /buyerOrganizations/{orgId} {
+      allow read: if isStaff() || belongsToBuyerOrg(orgId);
+      allow write: if isStaff();
+    }
+
+    // Orders Collection
+    match /orders/{orderId} {
+      allow read: if isStaff() || (isBuyer() && belongsToBuyerOrg(resource.data.buyerOrganizationId));
+      allow write: if isStaff();
+    }
+
+    // Production Updates (Only published updates visible to buyers)
+    match /productionUpdates/{updateId} {
+      allow read: if isStaff() || (
+        isBuyer() && 
+        resource.data.status == 'published' &&
+        belongsToBuyerOrg(get(/databases/$(database)/documents/orders/$(resource.data.orderId)).data.buyerOrganizationId)
+      );
+      allow write: if isStaff();
+    }
+
+    // Documents Collection (Check visibility & buyer org)
+    match /documents/{docId} {
+      allow read: if isStaff() || (
+        isBuyer() &&
+        resource.data.visibility == 'buyer' &&
+        belongsToBuyerOrg(resource.data.buyerOrganizationId)
+      );
+      allow write: if isStaff();
+    }
+
+    // Inquiries Collection (Public write, Staff read/write)
+    match /inquiries/{inquiryId} {
+      allow create: if true;
+      allow read, update, delete: if isStaff();
+    }
+
+    // Audit Logs (Super Admin only read, Append-only via server/admin)
+    match /auditLogs/{logId} {
+      allow read: if isSuperAdmin();
+      allow write: if false; // Cloud Functions / Server Admin only
+    }
+  }
+}

@@ -11,28 +11,46 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        brand: {
-          50: "#f0f7f6",
-          100: "#d9ebe8",
-          200: "#b5d8d3",
-          300: "#86bdb6",
-          400: "#5ba097",
-          500: "#3e847c",
-          600: "#2f6b64",
-          700: "#275551",
-          800: "#224542",
-          900: "#1b3534",
-          950: "#0b1c1c",
+        surface: {
+          DEFAULT: "var(--surface)",
+          muted: "var(--surface-muted)",
+          elevated: "var(--surface-elevated)",
         },
-        gold: {
-          400: "#f0c975",
-          500: "#d4a343",
-          600: "#b3802e",
-        }
+        border: {
+          DEFAULT: "var(--border)",
+          muted: "var(--border-muted)",
+        },
+        primary: {
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
+        },
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
+        },
+        muted: {
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)",
+        },
+        success: {
+          DEFAULT: "var(--success)",
+          foreground: "var(--success-foreground)",
+        },
+        warning: {
+          DEFAULT: "var(--warning)",
+          foreground: "var(--warning-foreground)",
+        },
+        error: {
+          DEFAULT: "var(--error)",
+          foreground: "var(--error-foreground)",
+        },
+        info: {
+          DEFAULT: "var(--info)",
+          foreground: "var(--info-foreground)",
+        },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
-        serif: ["var(--font-playfair)", "serif"],
       },
     },
   },
