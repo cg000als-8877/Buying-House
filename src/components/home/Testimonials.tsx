@@ -34,7 +34,7 @@ export function Testimonials() {
                 </div>
 
                 <p className="text-sm text-slate-300 leading-relaxed italic">
-                  "{item.quote}"
+                  &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
 

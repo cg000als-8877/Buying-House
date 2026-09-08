@@ -5,8 +5,8 @@ export interface AuditLog {
   action: string;
   entityType: 'order' | 'buyer' | 'factory' | 'production' | 'document' | 'sample' | 'inspection' | 'user' | 'system';
   entityId: string;
-  before?: Record<string, any> | null;
-  after?: Record<string, any> | null;
+  before?: Record<string, unknown> | null;
+  after?: Record<string, unknown> | null;
   timestamp: string;
   ipMetadata?: string | null;
 }

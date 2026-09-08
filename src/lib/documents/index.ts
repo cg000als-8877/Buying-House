@@ -1,5 +1,5 @@
 import { OrderDocument } from '@/types/document';
 
-export async function getDocumentsByOrder(orderId: string): Promise<OrderDocument[]> {
+export async function getDocumentsByOrder(_orderId: string): Promise<OrderDocument[]> {
   return [];
 }

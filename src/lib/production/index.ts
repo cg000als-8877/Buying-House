@@ -1,4 +1,4 @@
-import { ProductionUpdate, ProductionStage } from '@/types/production';
+import { ProductionUpdate } from '@/types/production';
 
 /**
  * Calculates achievement percentage with division-by-zero protection.
@@ -10,6 +10,6 @@ export function calculateAchievementPercentage(actual: number, planned: number):
   return Math.round(percentage * 10) / 10;
 }
 
-export async function getProductionUpdatesByOrder(orderId: string): Promise<ProductionUpdate[]> {
+export async function getProductionUpdatesByOrder(_orderId: string): Promise<ProductionUpdate[]> {
   return [];
 }

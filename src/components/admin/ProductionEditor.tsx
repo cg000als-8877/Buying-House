@@ -62,7 +62,7 @@ export function ProductionEditor({ isOpen, onClose, milestone, onSave }: Product
           <Select
             label="Stage Status"
             value={formData.status}
-            onChange={(e) => setFormData({ ...formData, status: e.target.value as any })}
+            onChange={(e) => setFormData({ ...formData, status: e.target.value as Milestone['status'] })}
             options={[
               { value: 'Upcoming', label: 'Upcoming' },
               { value: 'In Progress', label: 'In Progress' },

@@ -1,5 +1,5 @@
 import { Sample } from '@/types/sample';
 
-export async function getSamplesByOrder(orderId: string): Promise<Sample[]> {
+export async function getSamplesByOrder(_orderId: string): Promise<Sample[]> {
   return [];
 }

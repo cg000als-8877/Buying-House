@@ -1,7 +1,5 @@
 import React from 'react';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/Table';
-import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
 import { Edit, Trash2, Eye } from 'lucide-react';
 
 export interface Column<T> {
@@ -41,7 +39,7 @@ export function DataTable<T extends { id: string | number }>({
             <TableRow key={row.id}>
               {columns.map((col) => (
                 <TableCell key={col.key}>
-                  {col.render ? col.render(row) : (row as any)[col.key]}
+                  {col.render ? col.render(row) : String((row as Record<string, unknown>)[col.key] ?? '')}
                 </TableCell>
               ))}
               {(onEdit || onDelete || onView) && (

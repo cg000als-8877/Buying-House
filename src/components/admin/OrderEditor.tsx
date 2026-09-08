@@ -94,7 +94,7 @@ export function OrderEditor({ isOpen, onClose, order, onSave }: OrderEditorProps
           <Select
             label="Current Order Status"
             value={formData.status}
-            onChange={(e) => setFormData({ ...formData, status: e.target.value as any })}
+            onChange={(e) => setFormData({ ...formData, status: e.target.value as BuyerOrder['status'] })}
             options={[
               { value: 'In Production', label: 'In Production' },
               { value: 'Sample Approved', label: 'Sample Approved' },

@@ -23,7 +23,7 @@ export function TestimonialCard({ quote, clientName, role, brand, avatar }: Test
         </div>
 
         <p className="text-sm text-slate-300 leading-relaxed italic">
-          "{quote}"
+          &ldquo;{quote}&rdquo;
         </p>
       </div>
 
