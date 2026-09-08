@@ -11,7 +11,7 @@ export async function POST(request: Request) {
       message: 'Message received successfully.',
       data: body,
     });
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json(
       { success: false, error: 'Failed to process contact message' },
       { status: 500 }

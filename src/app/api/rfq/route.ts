@@ -6,14 +6,13 @@ export async function POST(request: Request) {
     console.log('--- NEW RFQ & SAMPLE INQUIRY RECEIVED ---');
     console.log(body);
 
-    // In production, you can trigger email notifications via Resend / SendGrid
-    // or persist directly to PostgreSQL / MongoDB / Supabase database.
+    // In production, configure transactional email (Resend / SendGrid) or Firestore persistence.
     return NextResponse.json({
       success: true,
-      message: 'Quotation request received successfully. Our merchandising lead will contact you within 24 hours.',
+      message: 'Your inquiry has been received by the system.',
       data: body,
     });
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json(
       { success: false, error: 'Failed to process RFQ inquiry' },
       { status: 500 }
