@@ -22,6 +22,9 @@
 .env.production.local
 .env*.local
 *.pem
+*.key
+service-account*.json
+firebase-adminsdk*.json
 
 # debug logs
 npm-debug.log*

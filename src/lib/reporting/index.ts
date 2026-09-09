@@ -905,12 +905,22 @@ const SENSITIVE_INTERNAL_KEYS = new Set([
   'factorymargin',
   'costprice',
   'factorycost',
+  'factorycostusd',
+  'targetcost',
+  'targetcostusd',
+  'unitmargin',
+  'unitmarginusd',
+  'marginpercent',
+  'margin',
+  'netmargin',
+  'profitmargin',
   'fobcost',
   'internalremarks',
   'internalnotes',
   'inspectorprivatenotes',
   'productioncost',
   'cmrate',
+  'factoryrating',
 ]);
 
 /**
@@ -942,17 +952,18 @@ export function exportReportToCSV(
   const lines = rows.map((row) => {
     return allowedKeys
       .map((k) => {
-        let val = row[k];
+        const val = row[k];
         if (val === undefined || val === null) {
           return '""';
         }
+        let strVal: string;
         if (typeof val === 'object') {
-          val = JSON.stringify(val);
+          strVal = JSON.stringify(val);
         } else {
-          val = String(val);
+          strVal = String(val);
         }
         // Escape quotes
-        return `"${val.replace(/"/g, '""')}"`;
+        return `"${strVal.replace(/"/g, '""')}"`;
       })
       .join(',');
   });

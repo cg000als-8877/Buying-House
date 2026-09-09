@@ -3,6 +3,9 @@ rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
 
+    // =========================================================================
+    // SECURITY HELPER FUNCTIONS
+    // =========================================================================
     function isAuthenticated() {
       return request.auth != null;
     }
@@ -17,6 +20,22 @@ service firebase.storage {
       return isAuthenticated() && request.auth.token.role == 'Buyer';
     }
 
+    function belongsToBuyerOrg(buyerOrgId) {
+      return isBuyer() && request.auth.token.buyerOrganizationId == buyerOrgId;
+    }
+
+    function isValidDocMimeType() {
+      return request.resource.contentType.matches('application/pdf') ||
+             request.resource.contentType.matches('image/(jpeg|png|webp)') ||
+             request.resource.contentType.matches('text/csv') ||
+             request.resource.contentType.matches('application/vnd.openxmlformats-officedocument.*') ||
+             request.resource.contentType.matches('application/vnd.ms-excel');
+    }
+
+    function isValidImageMimeType() {
+      return request.resource.contentType.matches('image/(jpeg|png|webp|avif)');
+    }
+
     // Default: Deny all
     match /{allPaths=**} {
       allow read, write: if false;
@@ -24,44 +43,51 @@ service firebase.storage {
 
     // Public inquiry attachments (e.g. tech packs submitted via RFQ form)
     match /inquiries/{inquiryId}/{fileName} {
-      allow create: if request.resource.size < 50 * 1024 * 1024; // 50MB max
+      allow create: if isValidDocMimeType() && request.resource.size < 50 * 1024 * 1024; // 50MB max
       allow read: if isStaff();
+      allow update, delete: if isStaff();
     }
 
     // Order Documents (Scoped by order and buyer organization)
     match /orders/{orderId}/documents/{fileName} {
       allow read: if isStaff() || (isAuthenticated() && request.auth.token.buyerOrganizationId != null);
-      allow write: if isStaff() && request.resource.size < 50 * 1024 * 1024;
+      allow write: if isStaff() && isValidDocMimeType() && request.resource.size < 50 * 1024 * 1024;
     }
 
-    // Tenant Document Vault (Scoped by buyer organization and document ID)
+    // Tenant Document Vault (Strictly scoped by buyer organization)
     match /documents/{buyerOrgId}/{docId}/{fileName} {
-      allow read: if isStaff() || (isAuthenticated() && request.auth.token.buyerOrganizationId == buyerOrgId);
-      allow write: if isStaff() && request.resource.size < 50 * 1024 * 1024;
+      allow read: if isStaff() || belongsToBuyerOrg(buyerOrgId);
+      allow write: if isStaff() && isValidDocMimeType() && request.resource.size < 50 * 1024 * 1024;
     }
 
     // Production Photos (Inspection / inline progress images)
     match /orders/{orderId}/photos/{fileName} {
-      allow read: if isAuthenticated();
-      allow write: if isStaff() && request.resource.size < 20 * 1024 * 1024;
+      allow read: if isStaff() || isBuyer();
+      allow write: if isStaff() && isValidImageMimeType() && request.resource.size < 20 * 1024 * 1024;
     }
 
     // Sample Attachments (Tech specs, fitting images, shade approvals)
     match /orders/{orderId}/samples/{allPaths=**} {
-      allow read: if isAuthenticated();
-      allow write: if isStaff() && request.resource.size < 20 * 1024 * 1024;
+      allow read: if isStaff() || isBuyer();
+      allow write: if isStaff() && (isValidDocMimeType() || isValidImageMimeType()) && request.resource.size < 30 * 1024 * 1024;
     }
 
     // Quality & Inspection Attachments (Reports, defect photos, lab tests)
     match /orders/{orderId}/inspections/{allPaths=**} {
-      allow read: if isAuthenticated();
-      allow write: if isStaff() && request.resource.size < 50 * 1024 * 1024;
+      allow read: if isStaff() || isBuyer();
+      allow write: if isStaff() && (isValidDocMimeType() || isValidImageMimeType()) && request.resource.size < 50 * 1024 * 1024;
+    }
+
+    // Shipment Commercial Documents (Bill of Lading, Packing Lists, Invoices)
+    match /shipments/{shipmentId}/{allPaths=**} {
+      allow read: if isStaff() || isBuyer();
+      allow write: if isStaff() && isValidDocMimeType() && request.resource.size < 50 * 1024 * 1024;
     }
 
     // User Avatar Images
     match /users/{userId}/avatar/{fileName} {
       allow read: if isAuthenticated();
-      allow write: if isAuthenticated() && request.auth.uid == userId && request.resource.size < 5 * 1024 * 1024;
+      allow write: if isAuthenticated() && request.auth.uid == userId && isValidImageMimeType() && request.resource.size < 5 * 1024 * 1024;
     }
   }
 }

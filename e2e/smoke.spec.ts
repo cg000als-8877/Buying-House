@@ -8,11 +8,11 @@ test.describe('Platform Foundation Smoke Tests', () => {
 
   test('buyer login route resolves without 404', async ({ page }) => {
     await page.goto('/buyer/login');
-    await expect(page.locator('h1')).toContainText(/Buyer Portal/i);
+    await expect(page.locator('h1')).toContainText(/Buyer/i);
   });
 
   test('admin login route resolves without 404', async ({ page }) => {
     await page.goto('/admin/login');
-    await expect(page.locator('h1')).toContainText(/Admin Portal/i);
+    await expect(page.locator('h1')).toContainText(/Operations Center/i);
   });
 });

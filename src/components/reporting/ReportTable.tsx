@@ -131,7 +131,7 @@ export function ReportTable<T extends Record<string, unknown>>({
                           : 'text-left'
                       } ${col.className || ''}`}
                     >
-                      {col.render ? col.render(row) : row[col.key]}
+                      {col.render ? col.render(row) : (row[col.key] as React.ReactNode)}
                     </td>
                   ))}
                 </tr>

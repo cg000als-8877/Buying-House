@@ -135,7 +135,7 @@ export default function AdminReportsPage() {
     if (!canExportReports) return;
 
     let rows: Record<string, any>[] = [];
-    let filename = `report-${activeTab}-${new Date().toISOString().split('T')[0]}`;
+    const filename = `report-${activeTab}-${new Date().toISOString().split('T')[0]}`;
 
     if (activeTab === 'orders' && ordersData?.ordersList) {
       rows = ordersData.ordersList;

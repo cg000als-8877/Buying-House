@@ -22,6 +22,10 @@ service cloud.firestore {
       return isAccountActive() && getUserData().role == 'Super Admin';
     }
 
+    function isAdmin() {
+      return isAccountActive() && (getUserData().role in ['Super Admin', 'Admin']);
+    }
+
     function isStaff() {
       return isAccountActive() && (
         getUserData().role in ['Super Admin', 'Admin', 'Operations Manager', 'Merchandiser', 'Production Staff', 'QC Staff']
@@ -231,10 +235,7 @@ service cloud.firestore {
     // REPORTING & ANALYTICS SNAPSHOTS
     // =========================================================================
     match /reportSnapshots/{snapshotId} {
-      allow read: if isStaff() || (
-        isBuyer() &&
-        resource.data.buyerOrganizationId == request.auth.token.buyerOrganizationId
-      );
+      allow read: if isStaff() || belongsToBuyerOrg(resource.data.buyerOrganizationId);
       allow create, update, delete: if isStaff();
     }
 
