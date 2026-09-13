@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { ShieldCheck, Activity, FileCheck, Bell, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/Badge';
 
 export function PortalCTA() {
   const telemetryFeatures = [
@@ -33,11 +32,9 @@ export function PortalCTA() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left Copy */}
         <div className="lg:col-span-7 space-y-4">
-          <div>
-            <Badge variant="brand" size="sm" dot>
-              Platform Telemetry
-            </Badge>
-          </div>
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+            Platform Telemetry
+          </p>
           <h3 className="font-display font-bold text-foreground text-h2 tracking-tight">
             Buyer Portal & Production Visibility
           </h3>

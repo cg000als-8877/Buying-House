@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { SectionHeading, FactoryGrid, CTASection } from '@/components/public';
-import { Badge } from '@/components/ui/Badge';
 import { Alert } from '@/components/ui/Alert';
 
 export const metadata: Metadata = {
@@ -14,11 +13,9 @@ export default function FactoriesPage() {
     <div className="space-y-16 lg:space-y-24 py-12 lg:py-16">
       {/* 1. Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <div>
-          <Badge variant="brand" size="sm" dot>
-            Manufacturing Network
-          </Badge>
-        </div>
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+          Manufacturing Network
+        </p>
         <h1 className="font-display font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
           Verified Factory Network & Production Allocation.
         </h1>

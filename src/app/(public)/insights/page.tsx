@@ -17,11 +17,9 @@ export default function InsightsPage() {
     <div className="space-y-16 lg:space-y-24 py-12 lg:py-16">
       {/* 1. Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <div>
-          <Badge variant="brand" size="sm" dot>
-            Industry Knowledge
-          </Badge>
-        </div>
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+          Industry Knowledge
+        </p>
         <h1 className="font-display font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
           Apparel Sourcing Insights & Technical Guides.
         </h1>

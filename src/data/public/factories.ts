@@ -15,6 +15,7 @@ export interface FactoryPartner {
   name: string;
   location: string;
   category: string;
+  image?: string;
   specialization: string[];
   productCategories: string[];
   certificationsPlaceholder: string;
@@ -30,6 +31,7 @@ export const FACTORY_NETWORK_PROFILES: FactoryPartner[] = [
     name: 'Circular Knitwear Manufacturing Unit',
     location: 'Bangladesh Apparel Industrial Corridor [Details on Request]',
     category: 'Circular Knitwear',
+    image: '/images/factory-floor.webp',
     specialization: [
       'Single Jersey, Pique & Interlock',
       'French Terry & Brushed Fleece',
@@ -47,6 +49,7 @@ export const FACTORY_NETWORK_PROFILES: FactoryPartner[] = [
     name: 'Woven Tops & Bottoms Manufacturing Unit',
     location: 'Bangladesh Apparel Industrial Corridor [Details on Request]',
     category: 'Woven Apparel',
+    image: '/images/pattern-cutting.webp',
     specialization: [
       'Casual & Dress Shirting',
       'Chino Trousers & Cargo Pants',
@@ -64,6 +67,7 @@ export const FACTORY_NETWORK_PROFILES: FactoryPartner[] = [
     name: 'Denim & Washed Apparel Manufacturing Unit',
     location: 'Bangladesh Apparel Industrial Corridor [Details on Request]',
     category: 'Denim & Washed Wear',
+    image: '/images/quality-inspection.webp',
     specialization: [
       '5-Pocket Denim Jeans & Jackets',
       'Laser Patterning & Ozone Washing',
@@ -81,6 +85,7 @@ export const FACTORY_NETWORK_PROFILES: FactoryPartner[] = [
     name: 'Outerwear & Technical Apparel Manufacturing Unit',
     location: 'Bangladesh Apparel Industrial Corridor [Details on Request]',
     category: 'Outerwear & Technical',
+    image: '/images/fashion-atelier.webp',
     specialization: [
       'Quilted Puffer Jackets & Vests',
       'Taped Seam Shell Jackets',

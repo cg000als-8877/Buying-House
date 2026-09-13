@@ -97,10 +97,10 @@ export function BuyerSidebar({
           className="flex items-center gap-3 group"
         >
           <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
-            <span className="font-serif font-black text-lg">XYZ</span>
+            <span className="font-display font-black text-lg">XYZ</span>
           </div>
           <div>
-            <div className="font-serif font-bold text-base text-foreground leading-tight">
+            <div className="font-display font-bold text-base text-foreground leading-tight">
               Buying House
             </div>
             <div className="text-[10px] font-mono uppercase tracking-widest text-primary font-bold">

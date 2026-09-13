@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
 import { InquiryForm } from '@/components/public';
 import { Card } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
 import { Mail, MapPin, Phone, Clock, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Contact & Sourcing RFQ Submission | XYZ Buying House',
   description:
-    'Submit your apparel sourcing inquiry or tech pack to XYZ Buying House in Bangladesh. Receive itemized FOB costing, mill feasibility, and sampling schedules within 24–48 hours.',
+    'Submit your apparel sourcing inquiry or tech pack to XYZ Buying House in Bangladesh. Receive itemized FOB costing, mill feasibility, and sampling schedules within 24-48 hours.',
 };
 
 export default function ContactPage() {
@@ -15,11 +14,9 @@ export default function ContactPage() {
     <div className="space-y-16 lg:space-y-24 py-12 lg:py-16">
       {/* 1. Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <div>
-          <Badge variant="brand" size="sm" dot>
-            Business Inquiries & RFQ
-          </Badge>
-        </div>
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+          Business Inquiries &amp; RFQ
+        </p>
         <h1 className="font-display font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
           Initiate a Sourcing Inquiry with XYZ Buying House.
         </h1>
@@ -65,7 +62,7 @@ export default function ContactPage() {
                   <div className="space-y-0.5">
                     <p className="font-semibold text-foreground">Operational Headquarters</p>
                     <p className="text-muted-foreground leading-relaxed font-mono text-[11px]">
-                      [Company Registered Address — Client Input Required]
+                      [Company Registered Address: Client Input Required]
                     </p>
                     <p className="text-muted-foreground text-[11px]">Dhaka, Bangladesh</p>
                   </div>
@@ -77,8 +74,8 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-0.5">
                     <p className="font-semibold text-foreground">Business Inquiries</p>
-                    <p className="text-muted-foreground font-mono text-[11px]">[Business Email — Client Input Required]</p>
-                    <p className="text-muted-foreground font-mono text-[11px]">[Merchandising Email — Client Input Required]</p>
+                    <p className="text-muted-foreground font-mono text-[11px]">[Business Email: Client Input Required]</p>
+                    <p className="text-muted-foreground font-mono text-[11px]">[Merchandising Email: Client Input Required]</p>
                   </div>
                 </div>
 
@@ -88,8 +85,8 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-0.5">
                     <p className="font-semibold text-foreground">Direct Telecommunications</p>
-                    <p className="text-muted-foreground font-mono text-[11px]">[Phone Number — Client Input Required]</p>
-                    <p className="text-muted-foreground font-mono text-[11px]">[WhatsApp Business — Client Input Required]</p>
+                    <p className="text-muted-foreground font-mono text-[11px]">[Phone Number: Client Input Required]</p>
+                    <p className="text-muted-foreground font-mono text-[11px]">[WhatsApp Business: Client Input Required]</p>
                   </div>
                 </div>
 
@@ -99,7 +96,7 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-0.5">
                     <p className="font-semibold text-foreground">Standard Operating Hours</p>
-                    <p className="text-muted-foreground">Sunday – Thursday: 09:00 – 18:00 (GMT+6)</p>
+                    <p className="text-muted-foreground">Sunday - Thursday: 09:00 - 18:00 (GMT+6)</p>
                     <p className="text-muted-foreground text-[11px] italic">Emergency Merchandising Hotline available for active orders</p>
                   </div>
                 </div>

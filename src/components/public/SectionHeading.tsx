@@ -1,6 +1,5 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Badge } from '@/components/ui/Badge';
 
 export interface SectionHeadingProps extends React.HTMLAttributes<HTMLDivElement> {
   badge?: string;
@@ -8,6 +7,26 @@ export interface SectionHeadingProps extends React.HTMLAttributes<HTMLDivElement
   description?: string;
   align?: 'left' | 'center';
   as?: 'h1' | 'h2' | 'h3';
+}
+
+function renderFormattedTitle(title: string) {
+  if (!title.includes('*') && !title.includes('_')) {
+    return title;
+  }
+  const parts = title.split(/(\*[^*]+\*|_[^_]+_)/g);
+  return parts.map((part, index) => {
+    if (
+      (part.startsWith('*') && part.endsWith('*') && part.length > 2) ||
+      (part.startsWith('_') && part.endsWith('_') && part.length > 2)
+    ) {
+      return (
+        <span key={index} className="italic font-normal text-amber-400">
+          {part.slice(1, -1)}
+        </span>
+      );
+    }
+    return part;
+  });
 }
 
 export function SectionHeading({
@@ -24,28 +43,26 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        'space-y-3 max-w-3xl',
+        'space-y-4 max-w-3xl',
         align === 'center' ? 'mx-auto text-center' : 'text-left',
         className
       )}
       {...props}
     >
       {badge && (
-        <div>
-          <Badge variant="brand" size="sm" dot>
-            {badge}
-          </Badge>
-        </div>
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+          {badge}
+        </p>
       )}
       <HeadingTag
         className={cn(
           'font-display font-bold text-foreground tracking-tight text-h2 leading-tight'
         )}
       >
-        {title}
+        {renderFormattedTitle(title)}
       </HeadingTag>
       {description && (
-        <p className="text-body text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto font-sans">
           {description}
         </p>
       )}

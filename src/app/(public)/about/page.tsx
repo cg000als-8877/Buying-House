@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
-import { SectionHeading, CTASection, MediaPlaceholder } from '@/components/public';
+import { SectionHeading, CTASection } from '@/components/public';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
 import { ShieldCheck, Target, Compass } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About XYZ Buying House | Apparel Sourcing & Manufacturing Management',
   description:
-    'Learn about XYZ Buying House — our mission, technical merchandising operations, ethical compliance standards, and digital production management in Bangladesh.',
+    'Learn about XYZ Buying House: our mission, technical merchandising operations, ethical compliance standards, and digital production management in Bangladesh.',
 };
 
 export default function AboutPage() {
@@ -34,11 +33,9 @@ export default function AboutPage() {
     <div className="space-y-16 lg:space-y-24 py-12 lg:py-16">
       {/* 1. Page Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <div>
-          <Badge variant="brand" size="sm" dot>
-            Company Profile & Governance
-          </Badge>
-        </div>
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+          Company Profile &amp; Governance
+        </p>
         <h1 className="font-display font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
           Bridging International Fashion Brands with Bangladesh Manufacturing.
         </h1>
@@ -56,7 +53,7 @@ export default function AboutPage() {
             </div>
             <h3 className="text-xl font-bold text-foreground tracking-tight">Our Mission</h3>
             <p className="text-body text-foreground-secondary leading-relaxed">
-              To provide global apparel buyers with a seamless, risk-free manufacturing bridge into Bangladesh — combining competitive open-cost sourcing with rigorous on-site quality assurance, compliance auditing, and real-time digital telemetry.
+              To provide global apparel buyers with a seamless, risk-free manufacturing bridge into Bangladesh: combining competitive open-cost sourcing with rigorous on-site quality assurance, compliance auditing, and real-time digital telemetry.
             </p>
           </Card>
 
@@ -66,7 +63,7 @@ export default function AboutPage() {
             </div>
             <h3 className="text-xl font-bold text-foreground tracking-tight">Our Vision</h3>
             <p className="text-body text-foreground-secondary leading-relaxed">
-              To establish the gold standard for buying house operations in South Asia — where every order is governed with end-to-end data transparency, zero ethical compromise, and exceptional garment craftsmanship.
+              To establish the gold standard for buying house operations in South Asia, where every order is governed with end-to-end data transparency, zero ethical compromise, and exceptional garment craftsmanship.
             </p>
           </Card>
         </div>
@@ -93,11 +90,18 @@ export default function AboutPage() {
           </div>
 
           <div className="lg:col-span-6">
-            <MediaPlaceholder
-              aspectRatio="4/3"
-              label="Operational Merchandising & Pattern Engineering Hub"
-              sublabel="Verified client team & facility photography placeholder"
-            />
+            <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-border bg-surface-muted shadow-medium group">
+              <img
+                src="/images/fashion-atelier.webp"
+                alt="Operational Merchandising & Pattern Engineering Hub"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
+              <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-slate-950/80 backdrop-blur-md border border-white/10 text-xs sm:text-sm text-slate-200">
+                <p className="font-semibold text-white">Central Merchandising &amp; Technical Studio</p>
+                <p className="text-slate-400 text-xs">Direct oversight of fabric sourcing, grading &amp; quality governance</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

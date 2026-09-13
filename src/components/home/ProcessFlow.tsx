@@ -49,13 +49,17 @@ export function ProcessFlow() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="text-emerald-400 text-xs font-bold uppercase tracking-widest">
+          <div className="text-emerald-400 text-xs sm:text-sm font-bold uppercase tracking-widest font-display">
             Streamlined Sourcing Pipeline
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white tracking-tight">
-            How We Bring Your Apparel Line to Life
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight">
+            How We Bring Your{' '}
+            <span className="text-emerald-400 font-extrabold">
+              Apparel Line
+            </span>{' '}
+            to Life
           </h2>
-          <p className="text-slate-400 text-sm leading-relaxed">
+          <p className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed font-sans">
             Transparent milestones, rigorous quality checks, and real-time updates from initial sketch to final delivery.
           </p>
         </div>
@@ -68,23 +72,23 @@ export function ProcessFlow() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 relative flex flex-col justify-between group"
+              className="p-7 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 relative flex flex-col justify-between group"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center">
                     {item.icon}
                   </div>
-                  <span className="font-serif font-bold text-2xl text-slate-700 group-hover:text-amber-400/60 transition-colors">
+                  <span className="font-display font-black text-3xl text-slate-700 group-hover:text-amber-400/60 transition-colors">
                     {item.step}
                   </span>
                 </div>
 
-                <div className="space-y-2">
-                  <h3 className="font-serif font-bold text-base text-white group-hover:text-amber-300 transition-colors">
+                <div className="space-y-2.5">
+                  <h3 className="font-display font-bold text-lg sm:text-xl text-white group-hover:text-amber-300 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
                     {item.desc}
                   </p>
                 </div>

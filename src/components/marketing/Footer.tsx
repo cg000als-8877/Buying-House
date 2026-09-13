@@ -11,14 +11,14 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-serif font-black text-xl">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-display font-black text-xl">
                 BH
               </div>
-              <span className="font-serif font-bold text-xl text-white tracking-wide">
+              <span className="font-display font-extrabold text-xl text-white tracking-wide">
                 ATELIER &amp; CO.
               </span>
             </div>
-            <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
+            <p className="text-sm text-slate-400 max-w-sm leading-relaxed font-sans">
               Premier apparel buying house, connecting international fashion brands and retailers with certified, high-standard garment manufacturing ecosystems.
             </p>
             <div className="flex items-center gap-3 pt-2">

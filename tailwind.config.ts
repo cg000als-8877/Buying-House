@@ -81,8 +81,13 @@ const config: Config = {
         selected: "var(--selected)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
-        display: ["var(--font-display)", "var(--font-inter)", "-apple-system", "sans-serif"],
+        sans: ["var(--font-roboto)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        body: ["var(--font-roboto)", "-apple-system", "sans-serif"],
+        roboto: ["var(--font-roboto)", "-apple-system", "sans-serif"],
+        display: ["var(--font-montserrat)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        heading: ["var(--font-montserrat)", "-apple-system", "sans-serif"],
+        montserrat: ["var(--font-montserrat)", "-apple-system", "sans-serif"],
+        serif: ["var(--font-montserrat)", "-apple-system", "sans-serif"],
       },
       borderRadius: {
         none: "0px",

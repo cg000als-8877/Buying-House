@@ -319,7 +319,7 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
                       {log.cumulativeQuantity.toLocaleString()}
                     </td>
                     <td className="py-3 px-3 font-sans text-muted-foreground max-w-xs truncate">
-                      {log.remarks || '—'}
+                      {log.remarks || '-'}
                     </td>
                   </tr>
                 ))}

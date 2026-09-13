@@ -31,7 +31,7 @@ export function BuyerHeader({ unreadCount = 0 }: BuyerHeaderProps) {
           </button>
 
           <div className="flex items-center gap-2">
-            <span className="font-serif font-bold text-base text-foreground lg:hidden">
+            <span className="font-display font-bold text-base text-foreground lg:hidden">
               XYZ Buying House
             </span>
             <span className="hidden sm:inline-block text-xs font-mono text-muted-foreground">

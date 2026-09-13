@@ -12,23 +12,26 @@ export function CtaBanner() {
       
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
         
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-widest">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Start Your Next Collection With Confidence</span>
-        </div>
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-400 font-display">
+          Start Your Next Collection With Confidence
+        </p>
 
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
-          Ready to Elevate Your Apparel Quality &amp; Profit Margins?
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight">
+          Ready to Elevate Your{' '}
+          <span className="text-amber-400 font-extrabold">
+            Apparel Quality
+          </span>{' '}
+          &amp; Profit Margins?
         </h2>
 
-        <p className="text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-sans">
           Send us your tech pack or request physical fabric swatch books today. Receive itemized BOM pricing and lead time estimations within 24 hours.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <Link
             href="/rfq"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-slate-950 hover:brightness-110 shadow-xl shadow-amber-500/25 transition-all hover:scale-105"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm sm:text-base font-bold uppercase tracking-wider bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-slate-950 hover:brightness-110 shadow-xl shadow-amber-500/25 transition-all hover:scale-105 font-display"
           >
             <span>Request Instant Quote &amp; Samples</span>
             <ArrowRight className="w-4 h-4" />
@@ -36,14 +39,14 @@ export function CtaBanner() {
 
           <Link
             href="/contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-slate-200 hover:text-white border border-slate-700 hover:border-slate-500 bg-slate-900/80 transition-all hover:bg-slate-800"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm sm:text-base font-semibold text-slate-200 hover:text-white border border-slate-700 hover:border-slate-500 bg-slate-900/80 transition-all hover:bg-slate-800 font-display"
           >
             <MessageSquare className="w-4 h-4 text-emerald-400" />
             <span>Book Virtual Showroom Tour</span>
           </Link>
         </div>
 
-        <div className="pt-4 flex items-center justify-center gap-6 text-xs text-slate-400">
+        <div className="pt-4 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-slate-300">
           <span>⚡ 24-Hour Quotation Turnaround</span>
           <span>•</span>
           <span>🛡️ NDA Guaranteed Privacy</span>

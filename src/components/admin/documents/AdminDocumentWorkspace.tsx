@@ -742,7 +742,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Approved Tech Pack v2.1 — Organic Crewneck"
+                  placeholder="e.g. Approved Tech Pack v2.1 - Organic Crewneck"
                   value={uploadFormData.title}
                   onChange={(e) => setUploadFormData({ ...uploadFormData, title: e.target.value })}
                   className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"

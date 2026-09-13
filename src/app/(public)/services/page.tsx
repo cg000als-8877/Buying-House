@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { CheckCircle2, FileCheck, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Services | XYZ Buying House — Apparel Sourcing, Sampling & Production',
+  title: 'Services | XYZ Buying House: Apparel Sourcing, Sampling & Production',
   description:
     'Comprehensive garment sourcing and buying house services in Bangladesh: vendor sourcing, tech pack development, Proto sampling, inline AQL quality control, compliance oversight, and export logistics.',
 };
@@ -17,11 +17,9 @@ export default function ServicesPage() {
     <div className="space-y-16 lg:space-y-24 py-12 lg:py-16">
       {/* 1. Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <div>
-          <Badge variant="brand" size="sm" dot>
-            Full-Spectrum Sourcing Solutions
-          </Badge>
-        </div>
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+          Full-Spectrum Sourcing Solutions
+        </p>
         <h1 className="font-display font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
           End-to-End Apparel Manufacturing Management.
         </h1>

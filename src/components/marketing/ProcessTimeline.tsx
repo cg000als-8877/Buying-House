@@ -60,16 +60,16 @@ export function ProcessTimeline() {
               <div className="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center">
                 {item.icon}
               </div>
-              <span className="font-serif font-bold text-2xl text-slate-700 group-hover:text-amber-400/60 transition-colors">
+              <span className="font-display font-bold text-2xl text-slate-700 group-hover:text-amber-400/60 transition-colors">
                 {item.step}
               </span>
             </div>
 
             <div className="space-y-2">
-              <h3 className="font-serif font-bold text-base text-white group-hover:text-amber-300 transition-colors">
+              <h3 className="font-display font-bold text-base sm:text-lg text-white group-hover:text-amber-300 transition-colors">
                 {item.title}
               </h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
                 {item.desc}
               </p>
             </div>

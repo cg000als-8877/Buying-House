@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { CapabilitySection, CTASection, PortalCTA } from '@/components/public';
-import { Badge } from '@/components/ui/Badge';
 
 export const metadata: Metadata = {
   title: 'Sourcing & Production Capabilities | XYZ Buying House',
@@ -13,11 +12,9 @@ export default function CapabilitiesPage() {
     <div className="space-y-16 lg:space-y-24 py-12 lg:py-16">
       {/* 1. Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <div>
-          <Badge variant="brand" size="sm" dot>
-            Technical Infrastructure
-          </Badge>
-        </div>
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+          Technical Infrastructure
+        </p>
         <h1 className="font-display font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
           Operational & Technical Sourcing Capabilities.
         </h1>

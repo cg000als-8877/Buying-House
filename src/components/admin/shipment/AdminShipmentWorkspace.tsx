@@ -476,7 +476,7 @@ export function AdminShipmentWorkspace({
                     <td className="p-4 font-sans">
                       <div className="text-white font-semibold flex items-center gap-1.5">
                         <MapPin className="w-3 h-3 text-emerald-400 shrink-0" />
-                        <span>{shipment.destinationCountry} — {shipment.destinationPort}</span>
+                        <span>{shipment.destinationCountry} - {shipment.destinationPort}</span>
                       </div>
                       <div className="text-xs text-slate-400 font-mono mt-0.5">
                         Org: {shipment.buyerOrganizationName}
@@ -582,7 +582,7 @@ export function AdminShipmentWorkspace({
                 </span>
               </div>
               <h3 className="text-xl font-serif font-bold text-white">
-                Cargo Operational Workspace — {selectedShipment.destinationCountry} ({selectedShipment.destinationPort})
+                Cargo Operational Workspace: {selectedShipment.destinationCountry} ({selectedShipment.destinationPort})
               </h3>
             </div>
 
@@ -795,7 +795,7 @@ export function AdminShipmentWorkspace({
                         ? 'All Pre-Shipment Quality & Production Gates Passed'
                         : readiness.qualityGate.overrideApplied
                         ? 'Shipment Approved via Manager Quality Override'
-                        : 'Readiness Gates Blocked — Unmet Pre-Shipment Conditions'}
+                        : 'Readiness Gates Blocked: Unmet Pre-Shipment Conditions'}
                     </h4>
                     <p className="text-xs text-slate-300">
                       {readiness.isReady
@@ -1081,7 +1081,7 @@ export function AdminShipmentWorkspace({
                     {packingItems.map((item) => (
                       <tr key={item.id} className="hover:bg-slate-800/30">
                         <td className="p-3 font-bold text-amber-400">
-                          #{item.cartonNumberStart} – #{item.cartonNumberEnd}
+                          #{item.cartonNumberStart} - #{item.cartonNumberEnd}
                         </td>
                         <td className="p-3 font-sans">
                           <span className="text-white font-semibold">{item.styleNumber}</span>

@@ -32,7 +32,7 @@ export function AdminHeader({ unreadCount = 0 }: AdminHeaderProps) {
           </button>
 
           <div className="flex items-center gap-2">
-            <span className="font-serif font-bold text-base text-white lg:hidden">
+            <span className="font-display font-bold text-base text-white lg:hidden">
               XYZ Operations
             </span>
             <span className="hidden sm:inline-block text-xs font-mono text-slate-400">

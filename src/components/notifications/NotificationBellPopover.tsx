@@ -176,7 +176,7 @@ export function NotificationBellPopover({
               }`}
             >
               <div className="flex items-center gap-2">
-                <span className="font-serif font-bold text-sm">Notifications</span>
+                <span className="font-display font-bold text-sm">Notifications</span>
                 {unreadCount > 0 && (
                   <Badge variant={isStaff ? 'amber' : 'brand'} size="sm">
                     {unreadCount} new

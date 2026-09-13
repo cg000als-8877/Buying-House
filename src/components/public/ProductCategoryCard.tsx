@@ -8,39 +8,52 @@ import { MediaPlaceholder } from './MediaPlaceholder';
 
 export function ProductCategoryCard({ category }: { category: ProductCategory }) {
   return (
-    <Card hoverEffect className="flex flex-col justify-between h-full bg-surface border-border overflow-hidden">
+    <Card hoverEffect className="flex flex-col justify-between h-full bg-surface border-border overflow-hidden group">
       <div>
-        <MediaPlaceholder
-          aspectRatio="16/9"
-          label={category.name}
-          sublabel="Garment category showcase"
-          className="rounded-b-none border-t-0 border-x-0"
-        />
+        {category.image ? (
+          <div className="relative aspect-video w-full overflow-hidden bg-surface-muted">
+            <img
+              src={category.image}
+              alt={category.name}
+              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+          </div>
+        ) : (
+          <MediaPlaceholder
+            aspectRatio="16/9"
+            label={category.name}
+            sublabel="Garment category showcase"
+            className="rounded-b-none border-t-0 border-x-0"
+          />
+        )}
 
         <CardHeader>
           <div className="flex items-center justify-between gap-2 mb-1">
-            <Badge variant="neutral" size="sm">
+            <Badge variant="neutral" size="sm" className="text-xs font-display">
               {category.leadTimeWeeks}
             </Badge>
           </div>
-          <CardTitle className="text-base sm:text-lg">{category.name}</CardTitle>
-          <CardDescription>{category.subtitle}</CardDescription>
+          <CardTitle className="text-lg sm:text-xl font-display font-bold group-hover:text-accent transition-colors">
+            {category.name}
+          </CardTitle>
+          <CardDescription className="text-xs sm:text-sm text-muted-foreground font-sans">{category.subtitle}</CardDescription>
         </CardHeader>
 
         <CardContent className="space-y-4">
-          <p className="text-xs text-foreground-secondary leading-relaxed">
+          <p className="text-xs sm:text-sm text-foreground-secondary leading-relaxed">
             {category.description}
           </p>
 
-          <div className="space-y-1.5">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+          <div className="space-y-2">
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Garments Produced:
             </p>
             <div className="flex flex-wrap gap-1.5">
               {category.keyGarments.slice(0, 3).map((item, idx) => (
                 <span
                   key={idx}
-                  className="text-[11px] px-2 py-0.5 rounded bg-surface-muted text-foreground-secondary border border-border/60"
+                  className="text-xs px-2.5 py-1 rounded-md bg-surface-muted text-foreground-secondary border border-border/60"
                 >
                   {item}
                 </span>
@@ -51,15 +64,15 @@ export function ProductCategoryCard({ category }: { category: ProductCategory })
       </div>
 
       <CardFooter className="pt-4 border-t border-border/60 justify-between">
-        <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
-          <Clock className="w-3.5 h-3.5 text-accent" />
+        <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+          <Clock className="w-4 h-4 text-accent" />
           <span>MOQ: {category.moqPlaceholder}</span>
         </div>
         <Link
           href={`/products#${category.id}`}
-          className="text-xs font-semibold text-foreground hover:text-accent flex items-center gap-1 transition-colors"
+          className="text-xs sm:text-sm font-semibold text-foreground hover:text-accent flex items-center gap-1 transition-colors"
         >
-          Specs <ArrowRight className="w-3.5 h-3.5" />
+          Specs <ArrowRight className="w-4 h-4" />
         </Link>
       </CardFooter>
     </Card>

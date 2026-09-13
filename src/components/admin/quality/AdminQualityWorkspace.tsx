@@ -983,7 +983,7 @@ export function AdminQualityWorkspace({
                   className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
                 >
                   <option value="GI">Level I (Reduced)</option>
-                  <option value="GII">Level II (Normal — Industry Standard)</option>
+                  <option value="GII">Level II (Normal - Industry Standard)</option>
                   <option value="GIII">Level III (Tightened)</option>
                 </select>
               </div>

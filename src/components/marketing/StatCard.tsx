@@ -9,13 +9,13 @@ export interface StatCardProps {
 export function StatCard({ value, label, sub }: StatCardProps) {
   return (
     <div className="space-y-1 relative text-center">
-      <div className="font-serif text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+      <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
         <span className="text-amber-400">{value}</span>
       </div>
-      <div className="text-xs sm:text-sm font-semibold text-slate-200 uppercase tracking-wide">
+      <div className="text-xs sm:text-sm font-semibold text-slate-200 uppercase tracking-wide font-display">
         {label}
       </div>
-      <div className="text-[11px] text-slate-400">
+      <div className="text-xs sm:text-sm text-slate-400 font-sans">
         {sub}
       </div>
     </div>

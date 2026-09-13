@@ -24,15 +24,15 @@ export function PublicFooter() {
             <div className="space-y-2 pt-2 text-xs text-foreground-secondary">
               <div className="flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-accent shrink-0" />
-                <span className="font-mono text-[11px]">[Headquarters Address — Client Input Required]</span>
+                <span className="font-mono text-[11px]">[Headquarters Address: Client Input Required]</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-accent shrink-0" />
-                <span className="font-mono text-[11px]">[Business Email — Client Input Required]</span>
+                <span className="font-mono text-[11px]">[Business Email: Client Input Required]</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-accent shrink-0" />
-                <span className="font-mono text-[11px]">[Phone Number — Client Input Required]</span>
+                <span className="font-mono text-[11px]">[Phone Number: Client Input Required]</span>
               </div>
             </div>
           </div>

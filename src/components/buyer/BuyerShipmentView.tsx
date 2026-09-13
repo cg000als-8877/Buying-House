@@ -315,7 +315,7 @@ export function BuyerShipmentView({
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
                     <span className="flex items-center gap-1.5 text-foreground font-semibold">
                       <MapPin className="w-3.5 h-3.5 text-emerald-400" />
-                      {shipment.destinationCountry} — {shipment.destinationPort}
+                      {shipment.destinationCountry} - {shipment.destinationPort}
                     </span>
                     <span>•</span>
                     <span className="flex items-center gap-1 text-slate-300">
@@ -379,7 +379,7 @@ export function BuyerShipmentView({
             <div>
               <span className="text-xs font-mono text-primary font-bold">Consignment Telemetry Details</span>
               <h3 className="text-xl font-serif font-bold text-foreground">
-                {selectedShipment.shipmentNumber} — Destination: {selectedShipment.destinationPort}
+                {selectedShipment.shipmentNumber}: Destination: {selectedShipment.destinationPort}
               </h3>
             </div>
             <Button

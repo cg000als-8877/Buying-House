@@ -22,7 +22,7 @@ export function TestimonialCard({ quote, clientName, role, brand, avatar }: Test
           ))}
         </div>
 
-        <p className="text-sm text-slate-300 leading-relaxed italic">
+        <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-sans">
           &ldquo;{quote}&rdquo;
         </p>
       </div>
@@ -34,9 +34,9 @@ export function TestimonialCard({ quote, clientName, role, brand, avatar }: Test
           className="w-10 h-10 rounded-full object-cover border border-amber-500/30"
         />
         <div>
-          <h4 className="text-sm font-bold text-white">{clientName}</h4>
-          <p className="text-xs text-slate-400">{role}</p>
-          <p className="text-[11px] text-emerald-400 font-medium">{brand}</p>
+          <h4 className="text-sm sm:text-base font-bold text-white font-display">{clientName}</h4>
+          <p className="text-xs sm:text-sm text-slate-400 font-sans">{role}</p>
+          <p className="text-xs text-emerald-400 font-medium font-sans">{brand}</p>
         </div>
       </div>
     </Card>

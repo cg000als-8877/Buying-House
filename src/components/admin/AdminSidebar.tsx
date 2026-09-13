@@ -124,10 +124,10 @@ export function AdminSidebar({
           className="flex items-center gap-3 group"
         >
           <div className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 group-hover:scale-105 transition-transform">
-            <span className="font-serif font-black text-lg">XYZ</span>
+            <span className="font-display font-black text-lg">XYZ</span>
           </div>
           <div>
-            <div className="font-serif font-bold text-base text-white leading-tight">
+            <div className="font-display font-bold text-base text-white leading-tight">
               Buying House
             </div>
             <div className="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold">

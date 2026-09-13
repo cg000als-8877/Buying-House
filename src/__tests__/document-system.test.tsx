@@ -169,7 +169,7 @@ describe('Document Management & Secure File Vault — Step 11 Verification', () 
       // Create an internal document
       await createDocument(
         {
-          title: 'Internal Cost Sheet — DO NOT SHARE',
+          title: 'Internal Cost Sheet - DO NOT SHARE',
           category: 'Commercial',
           orderId: 'TEST-ORDER-001',
           buyerOrganizationId: 'buyer-org-001',

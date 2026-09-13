@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useScroll, useMotionValueEvent } from 'framer-motion';
 import { Menu, X, ArrowRight, PhoneCall, UserCheck, LayoutDashboard } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
@@ -20,14 +21,11 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { scrollY } = useScroll();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setIsScrolled(latest > 20);
+  });
 
   return (
     <header
@@ -43,13 +41,13 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 via-amber-500 to-amber-700 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-              <span className="font-serif font-black text-slate-950 text-xl tracking-tighter">BH</span>
+              <span className="font-display font-black text-slate-950 text-xl tracking-tighter">BH</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-serif font-bold text-lg md:text-xl tracking-wide text-white group-hover:text-amber-300 transition-colors">
+              <span className="font-display font-extrabold text-lg md:text-xl tracking-wide text-white group-hover:text-amber-300 transition-colors">
                 ATELIER &amp; CO.
               </span>
-              <span className="text-[10px] tracking-widest uppercase text-emerald-400 font-medium">
+              <span className="text-[10px] tracking-widest uppercase text-emerald-400 font-semibold font-display">
                 Global Apparel Sourcing
               </span>
             </div>
@@ -98,7 +96,7 @@ export function Navbar() {
 
             <Link href="/rfq">
               <Button variant="gold" size="sm">
-                <span>Request Quote</span>
+                <span>Submit Sourcing RFQ</span>
                 <ArrowRight className="w-3 h-3" />
               </Button>
             </Link>
@@ -140,7 +138,7 @@ export function Navbar() {
           <div className="pt-4 border-t border-slate-800 flex flex-col gap-3">
             <Link href="/rfq" onClick={() => setMobileMenuOpen(false)}>
               <Button variant="gold" size="md" className="w-full">
-                Request Quote &amp; Samples
+                Submit Sourcing RFQ
               </Button>
             </Link>
           </div>

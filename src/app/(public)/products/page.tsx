@@ -17,11 +17,9 @@ export default function ProductsPage() {
     <div className="space-y-16 lg:space-y-24 py-12 lg:py-16">
       {/* 1. Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <div>
-          <Badge variant="brand" size="sm" dot>
-            Illustrative Manufacturing Scope
-          </Badge>
-        </div>
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+          Illustrative Manufacturing Scope
+        </p>
         <h1 className="font-display font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
           Apparel Categories & Manufacturing Scope.
         </h1>
@@ -38,27 +36,38 @@ export default function ProductsPage() {
             id={category.id}
             className="p-6 sm:p-10 rounded-2xl border border-border bg-surface shadow-subtle grid grid-cols-1 lg:grid-cols-12 gap-8 items-start scroll-mt-24"
           >
-            {/* Visual Media Placeholder & Quick Stats */}
+            {/* Visual Media Showcase & Quick Stats */}
             <div className="lg:col-span-5 space-y-4">
-              <MediaPlaceholder
-                aspectRatio="16/9"
-                label={`${category.name} Production`}
-                sublabel="Category garment photography placeholder"
-                className="shadow-subtle"
-              />
+              {category.image ? (
+                <div className="relative aspect-video w-full rounded-xl overflow-hidden border border-border bg-surface-muted shadow-subtle group">
+                  <img
+                    src={category.image}
+                    alt={`${category.name} Production`}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
+                </div>
+              ) : (
+                <MediaPlaceholder
+                  aspectRatio="16/9"
+                  label={`${category.name} Production`}
+                  sublabel="Category garment photography"
+                  className="shadow-subtle"
+                />
+              )}
 
-              <div className="p-4 rounded-lg bg-surface-muted/40 border border-border/80 grid grid-cols-2 gap-4 text-xs">
-                <div className="space-y-0.5">
-                  <span className="text-[10px] uppercase font-semibold text-muted-foreground">Lead Time Status</span>
-                  <p className="font-semibold text-foreground flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5 text-accent shrink-0" />
+              <div className="p-4 rounded-xl bg-surface-muted/40 border border-border/80 grid grid-cols-2 gap-4 text-xs sm:text-sm">
+                <div className="space-y-1">
+                  <span className="text-xs uppercase font-semibold text-muted-foreground">Lead Time Status</span>
+                  <p className="font-semibold text-foreground flex items-center gap-1.5">
+                    <Clock className="w-4 h-4 text-accent shrink-0" />
                     <span>{category.leadTimeWeeks}</span>
                   </p>
                 </div>
-                <div className="space-y-0.5">
-                  <span className="text-[10px] uppercase font-semibold text-muted-foreground">Order MOQ</span>
-                  <p className="font-semibold text-foreground flex items-center gap-1">
-                    <Layers className="w-3.5 h-3.5 text-accent shrink-0" />
+                <div className="space-y-1">
+                  <span className="text-xs uppercase font-semibold text-muted-foreground">Order MOQ</span>
+                  <p className="font-semibold text-foreground flex items-center gap-1.5">
+                    <Layers className="w-4 h-4 text-accent shrink-0" />
                     <span>{category.moqPlaceholder}</span>
                   </p>
                 </div>

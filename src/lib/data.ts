@@ -9,7 +9,7 @@ export const productsData: Product[] = [
     gsm: '240 - 280 GSM',
     moq: '500 pcs/color',
     leadTime: '30-45 days',
-    image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
+    image: '/images/knitwear.webp',
     features: ['Pre-shrunk', 'Silicon Soft Wash', 'Double-needle seam', 'Rib collar retention'],
     certifications: ['OEKO-TEX 100', 'GOTS Organic'],
     description: 'Ultra-luxurious heavyweight t-shirt tailored for premium streetwear and contemporary fashion labels. Exceptional hand-feel with zero twisting after wash.'
@@ -22,7 +22,7 @@ export const productsData: Product[] = [
     gsm: '380 - 450 GSM',
     moq: '300 pcs/color',
     leadTime: '35-50 days',
-    image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80',
+    image: '/images/knitwear.webp',
     features: ['Brushed fleece interior', 'Heavy ribbed cuffs & hem', 'Custom metal tipped aglets', 'Double-layer hood'],
     certifications: ['OEKO-TEX 100', 'GOTS', 'WRAP Certified'],
     description: 'High-density heavyweight fleece pullover engineered for luxury comfort, warmth, and streetwear structured silhouette.'
@@ -35,7 +35,7 @@ export const productsData: Product[] = [
     gsm: '13.5 oz / 460 GSM',
     moq: '400 pcs/style',
     leadTime: '45-60 days',
-    image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=800&q=80',
+    image: '/images/denim.webp',
     features: ['Shuttle-loom selvedge ID line', 'Antiqued brass hardware', 'Vintage hand-scrape wash', 'Reinforced bartack stitching'],
     certifications: ['BCI Cotton', 'Sedex SMETA', 'OEKO-TEX'],
     description: 'Authentic selvedge denim jacket combining heritage craftsmanship with modern laser and ozone eco-washing techniques.'
@@ -48,7 +48,7 @@ export const productsData: Product[] = [
     gsm: '220 GSM',
     moq: '500 pcs/color',
     leadTime: '30-40 days',
-    image: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=800&q=80',
+    image: '/images/activewear.webp',
     features: ['4-way stretch', 'Squat-proof compression', 'Moisture-wicking', 'Anti-microbial finish'],
     certifications: ['GRS (Global Recycled Standard)', 'OEKO-TEX'],
     description: 'Butter-soft high-waisted seamless activewear leggings built for high-impact performance and athleisure lines.'
@@ -61,7 +61,7 @@ export const productsData: Product[] = [
     gsm: '160 GSM',
     moq: '400 pcs/pattern',
     leadTime: '35-45 days',
-    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80',
+    image: '/images/woven.webp',
     features: ['Camp collar', 'Mother-of-pearl buttons', 'Enzyme garment washed', 'Breathable open weave'],
     certifications: ['European Flax', 'OEKO-TEX 100'],
     description: 'Effortlessly refined summer resort shirt offering breathable drape, natural texture, and relaxed luxury aesthetics.'
@@ -74,7 +74,7 @@ export const productsData: Product[] = [
     gsm: '350 GSM total weight',
     moq: '300 pcs/style',
     leadTime: '50-65 days',
-    image: 'https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80',
+    image: '/images/outerwear.webp',
     features: ['DWR water-repellent finish', '700+ Fill Power RDS certified down', 'YKK AquaGuard zippers', 'Packable pouch included'],
     certifications: ['RDS (Responsible Down)', 'GRS', 'bluesign® Approved'],
     description: 'Ultra-lightweight thermal insulation outerwear combining weather protection with sustainable recycled shell materials.'

@@ -23,7 +23,7 @@ export const SOURCING_CAPABILITIES: SourcingCapability[] = [
       'CAD Gerber / Lectra pattern grading and marker efficiency optimization',
       'Wash shrinkage compensation algorithms across circular knits and denim',
       'Alternative stitch and seam recommendation for structural durability',
-      'Pre-costing BOM validation within 24–48 hours of tech pack receipt',
+      'Pre-costing BOM validation within 24-48 hours of tech pack receipt',
     ],
   },
   {

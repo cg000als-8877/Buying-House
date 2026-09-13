@@ -31,43 +31,51 @@ export default function HomePage() {
 
       {/* 2. Trust & Capability Introduction */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-10 rounded-xl border border-border bg-surface grid grid-cols-1 md:grid-cols-4 gap-6 text-center sm:text-left">
-          <div className="space-y-1 sm:border-r sm:border-border sm:pr-4">
-            <p className="text-xs font-mono font-semibold uppercase tracking-wider text-accent">
-              01. Technical Sourcing
+        <div className="p-8 sm:p-10 rounded-2xl border border-border bg-surface grid grid-cols-1 md:grid-cols-4 gap-8 text-center sm:text-left shadow-subtle">
+          <div className="space-y-2 sm:border-r sm:border-border sm:pr-6">
+            <p className="text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-accent">
+              Technical Sourcing
             </p>
-            <h4 className="font-semibold text-sm text-foreground">Direct Sourcing Feasibility</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">
+            <h4 className="font-display font-bold text-base sm:text-lg text-foreground leading-snug">
+              Direct Sourcing Feasibility
+            </h4>
+            <p className="text-sm text-muted-foreground leading-relaxed font-sans">
               Transparent cost breakdowns and local/imported mill sourcing analysis.
             </p>
           </div>
 
-          <div className="space-y-1 sm:border-r sm:border-border sm:pr-4">
-            <p className="text-xs font-mono font-semibold uppercase tracking-wider text-accent">
-              02. AQL Governance
+          <div className="space-y-2 sm:border-r sm:border-border sm:pr-6">
+            <p className="text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-accent">
+              AQL Governance
             </p>
-            <h4 className="font-semibold text-sm text-foreground">Quality Control Framework</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">
+            <h4 className="font-display font-bold text-base sm:text-lg text-foreground leading-snug">
+              Quality Control Framework
+            </h4>
+            <p className="text-sm text-muted-foreground leading-relaxed font-sans">
               Structured multi-stage inspection protocols from raw fabric to pre-shipment FRI.
             </p>
           </div>
 
-          <div className="space-y-1 sm:border-r sm:border-border sm:pr-4">
-            <p className="text-xs font-mono font-semibold uppercase tracking-wider text-accent">
-              03. Digital Telemetry
+          <div className="space-y-2 sm:border-r sm:border-border sm:pr-6">
+            <p className="text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-accent">
+              Digital Telemetry
             </p>
-            <h4 className="font-semibold text-sm text-foreground">Buyer Portal Architecture</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">
+            <h4 className="font-display font-bold text-base sm:text-lg text-foreground leading-snug">
+              Buyer Portal Architecture
+            </h4>
+            <p className="text-sm text-muted-foreground leading-relaxed font-sans">
               Designed for live order tracking, sample approvals, and digital document access.
             </p>
           </div>
 
-          <div className="space-y-1">
-            <p className="text-xs font-mono font-semibold uppercase tracking-wider text-accent">
-              04. Social Compliance
+          <div className="space-y-2">
+            <p className="text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-accent">
+              Social Compliance
             </p>
-            <h4 className="font-semibold text-sm text-foreground">Ethical Supply Chain</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">
+            <h4 className="font-display font-bold text-base sm:text-lg text-foreground leading-snug">
+              Ethical Supply Chain
+            </h4>
+            <p className="text-sm text-muted-foreground leading-relaxed font-sans">
               Strict compliance evaluation, worker safety standards, and zero unauthorized subcontracting.
             </p>
           </div>
@@ -77,7 +85,6 @@ export default function HomePage() {
       {/* 3. Services Overview */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <SectionHeading
-          badge="End-to-End Solutions"
           title="Complete Garment Sourcing & Production Services"
           description="From initial tech pack interpretation and proto sampling to bulk line management, quality audits, and export logistics."
         />
@@ -87,7 +94,6 @@ export default function HomePage() {
       {/* 4. Product Categories */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <SectionHeading
-          badge="Manufacturing Scope"
           title="Apparel Categories & Technical Capabilities"
           description="Specialized production facilities covering circular knits, woven bottoms, casual shirting, washed denim, and outerwear."
         />
@@ -112,7 +118,6 @@ export default function HomePage() {
       {/* 7. Process / How We Work */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <SectionHeading
-          badge="Operational Methodology"
           title="From Tech Pack to Port Dispatch"
           description="A structured, milestone-driven critical path guaranteeing on-time ex-factory schedules and specification adherence."
         />
@@ -122,7 +127,6 @@ export default function HomePage() {
       {/* 8. Compliance & Sustainability Previews */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <SectionHeading
-          badge="Governance & Ethics"
           title="Ethical Compliance & Responsible Sourcing"
           description="Audited labor standards, building structural safety, and eco-certified material options for forward-thinking apparel brands."
         />
@@ -132,7 +136,6 @@ export default function HomePage() {
       {/* 9. Final Conversion CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <CTASection
-          badge="Initiate Sourcing Dialogue"
           title="Partner with a reliable, transparent buying house in Bangladesh."
           description="Submit your tech pack or collection concept today. Our technical merchandising team will provide feasibility analysis, price estimations, and sampling schedules."
           primaryCtaText="Submit Sourcing RFQ"

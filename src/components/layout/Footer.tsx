@@ -11,28 +11,28 @@ export function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-serif font-black text-xl">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-display font-black text-xl">
                 BH
               </div>
-              <span className="font-serif font-bold text-xl text-white tracking-wide">
+              <span className="font-display font-extrabold text-xl text-white tracking-wide">
                 ATELIER &amp; CO.
               </span>
             </div>
-            <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-300 max-w-sm leading-relaxed font-sans">
               Premier apparel buying house, connecting international fashion brands and retailers with certified, high-standard garment manufacturing ecosystems.
             </p>
             <div className="flex items-center gap-3 pt-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/60 text-emerald-400 border border-emerald-800/60">
-                <ShieldCheck className="w-3.5 h-3.5" />
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-emerald-950/60 text-emerald-400 border border-emerald-800/60">
+                <ShieldCheck className="w-4 h-4" />
                 OEKO-TEX &amp; GOTS Certified Hub
               </span>
             </div>
           </div>
 
           {/* Sourcing Categories */}
-          <div className="space-y-3">
-            <h4 className="text-white font-semibold text-sm tracking-wider uppercase">Apparel Lines</h4>
-            <ul className="space-y-2 text-sm">
+          <div className="space-y-3.5">
+            <h4 className="text-white font-semibold text-sm sm:text-base tracking-wider uppercase">Apparel Lines</h4>
+            <ul className="space-y-2.5 text-sm sm:text-base text-slate-300">
               <li><Link href="/products?cat=Knitwear" className="hover:text-amber-400 transition-colors">Premium Knitwear</Link></li>
               <li><Link href="/products?cat=Woven" className="hover:text-amber-400 transition-colors">Woven Shirts &amp; Pants</Link></li>
               <li><Link href="/products?cat=Denim" className="hover:text-amber-400 transition-colors">Eco-Wash Denim</Link></li>
@@ -43,9 +43,9 @@ export function Footer() {
           </div>
 
           {/* Capabilities */}
-          <div className="space-y-3">
-            <h4 className="text-white font-semibold text-sm tracking-wider uppercase">Services</h4>
-            <ul className="space-y-2 text-sm">
+          <div className="space-y-3.5">
+            <h4 className="text-white font-semibold text-sm sm:text-base tracking-wider uppercase">Services</h4>
+            <ul className="space-y-2.5 text-sm sm:text-base text-slate-300">
               <li><Link href="/services#sourcing" className="hover:text-amber-400 transition-colors">Fabric &amp; Trim Sourcing</Link></li>
               <li><Link href="/services#techpack" className="hover:text-amber-400 transition-colors">3D CAD &amp; Tech-Packs</Link></li>
               <li><Link href="/services#quality" className="hover:text-amber-400 transition-colors">AQL 1.5 / 2.5 Inspection</Link></li>
@@ -56,24 +56,24 @@ export function Footer() {
           </div>
 
           {/* Global Operations & Contact */}
-          <div className="space-y-3">
-            <h4 className="text-white font-semibold text-sm tracking-wider uppercase">Global Offices</h4>
-            <div className="space-y-2.5 text-xs text-slate-400">
-              <div className="flex items-start gap-2">
+          <div className="space-y-3.5">
+            <h4 className="text-white font-semibold text-sm sm:text-base tracking-wider uppercase">Global Offices</h4>
+            <div className="space-y-3 text-sm text-slate-300">
+              <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                 <span>Headquarters: Gulshan-2, Dhaka 1212</span>
               </div>
-              <div className="flex items-start gap-2">
+              <div className="flex items-start gap-2.5">
                 <Globe className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <span>Liaison: Frankfurt, London &amp; New York</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-amber-400 shrink-0" />
                 <a href="mailto:inquiry@atelierbuyinghouse.com" className="hover:text-white transition-colors">
                   inquiry@atelierbuyinghouse.com
                 </a>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>+880 (2) 987-6543 / +1 (800) 555-TEXT</span>
               </div>
@@ -83,7 +83,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-slate-400 gap-4">
           <p>© {new Date().getFullYear()} Atelier &amp; Co. Global Sourcing Ltd. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/compliance" className="hover:text-white transition-colors">Code of Conduct</Link>

@@ -33,7 +33,7 @@ export const QUALITY_PILLARS: QualityPillar[] = [
     title: 'Pre-Production & Cutting Audit',
     stage: 'Pre-Sewing Stage (10% Production)',
     standard: 'Pattern & Tolerance Specification',
-    description: 'Verifying pattern calibration, fabric relaxation times (24–48 hours), cut part measurement tolerances, and fusing temperature/pressure parameters.',
+    description: 'Verifying pattern calibration, fabric relaxation times (24-48 hours), cut part measurement tolerances, and fusing temperature/pressure parameters.',
     checkpoints: [
       'Fabric relaxation duration and bundle ply height verification',
       'Cut panel measurement checks against graded paper patterns (±0.5 cm)',

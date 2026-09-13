@@ -155,7 +155,7 @@ export default function NewShipmentPage() {
               >
                 {orders.map((o) => (
                   <option key={o.id} value={o.id}>
-                    {o.orderNumber} — {o.productName} ({o.quantity.toLocaleString()} pcs, Buyer: {o.buyerOrganizationId})
+                    {o.orderNumber} - {o.productName} ({o.quantity.toLocaleString()} pcs, Buyer: {o.buyerOrganizationId})
                   </option>
                 ))}
               </select>

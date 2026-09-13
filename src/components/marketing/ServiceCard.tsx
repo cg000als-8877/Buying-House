@@ -31,13 +31,13 @@ export function ServiceCard({ id, title, fullDesc, icon, metrics }: ServiceCardP
         </div>
 
         <div className="space-y-2">
-          <Badge variant="emerald" size="sm">
+          <Badge variant="emerald" size="sm" className="font-display">
             {metrics}
           </Badge>
-          <h3 className="text-xl font-serif font-bold text-white group-hover:text-amber-400 transition-colors">
+          <h3 className="text-xl font-display font-bold text-white group-hover:text-amber-400 transition-colors">
             {title}
           </h3>
-          <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+          <p className="text-sm text-slate-300 leading-relaxed font-sans">
             {fullDesc}
           </p>
         </div>

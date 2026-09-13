@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/Badge';
 
 export interface CTASectionProps {
   badge?: string;
@@ -26,17 +25,17 @@ export function CTASection({
   return (
     <section className="relative overflow-hidden p-8 sm:p-14 rounded-2xl border border-border bg-gradient-to-b from-surface via-surface to-background-secondary text-center space-y-6 shadow-medium">
       <div className="max-w-2xl mx-auto space-y-4">
-        <div>
-          <Badge variant="brand" size="sm" dot>
+        {badge && (
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
             {badge}
-          </Badge>
-        </div>
+          </p>
+        )}
 
         <h2 className="font-display font-bold text-foreground text-h2 tracking-tight leading-tight">
           {title}
         </h2>
 
-        <p className="text-body text-muted-foreground leading-relaxed">
+        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-sans">
           {description}
         </p>
 

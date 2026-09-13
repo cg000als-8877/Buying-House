@@ -21,13 +21,16 @@ export function ServicesOverview() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="text-amber-400 text-xs font-bold uppercase tracking-widest">
+          <div className="text-amber-400 text-xs sm:text-sm font-bold uppercase tracking-widest font-display">
             End-to-End Supply Chain Ecosystem
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white tracking-tight">
-            Integrated Solutions from Fibre to Finished Hanger
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight">
+            Integrated Solutions from{' '}
+            <span className="text-amber-400 font-extrabold">
+              Fibre to Finished Hanger
+            </span>
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed font-sans">
             Eliminate sourcing friction with our dedicated merchandising units, in-house QA inspectors, master pattern makers, and worldwide logistics network.
           </p>
         </div>
@@ -44,14 +47,14 @@ export function ServicesOverview() {
                   {iconMap[service.icon] || <Sparkles className="w-6 h-6 text-amber-400" />}
                 </div>
 
-                <div className="space-y-2">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-800/40">
+                <div className="space-y-2.5">
+                  <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/60 px-3 py-1 rounded-full border border-emerald-800/40 font-display">
                     {service.metrics}
                   </span>
-                  <h3 className="text-xl font-serif font-bold text-white group-hover:text-amber-400 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-display font-bold text-white group-hover:text-amber-400 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
                     {service.fullDesc}
                   </p>
                 </div>
@@ -60,10 +63,10 @@ export function ServicesOverview() {
               <div className="pt-6 mt-6 border-t border-slate-800/60 flex items-center justify-between">
                 <Link
                   href={`/services#${service.id}`}
-                  className="text-xs font-semibold text-slate-300 group-hover:text-amber-400 flex items-center gap-1.5 transition-colors"
+                  className="text-sm font-semibold text-slate-300 group-hover:text-amber-400 flex items-center gap-1.5 transition-colors"
                 >
                   <span>Explore Process Details</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
