@@ -42,8 +42,7 @@ export function ServiceCard({ service }: { service: SourcingService }) {
           </p>
           <ul className="space-y-1.5 text-xs text-foreground-secondary">
             {service.capabilities.slice(0, 3).map((cap, idx) => (
-              <li key={idx} className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
+              <li key={idx} className="flex items-start">
                 <span>{cap}</span>
               </li>
             ))}

@@ -73,8 +73,7 @@ export default function ServicesPage() {
                 </h4>
                 <ul className="space-y-2 text-xs text-foreground-secondary">
                   {service.capabilities.map((cap, cIdx) => (
-                    <li key={cIdx} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
+                    <li key={cIdx} className="flex items-start">
                       <span>{cap}</span>
                     </li>
                   ))}

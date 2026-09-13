@@ -97,7 +97,7 @@ export default function ProductsPage() {
                   </p>
                   <ul className="space-y-1 text-[11px] text-muted-foreground">
                     {category.keyGarments.map((g, idx) => (
-                      <li key={idx} className="truncate">• {g}</li>
+                      <li key={idx} className="truncate">{g}</li>
                     ))}
                   </ul>
                 </div>
@@ -109,7 +109,7 @@ export default function ProductsPage() {
                   </p>
                   <ul className="space-y-1 text-[11px] text-muted-foreground">
                     {category.fabricTypes.slice(0, 4).map((f, idx) => (
-                      <li key={idx} className="truncate">• {f}</li>
+                      <li key={idx} className="truncate">{f}</li>
                     ))}
                   </ul>
                 </div>
@@ -121,7 +121,7 @@ export default function ProductsPage() {
                   </p>
                   <ul className="space-y-1 text-[11px] text-muted-foreground">
                     {category.specialFinishes.map((s, idx) => (
-                      <li key={idx} className="truncate">• {s}</li>
+                      <li key={idx} className="truncate">{s}</li>
                     ))}
                   </ul>
                 </div>

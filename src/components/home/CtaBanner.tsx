@@ -46,12 +46,12 @@ export function CtaBanner() {
           </Link>
         </div>
 
-        <div className="pt-4 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-slate-300">
-          <span>⚡ 24-Hour Quotation Turnaround</span>
-          <span>•</span>
-          <span>🛡️ NDA Guaranteed Privacy</span>
-          <span>•</span>
-          <span>📦 Free Fabric Swatches for Qualified Brands</span>
+        <div className="pt-4 flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-xs sm:text-sm text-slate-300">
+          <span>24-Hour Quotation Turnaround</span>
+          <span className="h-3 w-px bg-slate-700 hidden sm:inline-block" />
+          <span>NDA Guaranteed Privacy</span>
+          <span className="h-3 w-px bg-slate-700 hidden sm:inline-block" />
+          <span>Free Fabric Swatches for Qualified Brands</span>
         </div>
 
       </div>
