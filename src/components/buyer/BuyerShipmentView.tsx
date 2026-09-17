@@ -176,7 +176,7 @@ export function BuyerShipmentView({
               Logistics &amp; Cargo Tracking
             </Badge>
             {orderNumber && (
-              <span className="text-xs font-mono text-muted-foreground">
+              <span className="text-xs font-medium text-muted-foreground">
                 PO: <strong className="text-primary">{orderNumber}</strong>
               </span>
             )}
@@ -204,28 +204,28 @@ export function BuyerShipmentView({
       {metrics && (
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
           <div className="p-3.5 rounded-xl bg-card border border-border/80 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-muted-foreground">Total Shipments</span>
-            <div className="text-xl font-bold font-mono text-foreground">{metrics.totalShipments}</div>
+            <span className="text-[10px] font-medium uppercase text-muted-foreground">Total Shipments</span>
+            <div className="text-xl font-bold font-medium text-foreground">{metrics.totalShipments}</div>
           </div>
           <div className="p-3.5 rounded-xl bg-card border border-border/80 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-sky-400">In Transit</span>
-            <div className="text-xl font-bold font-mono text-sky-400">{metrics.inTransitShipments}</div>
+            <span className="text-[10px] font-medium uppercase text-sky-400">In Transit</span>
+            <div className="text-xl font-bold font-medium text-sky-400">{metrics.inTransitShipments}</div>
           </div>
           <div className="p-3.5 rounded-xl bg-card border border-border/80 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-amber-400">Ready to Ship</span>
-            <div className="text-xl font-bold font-mono text-amber-400">{metrics.readyToShipShipments}</div>
+            <span className="text-[10px] font-medium uppercase text-amber-400">Ready to Ship</span>
+            <div className="text-xl font-bold font-medium text-amber-400">{metrics.readyToShipShipments}</div>
           </div>
           <div className="p-3.5 rounded-xl bg-card border border-border/80 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-emerald-400">Delivered</span>
-            <div className="text-xl font-bold font-mono text-emerald-400">{metrics.deliveredShipments}</div>
+            <span className="text-[10px] font-medium uppercase text-emerald-400">Delivered</span>
+            <div className="text-xl font-bold font-medium text-emerald-400">{metrics.deliveredShipments}</div>
           </div>
           <div className="p-3.5 rounded-xl bg-card border border-border/80 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-muted-foreground">Total CBM</span>
-            <div className="text-lg font-bold font-mono text-foreground">{metrics.totalCBM} m³</div>
+            <span className="text-[10px] font-medium uppercase text-muted-foreground">Total CBM</span>
+            <div className="text-lg font-bold font-medium text-foreground">{metrics.totalCBM} m³</div>
           </div>
           <div className="p-3.5 rounded-xl bg-card border border-border/80 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-muted-foreground">Total Garments</span>
-            <div className="text-lg font-bold font-mono text-foreground">{metrics.totalPieces.toLocaleString()} pcs</div>
+            <span className="text-[10px] font-medium uppercase text-muted-foreground">Total Garments</span>
+            <div className="text-lg font-bold font-medium text-foreground">{metrics.totalPieces.toLocaleString()} pcs</div>
           </div>
         </div>
       )}
@@ -247,7 +247,7 @@ export function BuyerShipmentView({
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value as ShipmentStatus | 'ALL')}
-            className="w-full sm:w-auto px-3 py-2 text-xs bg-muted/40 rounded-lg border border-border text-foreground focus:outline-none focus:border-primary font-mono"
+            className="w-full sm:w-auto px-3 py-2 text-xs bg-muted/40 rounded-lg border border-border text-foreground focus:outline-none focus:border-primary font-medium"
           >
             <option value="ALL">All Statuses</option>
             <option value="READY_TO_SHIP">Ready To Ship</option>
@@ -285,10 +285,10 @@ export function BuyerShipmentView({
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                 <div className="space-y-2">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-xs font-mono font-bold text-primary px-2.5 py-0.5 rounded bg-primary/10 border border-primary/20">
+                    <span className="text-xs font-medium font-bold text-primary px-2.5 py-0.5 rounded bg-primary/10 border border-primary/20">
                       {shipment.shipmentNumber}
                     </span>
-                    <span className="text-xs font-mono text-muted-foreground font-semibold">
+                    <span className="text-xs font-medium text-muted-foreground font-semibold">
                       PO: <strong>{shipment.orderNumber}</strong>
                     </span>
                     <Badge
@@ -317,7 +317,7 @@ export function BuyerShipmentView({
                       <MapPin className="w-3.5 h-3.5 text-emerald-400" />
                       {shipment.destinationCountry} - {shipment.destinationPort}
                     </span>
-                    <span>•</span>
+                    <span className="text-border">|</span>
                     <span className="flex items-center gap-1 text-slate-300">
                       {shipment.transportMode === 'AIR' ? (
                         <Plane className="w-3.5 h-3.5 text-sky-400" />
@@ -326,10 +326,10 @@ export function BuyerShipmentView({
                       )}
                       {shipment.carrier} ({shipment.incoterm})
                     </span>
-                    <span>•</span>
+                    <span className="text-border">|</span>
                     <span>Volume: <strong className="text-foreground">{shipment.totalCartons} ctns / {shipment.totalPieces.toLocaleString()} pcs</strong></span>
-                    <span>•</span>
-                    <span>Estimated Arrival: <strong className="text-amber-400 font-mono">{shipment.estimatedDeliveryDate}</strong></span>
+                    <span className="text-border">|</span>
+                    <span>Estimated Arrival: <strong className="text-amber-400 font-medium">{shipment.estimatedDeliveryDate}</strong></span>
                   </div>
                 </div>
 
@@ -350,7 +350,7 @@ export function BuyerShipmentView({
                   )}
 
                   {shipment.deliveryConfirmation?.confirmed && (
-                    <div className="flex items-center gap-1.5 text-xs text-emerald-400 font-mono font-bold bg-emerald-950/40 px-3 py-1.5 rounded-lg border border-emerald-800/60">
+                    <div className="flex items-center gap-1.5 text-xs text-emerald-400 font-medium font-bold bg-emerald-950/40 px-3 py-1.5 rounded-lg border border-emerald-800/60">
                       <CheckCircle2 className="w-4 h-4" />
                       <span>Receipt Confirmed</span>
                     </div>
@@ -377,7 +377,7 @@ export function BuyerShipmentView({
         <Card className="p-6 bg-card border-primary/40 shadow-2xl space-y-6">
           <div className="flex items-center justify-between pb-4 border-b border-border">
             <div>
-              <span className="text-xs font-mono text-primary font-bold">Consignment Telemetry Details</span>
+              <span className="text-xs font-medium text-primary font-bold">Consignment Telemetry Details</span>
               <h3 className="text-xl font-serif font-bold text-foreground">
                 {selectedShipment.shipmentNumber}: Destination: {selectedShipment.destinationPort}
               </h3>
@@ -392,7 +392,7 @@ export function BuyerShipmentView({
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-mono">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-medium">
             {/* Specs */}
             <Card className="p-4 bg-muted/30 border-border space-y-2.5">
               <h4 className="font-serif font-bold text-sm text-foreground pb-1 border-b border-border">
@@ -508,7 +508,7 @@ export function BuyerShipmentView({
                     <FileText className="w-4 h-4 text-primary shrink-0" />
                     <div className="min-w-0">
                       <div className="text-xs font-semibold text-foreground truncate">{doc.documentName}</div>
-                      <span className="text-[10px] font-mono text-muted-foreground">{doc.documentType}</span>
+                      <span className="text-[10px] font-medium text-muted-foreground">{doc.documentType}</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
@@ -554,12 +554,12 @@ export function BuyerShipmentView({
                   <tbody className="divide-y divide-border">
                     {packingItems.map((item) => (
                       <tr key={item.id} className="hover:bg-muted/20">
-                        <td className="p-2.5 font-mono font-bold text-foreground">
+                        <td className="p-2.5 font-medium font-bold text-foreground">
                           {item.cartonNumberStart} - {item.cartonNumberEnd}
                         </td>
                         <td className="p-2.5">
                           <div className="font-medium text-foreground">{item.styleNumber}</div>
-                          {item.barcode && <div className="text-[10px] text-muted-foreground font-mono">{item.barcode}</div>}
+                          {item.barcode && <div className="text-[10px] text-muted-foreground font-medium">{item.barcode}</div>}
                         </td>
                         <td className="p-2.5 text-muted-foreground">
                           {item.color} / <span className="text-foreground font-semibold">
@@ -593,12 +593,12 @@ export function BuyerShipmentView({
                   <div className="flex-1 p-3.5 rounded-xl bg-muted/30 border border-border space-y-1">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className="text-xs font-bold text-foreground">{evt.title}</span>
-                      <span className="text-[11px] font-mono text-muted-foreground">
+                      <span className="text-[11px] font-medium text-muted-foreground">
                         {new Date(evt.timestamp).toLocaleDateString()}
                       </span>
                     </div>
                     <p className="text-xs text-muted-foreground">{evt.description}</p>
-                    <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-mono pt-1">
+                    <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-medium pt-1">
                       <MapPin className="w-3 h-3" />
                       <span>{evt.location}</span>
                     </div>
@@ -616,7 +616,7 @@ export function BuyerShipmentView({
           <Card className="w-full max-w-lg bg-card border-border p-6 space-y-5 shadow-2xl">
             <div className="flex items-center justify-between pb-3 border-b border-border">
               <div>
-                <span className="text-xs font-mono text-primary font-bold uppercase">Consignee Acknowledgment</span>
+                <span className="text-xs font-medium text-primary font-bold uppercase">Consignee Acknowledgment</span>
                 <h4 className="font-serif font-bold text-lg text-foreground">
                   Confirm Delivery Receipt ({selectedShipment.shipmentNumber})
                 </h4>
@@ -657,7 +657,7 @@ export function BuyerShipmentView({
                     required
                     value={receivedQuantity}
                     onChange={(e) => setReceivedQuantity(Number(e.target.value))}
-                    className="w-full px-3 py-2 bg-muted/40 border border-border rounded text-foreground font-mono"
+                    className="w-full px-3 py-2 bg-muted/40 border border-border rounded text-foreground font-medium"
                   />
                   <span className="text-[11px] text-muted-foreground mt-0.5 block">
                     Manifested Cargo Volume: {selectedShipment.totalPieces.toLocaleString()} pcs

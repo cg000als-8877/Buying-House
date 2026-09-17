@@ -1,8 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  *, *::before, *::after {
+    font-family: 'Manrope', var(--font-manrope), sans-serif;
+    font-feature-settings: "zero" 0, "ss01" 0;
+    font-variant-numeric: normal;
+  }
+
+  html, body, input, button, select, textarea, code, pre, kbd, samp, span, p, h1, h2, h3, h4, h5, h6, div, table, tr, th, td {
+    font-family: 'Manrope', var(--font-manrope), sans-serif !important;
+    font-feature-settings: "zero" 0, "ss01" 0 !important;
+    font-variant-numeric: normal !important;
+  }
+
   /* ==========================================================================
      LIGHT THEME (Default)
      International Corporate Palette — High Contrast, Clean, Professional
@@ -152,7 +166,8 @@
   body {
     color: var(--foreground);
     background-color: var(--background);
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-family: var(--font-manrope), sans-serif;
+    font-feature-settings: normal;
     overflow-x: hidden;
   }
 
@@ -165,19 +180,19 @@
 
 /* ==========================================================================
    TYPOGRAPHY SYSTEM CLASSES
-   Montserrat for Modern Geometric Headers & Roboto for Clean Product Specs & Body
+   Unified Single Font Architecture: Manrope for all Headings, Body, Labels, and Numeric Digits
    ========================================================================== */
 @layer utilities {
   .text-display {
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
     font-size: clamp(2.5rem, 5.5vw, 4.25rem);
     line-height: 1.12;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.025em;
   }
 
   .text-h1 {
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.18;
     font-weight: 700;
@@ -185,7 +200,7 @@
   }
 
   .text-h2 {
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
     font-size: clamp(1.625rem, 3vw, 2.25rem);
     line-height: 1.25;
     font-weight: 700;
@@ -193,7 +208,7 @@
   }
 
   .text-h3 {
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
     font-size: clamp(1.25rem, 2vw, 1.625rem);
     line-height: 1.35;
     font-weight: 600;
@@ -201,7 +216,7 @@
   }
 
   .text-h4 {
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
     font-size: 1.1875rem;
     line-height: 1.45;
     font-weight: 600;
@@ -209,35 +224,35 @@
   }
 
   .text-body-lg {
-    font-family: var(--font-roboto), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
     font-size: 1.1875rem;
     line-height: 1.65;
     font-weight: 400;
   }
 
   .text-body {
-    font-family: var(--font-roboto), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
     font-size: 1rem;
     line-height: 1.6;
     font-weight: 400;
   }
 
   .text-body-sm {
-    font-family: var(--font-roboto), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
     font-size: 0.875rem;
     line-height: 1.55;
     font-weight: 400;
   }
 
   .text-caption {
-    font-family: var(--font-roboto), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
     font-size: 0.8125rem;
     line-height: 1.45;
     color: var(--muted-foreground);
   }
 
   .text-label {
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
     font-size: 0.8125rem;
     line-height: 1.25;
     font-weight: 600;
@@ -246,7 +261,7 @@
   }
 
   .text-nav {
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
     font-size: 0.9375rem;
     line-height: 1.3;
     font-weight: 500;
@@ -254,11 +269,80 @@
   }
 
   .font-heading {
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
   }
 
   .font-body {
-    font-family: var(--font-roboto), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
+  }
+
+  /* ==========================================================================
+     LIQUID FILL HOVER EFFECT FOR CTA BUTTONS
+     Hardware-accelerated fluid fill transition with strict contrast
+     ========================================================================== */
+  .btn-liquid {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: color 0.3s cubic-bezier(0.25, 1, 0.5, 1), transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-liquid::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .btn-liquid:hover::before {
+    transform: translateY(0%);
+  }
+
+  .btn-liquid > * {
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Liquid fill variants */
+  .btn-liquid-gold {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    color: #ffffff;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+  }
+  .btn-liquid-gold::before {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  }
+
+  .btn-liquid-primary {
+    background: #0f172a;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .dark .btn-liquid-primary {
+    background: #1e293b;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+  }
+  .btn-liquid-primary::before {
+    background: #334155;
+  }
+  .dark .btn-liquid-primary::before {
+    background: #0f172a;
+  }
+
+  .btn-liquid-accent {
+    background: #d97706;
+    color: #ffffff;
+    border: 1px solid #b45309;
+  }
+  .btn-liquid-accent::before {
+    background: #f59e0b;
   }
 }
 

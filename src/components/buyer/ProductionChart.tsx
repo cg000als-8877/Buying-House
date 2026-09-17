@@ -23,14 +23,14 @@ export function ProductionChart({
     <Card className="p-6 space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div>
-          <span className="text-xs font-mono text-amber-400 font-bold uppercase tracking-wider">
+          <span className="text-xs font-medium text-amber-400 font-bold uppercase tracking-wider">
             Volume Allocation
           </span>
           <h3 className="font-serif font-bold text-lg text-white">{title}</h3>
         </div>
         <div className="text-right">
           <span className="text-xs text-slate-400 block">Total Live Units</span>
-          <span className="text-xl font-bold text-white font-mono">{totalPieces.toLocaleString()} pcs</span>
+          <span className="text-xl font-bold text-white font-medium">{totalPieces.toLocaleString()} pcs</span>
         </div>
       </div>
 
@@ -57,7 +57,7 @@ export function ProductionChart({
               <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: item.color }} />
               <span className="text-xs text-slate-300 font-medium truncate">{item.category}</span>
             </div>
-            <div className="text-sm font-bold text-white font-mono">
+            <div className="text-sm font-bold text-white font-medium">
               {item.pieces.toLocaleString()} <span className="text-[10px] text-slate-500 font-normal">({item.percentage}%)</span>
             </div>
           </div>

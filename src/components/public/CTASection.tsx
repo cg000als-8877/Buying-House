@@ -26,12 +26,12 @@ export function CTASection({
     <section className="relative overflow-hidden p-8 sm:p-14 rounded-2xl border border-border bg-gradient-to-b from-surface via-surface to-background-secondary text-center space-y-6 shadow-medium">
       <div className="max-w-2xl mx-auto space-y-4">
         {badge && (
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-sans">
             {badge}
           </p>
         )}
 
-        <h2 className="font-display font-bold text-foreground text-h2 tracking-tight leading-tight">
+        <h2 className="font-sans font-bold text-foreground text-h2 tracking-tight leading-tight">
           {title}
         </h2>
 

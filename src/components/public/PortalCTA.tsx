@@ -32,10 +32,10 @@ export function PortalCTA() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left Copy */}
         <div className="lg:col-span-7 space-y-4">
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-sans">
             Platform Telemetry
           </p>
-          <h3 className="font-display font-bold text-foreground text-h2 tracking-tight">
+          <h3 className="font-sans font-bold text-foreground text-h2 tracking-tight">
             Buyer Portal & Production Visibility
           </h3>
           <p className="text-body text-muted-foreground leading-relaxed">

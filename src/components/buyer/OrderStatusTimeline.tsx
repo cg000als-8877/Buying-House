@@ -21,11 +21,11 @@ export function OrderStatusTimeline({
     <div className={`space-y-6 ${className}`}>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-border">
         <div>
-          <span className="text-xs text-primary font-mono font-bold uppercase tracking-wider">
+          <span className="text-xs text-primary font-medium font-bold uppercase tracking-wider">
             Order Production Lifecycle
           </span>
           <h3 className="text-lg font-serif font-bold text-foreground">
-            Milestone Tracking {orderNumber && <span className="text-xs font-mono text-muted-foreground font-normal">({orderNumber})</span>}
+            Milestone Tracking {orderNumber && <span className="text-xs font-medium text-muted-foreground font-normal">({orderNumber})</span>}
           </h3>
         </div>
         <div className="flex items-center gap-2">

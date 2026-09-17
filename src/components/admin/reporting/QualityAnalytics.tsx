@@ -24,7 +24,7 @@ export function QualityAnalytics({ data, onExport }: QualityAnalyticsProps) {
       key: 'totalInspections',
       header: 'Total Audits',
       align: 'center',
-      render: (item) => <span className="font-mono">{item.totalInspections}</span>,
+      render: (item) => <span className="font-medium">{item.totalInspections}</span>,
     },
     {
       key: 'passRate',
@@ -41,7 +41,7 @@ export function QualityAnalytics({ data, onExport }: QualityAnalyticsProps) {
       header: 'Critical',
       align: 'center',
       render: (item) => (
-        <span className={`font-mono font-bold ${item.criticalDefects > 0 ? 'text-rose-500' : 'text-muted-foreground'}`}>
+        <span className={`font-medium font-bold ${item.criticalDefects > 0 ? 'text-rose-500' : 'text-muted-foreground'}`}>
           {item.criticalDefects}
         </span>
       ),
@@ -50,13 +50,13 @@ export function QualityAnalytics({ data, onExport }: QualityAnalyticsProps) {
       key: 'majorDefects',
       header: 'Major',
       align: 'center',
-      render: (item) => <span className="font-mono text-amber-500 font-semibold">{item.majorDefects}</span>,
+      render: (item) => <span className="font-medium text-amber-500 font-semibold">{item.majorDefects}</span>,
     },
     {
       key: 'minorDefects',
       header: 'Minor',
       align: 'center',
-      render: (item) => <span className="font-mono text-muted-foreground">{item.minorDefects}</span>,
+      render: (item) => <span className="font-medium text-muted-foreground">{item.minorDefects}</span>,
     },
   ];
 

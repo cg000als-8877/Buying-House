@@ -50,13 +50,13 @@ export function SectionHeading({
       {...props}
     >
       {badge && (
-        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-sans">
           {badge}
         </p>
       )}
       <HeadingTag
         className={cn(
-          'font-display font-bold text-foreground tracking-tight text-h2 leading-tight'
+          'font-sans font-bold text-foreground tracking-tight text-h2 leading-tight'
         )}
       >
         {renderFormattedTitle(title)}

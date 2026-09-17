@@ -21,6 +21,7 @@ import {
 } from 'firebase/firestore';
 import { logSecurityEvent } from '@/lib/audit';
 import { hasPermission } from '@/lib/auth/permissions';
+import { normalizeBuyerOrgId } from '@/lib/auth/session';
 import { UserRole } from '@/types/auth';
 import {
   CreateInspectionInput,
@@ -245,6 +246,103 @@ export const TEST_INSPECTIONS: Inspection[] = [
     createdAt: '2026-09-05T09:00:00Z',
     updatedAt: '2026-09-05T14:00:00Z',
   },
+  {
+    id: 'insp-004',
+    orderId: 'TEST-ORDER-005',
+    orderNumber: 'PO-2026-0925',
+    styleNumber: 'STY-ACT-305',
+    buyerOrganizationId: 'buyer-org-003',
+    factoryId: 'fac-unit-activewear',
+    inspectionType: 'INLINE',
+    inspectionDate: '2026-09-07',
+    inspectorId: 'qc-staff-001',
+    inspectorName: 'Mahmudur Rahman (Lead QA)',
+    inspectionStatus: 'completed',
+    orderQuantity: 15000,
+    inspectedQuantity: 315,
+    sampleSize: 315,
+    aqlLevel: 'GII',
+    aqlMajor: 2.5,
+    aqlMinor: 4.0,
+    criticalDefects: 0,
+    majorDefects: 5,
+    minorDefects: 8,
+    totalDefects: 13,
+    maxAllowedMajor: 14,
+    maxAllowedMinor: 21,
+    result: 'PASS',
+    defects: [
+      {
+        id: 'def-010',
+        inspectionId: 'insp-004',
+        category: 'Workmanship',
+        severity: 'MAJOR',
+        quantity: 3,
+        location: 'Flatlock Inseam',
+        description: 'Minor loose thread loop on 4-needle flatlock seam',
+      },
+      {
+        id: 'def-011',
+        inspectionId: 'insp-004',
+        category: 'Measurement',
+        severity: 'MAJOR',
+        quantity: 2,
+        location: 'Waistband Elasticity',
+        description: 'Waistband recovery test +0.8cm from nominal specification',
+      },
+    ],
+    remarks: 'Activewear compression fit meets high stretch elasticity recovery thresholds. Flatlock tension calibrated.',
+    reinspectionRequired: false,
+    published: true,
+    publishedAt: '2026-09-07T16:00:00Z',
+    publishedBy: 'merch-001',
+    createdAt: '2026-09-07T10:00:00Z',
+    updatedAt: '2026-09-07T16:00:00Z',
+  },
+  {
+    id: 'insp-005',
+    orderId: 'TEST-ORDER-007',
+    orderNumber: 'PO-2026-0801',
+    styleNumber: 'STY-OUT-990',
+    buyerOrganizationId: 'buyer-org-005',
+    factoryId: 'fac-unit-outerwear',
+    inspectionType: 'FINAL_RANDOM',
+    inspectionDate: '2026-09-08',
+    inspectorId: 'qc-staff-002',
+    inspectorName: 'Anisul Hoque (Senior Auditor)',
+    inspectionStatus: 'completed',
+    orderQuantity: 3800,
+    inspectedQuantity: 125,
+    sampleSize: 125,
+    aqlLevel: 'GII',
+    aqlMajor: 2.5,
+    aqlMinor: 4.0,
+    criticalDefects: 0,
+    majorDefects: 2,
+    minorDefects: 4,
+    totalDefects: 6,
+    maxAllowedMajor: 7,
+    maxAllowedMinor: 10,
+    result: 'PASS',
+    defects: [
+      {
+        id: 'def-012',
+        inspectionId: 'insp-005',
+        category: 'Workmanship',
+        severity: 'MAJOR',
+        quantity: 2,
+        location: 'Waterproof Zipper Garage',
+        description: 'Zipper garage tape misalignment (1.5mm variance)',
+      },
+    ],
+    remarks: 'Hydrostatic water column test (>15,000mm H2O) passed on all 125 sample units. Taped seams verified 100% leak-proof.',
+    reinspectionRequired: false,
+    published: true,
+    publishedAt: '2026-09-08T15:30:00Z',
+    publishedBy: 'staff-admin-001',
+    createdAt: '2026-09-08T11:00:00Z',
+    updatedAt: '2026-09-08T15:30:00Z',
+  },
 ];
 
 export const TEST_LAB_REPORTS: LabTestReport[] = [
@@ -333,6 +431,35 @@ export const TEST_LAB_REPORTS: LabTestReport[] = [
     published: false,
     createdAt: '2026-09-04T10:00:00Z',
     updatedAt: '2026-09-04T10:00:00Z',
+  },
+  {
+    id: 'lab-004',
+    reportNumber: 'LAB-2026-TUV-7719',
+    testCategory: 'Tensile Strength',
+    labName: 'TUV SUD Bangladesh Product Testing Lab',
+    reportDate: '2026-09-06',
+    sampleReference: '3-Layer Membrane Bonded Ripstop Fabric',
+    orderId: 'TEST-ORDER-007',
+    orderNumber: 'PO-2026-0801',
+    buyerOrganizationId: 'buyer-org-005',
+    documentId: 'doc-lab-004',
+    documentUrl: 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80',
+    fileName: 'Tensile_Tear_Strength_PO801.pdf',
+    result: 'PASS',
+    status: 'active',
+    verificationStatus: 'VERIFIED',
+    visibility: 'buyer',
+    remarks: 'Tensile strength Warp: 850N, Weft: 790N. Tear resistance exceeds ISO 13937-2 standards.',
+    testParameters: [
+      { parameter: 'Tensile Strength (Warp)', standard: 'ISO 13934-1', result: '850 N (Min 600 N)', pass: true },
+      { parameter: 'Tensile Strength (Weft)', standard: 'ISO 13934-1', result: '790 N (Min 550 N)', pass: true },
+      { parameter: 'Hydrostatic Head Pressure', standard: 'ISO 811', result: '16,200 mm H2O (Min 10,000)', pass: true },
+    ],
+    published: true,
+    publishedAt: '2026-09-06T17:00:00Z',
+    publishedBy: 'merch-001',
+    createdAt: '2026-09-06T14:00:00Z',
+    updatedAt: '2026-09-06T17:00:00Z',
   },
 ];
 
@@ -491,9 +618,10 @@ export async function getInspectionsForBuyer(
   }
 ): Promise<Inspection[]> {
   const all = await getInspections();
+  const normId = normalizeBuyerOrgId(buyerOrganizationId);
 
   let buyerInspections = all.filter(
-    (i) => i.buyerOrganizationId === buyerOrganizationId && i.published === true
+    (i) => normalizeBuyerOrgId(i.buyerOrganizationId) === normId && i.published === true
   );
 
   if (filters) {
@@ -1275,10 +1403,11 @@ export async function getLabTestReportsForBuyer(
   filters?: { orderId?: string | 'ALL'; testCategory?: LabTestCategory | 'ALL' }
 ): Promise<LabTestReport[]> {
   const all = await getLabTestReports();
+  const normId = normalizeBuyerOrgId(buyerOrganizationId);
 
   let buyerReports = all.filter(
     (r) =>
-      r.buyerOrganizationId === buyerOrganizationId &&
+      normalizeBuyerOrgId(r.buyerOrganizationId) === normId &&
       r.published === true &&
       r.visibility === 'buyer' &&
       r.status === 'active'

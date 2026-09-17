@@ -23,19 +23,19 @@ export function ProductShowcase() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="text-amber-400 text-xs sm:text-sm font-bold uppercase tracking-widest mb-2 font-display">
+            <div className="text-amber-400 text-xs sm:text-sm font-bold uppercase tracking-widest mb-2">
               Virtual Showroom &amp; Apparel Lines
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               Manufactured with{' '}
-              <span className="text-amber-400 font-extrabold">
+              <span className="text-amber-400 font-bold">
                 Master-Level Precision
               </span>
             </h2>
           </div>
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-amber-400 hover:text-amber-300 transition-colors group font-display"
+            className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-amber-400 hover:text-amber-300 transition-colors group"
           >
             <span>View Full 2026 Lookbook &amp; Spec Sheets</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -48,7 +48,7 @@ export function ProductShowcase() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold tracking-wider transition-all whitespace-nowrap font-display ${
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold tracking-wider transition-all whitespace-nowrap ${
                 activeCategory === cat
                   ? 'bg-amber-400 text-slate-950 shadow-md font-bold'
                   : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800'
@@ -79,10 +79,10 @@ export function ProductShowcase() {
                     alt={product.name}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-sm px-3.5 py-1 rounded-full text-xs font-semibold text-emerald-400 border border-emerald-500/30 font-display">
+                  <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-sm px-3.5 py-1 rounded-full text-xs font-semibold text-emerald-400 border border-emerald-500/30">
                     {product.category}
                   </div>
-                  <div className="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-sm px-3.5 py-1 rounded-full text-xs font-semibold text-amber-300 border border-amber-500/30 font-display">
+                  <div className="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-sm px-3.5 py-1 rounded-full text-xs font-semibold text-amber-300 border border-amber-500/30">
                     MOQ: {product.moq}
                   </div>
                 </div>
@@ -90,10 +90,10 @@ export function ProductShowcase() {
                 {/* Content */}
                 <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                   <div className="space-y-2">
-                    <h3 className="font-display font-bold text-xl text-white group-hover:text-amber-400 transition-colors">
+                    <h3 className="font-bold text-xl text-white group-hover:text-amber-400 transition-colors">
                       {product.name}
                     </h3>
-                    <p className="text-sm text-slate-300 leading-relaxed line-clamp-2 font-sans">
+                    <p className="text-sm text-slate-300 leading-relaxed line-clamp-2">
                       {product.description}
                     </p>
                   </div>

@@ -25,13 +25,13 @@ export function StatsBanner() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="space-y-1 relative"
             >
-              <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
                 <span className="text-amber-400">{stat.value}</span>
               </div>
-              <div className="text-sm sm:text-base font-semibold text-slate-100 uppercase tracking-wide pt-1 font-display">
+              <div className="text-sm sm:text-base font-semibold text-slate-100 uppercase tracking-wide pt-1">
                 {stat.label}
               </div>
-              <div className="text-xs sm:text-sm text-slate-300 font-sans">
+              <div className="text-xs sm:text-sm text-slate-300">
                 {stat.sub}
               </div>
             </motion.div>

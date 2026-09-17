@@ -26,20 +26,20 @@ export function Hero() {
             className="lg:col-span-7 space-y-6 text-center lg:text-left"
           >
             {/* Eyebrow header text */}
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400 font-display">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
               Full-Spectrum Apparel Sourcing &amp; Manufacturing
             </p>
 
-            {/* Headline with Montserrat geometric styling */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.12] tracking-tight">
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.12] tracking-tight">
               Where Fashion Vision Meets{' '}
-              <span className="text-amber-400 font-extrabold">
+              <span className="text-amber-400 font-bold">
                 Flawless Execution.
               </span>
             </h1>
 
-            {/* Description with Roboto */}
-            <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal font-sans">
+            {/* Description */}
+            <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
               End-to-end garment manufacturing in Bangladesh with certified sustainable fabrics, precision tech pack execution, and AQL 1.5 quality control.
             </p>
 
@@ -125,7 +125,7 @@ export function Hero() {
                       </span>
                       <span className="text-xs sm:text-sm text-slate-300 font-medium">MOQ: 300 Pcs</span>
                     </div>
-                    <h3 className="text-white font-display font-bold text-lg sm:text-xl">
+                    <h3 className="text-white font-sans font-bold text-lg sm:text-xl">
                       Premium Organic Heavyweight Series
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-300 line-clamp-1">

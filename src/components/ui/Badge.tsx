@@ -117,19 +117,13 @@ export function Badge({
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-full border tracking-wide select-none',
+        'inline-flex items-center rounded-md border tracking-wide select-none font-medium',
         current.bg,
         sizes[size],
         className
       )}
       {...props}
     >
-      {dot && (
-        <span
-          className={cn('w-1.5 h-1.5 rounded-full shrink-0', current.dot)}
-          aria-hidden="true"
-        />
-      )}
       {children}
     </span>
   );

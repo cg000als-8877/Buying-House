@@ -123,7 +123,7 @@ export function BuyerDocumentVaultView({ initialOrderId }: BuyerDocumentVaultVie
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border/80">
         <div>
-          <span className="text-xs font-mono uppercase text-primary font-bold">
+          <span className="text-xs font-medium uppercase text-primary font-bold">
             Verified Files &amp; Technical Assets
           </span>
           <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground">
@@ -131,7 +131,7 @@ export function BuyerDocumentVaultView({ initialOrderId }: BuyerDocumentVaultVie
           </h2>
         </div>
 
-        <div className="flex items-center gap-2 text-xs text-muted-foreground font-mono bg-muted/40 px-3 py-1.5 rounded-lg border border-border/60">
+        <div className="flex items-center gap-2 text-xs text-muted-foreground font-medium bg-muted/40 px-3 py-1.5 rounded-lg border border-border/60">
           <ShieldCheck className="w-4 h-4 text-emerald-400" />
           <span>Tenant: <strong>{buyerOrgId}</strong></span>
         </div>
@@ -141,20 +141,20 @@ export function BuyerDocumentVaultView({ initialOrderId }: BuyerDocumentVaultVie
       {!initialOrderId && (
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <Card className="p-5 bg-card/90 border-border/80 space-y-1">
-            <span className="text-xs font-mono uppercase text-muted-foreground font-semibold">Available Documents</span>
-            <div className="text-2xl font-bold text-foreground font-mono">{documents.length}</div>
+            <span className="text-xs font-medium uppercase text-muted-foreground font-semibold">Available Documents</span>
+            <div className="text-2xl font-bold text-foreground font-medium">{documents.length}</div>
             <span className="text-[11px] text-muted-foreground">Active in your organization vault</span>
           </Card>
 
           <Card className="p-5 bg-card/90 border-border/80 space-y-1">
-            <span className="text-xs font-mono uppercase text-muted-foreground font-semibold">Tech Packs &amp; Specs</span>
-            <div className="text-2xl font-bold text-primary font-mono">{techPackCount}</div>
+            <span className="text-xs font-medium uppercase text-muted-foreground font-semibold">Tech Packs &amp; Specs</span>
+            <div className="text-2xl font-bold text-primary font-medium">{techPackCount}</div>
             <span className="text-[11px] text-primary/80">Approved garment technical packs</span>
           </Card>
 
           <Card className="p-5 bg-card/90 border-border/80 space-y-1">
-            <span className="text-xs font-mono uppercase text-muted-foreground font-semibold">Quality &amp; Approvals</span>
-            <div className="text-2xl font-bold text-emerald-400 font-mono">{inspectionCount + certCount}</div>
+            <span className="text-xs font-medium uppercase text-muted-foreground font-semibold">Quality &amp; Approvals</span>
+            <div className="text-2xl font-bold text-emerald-400 font-medium">{inspectionCount + certCount}</div>
             <span className="text-[11px] text-emerald-400/80">Signed certificates &amp; lab-dip reports</span>
           </Card>
         </div>
@@ -177,7 +177,7 @@ export function BuyerDocumentVaultView({ initialOrderId }: BuyerDocumentVaultVie
           <select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="w-full px-3 py-2 text-xs bg-muted/40 rounded-lg border border-border text-foreground focus:outline-none focus:border-primary font-mono"
+            className="w-full px-3 py-2 text-xs bg-muted/40 rounded-lg border border-border text-foreground focus:outline-none focus:border-primary font-medium"
           >
             <option value="ALL">All Categories</option>
             {DOCUMENT_CATEGORIES.map((cat) => (
@@ -215,7 +215,7 @@ export function BuyerDocumentVaultView({ initialOrderId }: BuyerDocumentVaultVie
                       <Badge variant="blue" size="sm">
                         {docItem.category}
                       </Badge>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 font-bold">
+                      <span className="text-[10px] font-medium px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 font-bold">
                         v{docItem.version}
                       </span>
                       {docItem.verified && (
@@ -225,10 +225,10 @@ export function BuyerDocumentVaultView({ initialOrderId }: BuyerDocumentVaultVie
                       )}
                     </div>
                     <p className="text-xs text-muted-foreground">
-                      {docItem.fileName} • {docItem.fileSizeFormatted} • Uploaded {docItem.createdAt.split('T')[0]}
+                      {docItem.fileName} | {docItem.fileSizeFormatted} | Uploaded {docItem.createdAt.split('T')[0]}
                     </p>
                     {docItem.orderNumber && (
-                      <p className="text-[11px] font-mono text-primary">
+                      <p className="text-[11px] font-medium text-primary">
                         Linked Purchase Order: {docItem.orderNumber}
                       </p>
                     )}

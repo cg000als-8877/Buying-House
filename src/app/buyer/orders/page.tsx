@@ -133,15 +133,15 @@ export default function BuyerOrdersPage() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-border">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-primary font-bold">
+            <span className="text-xs font-medium uppercase tracking-widest text-primary font-bold">
               Purchase Orders
             </span>
-            <span className="text-muted-foreground">•</span>
+            <span className="text-muted-foreground/60">/</span>
             <Badge variant="blue" size="sm">
               Tenant: {buyerOrgId}
             </Badge>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-foreground">
+          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-foreground tracking-tight">
             Order Directory &amp; Progress
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
@@ -150,7 +150,7 @@ export default function BuyerOrdersPage() {
         </div>
 
         <div className="flex items-center gap-2">
-          <Badge variant="slate" size="md" className="font-mono">
+          <Badge variant="slate" size="md" className="font-medium">
             {orders.length} Total Orders
           </Badge>
         </div>

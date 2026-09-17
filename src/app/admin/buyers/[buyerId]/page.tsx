@@ -143,7 +143,7 @@ export default function AdminBuyerDetailPage() {
     <div className="max-w-6xl mx-auto space-y-8">
       {/* Navigation Breadcrumb */}
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <div className="flex items-center gap-2 text-xs font-mono">
+        <div className="flex items-center gap-2 text-xs font-medium">
           <Link href="/admin/dashboard" className="text-slate-400 hover:text-white">
             Dashboard
           </Link>
@@ -168,7 +168,7 @@ export default function AdminBuyerDetailPage() {
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
           <div className="space-y-2">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-mono font-bold text-amber-400 px-2.5 py-1 rounded-md bg-amber-400/10 border border-amber-400/20">
+              <span className="text-xs font-medium font-bold text-amber-400 px-2.5 py-1 rounded-md bg-amber-400/10 border border-amber-400/20">
                 TENANT: {org.id}
               </span>
               <Badge
@@ -178,21 +178,21 @@ export default function AdminBuyerDetailPage() {
               >
                 {org.status.toUpperCase()} ACCOUNT
               </Badge>
-              <span className="text-xs font-mono text-slate-400">
+              <span className="text-xs font-medium text-slate-400">
                 Country: <strong className="text-white">{org.country}</strong>
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+            <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
               {org.name}
             </h1>
 
             <p className="text-xs sm:text-sm text-slate-400 flex flex-wrap items-center gap-x-4 gap-y-1">
-              <span>Created: <strong className="text-slate-300 font-mono">{new Date(org.createdAt).toLocaleDateString()}</strong></span>
-              <span>•</span>
-              <span>Active POs: <strong className="text-amber-400 font-mono">{activeOrders.length}</strong></span>
-              <span>•</span>
-              <span>Registered Reps: <strong className="text-slate-300 font-mono">{buyerUsers.length}</strong></span>
+              <span>Created: <strong className="text-slate-300 font-medium">{new Date(org.createdAt).toLocaleDateString()}</strong></span>
+              <span className="text-slate-700">|</span>
+              <span>Active POs: <strong className="text-amber-400 font-medium">{activeOrders.length}</strong></span>
+              <span className="text-slate-700">|</span>
+              <span>Registered Reps: <strong className="text-slate-300 font-medium">{buyerUsers.length}</strong></span>
             </p>
           </div>
 
@@ -235,7 +235,7 @@ export default function AdminBuyerDetailPage() {
             <div className="space-y-3 text-xs">
               <div className="flex justify-between items-center py-1 border-b border-slate-800/60">
                 <span className="text-slate-400">Contact Email:</span>
-                <span className="font-mono text-white flex items-center gap-1">
+                <span className="font-medium text-white flex items-center gap-1">
                   <Mail className="w-3 h-3 text-slate-500" />
                   {org.contactEmail}
                 </span>
@@ -244,7 +244,7 @@ export default function AdminBuyerDetailPage() {
               {org.contactPhone && (
                 <div className="flex justify-between items-center py-1 border-b border-slate-800/60">
                   <span className="text-slate-400">Phone:</span>
-                  <span className="font-mono text-slate-300">{org.contactPhone}</span>
+                  <span className="font-medium text-slate-300">{org.contactPhone}</span>
                 </div>
               )}
 
@@ -255,7 +255,7 @@ export default function AdminBuyerDetailPage() {
                     href={org.website}
                     target="_blank"
                     rel="noreferrer"
-                    className="font-mono text-amber-400 hover:underline flex items-center gap-1 truncate max-w-[160px]"
+                    className="font-medium text-amber-400 hover:underline flex items-center gap-1 truncate max-w-[160px]"
                   >
                     <Globe className="w-3 h-3" />
                     {org.website.replace('https://', '')}
@@ -293,7 +293,7 @@ export default function AdminBuyerDetailPage() {
                   <div key={u.uid} className="pt-2 first:pt-0 flex items-center justify-between">
                     <div>
                       <p className="font-semibold text-white">{u.displayName}</p>
-                      <p className="text-[11px] font-mono text-slate-400">{u.email}</p>
+                      <p className="text-[11px] font-medium text-slate-400">{u.email}</p>
                     </div>
                     <Badge variant={u.status === 'active' ? 'emerald' : 'amber'} size="sm">
                       {u.status}
@@ -335,7 +335,7 @@ export default function AdminBuyerDetailPage() {
             <Card className="overflow-hidden border-slate-800 bg-slate-900/80">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs text-slate-300">
-                  <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase font-mono text-slate-400">
+                  <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase font-medium text-slate-400">
                     <tr>
                       <th className="py-3 px-4">PO &amp; Style</th>
                       <th className="py-3 px-4">Product</th>
@@ -345,7 +345,7 @@ export default function AdminBuyerDetailPage() {
                       <th className="py-3 px-4 text-right">Action</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800/60 font-mono">
+                  <tbody className="divide-y divide-slate-800/60 font-medium">
                     {orders.map((order) => (
                       <tr key={order.id} className="hover:bg-slate-800/40 transition-colors">
                         <td className="py-3 px-4">

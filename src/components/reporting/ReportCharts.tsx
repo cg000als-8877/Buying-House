@@ -55,7 +55,7 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
               style={{ backgroundColor: entry.color || entry.fill }}
             />
             <span className="text-slate-300">{entry.name}:</span>
-            <span className="font-mono font-bold text-white">
+            <span className="font-medium font-bold text-white">
               {typeof entry.value === 'number' ? entry.value.toLocaleString() : entry.value}
             </span>
           </div>

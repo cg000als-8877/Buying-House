@@ -18,7 +18,7 @@ export function DocumentAnalytics({ data, onExport }: DocumentAnalyticsProps) {
     {
       key: 'orderNumber',
       header: 'Purchase Order',
-      render: (item) => <span className="font-mono font-semibold text-primary">{item.orderNumber}</span>,
+      render: (item) => <span className="font-medium font-semibold text-primary">{item.orderNumber}</span>,
     },
     {
       key: 'buyerName',
@@ -29,13 +29,13 @@ export function DocumentAnalytics({ data, onExport }: DocumentAnalyticsProps) {
       key: 'requiredDocsCount',
       header: 'Required Dossier',
       align: 'center',
-      render: (item) => <span className="font-mono">{item.requiredDocsCount} Docs</span>,
+      render: (item) => <span className="font-medium">{item.requiredDocsCount} Docs</span>,
     },
     {
       key: 'approvedDocsCount',
       header: 'Verified Dossier',
       align: 'center',
-      render: (item) => <span className="font-mono font-bold text-emerald-500">{item.approvedDocsCount} Docs</span>,
+      render: (item) => <span className="font-medium font-bold text-emerald-500">{item.approvedDocsCount} Docs</span>,
     },
     {
       key: 'isCompliant',

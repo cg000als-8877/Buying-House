@@ -14,7 +14,7 @@ export function SustainabilityPreview() {
               <div className="w-8 h-8 rounded bg-secondary flex items-center justify-center text-accent mb-2">
                 <Leaf className="w-4 h-4" />
               </div>
-              <p className="text-[10px] font-mono font-semibold uppercase tracking-wider text-muted-foreground">
+              <p className="text-[10px] font-medium font-semibold uppercase tracking-wider text-muted-foreground">
                 {goal.focusArea}
               </p>
               <CardTitle className="text-sm sm:text-base leading-snug">{goal.title}</CardTitle>

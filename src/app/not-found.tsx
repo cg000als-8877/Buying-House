@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function NotFound() {
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center p-6 text-center space-y-4">
-      <span className="text-xs font-mono uppercase tracking-widest text-primary font-bold">404 Error</span>
+      <span className="text-xs font-medium uppercase tracking-widest text-primary font-bold">404 Error</span>
       <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Page Not Found</h2>
       <p className="text-sm text-muted-foreground max-w-md">
         The requested resource or order record does not exist or you do not have permission to view it.

@@ -14,7 +14,7 @@ export function ProcessTimeline() {
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="w-8 h-8 rounded-md bg-secondary text-foreground font-mono font-bold text-sm flex items-center justify-center border border-border">
+                <span className="w-8 h-8 rounded-md bg-secondary text-foreground font-medium font-bold text-sm flex items-center justify-center border border-border">
                   0{stage.step}
                 </span>
                 <Badge variant="neutral" size="sm">
@@ -54,7 +54,7 @@ export function ProcessTimeline() {
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="w-8 h-8 rounded-md bg-secondary text-foreground font-mono font-bold text-sm flex items-center justify-center border border-border">
+                <span className="w-8 h-8 rounded-md bg-secondary text-foreground font-medium font-bold text-sm flex items-center justify-center border border-border">
                   0{stage.step}
                 </span>
                 <Badge variant="neutral" size="sm">

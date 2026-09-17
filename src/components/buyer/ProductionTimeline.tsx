@@ -26,9 +26,9 @@ export function ProductionTimeline({ orderNumber, styleName, milestones }: Produ
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-800">
         <div>
-          <span className="text-xs text-amber-400 font-mono font-bold">LIVE PRODUCTION PIPELINE</span>
+          <span className="text-xs text-amber-400 font-medium font-bold">LIVE PRODUCTION PIPELINE</span>
           <h3 className="text-xl font-serif font-bold text-white">
-            {styleName} <span className="text-sm font-mono text-slate-400">({orderNumber})</span>
+            {styleName} <span className="text-sm font-medium text-slate-400">({orderNumber})</span>
           </h3>
         </div>
         <div className="flex items-center gap-2">
@@ -73,10 +73,10 @@ export function ProductionTimeline({ orderNumber, styleName, milestones }: Produ
               <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1.5">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                   <div className="flex items-center gap-2">
-                    <h4 className="font-serif font-bold text-sm sm:text-base text-white">
+                    <h4 className="font-sans font-bold text-sm sm:text-base text-white">
                       {step.title}
                     </h4>
-                    <span className="text-[11px] text-slate-500">• {step.department}</span>
+                    <span className="text-[11px] text-slate-500 font-medium">| {step.department}</span>
                   </div>
                   <Badge
                     variant={isDone ? 'emerald' : isInProgress ? 'amber' : 'slate'}

@@ -73,15 +73,15 @@ export default function BuyerDashboardPage() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-border">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-primary font-bold">
+            <span className="text-xs font-medium uppercase tracking-widest text-primary font-bold">
               Buyer Portal Workspace
             </span>
-            <span className="text-muted-foreground">•</span>
+            <span className="text-muted-foreground/60">/</span>
             <Badge variant="blue" size="sm">
               Org: {buyerOrgId}
             </Badge>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-foreground">
+          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-foreground tracking-tight">
             Production &amp; Order Dashboard
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
@@ -115,7 +115,7 @@ export default function BuyerDashboardPage() {
           {/* Active Orders */}
           <Card className="p-5 relative overflow-hidden group border-border/80 hover:border-primary/50 transition-all">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground font-semibold">
+              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground font-semibold">
                 Active Orders
               </span>
               <div className="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center">
@@ -123,7 +123,7 @@ export default function BuyerDashboardPage() {
               </div>
             </div>
             <div className="mt-3">
-              <div className="text-3xl font-bold font-mono text-foreground">
+              <div className="text-3xl font-bold font-medium text-foreground">
                 {stats.activeOrdersCount}
               </div>
               <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
@@ -135,7 +135,7 @@ export default function BuyerDashboardPage() {
           {/* In Production */}
           <Card className="p-5 relative overflow-hidden group border-border/80 hover:border-amber-500/50 transition-all">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground font-semibold">
+              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground font-semibold">
                 In Production
               </span>
               <div className="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center">
@@ -143,7 +143,7 @@ export default function BuyerDashboardPage() {
               </div>
             </div>
             <div className="mt-3">
-              <div className="text-3xl font-bold font-mono text-foreground">
+              <div className="text-3xl font-bold font-medium text-foreground">
                 {stats.inProductionCount}
               </div>
               <p className="text-xs text-muted-foreground mt-1">
@@ -155,7 +155,7 @@ export default function BuyerDashboardPage() {
           {/* Upcoming Shipments / QC */}
           <Card className="p-5 relative overflow-hidden group border-border/80 hover:border-emerald-500/50 transition-all">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground font-semibold">
+              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground font-semibold">
                 QC &amp; Shipments
               </span>
               <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
@@ -163,7 +163,7 @@ export default function BuyerDashboardPage() {
               </div>
             </div>
             <div className="mt-3">
-              <div className="text-3xl font-bold font-mono text-foreground">
+              <div className="text-3xl font-bold font-medium text-foreground">
                 {stats.upcomingShipmentsCount}
               </div>
               <p className="text-xs text-muted-foreground mt-1">
@@ -175,7 +175,7 @@ export default function BuyerDashboardPage() {
           {/* Unread Alerts */}
           <Card className="p-5 relative overflow-hidden group border-border/80 hover:border-purple-500/50 transition-all">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground font-semibold">
+              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground font-semibold">
                 Notifications
               </span>
               <div className="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center">
@@ -183,7 +183,7 @@ export default function BuyerDashboardPage() {
               </div>
             </div>
             <div className="mt-3">
-              <div className="text-3xl font-bold font-mono text-foreground">
+              <div className="text-3xl font-bold font-medium text-foreground">
                 {stats.unreadNotificationsCount}
               </div>
               <Link

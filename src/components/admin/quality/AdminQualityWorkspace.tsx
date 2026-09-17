@@ -507,25 +507,25 @@ export function AdminQualityWorkspace({
     switch (result) {
       case 'PASS':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-emerald-950 text-emerald-400 border border-emerald-800">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-medium bg-emerald-950 text-emerald-400 border border-emerald-800">
             <CheckCircle2 className="w-3 h-3" /> PASS
           </span>
         );
       case 'CONDITIONAL':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-amber-950 text-amber-400 border border-amber-800">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-medium bg-amber-950 text-amber-400 border border-amber-800">
             <AlertTriangle className="w-3 h-3" /> CONDITIONAL
           </span>
         );
       case 'FAIL':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-rose-950 text-rose-400 border border-rose-800">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-medium bg-rose-950 text-rose-400 border border-rose-800">
             <XCircle className="w-3 h-3" /> FAIL
           </span>
         );
       default:
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-slate-800 text-slate-300">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-medium bg-slate-800 text-slate-300">
             <Clock className="w-3 h-3" /> PENDING
           </span>
         );
@@ -631,38 +631,38 @@ export function AdminQualityWorkspace({
       {metrics && (
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
           <Card className="p-4 bg-slate-900/80 border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-slate-400">Total Audits</span>
-            <div className="text-xl font-bold font-mono text-white">{metrics.totalInspections}</div>
+            <span className="text-[10px] font-medium uppercase text-slate-400">Total Audits</span>
+            <div className="text-xl font-bold font-medium text-white">{metrics.totalInspections}</div>
             <div className="text-[10px] text-slate-500">Across workflow</div>
           </Card>
 
           <Card className="p-4 bg-slate-900/80 border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-emerald-400">Pass Rate</span>
-            <div className="text-xl font-bold font-mono text-emerald-400">{metrics.passRatePercentage}%</div>
+            <span className="text-[10px] font-medium uppercase text-emerald-400">Pass Rate</span>
+            <div className="text-xl font-bold font-medium text-emerald-400">{metrics.passRatePercentage}%</div>
             <div className="text-[10px] text-emerald-400/70">{metrics.passedCount} Passed audits</div>
           </Card>
 
           <Card className="p-4 bg-slate-900/80 border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-amber-400">Conditional</span>
-            <div className="text-xl font-bold font-mono text-amber-400">{metrics.conditionalCount}</div>
+            <span className="text-[10px] font-medium uppercase text-amber-400">Conditional</span>
+            <div className="text-xl font-bold font-medium text-amber-400">{metrics.conditionalCount}</div>
             <div className="text-[10px] text-amber-400/70">Minor tolerance only</div>
           </Card>
 
           <Card className="p-4 bg-slate-900/80 border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-rose-400">Failed Audits</span>
-            <div className="text-xl font-bold font-mono text-rose-400">{metrics.failedCount}</div>
+            <span className="text-[10px] font-medium uppercase text-rose-400">Failed Audits</span>
+            <div className="text-xl font-bold font-medium text-rose-400">{metrics.failedCount}</div>
             <div className="text-[10px] text-rose-400/70">Threshold exceeded</div>
           </Card>
 
           <Card className="p-4 bg-slate-900/80 border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-amber-400">Open CAPs</span>
-            <div className="text-xl font-bold font-mono text-white">{metrics.openCorrectiveActions}</div>
+            <span className="text-[10px] font-medium uppercase text-amber-400">Open CAPs</span>
+            <div className="text-xl font-bold font-medium text-white">{metrics.openCorrectiveActions}</div>
             <div className="text-[10px] text-slate-400">Pending verification</div>
           </Card>
 
           <Card className="p-4 bg-slate-900/80 border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-sky-400">Lab Reports</span>
-            <div className="text-xl font-bold font-mono text-sky-400">{metrics.totalLabReports}</div>
+            <span className="text-[10px] font-medium uppercase text-sky-400">Lab Reports</span>
+            <div className="text-xl font-bold font-medium text-sky-400">{metrics.totalLabReports}</div>
             <div className="text-[10px] text-sky-400/70">Accredited tests</div>
           </Card>
         </div>
@@ -763,7 +763,7 @@ export function AdminQualityWorkspace({
             <Card className="overflow-hidden border-slate-800 bg-slate-900/60">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs text-slate-300">
-                  <thead className="bg-slate-950/80 text-slate-400 font-mono uppercase text-[10px] border-b border-slate-800">
+                  <thead className="bg-slate-950/80 text-slate-400 font-medium uppercase text-[10px] border-b border-slate-800">
                     <tr>
                       <th className="p-3.5">Order / PO</th>
                       <th className="p-3.5">Inspection Type</th>
@@ -779,16 +779,16 @@ export function AdminQualityWorkspace({
                     {filteredInspections.map((insp) => (
                       <tr key={insp.id} className="hover:bg-slate-800/40 transition-colors">
                         <td className="p-3.5">
-                          <div className="font-mono font-bold text-amber-400">{insp.orderNumber}</div>
+                          <div className="font-medium font-bold text-amber-400">{insp.orderNumber}</div>
                           <div className="text-[11px] text-slate-400">{insp.styleNumber}</div>
                         </td>
 
                         <td className="p-3.5">
                           <div className="font-medium text-white">{getInspectionTypeLabel(insp.inspectionType)}</div>
-                          <div className="text-[11px] text-slate-500 font-mono">Factory: {insp.factoryId}</div>
+                          <div className="text-[11px] text-slate-500 font-medium">Factory: {insp.factoryId}</div>
                         </td>
 
-                        <td className="p-3.5 font-mono">
+                        <td className="p-3.5 font-medium">
                           <div className="text-slate-200">
                             <strong>{insp.inspectedQuantity} pcs</strong>
                           </div>
@@ -799,13 +799,13 @@ export function AdminQualityWorkspace({
 
                         <td className="p-3.5">
                           <div className="flex items-center gap-1.5">
-                            <span className="px-1.5 py-0.5 rounded bg-rose-950 text-rose-400 border border-rose-800/60 font-mono text-[10px]" title="Critical">
+                            <span className="px-1.5 py-0.5 rounded bg-rose-950 text-rose-400 border border-rose-800/60 font-medium text-[10px]" title="Critical">
                               {insp.criticalDefects} Crit
                             </span>
-                            <span className="px-1.5 py-0.5 rounded bg-amber-950 text-amber-400 border border-amber-800/60 font-mono text-[10px]" title="Major">
+                            <span className="px-1.5 py-0.5 rounded bg-amber-950 text-amber-400 border border-amber-800/60 font-medium text-[10px]" title="Major">
                               {insp.majorDefects} Maj
                             </span>
-                            <span className="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[10px]" title="Minor">
+                            <span className="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-medium text-[10px]" title="Minor">
                               {insp.minorDefects} Min
                             </span>
                           </div>
@@ -814,7 +814,7 @@ export function AdminQualityWorkspace({
                         <td className="p-3.5">{getResultBadge(insp.result)}</td>
 
                         <td className="p-3.5">
-                          <div className="font-mono text-slate-300">{insp.inspectionDate}</div>
+                          <div className="font-medium text-slate-300">{insp.inspectionDate}</div>
                           <div className="text-[11px] text-slate-500">{insp.inspectorName}</div>
                         </td>
 
@@ -870,7 +870,7 @@ export function AdminQualityWorkspace({
           <Card className="overflow-hidden border-slate-800 bg-slate-900/60">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs text-slate-300">
-                <thead className="bg-slate-950/80 text-slate-400 font-mono uppercase text-[10px] border-b border-slate-800">
+                <thead className="bg-slate-950/80 text-slate-400 font-medium uppercase text-[10px] border-b border-slate-800">
                   <tr>
                     <th className="p-3.5">Report ID</th>
                     <th className="p-3.5">Test Category</th>
@@ -885,7 +885,7 @@ export function AdminQualityWorkspace({
                 <tbody className="divide-y divide-slate-800/60">
                   {labReports.map((report) => (
                     <tr key={report.id} className="hover:bg-slate-800/40 transition-colors">
-                      <td className="p-3.5 font-mono font-bold text-sky-400">
+                      <td className="p-3.5 font-medium font-bold text-sky-400">
                         {report.reportNumber}
                       </td>
 
@@ -897,17 +897,17 @@ export function AdminQualityWorkspace({
                         {report.labName}
                       </td>
 
-                      <td className="p-3.5 font-mono text-slate-300">
+                      <td className="p-3.5 font-medium text-slate-300">
                         {report.orderNumber || report.orderId}
                       </td>
 
                       <td className="p-3.5">
-                        <div className="font-mono text-slate-300">{report.reportDate}</div>
+                        <div className="font-medium text-slate-300">{report.reportDate}</div>
                         <div className="text-[11px] text-slate-500 truncate max-w-[140px]">{report.sampleReference}</div>
                       </td>
 
                       <td className="p-3.5">
-                        <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded font-mono font-bold text-[11px] ${
+                        <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded font-medium font-bold text-[11px] ${
                           report.result === 'PASS'
                             ? 'bg-emerald-950 text-emerald-400 border border-emerald-800'
                             : 'bg-rose-950 text-rose-400 border border-rose-800'
@@ -942,7 +942,7 @@ export function AdminQualityWorkspace({
                             Publish
                           </Button>
                         ) : (
-                          <span className="text-slate-500 font-mono text-[11px]">Draft</span>
+                          <span className="text-slate-500 font-medium text-[11px]">Draft</span>
                         )}
                       </td>
                     </tr>
@@ -965,22 +965,22 @@ export function AdminQualityWorkspace({
 
             <div className="space-y-3 text-xs">
               <div>
-                <label className="text-slate-400 font-mono block mb-1">Lot Size (Total Order Quantity):</label>
+                <label className="text-slate-400 font-medium block mb-1">Lot Size (Total Order Quantity):</label>
                 <input
                   type="number"
                   min="1"
                   value={calcLotSize}
                   onChange={(e) => setCalcLotSize(Number(e.target.value))}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                 />
               </div>
 
               <div>
-                <label className="text-slate-400 font-mono block mb-1">Inspection Level:</label>
+                <label className="text-slate-400 font-medium block mb-1">Inspection Level:</label>
                 <select
                   value={calcLevel}
                   onChange={(e) => setCalcLevel(e.target.value as InspectionLevel)}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                 >
                   <option value="GI">Level I (Reduced)</option>
                   <option value="GII">Level II (Normal - Industry Standard)</option>
@@ -990,11 +990,11 @@ export function AdminQualityWorkspace({
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Major AQL:</label>
+                  <label className="text-slate-400 font-medium block mb-1">Major AQL:</label>
                   <select
                     value={calcMajorAQL}
                     onChange={(e) => setCalcMajorAQL(Number(e.target.value))}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                   >
                     <option value="1.0">1.0</option>
                     <option value="1.5">1.5</option>
@@ -1004,11 +1004,11 @@ export function AdminQualityWorkspace({
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Minor AQL:</label>
+                  <label className="text-slate-400 font-medium block mb-1">Minor AQL:</label>
                   <select
                     value={calcMinorAQL}
                     onChange={(e) => setCalcMinorAQL(Number(e.target.value))}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                   >
                     <option value="1.5">1.5</option>
                     <option value="2.5">2.5</option>
@@ -1019,36 +1019,36 @@ export function AdminQualityWorkspace({
               </div>
 
               <div className="pt-2 border-t border-slate-800 space-y-2">
-                <label className="text-amber-400 font-mono block font-bold">Simulate Sample Defects Found:</label>
+                <label className="text-amber-400 font-medium block font-bold">Simulate Sample Defects Found:</label>
                 <div className="grid grid-cols-3 gap-2">
                   <div>
-                    <span className="text-[10px] text-rose-400 block font-mono">Critical:</span>
+                    <span className="text-[10px] text-rose-400 block font-medium">Critical:</span>
                     <input
                       type="number"
                       min="0"
                       value={calcCriticalDefects}
                       onChange={(e) => setCalcCriticalDefects(Number(e.target.value))}
-                      className="w-full px-2 py-1 bg-slate-950 border border-slate-700 rounded text-rose-400 font-mono"
+                      className="w-full px-2 py-1 bg-slate-950 border border-slate-700 rounded text-rose-400 font-medium"
                     />
                   </div>
                   <div>
-                    <span className="text-[10px] text-amber-400 block font-mono">Major:</span>
+                    <span className="text-[10px] text-amber-400 block font-medium">Major:</span>
                     <input
                       type="number"
                       min="0"
                       value={calcMajorDefects}
                       onChange={(e) => setCalcMajorDefects(Number(e.target.value))}
-                      className="w-full px-2 py-1 bg-slate-950 border border-slate-700 rounded text-amber-400 font-mono"
+                      className="w-full px-2 py-1 bg-slate-950 border border-slate-700 rounded text-amber-400 font-medium"
                     />
                   </div>
                   <div>
-                    <span className="text-[10px] text-slate-300 block font-mono">Minor:</span>
+                    <span className="text-[10px] text-slate-300 block font-medium">Minor:</span>
                     <input
                       type="number"
                       min="0"
                       value={calcMinorDefects}
                       onChange={(e) => setCalcMinorDefects(Number(e.target.value))}
-                      className="w-full px-2 py-1 bg-slate-950 border border-slate-700 rounded text-slate-300 font-mono"
+                      className="w-full px-2 py-1 bg-slate-950 border border-slate-700 rounded text-slate-300 font-medium"
                     />
                   </div>
                 </div>
@@ -1059,7 +1059,7 @@ export function AdminQualityWorkspace({
           <Card className="lg:col-span-2 p-6 bg-slate-900/90 border-slate-800 space-y-6">
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <div>
-                <span className="text-xs font-mono uppercase text-amber-400 font-bold">ISO 2859-1 Calculation Output</span>
+                <span className="text-xs font-medium uppercase text-amber-400 font-bold">ISO 2859-1 Calculation Output</span>
                 <h3 className="font-serif font-bold text-lg text-white">Statistical AQL Result</h3>
               </div>
               {interactiveCalcResult && getResultBadge(interactiveCalcResult.result)}
@@ -1069,41 +1069,41 @@ export function AdminQualityWorkspace({
               <div className="space-y-6">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div className="p-3 bg-slate-950 rounded border border-slate-800">
-                    <span className="text-[10px] font-mono text-slate-400">Code Letter</span>
-                    <div className="text-xl font-bold font-mono text-amber-400">{interactiveCalcResult.codeLetter}</div>
+                    <span className="text-[10px] font-medium text-slate-400">Code Letter</span>
+                    <div className="text-xl font-bold font-medium text-amber-400">{interactiveCalcResult.codeLetter}</div>
                   </div>
                   <div className="p-3 bg-slate-950 rounded border border-slate-800">
-                    <span className="text-[10px] font-mono text-slate-400">Sample Size</span>
-                    <div className="text-xl font-bold font-mono text-white">{interactiveCalcResult.sampleSize} pcs</div>
+                    <span className="text-[10px] font-medium text-slate-400">Sample Size</span>
+                    <div className="text-xl font-bold font-medium text-white">{interactiveCalcResult.sampleSize} pcs</div>
                   </div>
                   <div className="p-3 bg-slate-950 rounded border border-slate-800">
-                    <span className="text-[10px] font-mono text-slate-400">Major Ac / Re</span>
-                    <div className="text-xl font-bold font-mono text-emerald-400">{interactiveCalcResult.maxAllowedMajor} / {interactiveCalcResult.maxAllowedMajor + 1}</div>
+                    <span className="text-[10px] font-medium text-slate-400">Major Ac / Re</span>
+                    <div className="text-xl font-bold font-medium text-emerald-400">{interactiveCalcResult.maxAllowedMajor} / {interactiveCalcResult.maxAllowedMajor + 1}</div>
                   </div>
                   <div className="p-3 bg-slate-950 rounded border border-slate-800">
-                    <span className="text-[10px] font-mono text-slate-400">Minor Ac / Re</span>
-                    <div className="text-xl font-bold font-mono text-sky-400">{interactiveCalcResult.maxAllowedMinor} / {interactiveCalcResult.maxAllowedMinor + 1}</div>
+                    <span className="text-[10px] font-medium text-slate-400">Minor Ac / Re</span>
+                    <div className="text-xl font-bold font-medium text-sky-400">{interactiveCalcResult.maxAllowedMinor} / {interactiveCalcResult.maxAllowedMinor + 1}</div>
                   </div>
                 </div>
 
                 <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
-                  <h4 className="font-mono text-xs font-bold text-white uppercase">Evaluation Breakdown</h4>
+                  <h4 className="font-medium text-xs font-bold text-white uppercase">Evaluation Breakdown</h4>
                   <ul className="space-y-1.5 text-xs text-slate-300">
                     <li className="flex items-center justify-between">
                       <span>Critical Defects:</span>
-                      <strong className={interactiveCalcResult.actualCritical > 0 ? 'text-rose-400 font-mono' : 'text-emerald-400 font-mono'}>
+                      <strong className={interactiveCalcResult.actualCritical > 0 ? 'text-rose-400 font-medium' : 'text-emerald-400 font-medium'}>
                         {interactiveCalcResult.actualCritical} found (Max Allowed: 0)
                       </strong>
                     </li>
                     <li className="flex items-center justify-between">
                       <span>Major Defects (AQL {interactiveCalcResult.majorAQL}):</span>
-                      <strong className={interactiveCalcResult.actualMajor > interactiveCalcResult.maxAllowedMajor ? 'text-rose-400 font-mono' : 'text-emerald-400 font-mono'}>
+                      <strong className={interactiveCalcResult.actualMajor > interactiveCalcResult.maxAllowedMajor ? 'text-rose-400 font-medium' : 'text-emerald-400 font-medium'}>
                         {interactiveCalcResult.actualMajor} found (Max Allowed: {interactiveCalcResult.maxAllowedMajor})
                       </strong>
                     </li>
                     <li className="flex items-center justify-between">
                       <span>Minor Defects (AQL {interactiveCalcResult.minorAQL}):</span>
-                      <strong className={interactiveCalcResult.actualMinor > interactiveCalcResult.maxAllowedMinor ? 'text-rose-400 font-mono' : 'text-emerald-400 font-mono'}>
+                      <strong className={interactiveCalcResult.actualMinor > interactiveCalcResult.maxAllowedMinor ? 'text-rose-400 font-medium' : 'text-emerald-400 font-medium'}>
                         {interactiveCalcResult.actualMinor} found (Max Allowed: {interactiveCalcResult.maxAllowedMinor})
                       </strong>
                     </li>
@@ -1112,13 +1112,13 @@ export function AdminQualityWorkspace({
 
                 {interactiveCalcResult.failureReasons.length > 0 && (
                   <div className="p-4 rounded-xl bg-rose-950/30 border border-rose-800/40 space-y-1">
-                    <div className="flex items-center gap-2 text-rose-400 font-mono text-xs font-bold">
+                    <div className="flex items-center gap-2 text-rose-400 font-medium text-xs font-bold">
                       <AlertTriangle className="w-4 h-4" />
                       <span>Audit Non-Conformance Reasons</span>
                     </div>
                     {interactiveCalcResult.failureReasons.map((reason, idx) => (
                       <p key={idx} className="text-xs text-rose-300/80 pl-6">
-                        • {reason}
+                        - {reason}
                       </p>
                     ))}
                   </div>
@@ -1139,7 +1139,7 @@ export function AdminQualityWorkspace({
             <div className="flex items-start justify-between pb-4 border-b border-slate-800">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs font-bold text-amber-400">
+                  <span className="font-medium text-xs font-bold text-amber-400">
                     {selectedInspection.id}
                   </span>
                   {getResultBadge(selectedInspection.result)}
@@ -1153,11 +1153,11 @@ export function AdminQualityWorkspace({
                     </Badge>
                   )}
                 </div>
-                <h3 className="font-serif font-bold text-xl text-white">
+                <h3 className="font-sans font-bold text-xl text-white">
                   {getInspectionTypeLabel(selectedInspection.inspectionType)}
                 </h3>
-                <p className="text-xs text-slate-400 font-mono">
-                  PO: {selectedInspection.orderNumber} • Style: {selectedInspection.styleNumber} • Factory: {selectedInspection.factoryId}
+                <p className="text-xs text-slate-400 font-medium">
+                  PO: {selectedInspection.orderNumber} | Style: {selectedInspection.styleNumber} | Factory: {selectedInspection.factoryId}
                 </p>
               </div>
 
@@ -1170,7 +1170,7 @@ export function AdminQualityWorkspace({
             </div>
 
             {/* AQL Metrics Banner */}
-            <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-slate-950 border border-slate-800 text-center font-mono">
+            <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-slate-950 border border-slate-800 text-center font-medium">
               <div>
                 <span className="text-[10px] text-slate-400 uppercase">Sample Inspected</span>
                 <div className="text-lg font-bold text-white">{selectedInspection.sampleSize} pcs</div>
@@ -1196,7 +1196,7 @@ export function AdminQualityWorkspace({
             <div className="space-y-3">
               <h4 className="font-serif font-bold text-sm text-white flex items-center justify-between">
                 <span>Defect Itemization ({selectedInspection.defects.length})</span>
-                <span className="text-xs font-mono text-slate-400">Total: {selectedInspection.totalDefects} units</span>
+                <span className="text-xs font-medium text-slate-400">Total: {selectedInspection.totalDefects} units</span>
               </h4>
 
               {selectedInspection.defects.length === 0 ? (
@@ -1209,7 +1209,7 @@ export function AdminQualityWorkspace({
                     <div key={i} className="p-3 rounded-lg bg-slate-950 border border-slate-800/80 flex items-start justify-between gap-3">
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
-                          <span className={`px-1.5 py-0.5 rounded text-[10px] font-mono font-bold ${
+                          <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium font-bold ${
                             d.severity === 'CRITICAL'
                               ? 'bg-rose-950 text-rose-400 border border-rose-800'
                               : d.severity === 'MAJOR'
@@ -1219,7 +1219,7 @@ export function AdminQualityWorkspace({
                             {d.severity} ({d.quantity}x)
                           </span>
                           <span className="text-xs font-semibold text-white">{d.category}</span>
-                          {d.location && <span className="text-xs text-slate-400 font-mono">• {d.location}</span>}
+                          {d.location && <span className="text-xs text-slate-400 font-medium">| {d.location}</span>}
                         </div>
                         <p className="text-xs text-slate-300">{d.description}</p>
                       </div>
@@ -1267,10 +1267,10 @@ export function AdminQualityWorkspace({
                     </Badge>
                   </div>
                   <div>
-                    <span className="text-slate-400 font-mono">Action Required:</span>
+                    <span className="text-slate-400 font-medium">Action Required:</span>
                     <p className="text-slate-200 mt-0.5 font-medium">{selectedInspection.correctiveAction.actionRequired}</p>
                   </div>
-                  <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-400 font-mono pt-1">
+                  <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-400 font-medium pt-1">
                     <div>Responsible: <strong className="text-white">{selectedInspection.correctiveAction.responsibleParty}</strong></div>
                     <div>Due Date: <strong className="text-amber-400">{selectedInspection.correctiveAction.dueDate}</strong></div>
                   </div>
@@ -1304,7 +1304,7 @@ export function AdminQualityWorkspace({
             {/* Internal Confidential Notes */}
             {selectedInspection.internalNotes && (
               <div className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 space-y-1">
-                <div className="text-[11px] font-mono uppercase text-amber-400 font-bold">Internal QA Auditor Notes (Staff Only)</div>
+                <div className="text-[11px] font-medium uppercase text-amber-400 font-bold">Internal QA Auditor Notes (Staff Only)</div>
                 <p className="text-xs text-slate-300 leading-relaxed">{selectedInspection.internalNotes}</p>
               </div>
             )}
@@ -1364,11 +1364,11 @@ export function AdminQualityWorkspace({
             <form onSubmit={handleCreateInspection} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Inspection Stage / Type *</label>
+                  <label className="text-slate-400 font-medium block mb-1">Inspection Stage / Type *</label>
                   <select
                     value={formData.inspectionType}
                     onChange={(e) => setFormData({ ...formData, inspectionType: e.target.value as InspectionType })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                   >
                     {INSPECTION_TYPES.map((t) => (
                       <option key={t} value={t}>{getInspectionTypeLabel(t)}</option>
@@ -1377,59 +1377,59 @@ export function AdminQualityWorkspace({
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Inspection Date *</label>
+                  <label className="text-slate-400 font-medium block mb-1">Inspection Date *</label>
                   <input
                     type="date"
                     required
                     value={formData.inspectionDate}
                     onChange={(e) => setFormData({ ...formData, inspectionDate: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Factory Unit *</label>
+                  <label className="text-slate-400 font-medium block mb-1">Factory Unit *</label>
                   <input
                     type="text"
                     required
                     value={formData.factoryId}
                     onChange={(e) => setFormData({ ...formData, factoryId: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">PO Number *</label>
+                  <label className="text-slate-400 font-medium block mb-1">PO Number *</label>
                   <input
                     type="text"
                     required
                     value={formData.orderNumber}
                     onChange={(e) => setFormData({ ...formData, orderNumber: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Style Code *</label>
+                  <label className="text-slate-400 font-medium block mb-1">Style Code *</label>
                   <input
                     type="text"
                     required
                     value={formData.styleNumber}
                     onChange={(e) => setFormData({ ...formData, styleNumber: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Buyer Organization *</label>
+                  <label className="text-slate-400 font-medium block mb-1">Buyer Organization *</label>
                   <input
                     type="text"
                     required
                     value={formData.buyerOrganizationId}
                     onChange={(e) => setFormData({ ...formData, buyerOrganizationId: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                   />
                 </div>
               </div>
@@ -1437,7 +1437,7 @@ export function AdminQualityWorkspace({
               {/* Quantities & AQL Configuration */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs p-3.5 bg-slate-950 rounded-xl border border-slate-800">
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Order Quantity</label>
+                  <label className="text-slate-400 font-medium block mb-1">Order Quantity</label>
                   <input
                     type="number"
                     min="1"
@@ -1448,28 +1448,28 @@ export function AdminQualityWorkspace({
                       const standardSampleSize = getSampleSize(qty, formData.aqlLevel);
                       setFormData({ ...formData, orderQuantity: qty, inspectedQuantity: standardSampleSize });
                     }}
-                    className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Sample Size (Units)</label>
+                  <label className="text-slate-400 font-medium block mb-1">Sample Size (Units)</label>
                   <input
                     type="number"
                     min="1"
                     required
                     value={formData.inspectedQuantity}
                     onChange={(e) => setFormData({ ...formData, inspectedQuantity: Number(e.target.value) })}
-                    className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Major AQL</label>
+                  <label className="text-slate-400 font-medium block mb-1">Major AQL</label>
                   <select
                     value={formData.aqlMajor}
                     onChange={(e) => setFormData({ ...formData, aqlMajor: Number(e.target.value) })}
-                    className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
                   >
                     <option value="1.0">1.0</option>
                     <option value="1.5">1.5</option>
@@ -1479,11 +1479,11 @@ export function AdminQualityWorkspace({
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Minor AQL</label>
+                  <label className="text-slate-400 font-medium block mb-1">Minor AQL</label>
                   <select
                     value={formData.aqlMinor}
                     onChange={(e) => setFormData({ ...formData, aqlMinor: Number(e.target.value) })}
-                    className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
                   >
                     <option value="1.5">1.5</option>
                     <option value="2.5">2.5</option>
@@ -1496,7 +1496,7 @@ export function AdminQualityWorkspace({
               {/* Dynamic Defect Line Items */}
               <div className="space-y-3 pt-2">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs uppercase text-amber-400 font-bold">Defect Line Items</span>
+                  <span className="font-medium text-xs uppercase text-amber-400 font-bold">Defect Line Items</span>
                   <Button
                     type="button"
                     variant="outline"
@@ -1546,7 +1546,7 @@ export function AdminQualityWorkspace({
                             placeholder="Qty"
                             value={defect.quantity}
                             onChange={(e) => handleDefectChange(idx, 'quantity', Number(e.target.value))}
-                            className="w-full px-2 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono text-[11px]"
+                            className="w-full px-2 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium text-[11px]"
                           />
                         </div>
 
@@ -1579,9 +1579,9 @@ export function AdminQualityWorkspace({
               {liveAQLResult && (
                 <div className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
                   <div className="text-xs space-y-0.5">
-                    <span className="text-slate-400 font-mono uppercase text-[10px]">Deterministic AQL Calculation:</span>
-                    <div className="font-mono text-xs text-white">
-                      Code Letter: <strong>{liveAQLResult.codeLetter}</strong> • Total Defects: <strong>{liveAQLResult.totalDefects}</strong> (Ac: {liveAQLResult.maxAllowedMajor} Maj / {liveAQLResult.maxAllowedMinor} Min)
+                    <span className="text-slate-400 font-medium uppercase text-[10px]">Deterministic AQL Calculation:</span>
+                    <div className="font-medium text-xs text-white">
+                      Code Letter: <strong>{liveAQLResult.codeLetter}</strong> | Total Defects: <strong>{liveAQLResult.totalDefects}</strong> (Ac: {liveAQLResult.maxAllowedMajor} Maj / {liveAQLResult.maxAllowedMinor} Min)
                     </div>
                   </div>
                   {getResultBadge(liveAQLResult.result)}
@@ -1591,7 +1591,7 @@ export function AdminQualityWorkspace({
               {/* Remarks */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Public Remarks (Buyer Visible)</label>
+                  <label className="text-slate-400 font-medium block mb-1">Public Remarks (Buyer Visible)</label>
                   <textarea
                     rows={2}
                     placeholder="General observations, line tension status..."
@@ -1602,7 +1602,7 @@ export function AdminQualityWorkspace({
                 </div>
 
                 <div>
-                  <label className="text-amber-400 font-mono block mb-1">Internal Notes (Staff Only)</label>
+                  <label className="text-amber-400 font-medium block mb-1">Internal Notes (Staff Only)</label>
                   <textarea
                     rows={2}
                     placeholder="Confidential factory communications..."
@@ -1663,7 +1663,7 @@ export function AdminQualityWorkspace({
 
             <form onSubmit={handleCreateLabReport} className="space-y-3 text-xs">
               <div>
-                <label className="text-slate-400 font-mono block mb-1">Test Category *</label>
+                <label className="text-slate-400 font-medium block mb-1">Test Category *</label>
                 <select
                   value={labFormData.testCategory}
                   onChange={(e) => setLabFormData({ ...labFormData, testCategory: e.target.value as LabTestCategory })}
@@ -1677,7 +1677,7 @@ export function AdminQualityWorkspace({
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Accredited Laboratory *</label>
+                  <label className="text-slate-400 font-medium block mb-1">Accredited Laboratory *</label>
                   <input
                     type="text"
                     required
@@ -1687,19 +1687,19 @@ export function AdminQualityWorkspace({
                   />
                 </div>
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Report Date *</label>
+                  <label className="text-slate-400 font-medium block mb-1">Report Date *</label>
                   <input
                     type="date"
                     required
                     value={labFormData.reportDate}
                     onChange={(e) => setLabFormData({ ...labFormData, reportDate: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-slate-400 font-mono block mb-1">Sample Reference / Material Swatch</label>
+                <label className="text-slate-400 font-medium block mb-1">Sample Reference / Material Swatch</label>
                 <input
                   type="text"
                   value={labFormData.sampleReference}
@@ -1710,11 +1710,11 @@ export function AdminQualityWorkspace({
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Test Result</label>
+                  <label className="text-slate-400 font-medium block mb-1">Test Result</label>
                   <select
                     value={labFormData.result}
                     onChange={(e) => setLabFormData({ ...labFormData, result: e.target.value as 'PASS' | 'FAIL' | 'CONDITIONAL' })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                   >
                     <option value="PASS">PASS</option>
                     <option value="CONDITIONAL">CONDITIONAL</option>
@@ -1722,11 +1722,11 @@ export function AdminQualityWorkspace({
                   </select>
                 </div>
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Verification Status</label>
+                  <label className="text-slate-400 font-medium block mb-1">Verification Status</label>
                   <select
                     value={labFormData.verificationStatus}
                     onChange={(e) => setLabFormData({ ...labFormData, verificationStatus: e.target.value as 'VERIFIED' | 'VERIFICATION_REQUIRED' })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                   >
                     <option value="VERIFIED">VERIFIED</option>
                     <option value="VERIFICATION_REQUIRED">VERIFICATION_REQUIRED</option>
@@ -1767,7 +1767,7 @@ export function AdminQualityWorkspace({
 
             <form onSubmit={handleCreateCap} className="space-y-3 text-xs">
               <div>
-                <label className="text-slate-400 font-mono block mb-1">Issue Description *</label>
+                <label className="text-slate-400 font-medium block mb-1">Issue Description *</label>
                 <textarea
                   required
                   rows={2}
@@ -1778,7 +1778,7 @@ export function AdminQualityWorkspace({
               </div>
 
               <div>
-                <label className="text-slate-400 font-mono block mb-1">Action Required *</label>
+                <label className="text-slate-400 font-medium block mb-1">Action Required *</label>
                 <textarea
                   required
                   rows={2}
@@ -1790,7 +1790,7 @@ export function AdminQualityWorkspace({
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Responsible Party *</label>
+                  <label className="text-slate-400 font-medium block mb-1">Responsible Party *</label>
                   <input
                     type="text"
                     required
@@ -1800,13 +1800,13 @@ export function AdminQualityWorkspace({
                   />
                 </div>
                 <div>
-                  <label className="text-slate-400 font-mono block mb-1">Due Date *</label>
+                  <label className="text-slate-400 font-medium block mb-1">Due Date *</label>
                   <input
                     type="date"
                     required
                     value={capFormData.dueDate}
                     onChange={(e) => setCapFormData({ ...capFormData, dueDate: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                   />
                 </div>
               </div>
@@ -1839,7 +1839,7 @@ export function AdminQualityWorkspace({
               </p>
 
               <div>
-                <label className="text-slate-400 font-mono block mb-1">Reason / Scope *</label>
+                <label className="text-slate-400 font-medium block mb-1">Reason / Scope *</label>
                 <textarea
                   required
                   rows={3}

@@ -27,7 +27,7 @@ export function CardHeader({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn('flex flex-col space-y-1.5 p-5 sm:p-6 border-b border-border/60', className)}
+      className={cn('flex flex-col space-y-1 p-3.5 sm:p-5 border-b border-border/60', className)}
       {...props}
     >
       {children}
@@ -43,7 +43,7 @@ export function CardTitle({
   return (
     <h3
       className={cn(
-        'font-sans font-semibold text-lg sm:text-xl text-foreground tracking-tight',
+        'font-sans font-bold text-base sm:text-lg text-foreground tracking-tight',
         className
       )}
       {...props}
@@ -60,7 +60,7 @@ export function CardDescription({
 }: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
-      className={cn('text-xs sm:text-sm text-muted-foreground leading-relaxed', className)}
+      className={cn('text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans', className)}
       {...props}
     >
       {children}
@@ -74,7 +74,7 @@ export function CardContent({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn('p-5 sm:p-6', className)} {...props}>
+    <div className={cn('p-3.5 sm:p-5 font-sans', className)} {...props}>
       {children}
     </div>
   );
@@ -88,7 +88,7 @@ export function CardFooter({
   return (
     <div
       className={cn(
-        'p-5 sm:p-6 border-t border-border/60 flex items-center justify-between',
+        'p-3.5 sm:p-5 border-t border-border/60 flex items-center justify-between font-sans',
         className
       )}
       {...props}

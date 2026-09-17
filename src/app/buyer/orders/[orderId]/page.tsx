@@ -151,7 +151,7 @@ export default function OrderDetailPage() {
     <div className="max-w-6xl mx-auto space-y-8">
       {/* Navigation Breadcrumb & Back Link */}
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <div className="flex items-center gap-2 text-xs font-mono">
+        <div className="flex items-center gap-2 text-xs font-medium">
           <Link href="/buyer/dashboard" className="text-muted-foreground hover:text-foreground">
             Dashboard
           </Link>
@@ -176,15 +176,15 @@ export default function OrderDetailPage() {
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
           <div className="space-y-2">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-mono font-bold text-primary px-2.5 py-1 rounded-md bg-primary/10 border border-primary/20">
+              <span className="text-xs font-medium font-bold text-primary px-2.5 py-1 rounded-md bg-primary/10 border border-primary/20">
                 {order.orderNumber}
               </span>
-              <span className="text-xs font-mono text-muted-foreground font-semibold">
+              <span className="text-xs font-medium text-muted-foreground font-semibold">
                 Style: {order.styleNumber}
               </span>
               <OrderStatusBadge status={order.currentStatus} size="md" />
               {order.priority && (
-                <span className={`text-[11px] uppercase font-mono px-2 py-0.5 rounded font-bold ${
+                <span className={`text-[11px] uppercase font-medium px-2 py-0.5 rounded font-bold ${
                   order.priority === 'urgent'
                     ? 'bg-rose-950/60 text-rose-400 border border-rose-800/60'
                     : 'bg-amber-950/60 text-amber-400 border border-amber-800/60'
@@ -194,16 +194,16 @@ export default function OrderDetailPage() {
               )}
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-serif font-bold text-foreground">
+            <h1 className="text-2xl sm:text-3xl font-sans font-bold text-foreground tracking-tight">
               {order.productName}
             </h1>
 
             <p className="text-xs sm:text-sm text-muted-foreground flex flex-wrap items-center gap-x-3 gap-y-1">
               <span>Category: <strong className="text-foreground">{order.category}</strong></span>
-              <span>•</span>
+              <span className="text-border">|</span>
               <span>Total Volume: <strong className="text-foreground">{order.quantity.toLocaleString()} pcs</strong></span>
-              <span>•</span>
-              <span>Organization: <strong className="text-foreground font-mono">{order.buyerOrganizationId}</strong></span>
+              <span className="text-border">|</span>
+              <span>Organization: <strong className="text-foreground font-medium">{order.buyerOrganizationId}</strong></span>
             </p>
           </div>
 
@@ -211,7 +211,7 @@ export default function OrderDetailPage() {
           <div className="flex flex-col sm:flex-row lg:flex-col gap-3 p-4 rounded-xl bg-muted/40 border border-border/60 shrink-0">
             <div className="text-xs space-y-0.5">
               <span className="text-muted-foreground">Ex-Factory Date</span>
-              <div className="font-mono font-bold text-foreground text-sm flex items-center gap-1.5">
+              <div className="font-medium font-bold text-foreground text-sm flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5 text-primary" />
                 <span>{order.exFactoryDate}</span>
               </div>
@@ -219,7 +219,7 @@ export default function OrderDetailPage() {
             {order.shipmentDate && (
               <div className="text-xs space-y-0.5 pt-2 sm:pt-0 sm:pl-3 lg:pl-0 lg:pt-2 border-t sm:border-t-0 sm:border-l lg:border-l-0 lg:border-t border-border/60">
                 <span className="text-muted-foreground">Target Port Dispatch</span>
-                <div className="font-mono font-bold text-emerald-400 text-sm">
+                <div className="font-medium font-bold text-emerald-400 text-sm">
                   {order.shipmentDate}
                 </div>
               </div>
@@ -328,7 +328,7 @@ export default function OrderDetailPage() {
             <Card className="p-6 bg-card/80 border-border/80 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-border">
                 <div>
-                  <span className="text-xs font-mono uppercase text-primary font-bold">Floor Telemetry</span>
+                  <span className="text-xs font-medium uppercase text-primary font-bold">Floor Telemetry</span>
                   <h3 className="font-serif font-bold text-lg text-foreground">
                     Manufacturing Departmental Status
                   </h3>
@@ -340,8 +340,8 @@ export default function OrderDetailPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
                 <div className="p-3.5 rounded-lg bg-muted/40 border border-border/60 space-y-1">
-                  <span className="text-[11px] font-mono text-muted-foreground uppercase font-semibold">1. Cutting Dept</span>
-                  <div className="text-base font-bold text-foreground font-mono">
+                  <span className="text-[11px] font-medium text-muted-foreground uppercase font-semibold">1. Cutting Dept</span>
+                  <div className="text-base font-bold text-foreground font-medium">
                     {['Material', 'Cutting', 'Production', 'Finishing', 'QC', 'Packing', 'Shipment', 'Completed'].includes(order.currentStatus)
                       ? `${order.quantity.toLocaleString()} pcs (100%)`
                       : 'Scheduled'}
@@ -350,8 +350,8 @@ export default function OrderDetailPage() {
                 </div>
 
                 <div className="p-3.5 rounded-lg bg-muted/40 border border-border/60 space-y-1">
-                  <span className="text-[11px] font-mono text-muted-foreground uppercase font-semibold">2. Sewing Assembly</span>
-                  <div className="text-base font-bold text-foreground font-mono">
+                  <span className="text-[11px] font-medium text-muted-foreground uppercase font-semibold">2. Sewing Assembly</span>
+                  <div className="text-base font-bold text-foreground font-medium">
                     {['Production', 'Finishing', 'QC', 'Packing', 'Shipment', 'Completed'].includes(order.currentStatus)
                       ? 'In Assembly Lines'
                       : 'Awaiting cut panel feed'}
@@ -360,8 +360,8 @@ export default function OrderDetailPage() {
                 </div>
 
                 <div className="p-3.5 rounded-lg bg-muted/40 border border-border/60 space-y-1">
-                  <span className="text-[11px] font-mono text-muted-foreground uppercase font-semibold">3. Finishing &amp; QC</span>
-                  <div className="text-base font-bold text-foreground font-mono">
+                  <span className="text-[11px] font-medium text-muted-foreground uppercase font-semibold">3. Finishing &amp; QC</span>
+                  <div className="text-base font-bold text-foreground font-medium">
                     {['Finishing', 'QC', 'Packing', 'Shipment', 'Completed'].includes(order.currentStatus)
                       ? 'Final Audit Queue'
                       : 'Pending Sewing completion'}
@@ -383,34 +383,34 @@ export default function OrderDetailPage() {
               <div className="space-y-3 text-xs">
                 <div className="flex justify-between items-center py-1 border-b border-border/40">
                   <span className="text-muted-foreground">PO Number:</span>
-                  <span className="font-mono font-bold text-foreground">{order.orderNumber}</span>
+                  <span className="font-medium font-bold text-foreground">{order.orderNumber}</span>
                 </div>
                 <div className="flex justify-between items-center py-1 border-b border-border/40">
                   <span className="text-muted-foreground">Style Code:</span>
-                  <span className="font-mono font-semibold text-foreground">{order.styleNumber}</span>
+                  <span className="font-medium font-semibold text-foreground">{order.styleNumber}</span>
                 </div>
                 <div className="flex justify-between items-center py-1 border-b border-border/40">
                   <span className="text-muted-foreground">Order Quantity:</span>
-                  <span className="font-mono font-bold text-foreground">{order.quantity.toLocaleString()} pcs</span>
+                  <span className="font-medium font-bold text-foreground">{order.quantity.toLocaleString()} pcs</span>
                 </div>
                 <div className="flex justify-between items-center py-1 border-b border-border/40">
                   <span className="text-muted-foreground">Order Placed Date:</span>
-                  <span className="font-mono text-foreground">{order.orderDate}</span>
+                  <span className="font-medium text-foreground">{order.orderDate}</span>
                 </div>
                 <div className="flex justify-between items-center py-1 border-b border-border/40">
                   <span className="text-muted-foreground">Currency:</span>
-                  <span className="font-mono font-semibold text-foreground">{order.currency || 'USD'}</span>
+                  <span className="font-medium font-semibold text-foreground">{order.currency || 'USD'}</span>
                 </div>
                 {order.factoryId && (
                   <div className="flex justify-between items-center py-1 border-b border-border/40">
                     <span className="text-muted-foreground">Manufacturing Unit:</span>
-                    <span className="font-mono text-primary font-semibold">{order.factoryId}</span>
+                    <span className="font-medium text-primary font-semibold">{order.factoryId}</span>
                   </div>
                 )}
                 {order.assignedMerchandiserId && (
                   <div className="flex justify-between items-center py-1">
                     <span className="text-muted-foreground">Merchandiser Ref:</span>
-                    <span className="font-mono text-foreground">{order.assignedMerchandiserId}</span>
+                    <span className="font-medium text-foreground">{order.assignedMerchandiserId}</span>
                   </div>
                 )}
               </div>

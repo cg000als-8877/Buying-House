@@ -24,7 +24,7 @@ export function SampleAnalytics({ data, onExport }: SampleAnalyticsProps) {
       key: 'totalSamples',
       header: 'Samples Submitted',
       align: 'center',
-      render: (item) => <span className="font-mono">{item.totalSamples}</span>,
+      render: (item) => <span className="font-medium">{item.totalSamples}</span>,
     },
     {
       key: 'approvalRate',
@@ -40,7 +40,7 @@ export function SampleAnalytics({ data, onExport }: SampleAnalyticsProps) {
       key: 'avgCycleDays',
       header: 'Avg Decision Turnaround',
       align: 'right',
-      render: (item) => <span className="font-mono text-primary font-semibold">{item.avgCycleDays} days</span>,
+      render: (item) => <span className="font-medium text-primary font-semibold">{item.avgCycleDays} days</span>,
     },
   ];
 

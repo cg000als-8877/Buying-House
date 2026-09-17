@@ -15,13 +15,13 @@ export function ComplianceCard({ cert }: ComplianceCardProps) {
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <span className="text-3xl">{cert.logo}</span>
-          <Badge variant="emerald" size="sm" className="font-display">
+          <Badge variant="emerald" size="sm" className="font-sans">
             {cert.validity}
           </Badge>
         </div>
 
         <div>
-          <h3 className="font-display font-bold text-lg text-white">{cert.name}</h3>
+          <h3 className="font-sans font-bold text-lg text-white">{cert.name}</h3>
           <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed font-sans">
             {cert.description}
           </p>
@@ -32,7 +32,7 @@ export function ComplianceCard({ cert }: ComplianceCardProps) {
         <span className="text-slate-400 truncate max-w-[160px]">{cert.issuer}</span>
         <Link
           href="/rfq"
-          className="inline-flex items-center gap-1 font-semibold text-amber-400 hover:text-amber-300 transition-colors font-display"
+          className="inline-flex items-center gap-1 font-semibold text-amber-400 hover:text-amber-300 transition-colors font-sans"
         >
           <span>Request Copy</span>
           <Download className="w-3.5 h-3.5" />

@@ -82,7 +82,7 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-md space-y-6">
         {/* Header Branding */}
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border text-xs font-mono uppercase tracking-wider text-muted-foreground">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border text-xs font-medium uppercase tracking-wider text-muted-foreground">
             <ShieldAlert className="w-3.5 h-3.5 text-error" />
             Internal Staff Console
           </div>
@@ -175,7 +175,7 @@ export default function AdminLoginPage() {
 
           {/* Development / Testing Quick Switch */}
           <CardFooter className="flex-col items-start gap-2 bg-surface-muted/30 text-xs">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">
+            <span className="font-medium text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">
               Development Staff Roles:
             </span>
             <div className="grid grid-cols-2 gap-2 w-full">

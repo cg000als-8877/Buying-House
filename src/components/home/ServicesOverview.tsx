@@ -21,16 +21,16 @@ export function ServicesOverview() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="text-amber-400 text-xs sm:text-sm font-bold uppercase tracking-widest font-display">
+          <div className="text-amber-400 text-xs sm:text-sm font-bold uppercase tracking-widest">
             End-to-End Supply Chain Ecosystem
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
             Integrated Solutions from{' '}
-            <span className="text-amber-400 font-extrabold">
+            <span className="text-amber-400 font-bold">
               Fibre to Finished Hanger
             </span>
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed font-sans">
+          <p className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
             Eliminate sourcing friction with our dedicated merchandising units, in-house QA inspectors, master pattern makers, and worldwide logistics network.
           </p>
         </div>
@@ -48,10 +48,10 @@ export function ServicesOverview() {
                 </div>
 
                 <div className="space-y-2.5">
-                  <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/60 px-3 py-1 rounded-full border border-emerald-800/40 font-display">
+                  <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/60 px-3 py-1 rounded-full border border-emerald-800/40 font-sans">
                     {service.metrics}
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-display font-bold text-white group-hover:text-amber-400 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-sans font-bold text-white group-hover:text-amber-400 transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">

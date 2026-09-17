@@ -27,7 +27,7 @@ export function FactoryAnalytics({ data, onExport }: FactoryAnalyticsProps) {
       key: 'activeOrdersCount',
       header: 'Active Orders',
       align: 'center',
-      render: (item) => <span className="font-mono">{item.activeOrdersCount} POs</span>,
+      render: (item) => <span className="font-medium">{item.activeOrdersCount} POs</span>,
     },
     {
       key: 'capacityUtilization',
@@ -47,7 +47,7 @@ export function FactoryAnalytics({ data, onExport }: FactoryAnalyticsProps) {
               style={{ width: `${item.capacityUtilization}%` }}
             />
           </div>
-          <span className="font-mono text-xs">{item.capacityUtilization}%</span>
+          <span className="font-medium text-xs">{item.capacityUtilization}%</span>
         </div>
       ),
     },
@@ -65,7 +65,7 @@ export function FactoryAnalytics({ data, onExport }: FactoryAnalyticsProps) {
       key: 'onTimeDeliveryRate',
       header: 'On-Time Delivery %',
       align: 'right',
-      render: (item) => <span className="font-mono text-emerald-500 font-semibold">{item.onTimeDeliveryRate}%</span>,
+      render: (item) => <span className="font-medium text-emerald-500 font-semibold">{item.onTimeDeliveryRate}%</span>,
     },
     {
       key: 'status',
@@ -88,7 +88,7 @@ export function FactoryAnalytics({ data, onExport }: FactoryAnalyticsProps) {
             <Factory className="w-4 h-4 text-primary" />
             <span>TOTAL MONITORED UNITS</span>
           </div>
-          <div className="text-2xl font-bold font-mono text-foreground">
+          <div className="text-2xl font-bold font-medium text-foreground">
             {data.factories.length} Factories
           </div>
           <p className="text-xs text-muted-foreground mt-1">Active compliant partner manufacturing units</p>
@@ -99,7 +99,7 @@ export function FactoryAnalytics({ data, onExport }: FactoryAnalyticsProps) {
             <ShieldCheck className="w-4 h-4 text-emerald-500" />
             <span>AVG NETWORK QUALITY</span>
           </div>
-          <div className="text-2xl font-bold font-mono text-emerald-500">
+          <div className="text-2xl font-bold font-medium text-emerald-500">
             95.2% Pass Rate
           </div>
           <p className="text-xs text-muted-foreground mt-1">Across all inline & final AQL audits</p>
@@ -110,7 +110,7 @@ export function FactoryAnalytics({ data, onExport }: FactoryAnalyticsProps) {
             <Activity className="w-4 h-4 text-blue-500" />
             <span>AVG CAPACITY LOAD</span>
           </div>
-          <div className="text-2xl font-bold font-mono text-blue-500">
+          <div className="text-2xl font-bold font-medium text-blue-500">
             82.4% Allocated
           </div>
           <p className="text-xs text-muted-foreground mt-1">Optimal utilization range</p>

@@ -375,7 +375,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
     <div className="space-y-8">
       {/* Notice Banner */}
       {notice && (
-        <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-center justify-between">
+        <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-medium flex items-center justify-between">
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-400" />
             <span>{notice}</span>
@@ -389,7 +389,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
       {/* Header & Controls */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
         <div>
-          <span className="text-xs font-mono uppercase text-amber-400 font-bold">
+          <span className="text-xs font-medium uppercase text-amber-400 font-bold">
             Document Repository &amp; Storage
           </span>
           <h2 className="text-xl sm:text-2xl font-serif font-bold text-white">
@@ -414,33 +414,33 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
       {!initialOrderId && (
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
           <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold">Total Documents</span>
-            <div className="text-xl font-bold text-white font-mono">{totalCount}</div>
-            <span className="text-[10px] text-slate-500 font-mono">In repository</span>
+            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold">Total Documents</span>
+            <div className="text-xl font-bold text-white font-medium">{totalCount}</div>
+            <span className="text-[10px] text-slate-500 font-medium">In repository</span>
           </Card>
 
           <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold">Active in Vault</span>
-            <div className="text-xl font-bold text-emerald-400 font-mono">{activeCount}</div>
-            <span className="text-[10px] text-emerald-500/80 font-mono">Current records</span>
+            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold">Active in Vault</span>
+            <div className="text-xl font-bold text-emerald-400 font-medium">{activeCount}</div>
+            <span className="text-[10px] text-emerald-500/80 font-medium">Current records</span>
           </Card>
 
           <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold">Buyer Visible</span>
-            <div className="text-xl font-bold text-blue-400 font-mono">{buyerVisibleCount}</div>
-            <span className="text-[10px] text-blue-400/80 font-mono">Portal accessible</span>
+            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold">Buyer Visible</span>
+            <div className="text-xl font-bold text-blue-400 font-medium">{buyerVisibleCount}</div>
+            <span className="text-[10px] text-blue-400/80 font-medium">Portal accessible</span>
           </Card>
 
           <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold">Archived</span>
-            <div className="text-xl font-bold text-amber-400 font-mono">{archivedCount}</div>
-            <span className="text-[10px] text-amber-500/80 font-mono">Historical records</span>
+            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold">Archived</span>
+            <div className="text-xl font-bold text-amber-400 font-medium">{archivedCount}</div>
+            <span className="text-[10px] text-amber-500/80 font-medium">Historical records</span>
           </Card>
 
           <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1 col-span-2 lg:col-span-1">
-            <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold">Total Storage</span>
-            <div className="text-xl font-bold text-white font-mono">{formatBytes(totalBytes)}</div>
-            <span className="text-[10px] text-slate-500 font-mono">Encrypted volume</span>
+            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold">Total Storage</span>
+            <div className="text-xl font-bold text-white font-medium">{formatBytes(totalBytes)}</div>
+            <span className="text-[10px] text-slate-500 font-medium">Encrypted volume</span>
           </Card>
         </div>
       )}
@@ -462,7 +462,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
           <select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+            className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
           >
             <option value="ALL">All Categories</option>
             {DOCUMENT_CATEGORIES.map((cat) => (
@@ -477,7 +477,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
           <select
             value={visibilityFilter}
             onChange={(e) => setVisibilityFilter(e.target.value)}
-            className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+            className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
           >
             <option value="ALL">All Visibilities</option>
             <option value="buyer">Buyer Visible</option>
@@ -490,7 +490,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+            className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
           >
             <option value="ALL">All Statuses</option>
             <option value="active">Active Vault</option>
@@ -509,7 +509,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
         <Card className="overflow-hidden bg-slate-900/90 border-slate-800">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="bg-slate-950/80 border-b border-slate-800 font-mono text-[11px] text-slate-400 uppercase">
+              <thead className="bg-slate-950/80 border-b border-slate-800 font-medium text-[11px] text-slate-400 uppercase">
                 <tr>
                   <th className="py-3 px-4">Document Title &amp; File</th>
                   <th className="py-3 px-4">Category</th>
@@ -543,9 +543,9 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                             <span className="font-semibold text-white block hover:text-amber-400 transition-colors">
                               {docItem.title}
                             </span>
-                            <div className="flex items-center gap-2 text-[11px] text-slate-400 font-mono">
+                            <div className="flex items-center gap-2 text-[11px] text-slate-400 font-medium">
                               <span>{docItem.fileName}</span>
-                              <span>•</span>
+                              <span className="text-slate-700">|</span>
                               <span>{docItem.fileSizeFormatted}</span>
                             </div>
                           </div>
@@ -559,7 +559,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                       </td>
 
                       <td className="py-3.5 px-4 whitespace-nowrap">
-                        <div className="space-y-0.5 font-mono text-[11px]">
+                        <div className="space-y-0.5 font-medium text-[11px]">
                           <span className="text-amber-400 font-bold block">{docItem.buyerOrganizationId}</span>
                           {docItem.orderNumber && (
                             <span className="text-slate-400 block">PO: {docItem.orderNumber}</span>
@@ -570,7 +570,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                       <td className="py-3.5 px-4 whitespace-nowrap">
                         <button
                           onClick={() => setHistoryDoc(docItem)}
-                          className="font-mono text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/20"
+                          className="font-medium text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/20"
                           title="View revision history"
                         >
                           <span>v{docItem.version}</span>
@@ -598,7 +598,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                       </td>
 
                       <td className="py-3.5 px-4 whitespace-nowrap">
-                        <div className="space-y-0.5 text-[11px] font-mono text-slate-400">
+                        <div className="space-y-0.5 text-[11px] font-medium text-slate-400">
                           <span className="block text-slate-300">{docItem.createdAt.split('T')[0]}</span>
                           <span className="text-[10px] text-slate-500 block truncate max-w-[100px]">
                             {docItem.uploaderName || docItem.uploadedBy}
@@ -718,7 +718,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
           <Card className="max-w-xl w-full p-6 bg-slate-900 border-slate-800 space-y-5 shadow-2xl my-8">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
               <div>
-                <span className="text-xs font-mono uppercase text-amber-400 font-bold">
+                <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   File Ingestion Vault
                 </span>
                 <h3 className="font-serif font-bold text-lg text-white">Upload New Business Document</h3>
@@ -759,7 +759,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                     onChange={(e) =>
                       setUploadFormData({ ...uploadFormData, category: e.target.value as DocumentCategory })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                   >
                     {DOCUMENT_CATEGORIES.map((cat) => (
                       <option key={cat} value={cat}>
@@ -778,7 +778,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                     onChange={(e) =>
                       setUploadFormData({ ...uploadFormData, visibility: e.target.value as DocumentVisibility })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                   >
                     <option value="buyer">Buyer Visible (Portal Sync)</option>
                     <option value="internal">Internal Only (Staff Eyes)</option>
@@ -800,7 +800,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                     onChange={(e) =>
                       setUploadFormData({ ...uploadFormData, buyerOrganizationId: e.target.value })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
 
@@ -811,7 +811,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                     placeholder="e.g. TEST-ORDER-001"
                     value={uploadFormData.orderId}
                     onChange={(e) => setUploadFormData({ ...uploadFormData, orderId: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
               </div>
@@ -823,7 +823,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                   <div className="text-xs text-slate-300">
                     <span className="font-semibold text-amber-400">Click to attach file</span> or drag &amp; drop
                   </div>
-                  <p className="text-[10px] text-slate-500 font-mono">
+                  <p className="text-[10px] text-slate-500 font-medium">
                     PDF, DOCX, XLSX, CSV, PNG, JPG (Max 50MB)
                   </p>
                   <input
@@ -831,7 +831,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                     placeholder="File name (e.g. STY-KNIT-880_Specs.pdf)"
                     value={uploadFormData.fileName}
                     onChange={(e) => setUploadFormData({ ...uploadFormData, fileName: e.target.value })}
-                    className="w-full max-w-sm mx-auto px-3 py-1.5 text-xs bg-slate-900 rounded border border-slate-800 text-white font-mono text-center focus:outline-none focus:border-amber-400"
+                    className="w-full max-w-sm mx-auto px-3 py-1.5 text-xs bg-slate-900 rounded border border-slate-800 text-white font-medium text-center focus:outline-none focus:border-amber-400"
                   />
                 </div>
               </div>
@@ -866,7 +866,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
           <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4 shadow-2xl">
             <div className="flex items-center justify-between pb-2 border-b border-slate-800">
               <div>
-                <span className="text-xs font-mono uppercase text-amber-400 font-bold">
+                <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   Next Version: v{revisingDoc.version + 1}
                 </span>
                 <h3 className="font-serif font-bold text-base text-white">Upload Document Revision</h3>
@@ -908,7 +908,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                   placeholder={`e.g. ${revisingDoc.fileName.replace(/\.pdf$/, '')}_v${revisingDoc.version + 1}.pdf`}
                   value={revisionFormData.fileName}
                   onChange={(e) => setRevisionFormData({ ...revisionFormData, fileName: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white font-mono focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white font-medium focus:outline-none focus:border-amber-400"
                 />
               </div>
 
@@ -931,7 +931,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
           <Card className="max-w-xl w-full p-6 bg-slate-900 border-slate-800 space-y-5 shadow-2xl my-8">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
               <div>
-                <span className="text-xs font-mono uppercase text-amber-400 font-bold">
+                <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   Immutable Audit Chain
                 </span>
                 <h3 className="font-serif font-bold text-lg text-white">
@@ -946,7 +946,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
             {/* Current Active Version */}
             <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-amber-400 uppercase flex items-center gap-1.5">
+                <span className="text-xs font-medium font-bold text-amber-400 uppercase flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4" />
                   <span>Version v{historyDoc.version} (Current Active)</span>
                 </span>
@@ -954,18 +954,18 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                   Latest
                 </Badge>
               </div>
-              <div className="text-xs font-mono text-slate-300 flex justify-between">
+              <div className="text-xs font-medium text-slate-300 flex justify-between">
                 <span>{historyDoc.fileName}</span>
                 <span>{historyDoc.fileSizeFormatted}</span>
               </div>
-              <p className="text-xs text-slate-400 font-mono">
+              <p className="text-xs text-slate-400 font-medium">
                 Uploaded {historyDoc.updatedAt.split('T')[0]} by {historyDoc.uploaderName || historyDoc.uploadedBy}
               </p>
             </div>
 
             {/* Historical Predecessors */}
             <div className="space-y-3 pt-2">
-              <h4 className="text-xs font-mono uppercase text-slate-400 font-bold">
+              <h4 className="text-xs font-medium uppercase text-slate-400 font-bold">
                 Archived Previous Versions
               </h4>
 
@@ -978,16 +978,16 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                       key={hist.id}
                       className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-xs space-y-1.5"
                     >
-                      <div className="flex items-center justify-between font-mono">
+                      <div className="flex items-center justify-between font-medium">
                         <span className="font-bold text-slate-300">Version v{hist.version}</span>
                         <span className="text-slate-500">{hist.createdAt.split('T')[0]}</span>
                       </div>
-                      <div className="flex justify-between text-slate-400 font-mono text-[11px]">
+                      <div className="flex justify-between text-slate-400 font-medium text-[11px]">
                         <span>{hist.fileName}</span>
                         <span>{hist.fileSizeFormatted}</span>
                       </div>
                       {hist.changeNote && (
-                        <p className="text-amber-300/80 bg-slate-900/60 p-2 rounded text-[11px] font-mono">
+                        <p className="text-amber-300/80 bg-slate-900/60 p-2 rounded text-[11px] font-medium">
                           Note: {hist.changeNote}
                         </p>
                       )}
@@ -1037,7 +1037,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                     onChange={(e) =>
                       setEditFormData({ ...editFormData, category: e.target.value as DocumentCategory })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                   >
                     {DOCUMENT_CATEGORIES.map((cat) => (
                       <option key={cat} value={cat}>
@@ -1054,7 +1054,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                     onChange={(e) =>
                       setEditFormData({ ...editFormData, visibility: e.target.value as DocumentVisibility })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                   >
                     <option value="buyer">Buyer Visible</option>
                     <option value="internal">Internal Only</option>

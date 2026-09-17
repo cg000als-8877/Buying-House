@@ -30,11 +30,11 @@ export function ProductCategoryCard({ category }: { category: ProductCategory })
 
         <CardHeader>
           <div className="flex items-center justify-between gap-2 mb-1">
-            <Badge variant="neutral" size="sm" className="text-xs font-display">
+            <Badge variant="neutral" size="sm" className="text-xs font-sans">
               {category.leadTimeWeeks}
             </Badge>
           </div>
-          <CardTitle className="text-lg sm:text-xl font-display font-bold group-hover:text-accent transition-colors">
+          <CardTitle className="text-lg sm:text-xl font-sans font-bold group-hover:text-accent transition-colors">
             {category.name}
           </CardTitle>
           <CardDescription className="text-xs sm:text-sm text-muted-foreground font-sans">{category.subtitle}</CardDescription>

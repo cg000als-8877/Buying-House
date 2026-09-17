@@ -166,7 +166,7 @@ export function BuyerNotificationCenter() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-primary font-bold">
+            <span className="text-xs font-medium uppercase tracking-widest text-primary font-bold">
               Activity &amp; Approvals
             </span>
             {metrics && metrics.unreadCount > 0 && (
@@ -355,7 +355,7 @@ export function BuyerNotificationCenter() {
                         {notif.message}
                       </p>
 
-                      <div className="flex items-center gap-3 pt-1 text-[11px] text-muted-foreground/80 font-mono">
+                      <div className="flex items-center gap-3 pt-1 text-[11px] text-muted-foreground/80 font-medium">
                         <div className="flex items-center gap-1">
                           <Clock className="w-3 h-3" />
                           <span>
@@ -434,7 +434,7 @@ export function BuyerNotificationCenter() {
             <div className="space-y-4">
               {/* Channel toggles */}
               <div className="space-y-2 pb-3 border-b border-border">
-                <span className="text-xs font-mono uppercase tracking-wider text-primary font-bold">
+                <span className="text-xs font-medium uppercase tracking-wider text-primary font-bold">
                   Notification Channels
                 </span>
                 <label className="flex items-center justify-between p-2.5 rounded-lg bg-muted/30 border border-border cursor-pointer">
@@ -459,7 +459,7 @@ export function BuyerNotificationCenter() {
 
               {/* Category subscriptions */}
               <div className="space-y-2">
-                <span className="text-xs font-mono uppercase tracking-wider text-primary font-bold">
+                <span className="text-xs font-medium uppercase tracking-wider text-primary font-bold">
                   Category Subscriptions
                 </span>
                 {(

@@ -176,7 +176,7 @@ export function NotificationBellPopover({
               }`}
             >
               <div className="flex items-center gap-2">
-                <span className="font-display font-bold text-sm">Notifications</span>
+                <span className="font-sans font-bold text-sm">Notifications</span>
                 {unreadCount > 0 && (
                   <Badge variant={isStaff ? 'amber' : 'brand'} size="sm">
                     {unreadCount} new
@@ -255,7 +255,7 @@ export function NotificationBellPopover({
                           {notif.message}
                         </p>
 
-                        <div className="flex items-center justify-between pt-1 text-[10px] text-muted-foreground/70 font-mono">
+                        <div className="flex items-center justify-between pt-1 text-[10px] text-muted-foreground/70 font-medium">
                           <div className="flex items-center gap-1">
                             <Clock className="w-3 h-3" />
                             <span>{new Date(notif.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>

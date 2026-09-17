@@ -170,7 +170,7 @@ export default function CreateOrderPage() {
     <div className="max-w-4xl mx-auto space-y-8">
       {/* Navigation Breadcrumb */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 text-xs font-mono">
+        <div className="flex items-center gap-2 text-xs font-medium">
           <Link href="/admin/dashboard" className="text-slate-400 hover:text-white">
             Dashboard
           </Link>
@@ -211,7 +211,7 @@ export default function CreateOrderPage() {
 
           {/* Section 1: Order Identification & Client */}
           <div className="space-y-4">
-            <h3 className="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold pb-2 border-b border-slate-800">
+            <h3 className="text-xs font-medium uppercase tracking-wider text-amber-400 font-bold pb-2 border-b border-slate-800">
               1. Order Identification &amp; Tenant Assignment
             </h3>
 
@@ -223,7 +223,7 @@ export default function CreateOrderPage() {
                 <select
                   value={formData.buyerOrganizationId}
                   onChange={(e) => setFormData({ ...formData, buyerOrganizationId: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 >
                   {buyers.map((b) => (
                     <option key={b.id} value={b.id}>
@@ -246,7 +246,7 @@ export default function CreateOrderPage() {
                   placeholder="PO-2026-XXXX"
                   value={formData.orderNumber}
                   onChange={(e) => setFormData({ ...formData, orderNumber: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
                 {formErrors.orderNumber && (
                   <p className="text-[11px] text-rose-400">{formErrors.orderNumber}</p>
@@ -257,7 +257,7 @@ export default function CreateOrderPage() {
 
           {/* Section 2: Product Specifications */}
           <div className="space-y-4">
-            <h3 className="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold pb-2 border-b border-slate-800">
+            <h3 className="text-xs font-medium uppercase tracking-wider text-amber-400 font-bold pb-2 border-b border-slate-800">
               2. Product &amp; Garment Details
             </h3>
 
@@ -272,7 +272,7 @@ export default function CreateOrderPage() {
                   placeholder="e.g. STY-KNIT-402"
                   value={formData.styleNumber}
                   onChange={(e) => setFormData({ ...formData, styleNumber: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
                 {formErrors.styleNumber && (
                   <p className="text-[11px] text-rose-400">{formErrors.styleNumber}</p>
@@ -325,7 +325,7 @@ export default function CreateOrderPage() {
                   min={1}
                   value={formData.quantity}
                   onChange={(e) => setFormData({ ...formData, quantity: Number(e.target.value) })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
                 {formErrors.quantity && (
                   <p className="text-[11px] text-rose-400">{formErrors.quantity}</p>
@@ -342,7 +342,7 @@ export default function CreateOrderPage() {
                   placeholder="e.g. 4.50"
                   value={formData.unitPrice}
                   onChange={(e) => setFormData({ ...formData, unitPrice: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
 
@@ -353,7 +353,7 @@ export default function CreateOrderPage() {
                 <select
                   value={formData.currency}
                   onChange={(e) => setFormData({ ...formData, currency: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 >
                   <option value="USD">USD ($)</option>
                   <option value="EUR">EUR (€)</option>
@@ -365,7 +365,7 @@ export default function CreateOrderPage() {
 
           {/* Section 3: Manufacturing & Operations Allocation */}
           <div className="space-y-4">
-            <h3 className="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold pb-2 border-b border-slate-800">
+            <h3 className="text-xs font-medium uppercase tracking-wider text-amber-400 font-bold pb-2 border-b border-slate-800">
               3. Factory Allocation &amp; Merchandising Schedule
             </h3>
 
@@ -377,7 +377,7 @@ export default function CreateOrderPage() {
                 <select
                   value={formData.factoryId}
                   onChange={(e) => setFormData({ ...formData, factoryId: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 >
                   {factories.map((f) => (
                     <option key={f.id} value={f.id}>
@@ -397,7 +397,7 @@ export default function CreateOrderPage() {
                 <select
                   value={formData.assignedMerchandiserId}
                   onChange={(e) => setFormData({ ...formData, assignedMerchandiserId: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 >
                   {merchandisers.map((m) => (
                     <option key={m.uid} value={m.uid}>
@@ -418,7 +418,7 @@ export default function CreateOrderPage() {
                   required
                   value={formData.orderDate}
                   onChange={(e) => setFormData({ ...formData, orderDate: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
 
@@ -431,7 +431,7 @@ export default function CreateOrderPage() {
                   required
                   value={formData.exFactoryDate}
                   onChange={(e) => setFormData({ ...formData, exFactoryDate: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
                 {formErrors.exFactoryDate && (
                   <p className="text-[11px] text-rose-400">{formErrors.exFactoryDate}</p>
@@ -446,7 +446,7 @@ export default function CreateOrderPage() {
                   type="date"
                   value={formData.shipmentDate}
                   onChange={(e) => setFormData({ ...formData, shipmentDate: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
             </div>

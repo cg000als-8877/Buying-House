@@ -38,13 +38,13 @@ export function Navbar() {
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-amber-400 via-amber-500 to-amber-700 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-              <span className="font-display font-black text-slate-950 text-2xl tracking-tighter">BH</span>
+              <span className="font-bold text-slate-950 text-2xl tracking-tight">BH</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-extrabold text-xl md:text-2xl tracking-wide text-white group-hover:text-amber-300 transition-colors">
+              <span className="font-bold text-xl md:text-2xl tracking-wide text-white group-hover:text-amber-300 transition-colors">
                 ATELIER &amp; CO.
               </span>
-              <span className="text-xs tracking-widest uppercase text-emerald-400 font-semibold font-display">
+              <span className="text-xs tracking-widest uppercase text-emerald-400 font-semibold">
                 Global Apparel Sourcing
               </span>
             </div>

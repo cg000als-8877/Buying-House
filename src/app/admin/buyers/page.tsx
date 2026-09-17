@@ -153,13 +153,13 @@ export default function AdminBuyersPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
+            <span className="text-xs font-medium uppercase tracking-widest text-amber-400 font-bold">
               Client Directory
             </span>
-            <span className="text-slate-500">•</span>
-            <span className="text-xs font-mono text-slate-400">{buyers.length} Organizations</span>
+            <span className="text-slate-600">/</span>
+            <span className="text-xs font-medium text-slate-400">{buyers.length} Organizations</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
             Buyer Organizations
           </h1>
           <p className="text-sm text-slate-400 mt-1">
@@ -209,7 +209,7 @@ export default function AdminBuyersPage() {
         {(searchQuery || statusFilter !== 'ALL') && (
           <div className="flex items-center justify-between pt-2 border-t border-slate-800/80 text-xs">
             <span className="text-slate-400">
-              Showing <strong className="text-white font-mono">{filteredBuyers.length}</strong> of {buyers.length} organizations
+              Showing <strong className="text-white font-medium">{filteredBuyers.length}</strong> of {buyers.length} organizations
             </span>
             <button
               onClick={() => {
@@ -246,7 +246,7 @@ export default function AdminBuyersPage() {
         <Card className="overflow-hidden border-slate-800 bg-slate-900/80">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs text-slate-300">
-              <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase font-mono text-slate-400">
+              <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase font-medium text-slate-400">
                 <tr>
                   <th className="py-3.5 px-4">Organization Name</th>
                   <th className="py-3.5 px-4">Country</th>
@@ -266,18 +266,18 @@ export default function AdminBuyersPage() {
                     <tr key={org.id} className="hover:bg-slate-800/40 transition-colors">
                       <td className="py-3.5 px-4">
                         <span className="font-semibold text-white block text-sm">{org.name}</span>
-                        <span className="text-[10px] font-mono text-slate-500">ID: {org.id}</span>
+                        <span className="text-[10px] font-medium text-slate-500">ID: {org.id}</span>
                       </td>
                       <td className="py-3.5 px-4 text-slate-300">
                         {org.country}
                       </td>
                       <td className="py-3.5 px-4 text-slate-400 space-y-0.5">
-                        <div className="flex items-center gap-1.5 font-mono text-[11px] text-slate-300">
+                        <div className="flex items-center gap-1.5 font-medium text-[11px] text-slate-300">
                           <Mail className="w-3 h-3 text-slate-500" />
                           <span>{org.contactEmail}</span>
                         </div>
                         {org.contactPhone && (
-                          <div className="flex items-center gap-1.5 font-mono text-[10px] text-slate-500">
+                          <div className="flex items-center gap-1.5 font-medium text-[10px] text-slate-500">
                             <Phone className="w-3 h-3 text-slate-600" />
                             <span>{org.contactPhone}</span>
                           </div>
@@ -293,7 +293,7 @@ export default function AdminBuyersPage() {
                         </Badge>
                       </td>
                       <td className="py-3.5 px-4">
-                        <span className="font-mono font-bold text-white px-2 py-0.5 rounded bg-slate-800 border border-slate-700">
+                        <span className="font-medium font-bold text-white px-2 py-0.5 rounded bg-slate-800 border border-slate-700">
                           {activeCount} Active
                         </span>
                       </td>

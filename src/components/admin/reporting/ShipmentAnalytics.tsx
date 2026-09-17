@@ -24,7 +24,7 @@ export function ShipmentAnalytics({ data, onExport }: ShipmentAnalyticsProps) {
       key: 'totalShipments',
       header: 'Consignments Handled',
       align: 'center',
-      render: (item) => <span className="font-mono">{item.totalShipments}</span>,
+      render: (item) => <span className="font-medium">{item.totalShipments}</span>,
     },
     {
       key: 'onTimeRate',
@@ -41,7 +41,7 @@ export function ShipmentAnalytics({ data, onExport }: ShipmentAnalyticsProps) {
       header: 'Avg Variance',
       align: 'right',
       render: (item) => (
-        <span className={`font-mono ${item.avgDelayDays > 0 ? 'text-rose-500 font-semibold' : 'text-emerald-500'}`}>
+        <span className={`font-medium ${item.avgDelayDays > 0 ? 'text-rose-500 font-semibold' : 'text-emerald-500'}`}>
           {item.avgDelayDays > 0 ? `+${item.avgDelayDays} days` : 'On Schedule'}
         </span>
       ),

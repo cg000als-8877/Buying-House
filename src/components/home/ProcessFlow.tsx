@@ -49,17 +49,17 @@ export function ProcessFlow() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="text-emerald-400 text-xs sm:text-sm font-bold uppercase tracking-widest font-display">
+          <div className="text-emerald-400 text-xs sm:text-sm font-bold uppercase tracking-widest">
             Streamlined Sourcing Pipeline
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
             How We Bring Your{' '}
-            <span className="text-emerald-400 font-extrabold">
+            <span className="text-emerald-400 font-bold">
               Apparel Line
             </span>{' '}
             to Life
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed font-sans">
+          <p className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
             Transparent milestones, rigorous quality checks, and real-time updates from initial sketch to final delivery.
           </p>
         </div>
@@ -79,16 +79,16 @@ export function ProcessFlow() {
                   <div className="w-12 h-12 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center">
                     {item.icon}
                   </div>
-                  <span className="font-display font-black text-3xl text-slate-700 group-hover:text-amber-400/60 transition-colors">
+                  <span className="font-bold text-3xl text-slate-700 group-hover:text-amber-400/60 transition-colors">
                     {item.step}
                   </span>
                 </div>
 
                 <div className="space-y-2.5">
-                  <h3 className="font-display font-bold text-lg sm:text-xl text-white group-hover:text-amber-300 transition-colors">
+                  <h3 className="font-bold text-lg sm:text-xl text-white group-hover:text-amber-300 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
+                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

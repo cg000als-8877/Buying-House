@@ -21,7 +21,7 @@ export function AdminGuard({ children }: { children: React.ReactNode }) {
     return (
       <div className="min-h-[70vh] flex flex-col items-center justify-center p-6 space-y-4">
         <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-        <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider">
+        <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
           Verifying staff credentials & permissions...
         </p>
       </div>

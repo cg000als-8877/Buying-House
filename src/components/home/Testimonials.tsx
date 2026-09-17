@@ -10,12 +10,12 @@ export function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="text-amber-400 text-xs sm:text-sm font-bold uppercase tracking-widest font-display">
+          <div className="text-amber-400 text-xs sm:text-sm font-bold uppercase tracking-widest">
             Trusted by Global Fashion Houses
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
             What International{' '}
-            <span className="text-amber-400 font-extrabold">
+            <span className="text-amber-400 font-bold">
               Brand Directors
             </span>{' '}
             Say
@@ -49,7 +49,7 @@ export function Testimonials() {
                   className="w-11 h-11 rounded-full object-cover border border-amber-500/30"
                 />
                 <div>
-                  <h4 className="text-sm sm:text-base font-bold text-white font-display">{item.clientName}</h4>
+                  <h4 className="text-sm sm:text-base font-bold text-white font-sans">{item.clientName}</h4>
                   <p className="text-xs sm:text-sm text-slate-400 font-sans">{item.role}</p>
                   <p className="text-xs text-emerald-400 font-semibold font-sans">{item.brand}</p>
                 </div>

@@ -27,6 +27,7 @@ import {
   createSampleRevisionSchema,
 } from '@/lib/validation/sample.schema';
 import { logSecurityEvent } from '@/lib/audit';
+import { normalizeBuyerOrgId } from '@/lib/auth/session';
 
 // ============================================================================
 // IN-MEMORY DEMO FIXTURES (For development fallback and unit testing)
@@ -224,9 +225,12 @@ export async function getSamplesForBuyer(
   buyerOrganizationId: string
 ): Promise<Sample[]> {
   const allSamples = await getSamplesByOrder(orderId);
+  const normId = normalizeBuyerOrgId(buyerOrganizationId);
 
   // Filter for matching organization
-  const orgSamples = allSamples.filter((s) => s.buyerOrganizationId === buyerOrganizationId);
+  const orgSamples = allSamples.filter(
+    (s) => normalizeBuyerOrgId(s.buyerOrganizationId) === normId
+  );
 
   // Sanitize buyer-visible data
   return orgSamples.map((sample) => ({

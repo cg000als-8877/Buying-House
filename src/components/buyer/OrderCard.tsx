@@ -37,15 +37,15 @@ export function OrderCard({ order }: OrderCardProps) {
         {/* Left Section: Order Identity & Product Info */}
         <div className="space-y-2.5 max-w-xl">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-mono font-bold text-primary px-2 py-0.5 rounded bg-primary/10 border border-primary/20">
+            <span className="text-xs font-medium font-bold text-primary px-2 py-0.5 rounded bg-primary/10 border border-primary/20">
               {order.orderNumber}
             </span>
-            <span className="text-xs font-mono text-muted-foreground">
+            <span className="text-xs font-medium text-muted-foreground">
               Style: {order.styleNumber}
             </span>
             <OrderStatusBadge status={order.currentStatus} size="sm" />
             {order.priority && order.priority !== 'medium' && (
-              <span className={`text-[10px] uppercase font-mono px-1.5 py-0.5 rounded font-bold ${
+              <span className={`text-[10px] uppercase font-medium px-1.5 py-0.5 rounded font-bold ${
                 order.priority === 'urgent'
                   ? 'bg-rose-950/60 text-rose-400 border border-rose-800/60'
                   : 'bg-amber-950/60 text-amber-400 border border-amber-800/60'
@@ -56,7 +56,7 @@ export function OrderCard({ order }: OrderCardProps) {
           </div>
 
           <div>
-            <h3 className="text-base sm:text-lg font-semibold text-foreground tracking-tight hover:text-primary transition-colors">
+            <h3 className="text-base sm:text-lg font-sans font-bold text-foreground tracking-tight hover:text-primary transition-colors">
               <Link href={`/buyer/orders/${order.id}`}>
                 {order.productName}
               </Link>
@@ -66,11 +66,11 @@ export function OrderCard({ order }: OrderCardProps) {
                 <Layers className="w-3.5 h-3.5 text-muted-foreground/70" />
                 Category: <strong className="text-foreground font-medium">{order.category}</strong>
               </span>
-              <span>•</span>
+              <span className="text-border">|</span>
               <span>Quantity: <strong className="text-foreground font-medium">{order.quantity.toLocaleString()} pcs</strong></span>
               {order.factoryId && (
                 <>
-                  <span>•</span>
+                  <span className="text-border">|</span>
                   <span>Factory Ref: <strong className="text-foreground font-medium">{order.factoryId}</strong></span>
                 </>
               )}
@@ -85,10 +85,10 @@ export function OrderCard({ order }: OrderCardProps) {
           <div className="flex items-center justify-between text-[11px] text-muted-foreground">
             <span className="flex items-center gap-1">
               <Calendar className="w-3 h-3 text-muted-foreground/80" />
-              Ex-Factory: <strong className="text-foreground font-mono">{order.exFactoryDate}</strong>
+              Ex-Factory: <strong className="text-foreground font-medium">{order.exFactoryDate}</strong>
             </span>
             {order.shipmentDate && (
-              <span className="font-mono text-muted-foreground">
+              <span className="font-medium text-muted-foreground">
                 Ship: {order.shipmentDate}
               </span>
             )}

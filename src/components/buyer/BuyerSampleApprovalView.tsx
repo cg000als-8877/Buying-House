@@ -195,7 +195,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
 
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border/80">
         <div>
-          <span className="text-xs font-mono uppercase text-primary font-bold">
+          <span className="text-xs font-medium uppercase text-primary font-bold">
             Fit, Proto &amp; Pre-Production Approvals
           </span>
           <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground">
@@ -236,11 +236,11 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
                   <div className="flex items-start justify-between gap-2 pb-3 border-b border-border/60">
                     <div>
                       <div className="flex items-center gap-1.5">
-                        <span className="text-[10px] font-mono text-primary uppercase font-bold tracking-wider">
+                        <span className="text-[10px] font-medium text-primary uppercase font-bold tracking-wider">
                           Revision v{sample.revisionNumber}
                         </span>
                         {(sample.history?.length || 0) > 0 && (
-                          <span className="text-[10px] font-mono text-muted-foreground">
+                          <span className="text-[10px] font-medium text-muted-foreground">
                             ({sample.history?.length} previous round{(sample.history?.length || 0) > 1 ? 's' : ''})
                           </span>
                         )}
@@ -280,12 +280,12 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
                           <Truck className="w-3.5 h-3.5 text-primary" />
                           <span>{sample.courierName || 'Airway Bill'}:</span>
                         </span>
-                        <span className="font-mono font-bold text-primary truncate max-w-[150px]">
+                        <span className="font-medium font-bold text-primary truncate max-w-[150px]">
                           {sample.trackingNumber}
                         </span>
                       </div>
                       {sample.submittedAt && (
-                        <div className="text-[11px] text-muted-foreground font-mono text-right">
+                        <div className="text-[11px] text-muted-foreground font-medium text-right">
                           Dispatched: {sample.submittedAt.split('T')[0]}
                         </div>
                       )}
@@ -294,7 +294,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
 
                   {sample.buyerRemarks && (
                     <div className="text-xs text-muted-foreground space-y-1">
-                      <span className="text-[10px] font-mono uppercase text-foreground/70 font-semibold block">
+                      <span className="text-[10px] font-medium uppercase text-foreground/70 font-semibold block">
                         Specification Notes:
                       </span>
                       <p className="line-clamp-2 leading-relaxed">{sample.buyerRemarks}</p>
@@ -311,7 +311,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
                           : 'bg-rose-950/30 border-rose-500/30 text-rose-300'
                       }`}
                     >
-                      <span className="text-[10px] font-mono uppercase font-bold block mb-1">
+                      <span className="text-[10px] font-medium uppercase font-bold block mb-1">
                         Your Feedback ({sample.decidedAt?.split('T')[0]}):
                       </span>
                       <p className="line-clamp-2 italic">&quot;{sample.buyerFeedback}&quot;</p>
@@ -371,7 +371,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
           <Card className="max-w-lg w-full p-6 bg-card border-border space-y-5 shadow-2xl">
             <div className="flex items-center justify-between pb-3 border-b border-border">
               <div>
-                <span className="text-xs font-mono uppercase text-primary font-bold">
+                <span className="text-xs font-medium uppercase text-primary font-bold">
                   Buyer Quality Verification
                 </span>
                 <h3 className="font-serif font-bold text-lg text-foreground">
@@ -488,7 +488,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
           <Card className="max-w-2xl w-full p-6 bg-card border-border space-y-6 shadow-2xl my-8">
             <div className="flex items-center justify-between pb-3 border-b border-border">
               <div>
-                <span className="text-xs font-mono uppercase text-primary font-bold">
+                <span className="text-xs font-medium uppercase text-primary font-bold">
                   Revision v{selectedSample.revisionNumber}
                 </span>
                 <h3 className="font-serif font-bold text-xl text-foreground">
@@ -506,13 +506,13 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div className="p-3 rounded-xl bg-muted/40 border border-border/60">
                 <span className="text-muted-foreground block text-[11px]">Courier / AWB Tracking:</span>
-                <span className="font-mono font-bold text-foreground">
+                <span className="font-medium font-bold text-foreground">
                   {selectedSample.courierName || 'Carrier'}: {selectedSample.trackingNumber || 'Pending'}
                 </span>
               </div>
               <div className="p-3 rounded-xl bg-muted/40 border border-border/60">
                 <span className="text-muted-foreground block text-[11px]">Submission Date:</span>
-                <span className="font-mono text-foreground">
+                <span className="font-medium text-foreground">
                   {selectedSample.submittedAt?.split('T')[0] || 'In Preparation'}
                 </span>
               </div>
@@ -520,7 +520,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
 
             {(selectedSample.attachments?.length || 0) > 0 && (
               <div className="space-y-2">
-                <h4 className="text-xs font-mono uppercase font-bold text-foreground flex items-center gap-1.5">
+                <h4 className="text-xs font-medium uppercase font-bold text-foreground flex items-center gap-1.5">
                   <Paperclip className="w-3.5 h-3.5 text-primary" />
                   <span>Verified Sample Attachments &amp; Photos</span>
                 </h4>
@@ -532,7 +532,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
                     >
                       <div className="truncate text-xs">
                         <div className="font-semibold text-foreground truncate">{att.fileName}</div>
-                        <div className="text-[10px] text-muted-foreground font-mono">{att.fileSize}</div>
+                        <div className="text-[10px] text-muted-foreground font-medium">{att.fileSize}</div>
                       </div>
                       {att.url && (
                         <a
@@ -552,7 +552,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
 
             {(selectedSample.history?.length || 0) > 0 && (
               <div className="space-y-3 pt-3 border-t border-border">
-                <h4 className="text-xs font-mono uppercase font-bold text-foreground flex items-center gap-1.5">
+                <h4 className="text-xs font-medium uppercase font-bold text-foreground flex items-center gap-1.5">
                   <History className="w-3.5 h-3.5 text-amber-400" />
                   <span>Previous Revision Rounds</span>
                 </h4>
@@ -563,7 +563,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
                       className="p-3 rounded-xl bg-muted/40 border border-border text-xs space-y-1.5"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-mono font-bold text-primary">Revision v{rev.revisionNumber}</span>
+                        <span className="font-medium font-bold text-primary">Revision v{rev.revisionNumber}</span>
                         <Badge
                           variant={
                             rev.status === 'approved'
@@ -581,7 +581,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
                         <p className="text-muted-foreground italic">&quot;{rev.buyerFeedback}&quot;</p>
                       )}
                       {rev.revisionNotes && (
-                        <p className="text-[11px] text-foreground font-mono">Note: {rev.revisionNotes}</p>
+                        <p className="text-[11px] text-foreground font-medium">Note: {rev.revisionNotes}</p>
                       )}
                     </div>
                   ))}
@@ -590,7 +590,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
             )}
 
             <div className="space-y-3 pt-3 border-t border-border">
-              <h4 className="text-xs font-mono uppercase font-bold text-foreground flex items-center gap-1.5">
+              <h4 className="text-xs font-medium uppercase font-bold text-foreground flex items-center gap-1.5">
                 <MessageSquare className="w-3.5 h-3.5 text-primary" />
                 <span>Technical Discussion Thread</span>
               </h4>
@@ -604,7 +604,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
                       key={comment.id}
                       className="p-2.5 rounded-xl bg-muted/30 border border-border/50 text-xs space-y-1"
                     >
-                      <div className="flex justify-between items-center text-[10px] text-muted-foreground font-mono">
+                      <div className="flex justify-between items-center text-[10px] text-muted-foreground font-medium">
                         <span className="font-bold text-foreground">{comment.authorName}</span>
                         <span>{comment.createdAt.split('T')[0]}</span>
                       </div>

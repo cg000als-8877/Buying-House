@@ -111,37 +111,37 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
       {summary && (
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <Card className="p-4 bg-card/90 border-border/80 space-y-1">
-            <span className="text-[11px] font-mono uppercase text-muted-foreground font-semibold block">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold block">
               Order Target
             </span>
-            <div className="text-xl font-bold text-foreground font-mono">
+            <div className="text-xl font-bold text-foreground font-medium">
               {summary.orderQuantity.toLocaleString()} <span className="text-xs text-muted-foreground">pcs</span>
             </div>
             <span className="text-[10px] text-muted-foreground">Contracted purchase volume</span>
           </Card>
 
           <Card className="p-4 bg-card/90 border-border/80 space-y-1">
-            <span className="text-[11px] font-mono uppercase text-muted-foreground font-semibold block">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold block">
               Cumulative Produced
             </span>
-            <div className="text-xl font-bold text-emerald-400 font-mono">
+            <div className="text-xl font-bold text-emerald-400 font-medium">
               {summary.completedQuantity.toLocaleString()} <span className="text-xs text-muted-foreground">pcs</span>
             </div>
             <span className="text-[10px] text-muted-foreground">Verified factory output</span>
           </Card>
 
           <Card className="p-4 bg-card/90 border-border/80 space-y-1">
-            <span className="text-[11px] font-mono uppercase text-muted-foreground font-semibold block">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold block">
               Remaining Units
             </span>
-            <div className="text-xl font-bold text-primary font-mono">
+            <div className="text-xl font-bold text-primary font-medium">
               {summary.remainingQuantity.toLocaleString()} <span className="text-xs text-muted-foreground">pcs</span>
             </div>
             <span className="text-[10px] text-muted-foreground">Balance in assembly</span>
           </Card>
 
           <Card className="p-4 bg-card/90 border-border/80 space-y-1">
-            <span className="text-[11px] font-mono uppercase text-muted-foreground font-semibold block">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold block">
               Manufacturing Stage
             </span>
             <div className="pt-1">
@@ -160,14 +160,14 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
       <Card className="p-6 bg-card/80 border-border/80 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-border">
           <div>
-            <span className="text-xs font-mono uppercase text-primary font-bold">
+            <span className="text-xs font-medium uppercase text-primary font-bold">
               Production Workflow
             </span>
             <h3 className="font-serif font-bold text-lg text-foreground">
               Garment Manufacturing Pipeline
             </h3>
           </div>
-          <div className="flex items-center gap-1.5 text-xs text-emerald-400 font-mono">
+          <div className="flex items-center gap-1.5 text-xs text-emerald-400 font-medium">
             <ShieldCheck className="w-4 h-4" />
             <span>Verified Floor Reporting</span>
           </div>
@@ -193,7 +193,7 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
                 }`}
               >
                 <div className="flex items-center justify-between gap-1 pb-1.5 border-b border-border/60">
-                  <span className="text-[10px] font-mono font-bold uppercase text-muted-foreground">
+                  <span className="text-[10px] font-medium font-bold uppercase text-muted-foreground">
                     Step {stage.sequence}
                   </span>
                   <Badge
@@ -208,7 +208,7 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
                   {stage.stageName}
                 </h4>
 
-                <div className="pt-2 space-y-1 text-[11px] font-mono">
+                <div className="pt-2 space-y-1 text-[11px] font-medium">
                   <div className="flex justify-between text-muted-foreground">
                     <span>Produced:</span>
                     <span className="text-foreground font-bold">{stage.cumulativeQuantity.toLocaleString()}</span>
@@ -220,7 +220,7 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
                 </div>
 
                 {stage.lastUpdateDate && (
-                  <div className="mt-2 pt-1.5 border-t border-border/60 text-[10px] font-mono text-muted-foreground truncate">
+                  <div className="mt-2 pt-1.5 border-t border-border/60 text-[10px] font-medium text-muted-foreground truncate">
                     Updated: {stage.lastUpdateDate}
                   </div>
                 )}
@@ -235,14 +235,14 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
         <Card className="p-6 bg-card/80 border-border/80 space-y-4">
           <div className="flex items-center justify-between pb-2 border-b border-border">
             <div>
-              <span className="text-xs font-mono uppercase text-primary font-bold">
+              <span className="text-xs font-medium uppercase text-primary font-bold">
                 Output Progress
               </span>
               <h3 className="font-serif font-bold text-lg text-foreground">
                 Daily Manufacturing Output
               </h3>
             </div>
-            <span className="text-xs font-mono text-muted-foreground">Pieces (pcs)</span>
+            <span className="text-xs font-medium text-muted-foreground">Pieces (pcs)</span>
           </div>
 
           <div className="h-64 w-full pt-4">
@@ -268,14 +268,14 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
       <Card className="p-6 bg-card/80 border-border/80 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-border">
           <div>
-            <span className="text-xs font-mono uppercase text-primary font-bold">
+            <span className="text-xs font-medium uppercase text-primary font-bold">
               Verified Log Stream
             </span>
             <h3 className="font-serif font-bold text-lg text-foreground">
               Daily Production Reporting History
             </h3>
           </div>
-          <span className="text-xs font-mono text-muted-foreground">
+          <span className="text-xs font-medium text-muted-foreground">
             {publishedLogs.length} Verified Entries
           </span>
         </div>
@@ -289,7 +289,7 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="border-b border-border text-muted-foreground font-mono text-[11px] uppercase">
+                <tr className="border-b border-border text-muted-foreground font-medium text-[11px] uppercase">
                   <th className="py-3 px-3">Date</th>
                   <th className="py-3 px-3">Stage</th>
                   <th className="py-3 px-3 text-right">Target (pcs)</th>
@@ -299,7 +299,7 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
                   <th className="py-3 px-3">Remarks</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border/60 font-mono">
+              <tbody className="divide-y divide-border/60 font-medium">
                 {publishedLogs.map((log) => (
                   <tr key={log.id} className="hover:bg-muted/40 transition-colors">
                     <td className="py-3 px-3 text-foreground font-semibold whitespace-nowrap">
@@ -333,14 +333,14 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
       <Card className="p-6 bg-card/80 border-border/80 space-y-4">
         <div className="flex items-center justify-between pb-3 border-b border-border">
           <div>
-            <span className="text-xs font-mono uppercase text-primary font-bold">
+            <span className="text-xs font-medium uppercase text-primary font-bold">
               Factory Floor Documentation
             </span>
             <h3 className="font-serif font-bold text-lg text-foreground">
               Production &amp; Inspection Snapshots
             </h3>
           </div>
-          <span className="text-xs font-mono text-muted-foreground">{photos.length} Photos</span>
+          <span className="text-xs font-medium text-muted-foreground">{photos.length} Photos</span>
         </div>
 
         {photos.length === 0 ? (
@@ -364,7 +364,7 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
                 </div>
                 <div className="p-2.5 space-y-1 text-xs">
                   <p className="text-foreground line-clamp-2">{photo.caption || 'Inspection photo'}</p>
-                  <span className="text-[10px] font-mono text-muted-foreground block pt-0.5">
+                  <span className="text-[10px] font-medium text-muted-foreground block pt-0.5">
                     {photo.createdAt?.split('T')[0]}
                   </span>
                 </div>

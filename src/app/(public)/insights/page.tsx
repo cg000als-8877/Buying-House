@@ -17,10 +17,10 @@ export default function InsightsPage() {
     <div className="space-y-16 lg:space-y-24 py-12 lg:py-16">
       {/* 1. Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-sans">
           Industry Knowledge
         </p>
-        <h1 className="font-display font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
+        <h1 className="font-sans font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
           Apparel Sourcing Insights & Technical Guides.
         </h1>
         <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -39,7 +39,7 @@ export default function InsightsPage() {
                     <Badge variant="neutral" size="sm">
                       {article.category}
                     </Badge>
-                    <span className="text-[11px] font-mono text-muted-foreground flex items-center gap-1">
+                    <span className="text-[11px] font-medium text-muted-foreground flex items-center gap-1">
                       <Clock className="w-3.5 h-3.5" />
                       {article.readTime}
                     </span>

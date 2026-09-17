@@ -97,13 +97,13 @@ export function BuyerSidebar({
           className="flex items-center gap-3 group"
         >
           <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
-            <span className="font-display font-black text-lg">XYZ</span>
+            <span className="font-bold text-lg">XYZ</span>
           </div>
           <div>
-            <div className="font-display font-bold text-base text-foreground leading-tight">
+            <div className="font-bold text-base text-foreground leading-tight">
               Buying House
             </div>
-            <div className="text-[10px] font-mono uppercase tracking-widest text-primary font-bold">
+            <div className="text-[10px] uppercase tracking-widest text-primary font-bold">
               Buyer Portal
             </div>
           </div>
@@ -117,7 +117,7 @@ export function BuyerSidebar({
               {user?.buyerOrganizationId || 'buyer-org-001'}
             </Badge>
           </div>
-          <div className="flex items-center gap-1.5 mt-1 text-[11px] text-muted-foreground font-mono">
+          <div className="flex items-center gap-1.5 mt-1 text-[11px] text-muted-foreground">
             <ShieldCheck className="w-3 h-3 text-emerald-400" />
             <span className="truncate">Isolated Tenant Workspace</span>
           </div>
@@ -126,7 +126,7 @@ export function BuyerSidebar({
 
       {/* Navigation List */}
       <nav className="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto">
-        <div className="px-3 pb-2 text-[10px] font-mono uppercase tracking-wider text-muted-foreground/70 font-semibold">
+        <div className="px-3 pb-2 text-[10px] uppercase tracking-wider text-muted-foreground/70 font-semibold">
           Main Navigation
         </div>
         {navItems.map((item) => {
@@ -148,7 +148,7 @@ export function BuyerSidebar({
               </div>
               {item.badge !== undefined && (
                 <span
-                  className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded-full ${
+                  className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
                     item.active
                       ? 'bg-primary-foreground text-primary'
                       : 'bg-primary/20 text-primary border border-primary/30'
@@ -161,7 +161,7 @@ export function BuyerSidebar({
           );
         })}
 
-        <div className="pt-6 px-3 pb-2 text-[10px] font-mono uppercase tracking-wider text-muted-foreground/70 font-semibold">
+        <div className="pt-6 px-3 pb-2 text-[10px] uppercase tracking-wider text-muted-foreground/70 font-semibold">
           Public Website
         </div>
         <Link
@@ -184,7 +184,7 @@ export function BuyerSidebar({
             <p className="text-xs font-semibold text-foreground truncate">
               {user?.displayName || user?.email || 'Authorized Buyer'}
             </p>
-            <p className="text-[10px] font-mono text-muted-foreground truncate">
+            <p className="text-[10px] text-muted-foreground truncate">
               Role: {user?.role || 'buyer'}
             </p>
           </div>

@@ -29,19 +29,19 @@ export function ProductionAnalytics({ data, onExport }: ProductionAnalyticsProps
       key: 'activeLines',
       header: 'Active Lines',
       align: 'center',
-      render: (item) => <span className="font-mono">{item.activeLines} Lines</span>,
+      render: (item) => <span className="font-medium">{item.activeLines} Lines</span>,
     },
     {
       key: 'plannedQty',
       header: 'Planned (pcs)',
       align: 'right',
-      render: (item) => <span className="font-mono">{item.plannedQty.toLocaleString()}</span>,
+      render: (item) => <span className="font-medium">{item.plannedQty.toLocaleString()}</span>,
     },
     {
       key: 'producedQty',
       header: 'Produced (pcs)',
       align: 'right',
-      render: (item) => <span className="font-mono font-bold text-emerald-500">{item.producedQty.toLocaleString()}</span>,
+      render: (item) => <span className="font-medium font-bold text-emerald-500">{item.producedQty.toLocaleString()}</span>,
     },
     {
       key: 'efficiencyRate',

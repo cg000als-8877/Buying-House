@@ -32,10 +32,10 @@ export function AdminHeader({ unreadCount = 0 }: AdminHeaderProps) {
           </button>
 
           <div className="flex items-center gap-2">
-            <span className="font-display font-bold text-base text-white lg:hidden">
+            <span className="font-sans font-bold text-base text-white lg:hidden">
               XYZ Operations
             </span>
-            <span className="hidden sm:inline-block text-xs font-mono text-slate-400">
+            <span className="hidden sm:inline-block text-xs font-medium text-slate-400">
               Internal Control Center
             </span>
           </div>

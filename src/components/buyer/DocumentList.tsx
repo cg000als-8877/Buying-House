@@ -22,7 +22,7 @@ export function DocumentList({ documents }: DocumentListProps) {
     <Card className="p-6 space-y-4">
       <div className="flex items-center justify-between pb-3 border-b border-slate-800">
         <div>
-          <span className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">
+          <span className="text-xs font-medium text-emerald-400 font-bold uppercase tracking-wider">
             Verified Vault
           </span>
           <h3 className="font-serif font-bold text-lg text-white">
@@ -56,7 +56,7 @@ export function DocumentList({ documents }: DocumentListProps) {
                   )}
                 </div>
                 <p className="text-xs text-slate-400">
-                  {doc.type} • {doc.fileSize} • Uploaded {doc.uploadDate}
+                  {doc.type} | {doc.fileSize} | Uploaded {doc.uploadDate}
                 </p>
               </div>
             </div>

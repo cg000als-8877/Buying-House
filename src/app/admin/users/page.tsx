@@ -217,13 +217,13 @@ export default function AdminUsersPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
+            <span className="text-xs font-medium uppercase tracking-widest text-amber-400 font-bold">
               Access Control &amp; RBAC
             </span>
-            <span className="text-slate-500">•</span>
-            <span className="text-xs font-mono text-slate-400">{users.length} Users</span>
+            <span className="text-slate-600">/</span>
+            <span className="text-xs font-medium text-slate-400">{users.length} Users</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
             User Directory &amp; Role Management
           </h1>
           <p className="text-sm text-slate-400 mt-1">
@@ -299,7 +299,7 @@ export default function AdminUsersPage() {
         {(searchQuery || roleFilter !== 'ALL' || statusFilter !== 'ALL') && (
           <div className="flex items-center justify-between pt-2 border-t border-slate-800/80 text-xs">
             <span className="text-slate-400">
-              Showing <strong className="text-white font-mono">{filteredUsers.length}</strong> of {users.length} users
+              Showing <strong className="text-white font-medium">{filteredUsers.length}</strong> of {users.length} users
             </span>
             <button
               onClick={() => {
@@ -337,7 +337,7 @@ export default function AdminUsersPage() {
         <Card className="overflow-hidden border-slate-800 bg-slate-900/80">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs text-slate-300">
-              <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase font-mono text-slate-400">
+              <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase font-medium text-slate-400">
                 <tr>
                   <th className="py-3.5 px-4">User Details</th>
                   <th className="py-3.5 px-4">System Role</th>
@@ -362,12 +362,12 @@ export default function AdminUsersPage() {
                             <span className="font-semibold text-white block">
                               {u.displayName}
                               {isSelf && (
-                                <span className="ml-1.5 text-[10px] font-mono text-amber-400 font-normal">
+                                <span className="ml-1.5 text-[10px] font-medium text-amber-400 font-normal">
                                   (You)
                                 </span>
                               )}
                             </span>
-                            <span className="text-[11px] font-mono text-slate-400">{u.email}</span>
+                            <span className="text-[11px] font-medium text-slate-400">{u.email}</span>
                           </div>
                         </div>
                       </td>
@@ -382,7 +382,7 @@ export default function AdminUsersPage() {
                           <select
                             value={u.role}
                             onChange={(e) => handleRoleUpdate(u.uid, e.target.value as UserRole)}
-                            className="px-2 py-1 text-xs bg-slate-950 rounded border border-slate-700 text-white font-mono focus:outline-none focus:border-amber-400"
+                            className="px-2 py-1 text-xs bg-slate-950 rounded border border-slate-700 text-white font-medium focus:outline-none focus:border-amber-400"
                           >
                             {SYSTEM_ROLES.map((r) => (
                               <option key={r} value={r}>
@@ -403,7 +403,7 @@ export default function AdminUsersPage() {
                           <select
                             value={u.status}
                             onChange={(e) => handleStatusUpdate(u.uid, e.target.value as UserStatus)}
-                            className="px-2 py-1 text-xs bg-slate-950 rounded border border-slate-700 text-white font-mono focus:outline-none focus:border-amber-400"
+                            className="px-2 py-1 text-xs bg-slate-950 rounded border border-slate-700 text-white font-medium focus:outline-none focus:border-amber-400"
                           >
                             <option value="active">Active</option>
                             <option value="invited">Invited</option>
@@ -419,7 +419,7 @@ export default function AdminUsersPage() {
                           <select
                             value={u.buyerOrganizationId || ''}
                             onChange={(e) => handleOrgAssignment(u.uid, e.target.value)}
-                            className="px-2 py-1 text-xs bg-slate-950 rounded border border-slate-700 text-amber-400 font-mono focus:outline-none focus:border-amber-400 max-w-[150px]"
+                            className="px-2 py-1 text-xs bg-slate-950 rounded border border-slate-700 text-amber-400 font-medium focus:outline-none focus:border-amber-400 max-w-[150px]"
                           >
                             <option value="">Unassigned</option>
                             {buyerOrgs.map((org) => (
@@ -429,13 +429,13 @@ export default function AdminUsersPage() {
                             ))}
                           </select>
                         ) : (
-                          <span className="font-mono text-slate-500 text-[11px]">
+                          <span className="font-medium text-slate-500 text-[11px]">
                             Internal Staff
                           </span>
                         )}
                       </td>
 
-                      <td className="py-3.5 px-4 text-slate-400 font-mono text-[11px]">
+                      <td className="py-3.5 px-4 text-slate-400 font-medium text-[11px]">
                         {u.lastLoginAt ? (
                           new Date(u.lastLoginAt).toLocaleDateString()
                         ) : (
@@ -445,11 +445,11 @@ export default function AdminUsersPage() {
 
                       <td className="py-3.5 px-4 text-right">
                         {isSelf ? (
-                          <span className="text-[11px] font-mono text-slate-600">Locked Session</span>
+                          <span className="text-[11px] font-medium text-slate-600">Locked Session</span>
                         ) : (
                           <button
                             onClick={() => handleStatusUpdate(u.uid, u.status === 'active' ? 'suspended' : 'active')}
-                            className="text-[11px] text-slate-400 hover:text-amber-400 underline font-mono"
+                            className="text-[11px] text-slate-400 hover:text-amber-400 underline font-medium"
                           >
                             {u.status === 'active' ? 'Suspend Account' : 'Activate Account'}
                           </button>
@@ -519,7 +519,7 @@ export default function AdminUsersPage() {
                   placeholder="user@example.com"
                   value={inviteData.email}
                   onChange={(e) => setInviteData({ ...inviteData, email: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
 
@@ -549,7 +549,7 @@ export default function AdminUsersPage() {
                     <select
                       value={inviteData.buyerOrganizationId}
                       onChange={(e) => setInviteData({ ...inviteData, buyerOrganizationId: e.target.value })}
-                      className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-amber-400 focus:outline-none focus:border-amber-400 font-mono"
+                      className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-amber-400 focus:outline-none focus:border-amber-400 font-medium"
                     >
                       <option value="">Select Tenant Organization</option>
                       {buyerOrgs.map((org) => (
@@ -564,7 +564,7 @@ export default function AdminUsersPage() {
                     <label className="text-xs font-semibold text-slate-400">
                       Organization Scope
                     </label>
-                    <div className="px-3 py-2 text-xs bg-slate-950/60 rounded-lg border border-slate-800/80 text-slate-500 font-mono">
+                    <div className="px-3 py-2 text-xs bg-slate-950/60 rounded-lg border border-slate-800/80 text-slate-500 font-medium">
                       Internal HQ Hub
                     </div>
                   </div>

@@ -17,10 +17,10 @@ export default function QualityPage() {
     <div className="space-y-16 lg:space-y-24 py-12 lg:py-16">
       {/* 1. Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-sans">
           Quality Assurance Framework
         </p>
-        <h1 className="font-display font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
+        <h1 className="font-sans font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
           AQL Quality Assurance & Multi-Stage Inspection Framework.
         </h1>
         <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -44,7 +44,7 @@ export default function QualityPage() {
                   <Badge variant="brand" size="sm">
                     {pillar.stage}
                   </Badge>
-                  <span className="text-xs font-mono text-accent">{pillar.standard}</span>
+                  <span className="text-xs font-medium text-accent">{pillar.standard}</span>
                 </div>
                 <CardTitle className="text-lg">{pillar.title}</CardTitle>
                 <CardDescription>{pillar.description}</CardDescription>
@@ -87,7 +87,7 @@ export default function QualityPage() {
             {LAB_TESTING_PARAMETERS.map((row, idx) => (
               <TableRow key={idx}>
                 <TableCell className="font-semibold text-foreground">{row.test}</TableCell>
-                <TableCell className="font-mono text-xs">{row.method}</TableCell>
+                <TableCell className="font-medium text-xs">{row.method}</TableCell>
                 <TableCell className="text-accent font-medium">{row.tolerance}</TableCell>
               </TableRow>
             ))}

@@ -153,7 +153,7 @@ export default function AdminOrderDetailPage() {
     <div className="max-w-6xl mx-auto space-y-8">
       {/* Navigation Breadcrumb */}
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <div className="flex items-center gap-2 text-xs font-mono">
+        <div className="flex items-center gap-2 text-xs font-medium">
           <Link href="/admin/dashboard" className="text-slate-400 hover:text-white">
             Dashboard
           </Link>
@@ -178,14 +178,14 @@ export default function AdminOrderDetailPage() {
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
           <div className="space-y-2">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-mono font-bold text-amber-400 px-2.5 py-1 rounded-md bg-amber-400/10 border border-amber-400/20">
+              <span className="text-xs font-medium font-bold text-amber-400 px-2.5 py-1 rounded-md bg-amber-400/10 border border-amber-400/20">
                 {order.orderNumber}
               </span>
-              <span className="text-xs font-mono text-slate-400 font-semibold">
+              <span className="text-xs font-medium text-slate-400 font-semibold">
                 Style: {order.styleNumber}
               </span>
               <OrderStatusBadge status={order.currentStatus} size="md" />
-              <span className={`text-[10px] uppercase font-mono px-2 py-0.5 rounded font-bold ${
+              <span className={`text-[10px] uppercase font-medium px-2 py-0.5 rounded font-bold ${
                 order.priority === 'urgent'
                   ? 'bg-rose-950 text-rose-400 border border-rose-800'
                   : 'bg-slate-800 text-slate-300'
@@ -194,35 +194,35 @@ export default function AdminOrderDetailPage() {
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+            <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
               {order.productName}
             </h1>
 
             <p className="text-xs sm:text-sm text-slate-400 flex flex-wrap items-center gap-x-4 gap-y-1">
               <span>
                 Buyer Tenant:{' '}
-                <Link href={`/admin/buyers/${order.buyerOrganizationId}`} className="text-amber-400 hover:underline font-mono font-bold">
+                <Link href={`/admin/buyers/${order.buyerOrganizationId}`} className="text-amber-400 hover:underline font-medium font-bold">
                   {order.buyerOrganizationId}
                 </Link>
               </span>
-              <span>•</span>
-              <span>Factory: <strong className="text-slate-200 font-mono">{order.factoryId}</strong></span>
-              <span>•</span>
-              <span>Volume: <strong className="text-white font-mono">{order.quantity.toLocaleString()} pcs</strong></span>
-              <span>•</span>
-              <span>Merchandiser: <strong className="text-slate-200 font-mono">{order.assignedMerchandiserId}</strong></span>
+              <span className="text-slate-700">|</span>
+              <span>Factory: <strong className="text-slate-200 font-medium">{order.factoryId}</strong></span>
+              <span className="text-slate-700">|</span>
+              <span>Volume: <strong className="text-white font-medium">{order.quantity.toLocaleString()} pcs</strong></span>
+              <span className="text-slate-700">|</span>
+              <span>Merchandiser: <strong className="text-slate-200 font-medium">{order.assignedMerchandiserId}</strong></span>
             </p>
           </div>
 
           {/* Quick Operational Status Mutator */}
           <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3 shrink-0">
             <div className="text-xs space-y-1">
-              <label className="text-slate-400 block font-mono text-[11px]">Advance Stage:</label>
+              <label className="text-slate-400 block font-medium text-[11px]">Advance Stage:</label>
               <select
                 value={order.currentStatus}
                 disabled={isUpdating}
                 onChange={(e) => handleStatusUpdate(e.target.value as OrderStatus)}
-                className="w-full px-2.5 py-1.5 text-xs bg-slate-900 rounded border border-slate-700 text-white font-mono focus:outline-none focus:border-amber-400"
+                className="w-full px-2.5 py-1.5 text-xs bg-slate-900 rounded border border-slate-700 text-white font-medium focus:outline-none focus:border-amber-400"
               >
                 <option value="Inquiry">Inquiry</option>
                 <option value="Development">Development</option>
@@ -241,12 +241,12 @@ export default function AdminOrderDetailPage() {
             </div>
 
             <div className="text-xs space-y-1 pt-2 border-t border-slate-800">
-              <label className="text-slate-400 block font-mono text-[11px]">Priority:</label>
+              <label className="text-slate-400 block font-medium text-[11px]">Priority:</label>
               <select
                 value={order.priority}
                 disabled={isUpdating}
                 onChange={(e) => handlePriorityUpdate(e.target.value as PriorityLevel)}
-                className="w-full px-2.5 py-1 text-xs bg-slate-900 rounded border border-slate-700 text-white font-mono focus:outline-none focus:border-amber-400"
+                className="w-full px-2.5 py-1 text-xs bg-slate-900 rounded border border-slate-700 text-white font-medium focus:outline-none focus:border-amber-400"
               >
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
@@ -300,7 +300,7 @@ export default function AdminOrderDetailPage() {
             <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                 <div>
-                  <span className="text-xs font-mono uppercase text-amber-400 font-bold">Floor Telemetry</span>
+                  <span className="text-xs font-medium uppercase text-amber-400 font-bold">Floor Telemetry</span>
                   <h3 className="font-serif font-bold text-lg text-white">
                     Factory Line Operational Status
                   </h3>
@@ -312,8 +312,8 @@ export default function AdminOrderDetailPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
                 <div className="p-3.5 rounded-lg bg-slate-950 border border-slate-800 space-y-1">
-                  <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold">1. Cutting Dept</span>
-                  <div className="text-base font-bold text-white font-mono">
+                  <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold">1. Cutting Dept</span>
+                  <div className="text-base font-bold text-white font-medium">
                     {['Material', 'Cutting', 'Production', 'Finishing', 'QC', 'Packing', 'Shipment', 'Completed'].includes(order.currentStatus)
                       ? `${order.quantity.toLocaleString()} pcs`
                       : 'Scheduled'}
@@ -322,8 +322,8 @@ export default function AdminOrderDetailPage() {
                 </div>
 
                 <div className="p-3.5 rounded-lg bg-slate-950 border border-slate-800 space-y-1">
-                  <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold">2. Sewing Lines</span>
-                  <div className="text-base font-bold text-white font-mono">
+                  <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold">2. Sewing Lines</span>
+                  <div className="text-base font-bold text-white font-medium">
                     {['Production', 'Finishing', 'QC', 'Packing', 'Shipment', 'Completed'].includes(order.currentStatus)
                       ? 'In Assembly'
                       : 'Pending Line Feed'}
@@ -332,8 +332,8 @@ export default function AdminOrderDetailPage() {
                 </div>
 
                 <div className="p-3.5 rounded-lg bg-slate-950 border border-slate-800 space-y-1">
-                  <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold">3. Finishing &amp; QC</span>
-                  <div className="text-base font-bold text-white font-mono">
+                  <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold">3. Finishing &amp; QC</span>
+                  <div className="text-base font-bold text-white font-medium">
                     {['Finishing', 'QC', 'Packing', 'Shipment', 'Completed'].includes(order.currentStatus)
                       ? 'Final Audit Queue'
                       : 'Scheduled'}
@@ -351,7 +351,7 @@ export default function AdminOrderDetailPage() {
                 Order Technical Master
               </h3>
 
-              <div className="space-y-3 text-xs font-mono">
+              <div className="space-y-3 text-xs font-medium">
                 <div className="flex justify-between items-center py-1 border-b border-slate-800/60">
                   <span className="text-slate-400 font-sans">Category:</span>
                   <span className="text-white font-sans">{order.category}</span>

@@ -18,7 +18,7 @@ export function OrderAnalytics({ data, onExport }: OrderAnalyticsProps) {
     {
       key: 'orderNumber',
       header: 'PO Number',
-      render: (item) => <span className="font-mono font-semibold text-primary">{item.orderNumber}</span>,
+      render: (item) => <span className="font-medium font-semibold text-primary">{item.orderNumber}</span>,
     },
     {
       key: 'buyerName',
@@ -39,7 +39,7 @@ export function OrderAnalytics({ data, onExport }: OrderAnalyticsProps) {
       key: 'quantity',
       header: 'Units (pcs)',
       align: 'right',
-      render: (item) => <span className="font-mono font-semibold">{item.quantity.toLocaleString()}</span>,
+      render: (item) => <span className="font-medium font-semibold">{item.quantity.toLocaleString()}</span>,
     },
     {
       key: 'status',
@@ -53,7 +53,7 @@ export function OrderAnalytics({ data, onExport }: OrderAnalyticsProps) {
     {
       key: 'exFactoryDate',
       header: 'Ex-Factory Date',
-      render: (item) => <span className="text-muted-foreground font-mono">{item.exFactoryDate}</span>,
+      render: (item) => <span className="text-muted-foreground font-medium">{item.exFactoryDate}</span>,
     },
   ];
 

@@ -17,10 +17,10 @@ export default function ServicesPage() {
     <div className="space-y-16 lg:space-y-24 py-12 lg:py-16">
       {/* 1. Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-sans">
           Full-Spectrum Sourcing Solutions
         </p>
-        <h1 className="font-display font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
+        <h1 className="font-sans font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
           End-to-End Apparel Manufacturing Management.
         </h1>
         <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -39,7 +39,7 @@ export default function ServicesPage() {
             {/* Service Summary */}
             <div className="lg:col-span-5 space-y-4">
               <div className="flex items-center gap-2">
-                <span className="w-8 h-8 rounded-md bg-secondary text-foreground font-mono font-bold text-xs flex items-center justify-center border border-border">
+                <span className="w-8 h-8 rounded-md bg-secondary text-foreground font-medium font-bold text-xs flex items-center justify-center border border-border">
                   0{idx + 1}
                 </span>
                 <Badge variant="neutral" size="sm">
@@ -47,7 +47,7 @@ export default function ServicesPage() {
                 </Badge>
               </div>
 
-              <h2 className="font-display font-bold text-foreground text-h3 tracking-tight">
+              <h2 className="font-sans font-bold text-foreground text-h3 tracking-tight">
                 {service.title}
               </h2>
 

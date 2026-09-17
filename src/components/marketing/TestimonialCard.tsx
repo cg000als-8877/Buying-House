@@ -34,7 +34,7 @@ export function TestimonialCard({ quote, clientName, role, brand, avatar }: Test
           className="w-10 h-10 rounded-full object-cover border border-amber-500/30"
         />
         <div>
-          <h4 className="text-sm sm:text-base font-bold text-white font-display">{clientName}</h4>
+          <h4 className="text-sm sm:text-base font-bold text-white font-sans">{clientName}</h4>
           <p className="text-xs sm:text-sm text-slate-400 font-sans">{role}</p>
           <p className="text-xs text-emerald-400 font-medium font-sans">{brand}</p>
         </div>

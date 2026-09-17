@@ -91,15 +91,15 @@ export default function AdminDashboardPage() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
+            <span className="text-xs font-medium uppercase tracking-widest text-amber-400 font-bold">
               Operations Control Center
             </span>
-            <span className="text-slate-500">•</span>
+            <span className="text-slate-600">/</span>
             <Badge variant="amber" size="sm">
               Role: {user?.role || 'Staff'}
             </Badge>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
             Manufacturing &amp; Merchandising Overview
           </h1>
           <p className="text-sm text-slate-400 mt-1">
@@ -137,10 +137,10 @@ export default function AdminDashboardPage() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {/* Active Orders */}
           <Card className="p-4 bg-slate-900/80 border-slate-800 hover:border-amber-400/40 transition-colors">
-            <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold block truncate">
+            <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold block truncate">
               Active Orders
             </span>
-            <div className="text-2xl font-bold font-mono text-white mt-1">
+            <div className="text-2xl font-bold font-medium text-white mt-1">
               {stats.activeOrdersCount}
             </div>
             <span className="text-[10px] text-slate-500">In-flight POs</span>
@@ -148,10 +148,10 @@ export default function AdminDashboardPage() {
 
           {/* In Production */}
           <Card className="p-4 bg-slate-900/80 border-slate-800 hover:border-indigo-400/40 transition-colors">
-            <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold block truncate">
+            <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold block truncate">
               In Production
             </span>
-            <div className="text-2xl font-bold font-mono text-indigo-400 mt-1">
+            <div className="text-2xl font-bold font-medium text-indigo-400 mt-1">
               {stats.inProductionCount}
             </div>
             <span className="text-[10px] text-slate-500">Cut &amp; Sew</span>
@@ -161,10 +161,10 @@ export default function AdminDashboardPage() {
           <Card className={`p-4 bg-slate-900/80 border-slate-800 transition-colors ${
             stats.delayedOrdersCount > 0 ? 'border-rose-500/40 bg-rose-950/20' : ''
           }`}>
-            <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold block truncate">
+            <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold block truncate">
               Critical Attention
             </span>
-            <div className={`text-2xl font-bold font-mono mt-1 ${
+            <div className={`text-2xl font-bold font-medium mt-1 ${
               stats.delayedOrdersCount > 0 ? 'text-rose-400' : 'text-slate-300'
             }`}>
               {stats.delayedOrdersCount}
@@ -174,10 +174,10 @@ export default function AdminDashboardPage() {
 
           {/* Pending Samples */}
           <Card className="p-4 bg-slate-900/80 border-slate-800 hover:border-purple-400/40 transition-colors">
-            <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold block truncate">
+            <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold block truncate">
               Sample Reviews
             </span>
-            <div className="text-2xl font-bold font-mono text-purple-400 mt-1">
+            <div className="text-2xl font-bold font-medium text-purple-400 mt-1">
               {stats.pendingSampleApprovalsCount}
             </div>
             <span className="text-[10px] text-slate-500">Proto / PP review</span>
@@ -185,10 +185,10 @@ export default function AdminDashboardPage() {
 
           {/* Upcoming Ex-Factory */}
           <Card className="p-4 bg-slate-900/80 border-slate-800 hover:border-amber-400/40 transition-colors">
-            <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold block truncate">
+            <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold block truncate">
               Upcoming Ex-Fac
             </span>
-            <div className="text-2xl font-bold font-mono text-amber-400 mt-1">
+            <div className="text-2xl font-bold font-medium text-amber-400 mt-1">
               {stats.upcomingExFactoryCount}
             </div>
             <span className="text-[10px] text-slate-500">Next 45 days</span>
@@ -196,10 +196,10 @@ export default function AdminDashboardPage() {
 
           {/* QC / Shipments */}
           <Card className="p-4 bg-slate-900/80 border-slate-800 hover:border-emerald-400/40 transition-colors">
-            <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold block truncate">
+            <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold block truncate">
               QC &amp; Shipments
             </span>
-            <div className="text-2xl font-bold font-mono text-emerald-400 mt-1">
+            <div className="text-2xl font-bold font-medium text-emerald-400 mt-1">
               {stats.upcomingShipmentsCount}
             </div>
             <span className="text-[10px] text-slate-500">AQL audit / Port</span>
@@ -212,7 +212,7 @@ export default function AdminDashboardPage() {
         <Card className="p-5 bg-rose-950/20 border-rose-800/60 space-y-3">
           <div className="flex items-center gap-2 text-rose-400">
             <AlertTriangle className="w-4 h-4" />
-            <h3 className="font-serif font-bold text-sm sm:text-base">
+            <h3 className="font-sans font-bold text-sm sm:text-base">
               Urgent Attention Required: {delayedOrders.length} Order(s) Approaching Delivery Deadline
             </h3>
           </div>
@@ -220,9 +220,9 @@ export default function AdminDashboardPage() {
             {delayedOrders.map((order) => (
               <div key={order.id} className="py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div className="space-y-0.5">
-                  <span className="font-mono font-bold text-white">{order.orderNumber}</span> • {order.productName} ({order.quantity.toLocaleString()} pcs)
+                  <span className="font-medium font-bold text-white">{order.orderNumber}</span> - {order.productName} ({order.quantity.toLocaleString()} pcs)
                   <div className="text-[11px] text-slate-400">
-                    Ex-Factory: <strong className="text-rose-300 font-mono">{order.exFactoryDate}</strong> • Factory: <span className="font-mono">{order.factoryId}</span> • Merchandiser: <span className="font-mono">{order.assignedMerchandiserId}</span>
+                    Ex-Factory: <strong className="text-rose-300 font-medium">{order.exFactoryDate}</strong> | Factory: <span className="font-medium">{order.factoryId}</span> | Merchandiser: <span className="font-medium">{order.assignedMerchandiserId}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
@@ -245,7 +245,7 @@ export default function AdminDashboardPage() {
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-lg font-serif font-bold text-white">
+              <h2 className="text-lg font-sans font-bold text-white">
                 Recent Purchase Orders
               </h2>
               <p className="text-xs text-slate-400">
@@ -280,7 +280,7 @@ export default function AdminDashboardPage() {
             <Card className="overflow-hidden border-slate-800 bg-slate-900/80">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs text-slate-300">
-                  <thead className="bg-slate-950/80 border-b border-slate-800 text-[11px] uppercase font-mono text-slate-400">
+                  <thead className="bg-slate-950/80 border-b border-slate-800 text-[11px] uppercase font-medium text-slate-400">
                     <tr>
                       <th className="py-3 px-4">PO &amp; Style</th>
                       <th className="py-3 px-4">Buyer Org</th>
@@ -290,7 +290,7 @@ export default function AdminDashboardPage() {
                       <th className="py-3 px-4 text-right">Action</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800/60 font-mono">
+                  <tbody className="divide-y divide-slate-800/60 font-medium">
                     {recentOrders.map((order) => (
                       <tr key={order.id} className="hover:bg-slate-800/40 transition-colors">
                         <td className="py-3 px-4">
@@ -328,7 +328,7 @@ export default function AdminDashboardPage() {
         {/* Right Section (1/3): Operational Activity & Audit Trail */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-serif font-bold text-white">
+            <h2 className="text-lg font-sans font-bold text-white">
               Recent Audit Activity
             </h2>
             <Link href="/admin/audit-logs">
@@ -353,17 +353,17 @@ export default function AdminDashboardPage() {
                 {auditLogs.map((log) => (
                   <div key={log.id} className="pt-3 first:pt-0 space-y-1">
                     <div className="flex items-center justify-between">
-                      <span className="font-mono font-semibold text-amber-400 text-[11px]">
+                      <span className="font-medium font-semibold text-amber-400 text-[11px]">
                         {log.action}
                       </span>
-                      <span className="text-[10px] text-slate-500 font-mono">
+                      <span className="text-[10px] text-slate-500 font-medium">
                         {new Date(log.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                       </span>
                     </div>
                     <p className="text-slate-300 text-[11px]">
                       Actor: <span className="text-white font-medium">{log.actorRole}</span> ({log.actorUid})
                     </p>
-                    <p className="text-slate-500 text-[10px] font-mono">
+                    <p className="text-slate-500 text-[10px] font-medium">
                       Target: {log.entityType} ({log.entityId})
                     </p>
                   </div>

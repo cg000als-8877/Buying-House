@@ -14,10 +14,10 @@ export default function ContactPage() {
     <div className="space-y-16 lg:space-y-24 py-12 lg:py-16">
       {/* 1. Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-sans">
           Business Inquiries &amp; RFQ
         </p>
-        <h1 className="font-display font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
+        <h1 className="font-sans font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
           Initiate a Sourcing Inquiry with XYZ Buying House.
         </h1>
         <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -61,7 +61,7 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-0.5">
                     <p className="font-semibold text-foreground">Operational Headquarters</p>
-                    <p className="text-muted-foreground leading-relaxed font-mono text-[11px]">
+                    <p className="text-muted-foreground leading-relaxed font-medium text-[11px]">
                       [Company Registered Address: Client Input Required]
                     </p>
                     <p className="text-muted-foreground text-[11px]">Dhaka, Bangladesh</p>
@@ -74,8 +74,8 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-0.5">
                     <p className="font-semibold text-foreground">Business Inquiries</p>
-                    <p className="text-muted-foreground font-mono text-[11px]">[Business Email: Client Input Required]</p>
-                    <p className="text-muted-foreground font-mono text-[11px]">[Merchandising Email: Client Input Required]</p>
+                    <p className="text-muted-foreground font-medium text-[11px]">[Business Email: Client Input Required]</p>
+                    <p className="text-muted-foreground font-medium text-[11px]">[Merchandising Email: Client Input Required]</p>
                   </div>
                 </div>
 
@@ -85,8 +85,8 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-0.5">
                     <p className="font-semibold text-foreground">Direct Telecommunications</p>
-                    <p className="text-muted-foreground font-mono text-[11px]">[Phone Number: Client Input Required]</p>
-                    <p className="text-muted-foreground font-mono text-[11px]">[WhatsApp Business: Client Input Required]</p>
+                    <p className="text-muted-foreground font-medium text-[11px]">[Phone Number: Client Input Required]</p>
+                    <p className="text-muted-foreground font-medium text-[11px]">[WhatsApp Business: Client Input Required]</p>
                   </div>
                 </div>
 

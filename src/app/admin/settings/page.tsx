@@ -32,15 +32,15 @@ export default function AdminSettingsPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
+            <span className="text-xs font-medium uppercase tracking-widest text-amber-400 font-bold">
               System Configuration
             </span>
-            <span className="text-slate-500">•</span>
+            <span className="text-slate-600">/</span>
             <Badge variant="amber" size="sm">
               Role: {user?.role || 'Staff'}
             </Badge>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
             Platform Operations &amp; Security Settings
           </h1>
           <p className="text-sm text-slate-400 mt-1">
@@ -84,7 +84,7 @@ export default function AdminSettingsPage() {
               type="text"
               readOnly
               value="XYZ Buying House & Sourcing Atelier Ltd."
-              className="w-full px-3 py-2 bg-slate-950 rounded-lg border border-slate-800 text-white font-mono"
+              className="w-full px-3 py-2 bg-slate-950 rounded-lg border border-slate-800 text-white font-medium"
             />
           </div>
 
@@ -109,7 +109,7 @@ export default function AdminSettingsPage() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-medium">
           <div className="space-y-1">
             <label className="text-slate-400 font-sans font-semibold">Default Sampling Standard</label>
             <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-white">

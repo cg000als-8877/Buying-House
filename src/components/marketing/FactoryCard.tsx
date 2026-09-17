@@ -39,7 +39,7 @@ export function FactoryCard({
 
       <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
         <div className="space-y-1.5">
-          <h4 className="font-display font-bold text-lg text-white">{name}</h4>
+          <h4 className="font-sans font-bold text-lg text-white">{name}</h4>
           <p className="text-xs sm:text-sm text-slate-300 flex items-center gap-1 font-sans">
             <MapPin className="w-3.5 h-3.5 text-amber-400" />
             <span>{location}</span>
@@ -57,7 +57,7 @@ export function FactoryCard({
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-1 pt-1 font-display">
+        <div className="flex flex-wrap gap-1 pt-1 font-sans">
           {certifications.map((c) => (
             <span key={c} className="text-[10px] sm:text-xs px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800/40 font-semibold">
               {c}

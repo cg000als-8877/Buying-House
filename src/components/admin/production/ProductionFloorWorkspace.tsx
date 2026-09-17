@@ -313,7 +313,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
     <div className="space-y-8">
       {/* Notice Banner */}
       {notice && (
-        <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-center justify-between">
+        <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-medium flex items-center justify-between">
           <span>{notice}</span>
           <button onClick={() => setNotice(null)} className="text-amber-400 hover:text-white">
             <X className="w-4 h-4" />
@@ -325,40 +325,40 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
       {summary && (
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
           <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold block">
+            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold block">
               Order Volume
             </span>
-            <div className="text-xl font-bold text-white font-mono">
+            <div className="text-xl font-bold text-white font-medium">
               {summary.orderQuantity.toLocaleString()} <span className="text-xs text-slate-500">pcs</span>
             </div>
             <span className="text-[10px] text-slate-400">Total Purchase Order Target</span>
           </Card>
 
           <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold block">
+            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold block">
               Cumulative Output
             </span>
-            <div className="text-xl font-bold text-emerald-400 font-mono">
+            <div className="text-xl font-bold text-emerald-400 font-medium">
               {summary.completedQuantity.toLocaleString()} <span className="text-xs text-slate-500">pcs</span>
             </div>
             <span className="text-[10px] text-slate-400">Current Output Stage</span>
           </Card>
 
           <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold block">
+            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold block">
               Remaining Balance
             </span>
-            <div className="text-xl font-bold text-amber-400 font-mono">
+            <div className="text-xl font-bold text-amber-400 font-medium">
               {summary.remainingQuantity.toLocaleString()} <span className="text-xs text-slate-500">pcs</span>
             </div>
             <span className="text-[10px] text-slate-400">Balance to complete</span>
           </Card>
 
           <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold block">
+            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold block">
               Completion Progress
             </span>
-            <div className="text-xl font-bold text-white font-mono flex items-center gap-1.5">
+            <div className="text-xl font-bold text-white font-medium flex items-center gap-1.5">
               <span>{summary.completionPercentage}%</span>
             </div>
             <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
@@ -370,7 +370,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
           </Card>
 
           <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1 col-span-2 lg:col-span-1">
-            <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold block">
+            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold block">
               Line Operational Health
             </span>
             <div className="pt-1">
@@ -398,7 +398,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
       <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
           <div>
-            <span className="text-xs font-mono uppercase text-amber-400 font-bold">
+            <span className="text-xs font-medium uppercase text-amber-400 font-bold">
               Sequential Workflow
             </span>
             <h3 className="font-serif font-bold text-lg text-white">
@@ -448,7 +448,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                 }`}
               >
                 <div className="flex items-center justify-between gap-1 pb-1.5 border-b border-slate-800/60">
-                  <span className="text-[10px] font-mono font-bold uppercase text-slate-400">
+                  <span className="text-[10px] font-medium font-bold uppercase text-slate-400">
                     Step {stage.sequence}
                   </span>
                   <Badge
@@ -463,7 +463,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                   {stage.stageName}
                 </h4>
 
-                <div className="pt-2 space-y-1 text-[11px] font-mono">
+                <div className="pt-2 space-y-1 text-[11px] font-medium">
                   <div className="flex justify-between text-slate-400">
                     <span>Cumulative:</span>
                     <span className="text-white font-bold">{stage.cumulativeQuantity.toLocaleString()}</span>
@@ -485,7 +485,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                 </div>
 
                 {stage.lastUpdateDate && (
-                  <div className="mt-2 pt-1.5 border-t border-slate-800/60 text-[10px] font-mono text-slate-500 truncate">
+                  <div className="mt-2 pt-1.5 border-t border-slate-800/60 text-[10px] font-medium text-slate-500 truncate">
                     Updated: {stage.lastUpdateDate}
                   </div>
                 )}
@@ -500,14 +500,14 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
         <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
           <div className="flex items-center justify-between pb-2 border-b border-slate-800">
             <div>
-              <span className="text-xs font-mono uppercase text-amber-400 font-bold">
+              <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                 Output Analytics
               </span>
               <h3 className="font-serif font-bold text-lg text-white">
                 Daily Output vs Planned Volume
               </h3>
             </div>
-            <span className="text-xs font-mono text-slate-400">Units (Pcs)</span>
+            <span className="text-xs font-medium text-slate-400">Units (Pcs)</span>
           </div>
 
           <div className="h-64 w-full pt-4">
@@ -533,14 +533,14 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
       <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-slate-800">
           <div>
-            <span className="text-xs font-mono uppercase text-amber-400 font-bold">
+            <span className="text-xs font-medium uppercase text-amber-400 font-bold">
               Factory Reporting Stream
             </span>
             <h3 className="font-serif font-bold text-lg text-white">
               Daily Production Logs &amp; Variance
             </h3>
           </div>
-          <span className="text-xs font-mono text-slate-400">{filteredUpdates.length} Records</span>
+          <span className="text-xs font-medium text-slate-400">{filteredUpdates.length} Records</span>
         </div>
 
         {/* Search & Filtering Bar */}
@@ -596,7 +596,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="border-b border-slate-800 text-slate-400 font-mono text-[11px] uppercase">
+                <tr className="border-b border-slate-800 text-slate-400 font-medium text-[11px] uppercase">
                   <th className="py-3 px-3">Date</th>
                   <th className="py-3 px-3">Stage</th>
                   <th className="py-3 px-3 text-right">Planned</th>
@@ -608,7 +608,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                   <th className="py-3 px-3 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60 font-mono">
+              <tbody className="divide-y divide-slate-800/60 font-medium">
                 {filteredUpdates.map((log) => {
                   const variance = log.actualQuantity - log.plannedQuantity;
                   const isDraft = log.status === 'draft';
@@ -692,7 +692,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                           )}
 
                           {isPublished && (
-                            <span className="text-[10px] text-emerald-400 font-mono">Live on Portal</span>
+                            <span className="text-[10px] text-emerald-400 font-medium">Live on Portal</span>
                           )}
                         </div>
                       </td>
@@ -709,7 +709,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
       <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
         <div className="flex items-center justify-between pb-3 border-b border-slate-800">
           <div>
-            <span className="text-xs font-mono uppercase text-amber-400 font-bold">
+            <span className="text-xs font-medium uppercase text-amber-400 font-bold">
               Visual Documentation
             </span>
             <h3 className="font-serif font-bold text-lg text-white">
@@ -748,7 +748,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                 </div>
                 <div className="p-2.5 space-y-1 text-xs">
                   <p className="text-slate-300 line-clamp-2">{photo.caption || 'Factory floor inspection'}</p>
-                  <div className="flex items-center justify-between text-[10px] font-mono text-slate-500 pt-1">
+                  <div className="flex items-center justify-between text-[10px] font-medium text-slate-500 pt-1">
                     <span>{photo.createdAt?.split('T')[0]}</span>
                     <button
                       onClick={() => handleDeletePhoto(photo.id)}
@@ -771,7 +771,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
           <Card className="max-w-xl w-full p-6 bg-slate-900 border-slate-800 shadow-2xl space-y-6">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
               <div>
-                <span className="text-xs font-mono uppercase text-amber-400 font-bold">
+                <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   Daily Telemetry Entry
                 </span>
                 <h3 className="font-serif font-bold text-lg text-white">
@@ -819,7 +819,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                     type="date"
                     value={formData.productionDate}
                     onChange={(e) => setFormData({ ...formData, productionDate: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
               </div>
@@ -836,7 +836,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                     onChange={(e) =>
                       setFormData({ ...formData, plannedQuantity: Number(e.target.value) })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
 
@@ -851,13 +851,13 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                     onChange={(e) =>
                       setFormData({ ...formData, actualQuantity: Number(e.target.value) })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
               </div>
 
               {/* Real-time Math Preview */}
-              <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 grid grid-cols-2 gap-4 text-xs font-mono">
+              <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 grid grid-cols-2 gap-4 text-xs font-medium">
                 <div>
                   <span className="text-slate-500 block text-[10px]">Calculated Achievement</span>
                   <span className="text-amber-400 font-bold text-sm">{liveAchievement}%</span>
@@ -1074,7 +1074,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
               {stages.map((stage, idx) => (
                 <div
                   key={stage.id}
-                  className="p-3 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-between gap-4 text-xs font-mono"
+                  className="p-3 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-between gap-4 text-xs font-medium"
                 >
                   <div className="flex items-center gap-2">
                     <span className="text-slate-500 font-bold">#{stage.sequence}</span>

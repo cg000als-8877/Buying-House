@@ -33,10 +33,10 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-8 sm:p-10 rounded-2xl border border-border bg-surface grid grid-cols-1 md:grid-cols-4 gap-8 text-center sm:text-left shadow-subtle">
           <div className="space-y-2 sm:border-r sm:border-border sm:pr-6">
-            <p className="text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-accent">
+            <p className="text-xs sm:text-sm font-sans font-bold uppercase tracking-wider text-accent">
               Technical Sourcing
             </p>
-            <h4 className="font-display font-bold text-base sm:text-lg text-foreground leading-snug">
+            <h4 className="font-sans font-bold text-base sm:text-lg text-foreground leading-snug">
               Direct Sourcing Feasibility
             </h4>
             <p className="text-sm text-muted-foreground leading-relaxed font-sans">
@@ -45,10 +45,10 @@ export default function HomePage() {
           </div>
 
           <div className="space-y-2 sm:border-r sm:border-border sm:pr-6">
-            <p className="text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-accent">
+            <p className="text-xs sm:text-sm font-sans font-bold uppercase tracking-wider text-accent">
               AQL Governance
             </p>
-            <h4 className="font-display font-bold text-base sm:text-lg text-foreground leading-snug">
+            <h4 className="font-sans font-bold text-base sm:text-lg text-foreground leading-snug">
               Quality Control Framework
             </h4>
             <p className="text-sm text-muted-foreground leading-relaxed font-sans">
@@ -57,10 +57,10 @@ export default function HomePage() {
           </div>
 
           <div className="space-y-2 sm:border-r sm:border-border sm:pr-6">
-            <p className="text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-accent">
+            <p className="text-xs sm:text-sm font-sans font-bold uppercase tracking-wider text-accent">
               Digital Telemetry
             </p>
-            <h4 className="font-display font-bold text-base sm:text-lg text-foreground leading-snug">
+            <h4 className="font-sans font-bold text-base sm:text-lg text-foreground leading-snug">
               Buyer Portal Architecture
             </h4>
             <p className="text-sm text-muted-foreground leading-relaxed font-sans">
@@ -69,10 +69,10 @@ export default function HomePage() {
           </div>
 
           <div className="space-y-2">
-            <p className="text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-accent">
+            <p className="text-xs sm:text-sm font-sans font-bold uppercase tracking-wider text-accent">
               Social Compliance
             </p>
-            <h4 className="font-display font-bold text-base sm:text-lg text-foreground leading-snug">
+            <h4 className="font-sans font-bold text-base sm:text-lg text-foreground leading-snug">
               Ethical Supply Chain
             </h4>
             <p className="text-sm text-muted-foreground leading-relaxed font-sans">

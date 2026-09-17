@@ -12,6 +12,7 @@ import { db, isConfigured } from '@/lib/firebase/client';
 import { collection, getDocs, DocumentData, QueryDocumentSnapshot } from 'firebase/firestore';
 import { logSecurityEvent } from '@/lib/audit';
 import { hasPermission } from '@/lib/auth/permissions';
+import { normalizeBuyerOrgId } from '@/lib/auth/session';
 import { UserRole } from '@/types/auth';
 import {
   CreateShipmentInput,
@@ -157,6 +158,91 @@ export const TEST_SHIPMENTS: Shipment[] = [
     internalNotes: 'Consignment successfully handed over to consignee with zero transit damage.',
     createdAt: '2026-08-01T09:00:00Z',
     updatedAt: '2026-09-05T15:00:00Z',
+  },
+  {
+    id: 'ship-004',
+    shipmentNumber: 'SHP-2026-0084',
+    orderId: 'TEST-ORDER-005',
+    orderNumber: 'PO-2026-0925',
+    buyerOrganizationId: 'buyer-org-003',
+    buyerOrganizationName: 'Continental Sportswear S.A.',
+    destinationCountry: 'Germany',
+    destinationPort: 'Frankfurt Airport (FRA)',
+    portOfLoading: 'Hazrat Shahjalal International Airport (DAC)',
+    transportMode: 'AIR',
+    incoterm: 'FCA',
+    carrier: 'Lufthansa Cargo',
+    forwarder: 'Expeditors International Bangladesh Ltd.',
+    vesselFlightNumber: 'LH-8419 Cargo MD-11F',
+    voyageNumber: 'LH-FRA-8419',
+    billOfLadingNumber: '020-94821033',
+    bookingReference: 'BK-EXP-2026-904',
+    trackingReference: 'LH-AWB-94821033',
+    status: 'IN_TRANSIT',
+    packingStatus: 'COMPLETED',
+    documentationStatus: 'COMPLETED',
+    customsStatus: 'CLEARED',
+    plannedShipDate: '2026-09-07',
+    actualShipDate: '2026-09-07',
+    estimatedDeliveryDate: '2026-09-10',
+    totalCartons: 180,
+    totalPieces: 15000,
+    totalGrossWeightKG: 2850.0,
+    totalNetWeightKG: 2700.0,
+    totalCBM: 14.4,
+    delayStatus: 'ON_TIME',
+    internalNotes: 'Priority air freight dispatch for Fall-Winter launch campaign. Customs clearance cleared at Dhaka Airfreight unit.',
+    createdAt: '2026-08-30T09:00:00Z',
+    updatedAt: '2026-09-07T18:00:00Z',
+  },
+  {
+    id: 'ship-005',
+    shipmentNumber: 'SHP-2026-0085',
+    orderId: 'TEST-ORDER-008',
+    orderNumber: 'PO-2026-0512',
+    buyerOrganizationId: 'buyer-org-001',
+    buyerOrganizationName: 'Nordic Trend House A/S',
+    destinationCountry: 'Denmark',
+    destinationPort: 'Aarhus Port (DKAAR)',
+    portOfLoading: 'Chittagong Port (BDCGP)',
+    transportMode: 'SEA_FCL',
+    incoterm: 'FOB',
+    carrier: 'Maersk Line',
+    forwarder: 'DSV Air & Sea Ltd.',
+    vesselFlightNumber: 'Maersk Mc-Kinney Moller',
+    voyageNumber: 'MM-2608',
+    containerNumber: 'MSKU-771920-4',
+    sealNumber: 'SL-88310',
+    billOfLadingNumber: 'MSK-DK-551982',
+    bookingReference: 'BK-DSV-7719',
+    trackingReference: 'MSK-7719204',
+    status: 'DELIVERED',
+    packingStatus: 'COMPLETED',
+    documentationStatus: 'COMPLETED',
+    customsStatus: 'CLEARED',
+    plannedShipDate: '2026-08-08',
+    actualShipDate: '2026-08-08',
+    estimatedDeliveryDate: '2026-08-30',
+    actualDeliveryDate: '2026-08-30',
+    totalCartons: 200,
+    totalPieces: 9000,
+    totalGrossWeightKG: 4500.0,
+    totalNetWeightKG: 4250.0,
+    totalCBM: 24.0,
+    delayStatus: 'ON_TIME',
+    deliveryConfirmation: {
+      confirmed: true,
+      confirmedAt: '2026-08-30T16:00:00Z',
+      confirmedByUid: 'buyer-001',
+      confirmedByName: 'Morten Lindqvist',
+      receivedQuantity: 9000,
+      discrepancyReported: false,
+      conditionNotes: 'All 200 master cartons received sealed and dry at Aarhus Logistics Hub.',
+      buyerSignatureName: 'Morten Lindqvist (Supply Chain Director)',
+    },
+    internalNotes: 'Delivered seamlessly on schedule. Order concluded.',
+    createdAt: '2026-07-25T08:00:00Z',
+    updatedAt: '2026-08-30T16:30:00Z',
   },
 ];
 
@@ -562,8 +648,9 @@ export async function getShipmentsForBuyer(
 ): Promise<Shipment[]> {
   if (!buyerOrganizationId) return [];
 
+  const normId = normalizeBuyerOrgId(buyerOrganizationId);
   const all = await getShipmentsForAdmin();
-  let buyerShipments = all.filter((s) => s.buyerOrganizationId === buyerOrganizationId);
+  let buyerShipments = all.filter((s) => normalizeBuyerOrgId(s.buyerOrganizationId) === normId);
 
   if (filters) {
     if (filters.status && filters.status !== 'ALL') {

@@ -9,19 +9,19 @@ export function CtaSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/50 via-slate-900 to-amber-950/40 border-y border-amber-500/20 pointer-events-none" />
       
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-400 font-display">
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-400">
           Start Your Next Collection With Confidence
         </p>
 
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
           Ready to Elevate Your Apparel Quality &amp; Profit Margins?
         </h2>
 
-        <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-sans">
+        <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
           Send us your tech pack or request physical fabric swatch books today. Receive itemized BOM pricing and lead time estimations within 24 hours.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 font-display">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <Link href="/rfq">
             <Button variant="gold" size="lg" className="w-full sm:w-auto">
               <span>Request Instant Quote &amp; Samples</span>

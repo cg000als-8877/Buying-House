@@ -18,6 +18,7 @@ import {
 } from 'firebase/firestore';
 import { logSecurityEvent } from '@/lib/audit';
 import { hasPermission } from '@/lib/auth/permissions';
+import { normalizeBuyerOrgId } from '@/lib/auth/session';
 import { UserRole } from '@/types/auth';
 import {
   CreateDocumentInput,
@@ -255,6 +256,93 @@ export const TEST_DOCUMENTS: BusinessDocument[] = [
     createdAt: '2026-08-25T10:00:00Z',
     updatedAt: '2026-08-25T10:00:00Z',
   },
+  {
+    id: 'doc-demo-008',
+    title: 'Seamless Performance Compression Tech Pack v1.2',
+    fileName: 'STY-ACT-305_Seamless_TechPack.pdf',
+    storagePath: '/orders/TEST-ORDER-005/documents/STY-ACT-305_Seamless_TechPack.pdf',
+    url: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
+    category: 'Tech Pack',
+    type: 'Tech Pack',
+    name: 'Seamless Performance Compression Tech Pack v1.2',
+    visibility: 'buyer',
+    status: 'active',
+    version: 1,
+    mimeType: 'application/pdf',
+    fileSize: 3774873,
+    fileSizeFormatted: '3.6 MB',
+    buyerOrganizationId: 'buyer-org-003',
+    orderId: 'TEST-ORDER-005',
+    orderNumber: 'PO-2026-0925',
+    styleNumber: 'STY-ACT-305',
+    description: 'Technical zone compression mapping and elastane tension requirements.',
+    uploadedBy: 'staff-admin-001',
+    uploaderName: 'Super Admin',
+    uploaderRole: 'Super Admin',
+    isLatest: true,
+    downloadCount: 9,
+    verified: true,
+    history: [],
+    createdAt: '2026-08-02T10:00:00Z',
+    updatedAt: '2026-08-02T10:00:00Z',
+  },
+  {
+    id: 'doc-demo-009',
+    title: 'GOTS Organic Scope Certificate - 2026 Renewal',
+    fileName: 'GOTS_Scope_Certificate_Apex_2026.pdf',
+    storagePath: '/compliance/GOTS_Scope_Certificate_Apex_2026.pdf',
+    url: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80',
+    category: 'Compliance',
+    type: 'Compliance',
+    name: 'GOTS Organic Scope Certificate - 2026 Renewal',
+    visibility: 'buyer',
+    status: 'active',
+    version: 1,
+    mimeType: 'application/pdf',
+    fileSize: 2516582,
+    fileSizeFormatted: '2.4 MB',
+    buyerOrganizationId: 'buyer-org-001',
+    description: 'Annual GOTS (Global Organic Textile Standard) Scope Certificate audited by Control Union.',
+    uploadedBy: 'staff-admin-001',
+    uploaderName: 'Super Admin',
+    uploaderRole: 'Super Admin',
+    isLatest: true,
+    downloadCount: 15,
+    verified: true,
+    history: [],
+    createdAt: '2026-01-20T08:00:00Z',
+    updatedAt: '2026-01-20T08:00:00Z',
+  },
+  {
+    id: 'doc-demo-010',
+    title: 'Technical 3-Layer Mountain Parka Seam Sealing Spec',
+    fileName: 'STY-OUT-990_Seam_Sealing_Spec.pdf',
+    storagePath: '/orders/TEST-ORDER-007/documents/STY-OUT-990_Seam_Sealing_Spec.pdf',
+    url: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
+    category: 'Specification',
+    type: 'Specification',
+    name: 'Technical 3-Layer Mountain Parka Seam Sealing Spec',
+    visibility: 'buyer',
+    status: 'active',
+    version: 1,
+    mimeType: 'application/pdf',
+    fileSize: 2936012,
+    fileSizeFormatted: '2.8 MB',
+    buyerOrganizationId: 'buyer-org-005',
+    orderId: 'TEST-ORDER-007',
+    orderNumber: 'PO-2026-0801',
+    styleNumber: 'STY-OUT-990',
+    description: 'Hot-air welded seam taping diagram and hydrostatic pressure test protocol.',
+    uploadedBy: 'merch-001',
+    uploaderName: 'Jane Merchandiser',
+    uploaderRole: 'Merchandiser',
+    isLatest: true,
+    downloadCount: 5,
+    verified: true,
+    history: [],
+    createdAt: '2026-07-05T11:00:00Z',
+    updatedAt: '2026-07-05T11:00:00Z',
+  },
 ];
 
 let inMemoryDocuments: BusinessDocument[] = [...TEST_DOCUMENTS];
@@ -375,11 +463,12 @@ export async function getDocumentsForBuyer(
   filters?: { category?: DocumentCategory | 'ALL'; orderId?: string | 'ALL'; searchQuery?: string }
 ): Promise<BusinessDocument[]> {
   const allDocs = await getDocuments();
+  const normId = normalizeBuyerOrgId(buyerOrganizationId);
 
   // Strict Tenant Isolation & Visibility Boundary
   let buyerDocs = allDocs.filter(
     (d) =>
-      d.buyerOrganizationId === buyerOrganizationId &&
+      normalizeBuyerOrgId(d.buyerOrganizationId) === normId &&
       d.visibility === 'buyer' &&
       d.status === 'active'
   );

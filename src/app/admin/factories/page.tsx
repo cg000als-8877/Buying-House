@@ -163,13 +163,13 @@ export default function AdminFactoriesPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
+            <span className="text-xs font-medium uppercase tracking-widest text-amber-400 font-bold">
               Manufacturing Units
             </span>
-            <span className="text-slate-500">•</span>
-            <span className="text-xs font-mono text-slate-400">{factories.length} Registered Units</span>
+            <span className="text-slate-600">/</span>
+            <span className="text-xs font-medium text-slate-400">{factories.length} Registered Units</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
             Partner Factories Directory
           </h1>
           <p className="text-sm text-slate-400 mt-1">
@@ -219,7 +219,7 @@ export default function AdminFactoriesPage() {
         {(searchQuery || statusFilter !== 'ALL') && (
           <div className="flex items-center justify-between pt-2 border-t border-slate-800/80 text-xs">
             <span className="text-slate-400">
-              Showing <strong className="text-white font-mono">{filteredFactories.length}</strong> of {factories.length} factories
+              Showing <strong className="text-white font-medium">{filteredFactories.length}</strong> of {factories.length} factories
             </span>
             <button
               onClick={() => {
@@ -267,7 +267,7 @@ export default function AdminFactoriesPage() {
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      <span className="text-[10px] font-mono text-amber-400 font-semibold uppercase block">
+                      <span className="text-[10px] font-medium text-amber-400 font-semibold uppercase block">
                         {factory.id}
                       </span>
                       <h3 className="font-serif font-bold text-base text-white hover:text-amber-400 transition-colors">
@@ -291,13 +291,13 @@ export default function AdminFactoriesPage() {
                     {factory.specializations.slice(0, 3).map((spec) => (
                       <span
                         key={spec}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-950 text-slate-300 border border-slate-800"
+                        className="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-950 text-slate-300 border border-slate-800"
                       >
                         {spec}
                       </span>
                     ))}
                     {factory.specializations.length > 3 && (
-                      <span className="text-[10px] font-mono text-slate-500 px-1 py-0.5">
+                      <span className="text-[10px] font-medium text-slate-500 px-1 py-0.5">
                         +{factory.specializations.length - 3} more
                       </span>
                     )}
@@ -306,18 +306,18 @@ export default function AdminFactoriesPage() {
                   {/* Metrics */}
                   <div className="pt-2 border-t border-slate-800/80 grid grid-cols-2 gap-2 text-xs">
                     <div>
-                      <span className="text-[10px] text-slate-500 uppercase block font-mono">Monthly Capacity</span>
-                      <strong className="text-white font-mono text-[11px]">{factory.capacity}</strong>
+                      <span className="text-[10px] text-slate-500 uppercase block font-medium">Monthly Capacity</span>
+                      <strong className="text-white font-medium text-[11px]">{factory.capacity}</strong>
                     </div>
                     <div>
-                      <span className="text-[10px] text-slate-500 uppercase block font-mono">Active POs</span>
-                      <strong className="text-amber-400 font-mono text-[11px]">{activeCount} Orders</strong>
+                      <span className="text-[10px] text-slate-500 uppercase block font-medium">Active POs</span>
+                      <strong className="text-amber-400 font-medium text-[11px]">{activeCount} Orders</strong>
                     </div>
                   </div>
                 </div>
 
                 <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-slate-500">
+                  <span className="text-[11px] font-medium text-slate-500">
                     {factory.certificationIds.length} Certifications
                   </span>
                   <Link href={`/admin/factories/${factory.id}`}>
@@ -402,7 +402,7 @@ export default function AdminFactoriesPage() {
                     placeholder="e.g. 1,000,000 pcs / month"
                     value={formData.capacity}
                     onChange={(e) => setFormData({ ...formData, capacity: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
 
@@ -444,7 +444,7 @@ export default function AdminFactoriesPage() {
                   placeholder="e.g. OEKO-TEX-100, WRAP-GOLD, SEDEX-SMETA"
                   value={formData.certificationIds}
                   onChange={(e) => setFormData({ ...formData, certificationIds: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
 

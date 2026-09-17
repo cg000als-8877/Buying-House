@@ -28,14 +28,14 @@ export function FactoryCard({ factory }: { factory: FactoryPartner }) {
 
         <CardHeader>
           <div className="flex items-center justify-between gap-2 mb-1">
-            <Badge variant="neutral" size="sm" className="text-xs font-display">
+            <Badge variant="neutral" size="sm" className="text-xs font-sans">
               {factory.category}
             </Badge>
-            <span className="text-xs font-mono text-emerald-400 font-medium">
+            <span className="text-xs font-medium text-emerald-400 font-medium">
               Verified Partner
             </span>
           </div>
-          <CardTitle className="text-lg sm:text-xl font-display font-bold group-hover:text-accent transition-colors">
+          <CardTitle className="text-lg sm:text-xl font-sans font-bold group-hover:text-accent transition-colors">
             {factory.name}
           </CardTitle>
           <div className="flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground pt-0.5 font-sans">

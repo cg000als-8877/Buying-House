@@ -104,7 +104,7 @@ export default function NewShipmentPage() {
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 text-xs font-mono">
+        <div className="flex items-center gap-2 text-xs font-medium">
           <Link href="/admin/shipments" className="text-slate-400 hover:text-white">
             Shipments
           </Link>
@@ -151,7 +151,7 @@ export default function NewShipmentPage() {
                 required
                 value={selectedOrderId}
                 onChange={(e) => setSelectedOrderId(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-mono"
+                className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-medium"
               >
                 {orders.map((o) => (
                   <option key={o.id} value={o.id}>
@@ -161,7 +161,7 @@ export default function NewShipmentPage() {
               </select>
             </div>
             {selectedOrder && (
-              <div className="text-[11px] font-mono text-slate-400 flex flex-wrap gap-x-4 gap-y-1 pt-1">
+              <div className="text-[11px] font-medium text-slate-400 flex flex-wrap gap-x-4 gap-y-1 pt-1">
                 <span>Style: <strong className="text-slate-200">{selectedOrder.styleNumber}</strong></span>
                 <span>Category: <strong className="text-slate-200">{selectedOrder.category}</strong></span>
                 <span>Ex-Factory: <strong className="text-amber-400">{selectedOrder.exFactoryDate}</strong></span>
@@ -180,7 +180,7 @@ export default function NewShipmentPage() {
                 <select
                   value={transportMode}
                   onChange={(e) => setTransportMode(e.target.value as TransportMode)}
-                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-mono"
+                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-medium"
                 >
                   <option value="SEA_FCL">Sea FCL (Full Container Load)</option>
                   <option value="SEA_LCL">Sea LCL (Less than Container Load)</option>
@@ -195,7 +195,7 @@ export default function NewShipmentPage() {
                 <select
                   value={incoterm}
                   onChange={(e) => setIncoterm(e.target.value as Incoterm)}
-                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-mono"
+                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-medium"
                 >
                   <option value="FOB">FOB (Free On Board)</option>
                   <option value="CIF">CIF (Cost, Insurance &amp; Freight)</option>
@@ -279,7 +279,7 @@ export default function NewShipmentPage() {
                   value={bookingReference}
                   onChange={(e) => setBookingReference(e.target.value)}
                   placeholder="e.g. BK-KN-2026-9901"
-                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-mono"
+                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-medium"
                 />
               </div>
 
@@ -290,7 +290,7 @@ export default function NewShipmentPage() {
                   required
                   value={plannedShipDate}
                   onChange={(e) => setPlannedShipDate(e.target.value)}
-                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-mono"
+                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-medium"
                 />
               </div>
 
@@ -301,7 +301,7 @@ export default function NewShipmentPage() {
                   required
                   value={estimatedDeliveryDate}
                   onChange={(e) => setEstimatedDeliveryDate(e.target.value)}
-                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-mono"
+                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-medium"
                 />
               </div>
 
@@ -323,7 +323,7 @@ export default function NewShipmentPage() {
                   value={containerNumber}
                   onChange={(e) => setContainerNumber(e.target.value)}
                   placeholder="e.g. HLXU-892147-3"
-                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-mono"
+                  className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white font-medium"
                 />
               </div>
             </div>

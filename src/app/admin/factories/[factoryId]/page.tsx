@@ -123,7 +123,7 @@ export default function AdminFactoryDetailPage() {
     <div className="max-w-6xl mx-auto space-y-8">
       {/* Navigation Breadcrumb */}
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <div className="flex items-center gap-2 text-xs font-mono">
+        <div className="flex items-center gap-2 text-xs font-medium">
           <Link href="/admin/dashboard" className="text-slate-400 hover:text-white">
             Dashboard
           </Link>
@@ -148,19 +148,19 @@ export default function AdminFactoryDetailPage() {
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
           <div className="space-y-2">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-mono font-bold text-amber-400 px-2.5 py-1 rounded-md bg-amber-400/10 border border-amber-400/20">
+              <span className="text-xs font-medium font-bold text-amber-400 px-2.5 py-1 rounded-md bg-amber-400/10 border border-amber-400/20">
                 UNIT ID: {factory.id}
               </span>
-              <Badge variant={isAudited ? 'emerald' : 'blue'} size="md" dot>
+              <Badge variant={isAudited ? 'emerald' : 'blue'} size="md">
                 {factory.status.toUpperCase()}
               </Badge>
-              <span className="text-xs font-mono text-emerald-400 flex items-center gap-1">
+              <span className="text-xs font-medium text-emerald-400 flex items-center gap-1">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 VERIFIED PARTNER
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+            <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
               {factory.name}
             </h1>
 
@@ -169,12 +169,12 @@ export default function AdminFactoryDetailPage() {
                 <MapPin className="w-3.5 h-3.5 text-slate-500" />
                 {factory.location}
               </span>
-              <span>•</span>
-              <span>Capacity: <strong className="text-white font-mono">{factory.capacity}</strong></span>
+              <span className="text-slate-700">|</span>
+              <span>Capacity: <strong className="text-white font-medium">{factory.capacity}</strong></span>
               {factory.employeeCount && (
                 <>
-                  <span>•</span>
-                  <span>Workforce: <strong className="text-slate-200 font-mono">{factory.employeeCount.toLocaleString()} workers</strong></span>
+                  <span className="text-slate-700">|</span>
+                  <span>Workforce: <strong className="text-slate-200 font-medium">{factory.employeeCount.toLocaleString()} workers</strong></span>
                 </>
               )}
             </p>
@@ -182,12 +182,12 @@ export default function AdminFactoryDetailPage() {
 
           {/* Status Mutator */}
           <div className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-2 shrink-0">
-            <span className="text-[11px] font-mono text-slate-400 block">Unit Compliance Status:</span>
+            <span className="text-[11px] font-medium text-slate-400 block">Unit Compliance Status:</span>
             <select
               value={factory.status}
               disabled={isUpdatingStatus}
               onChange={(e) => handleStatusChange(e.target.value as 'audited' | 'active' | 'inactive')}
-              className="w-full px-2.5 py-1 text-xs bg-slate-900 rounded border border-slate-700 text-white font-mono focus:outline-none focus:border-amber-400"
+              className="w-full px-2.5 py-1 text-xs bg-slate-900 rounded border border-slate-700 text-white font-medium focus:outline-none focus:border-amber-400"
             >
               <option value="audited">Verified Audited</option>
               <option value="active">Active Operations</option>
@@ -215,14 +215,14 @@ export default function AdminFactoryDetailPage() {
 
           <div className="space-y-3 text-xs">
             <div>
-              <span className="text-slate-400 block mb-1.5 font-mono text-[11px] uppercase">
+              <span className="text-slate-400 block mb-1.5 font-medium text-[11px] uppercase">
                 Core Specializations:
               </span>
               <div className="flex flex-wrap gap-1.5">
                 {factory.specializations.map((s) => (
                   <span
                     key={s}
-                    className="px-2.5 py-1 rounded bg-slate-950 text-slate-200 border border-slate-800 font-mono text-xs"
+                    className="px-2.5 py-1 rounded bg-slate-950 text-slate-200 border border-slate-800 font-medium text-xs"
                   >
                     {s}
                   </span>
@@ -231,7 +231,7 @@ export default function AdminFactoryDetailPage() {
             </div>
 
             <div className="pt-2 border-t border-slate-800/60">
-              <span className="text-slate-400 block mb-1.5 font-mono text-[11px] uppercase">
+              <span className="text-slate-400 block mb-1.5 font-medium text-[11px] uppercase">
                 Audited Social &amp; Quality Certifications:
               </span>
               <div className="flex flex-wrap gap-2">
@@ -244,10 +244,10 @@ export default function AdminFactoryDetailPage() {
             </div>
 
             <div className="pt-2 border-t border-slate-800/60">
-              <span className="text-slate-400 block font-mono text-[11px] uppercase">
+              <span className="text-slate-400 block font-medium text-[11px] uppercase">
                 Monthly Throughput Capacity:
               </span>
-              <p className="text-sm font-mono font-bold text-white mt-0.5">
+              <p className="text-sm font-medium font-bold text-white mt-0.5">
                 {factory.capacity}
               </p>
             </div>
@@ -271,13 +271,13 @@ export default function AdminFactoryDetailPage() {
           <div className="space-y-3 text-xs">
             {factory.contactInformation && (
               <div className="space-y-1.5">
-                <span className="text-slate-400 block font-mono text-[11px] uppercase">
+                <span className="text-slate-400 block font-medium text-[11px] uppercase">
                   Primary Floor Liaison:
                 </span>
                 <p className="font-semibold text-white">
                   {factory.contactInformation.contactPerson || 'Not assigned'}
                 </p>
-                <div className="flex flex-col gap-1 text-slate-300 font-mono pt-1">
+                <div className="flex flex-col gap-1 text-slate-300 font-medium pt-1">
                   {factory.contactInformation.email && (
                     <span className="flex items-center gap-1.5">
                       <Mail className="w-3.5 h-3.5 text-slate-500" />
@@ -295,7 +295,7 @@ export default function AdminFactoryDetailPage() {
             )}
 
             <div className="pt-2 border-t border-slate-800/60">
-              <span className="text-slate-400 block font-mono text-[11px] uppercase mb-1">
+              <span className="text-slate-400 block font-medium text-[11px] uppercase mb-1">
                 Internal Line Notes &amp; Capabilities Assessment:
               </span>
               <p className="text-xs text-slate-300 bg-slate-950 p-3 rounded-lg border border-slate-800 leading-relaxed">
@@ -329,7 +329,7 @@ export default function AdminFactoryDetailPage() {
           <Card className="overflow-hidden border-slate-800 bg-slate-900/80">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs text-slate-300">
-                <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase font-mono text-slate-400">
+                <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase font-medium text-slate-400">
                   <tr>
                     <th className="py-3 px-4">PO &amp; Style</th>
                     <th className="py-3 px-4">Buyer Organization</th>
@@ -339,7 +339,7 @@ export default function AdminFactoryDetailPage() {
                     <th className="py-3 px-4 text-right">Action</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-800/60 font-mono">
+                <tbody className="divide-y divide-slate-800/60 font-medium">
                   {orders.map((order) => (
                     <tr key={order.id} className="hover:bg-slate-800/40 transition-colors">
                       <td className="py-3 px-4">

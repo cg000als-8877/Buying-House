@@ -132,6 +132,155 @@ export const TEST_ORDER_FIXTURES: Order[] = [
     createdAt: '2026-06-01T09:00:00Z',
     updatedAt: '2026-09-06T10:00:00Z',
   },
+  {
+    id: 'TEST-ORDER-005',
+    orderNumber: 'PO-2026-0925',
+    buyerOrganizationId: 'buyer-org-003',
+    styleNumber: 'STY-ACT-305',
+    productName: 'Seamless Compression Training Leggings & Sports Bra Set',
+    category: 'Activewear & Performance',
+    factoryId: 'fac-unit-activewear',
+    quantity: 15000,
+    currency: 'EUR',
+    orderDate: '2026-08-01',
+    exFactoryDate: '2026-10-30',
+    shipmentDate: '2026-11-06',
+    currentStatus: 'Production',
+    priority: 'high',
+    assignedMerchandiserId: 'merch-001',
+    createdAt: '2026-08-01T09:30:00Z',
+    updatedAt: '2026-09-08T11:00:00Z',
+  },
+  {
+    id: 'TEST-ORDER-006',
+    orderNumber: 'PO-2026-0940',
+    buyerOrganizationId: 'buyer-org-004',
+    styleNumber: 'STY-WOV-712',
+    productName: 'French Collar Poplin Tailored Shirt with Mother-of-Pearl Buttons',
+    category: 'Woven Tops & Bottoms',
+    factoryId: 'fac-unit-woven',
+    quantity: 5500,
+    currency: 'EUR',
+    orderDate: '2026-08-15',
+    exFactoryDate: '2026-11-15',
+    currentStatus: 'Material',
+    priority: 'medium',
+    assignedMerchandiserId: 'merch-002',
+    createdAt: '2026-08-15T10:00:00Z',
+    updatedAt: '2026-09-04T15:20:00Z',
+  },
+  {
+    id: 'TEST-ORDER-007',
+    orderNumber: 'PO-2026-0801',
+    buyerOrganizationId: 'buyer-org-005',
+    styleNumber: 'STY-OUT-990',
+    productName: 'Storm-Proof 3-Layer Shell Mountain Parka',
+    category: 'Outerwear & Heavy Jackets',
+    factoryId: 'fac-unit-outerwear',
+    quantity: 3800,
+    currency: 'USD',
+    orderDate: '2026-07-01',
+    exFactoryDate: '2026-09-20',
+    shipmentDate: '2026-09-28',
+    currentStatus: 'Finishing',
+    priority: 'urgent',
+    assignedMerchandiserId: 'merch-001',
+    createdAt: '2026-07-01T08:00:00Z',
+    updatedAt: '2026-09-07T14:10:00Z',
+  },
+  {
+    id: 'TEST-ORDER-008',
+    orderNumber: 'PO-2026-0512',
+    buyerOrganizationId: 'buyer-org-001',
+    styleNumber: 'STY-KNIT-115',
+    productName: 'Organic French Terry Pullover Hoodie',
+    category: 'Circular Knitwear',
+    factoryId: 'fac-unit-knitwear',
+    quantity: 9000,
+    currency: 'USD',
+    orderDate: '2026-05-10',
+    exFactoryDate: '2026-08-01',
+    shipmentDate: '2026-08-08',
+    currentStatus: 'Completed',
+    priority: 'medium',
+    assignedMerchandiserId: 'merch-001',
+    createdAt: '2026-05-10T09:00:00Z',
+    updatedAt: '2026-08-15T16:00:00Z',
+  },
+  {
+    id: 'TEST-ORDER-009',
+    orderNumber: 'PO-2026-0955',
+    buyerOrganizationId: 'buyer-org-002',
+    styleNumber: 'STY-DNM-620',
+    productName: 'Raw Selvedge 14oz Straight-Leg Jeans',
+    category: 'Denim & Washed Apparel',
+    factoryId: 'fac-unit-denim',
+    quantity: 7200,
+    currency: 'USD',
+    orderDate: '2026-08-28',
+    exFactoryDate: '2026-11-20',
+    currentStatus: 'Cutting',
+    priority: 'high',
+    assignedMerchandiserId: 'merch-002',
+    createdAt: '2026-08-28T11:00:00Z',
+    updatedAt: '2026-09-06T12:30:00Z',
+  },
+  {
+    id: 'TEST-ORDER-010',
+    orderNumber: 'PO-2026-0968',
+    buyerOrganizationId: 'buyer-org-006',
+    styleNumber: 'STY-KNIT-901',
+    productName: 'Minimalist Relaxed Fit Supima Cotton Tee',
+    category: 'Circular Knitwear',
+    factoryId: 'fac-unit-knitwear',
+    quantity: 11000,
+    currency: 'USD',
+    orderDate: '2026-09-01',
+    exFactoryDate: '2026-12-01',
+    currentStatus: 'Development',
+    priority: 'medium',
+    assignedMerchandiserId: 'merch-001',
+    createdAt: '2026-09-01T08:30:00Z',
+    updatedAt: '2026-09-03T10:00:00Z',
+  },
+  {
+    id: 'TEST-ORDER-011',
+    orderNumber: 'PO-2026-0775',
+    buyerOrganizationId: 'buyer-org-003',
+    styleNumber: 'STY-ACT-410',
+    productName: 'Laser-Perforated Lightweight Running Shorts',
+    category: 'Activewear & Performance',
+    factoryId: 'fac-unit-activewear',
+    quantity: 8000,
+    currency: 'EUR',
+    orderDate: '2026-07-20',
+    exFactoryDate: '2026-09-30',
+    shipmentDate: '2026-10-05',
+    currentStatus: 'QC',
+    priority: 'high',
+    assignedMerchandiserId: 'merch-002',
+    createdAt: '2026-07-20T10:00:00Z',
+    updatedAt: '2026-09-08T09:15:00Z',
+  },
+  {
+    id: 'TEST-ORDER-012',
+    orderNumber: 'PO-2026-0688',
+    buyerOrganizationId: 'buyer-org-004',
+    styleNumber: 'STY-WOV-330',
+    productName: 'Linen-Blend Relaxed Resort Collar Shirt',
+    category: 'Woven Tops & Bottoms',
+    factoryId: 'fac-unit-woven',
+    quantity: 6500,
+    currency: 'EUR',
+    orderDate: '2026-06-25',
+    exFactoryDate: '2026-09-10',
+    shipmentDate: '2026-09-16',
+    currentStatus: 'Packing',
+    priority: 'medium',
+    assignedMerchandiserId: 'merch-001',
+    createdAt: '2026-06-25T09:00:00Z',
+    updatedAt: '2026-09-07T11:45:00Z',
+  },
 ];
 
 let inMemoryOrders = [...TEST_ORDER_FIXTURES];
@@ -171,6 +320,8 @@ export function getOrderMilestones(order: Order): OrderMilestone[] {
   });
 }
 
+import { normalizeBuyerOrgId } from '@/lib/auth/session';
+
 /**
  * Fetches all orders belonging strictly to the authenticated buyer's organization.
  * Enforces tenant isolation at the query level.
@@ -180,12 +331,14 @@ export async function getOrdersByBuyerOrg(buyerOrgId: string): Promise<Order[]> 
     return [];
   }
 
+  const normId = normalizeBuyerOrgId(buyerOrgId);
+
   if (isConfigured && db) {
     try {
       const ordersRef = collection(db, 'orders');
       const q = query(
         ordersRef,
-        where('buyerOrganizationId', '==', buyerOrgId),
+        where('buyerOrganizationId', 'in', [normId, buyerOrgId]),
         orderBy('createdAt', 'desc')
       );
       const querySnapshot = await getDocs(q);
@@ -204,7 +357,7 @@ export async function getOrdersByBuyerOrg(buyerOrgId: string): Promise<Order[]> 
       console.warn('[Firestore] Error fetching orders by buyerOrganizationId:', error);
       try {
         const ordersRef = collection(db, 'orders');
-        const fallbackQ = query(ordersRef, where('buyerOrganizationId', '==', buyerOrgId));
+        const fallbackQ = query(ordersRef, where('buyerOrganizationId', '==', normId));
         const querySnapshot = await getDocs(fallbackQ);
         const orders: Order[] = [];
         querySnapshot.forEach((docSnap) => {
@@ -218,7 +371,7 @@ export async function getOrdersByBuyerOrg(buyerOrgId: string): Promise<Order[]> 
     }
   }
 
-  return inMemoryOrders.filter((o) => o.buyerOrganizationId === buyerOrgId);
+  return inMemoryOrders.filter((o) => normalizeBuyerOrgId(o.buyerOrganizationId) === normId);
 }
 
 /**
@@ -229,6 +382,8 @@ export async function getOrderByIdForBuyer(orderId: string, buyerOrgId: string):
   if (!orderId || !buyerOrgId) {
     return null;
   }
+
+  const normId = normalizeBuyerOrgId(buyerOrgId);
 
   if (isConfigured && db) {
     try {
@@ -241,7 +396,7 @@ export async function getOrderByIdForBuyer(orderId: string, buyerOrgId: string):
 
       const orderData = docSnap.data() as Omit<Order, 'id'>;
 
-      if (orderData.buyerOrganizationId !== buyerOrgId) {
+      if (normalizeBuyerOrgId(orderData.buyerOrganizationId) !== normId) {
         return null;
       }
 
@@ -256,7 +411,7 @@ export async function getOrderByIdForBuyer(orderId: string, buyerOrgId: string):
   }
 
   const fixture = inMemoryOrders.find(
-    (o) => o.id === orderId && o.buyerOrganizationId === buyerOrgId
+    (o) => o.id === orderId && normalizeBuyerOrgId(o.buyerOrganizationId) === normId
   );
   return fixture || null;
 }

@@ -103,15 +103,15 @@ export default function AdminAuditLogsPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
+            <span className="text-xs font-medium uppercase tracking-widest text-amber-400 font-bold">
               Security Operations
             </span>
-            <span className="text-slate-500">•</span>
-            <Badge variant="emerald" size="sm" dot>
+            <span className="text-slate-600">/</span>
+            <Badge variant="emerald" size="sm">
               Append-Only Vault
             </Badge>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
             System Audit Trail &amp; Access Records
           </h1>
           <p className="text-sm text-slate-400 mt-1">
@@ -129,7 +129,7 @@ export default function AdminAuditLogsPage() {
             placeholder="Search by action, actor role, or entity ID..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 focus:outline-none focus:border-amber-400 text-white placeholder:text-slate-600 font-mono"
+            className="w-full pl-9 pr-4 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 focus:outline-none focus:border-amber-400 text-white placeholder:text-slate-600 font-medium"
           />
         </div>
       </Card>
@@ -154,7 +154,7 @@ export default function AdminAuditLogsPage() {
       ) : (
         <Card className="overflow-hidden border-slate-800 bg-slate-900/80">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs text-slate-300 font-mono">
+            <table className="w-full text-left text-xs text-slate-300 font-medium">
               <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase text-slate-400">
                 <tr>
                   <th className="py-3.5 px-4">Event Timestamp</th>

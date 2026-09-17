@@ -105,12 +105,12 @@ export function HeroSection() {
           <div className="lg:col-span-6 space-y-6 sm:space-y-7 text-left">
             
             {/* Clean Category Eyebrow */}
-            <p className="text-xs sm:text-sm font-display font-bold uppercase tracking-widest text-amber-400">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-400">
               Bangladesh Apparel Sourcing Platform
             </p>
 
             {/* Main Headline */}
-            <h1 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-[52px] text-white tracking-tight leading-[1.12]">
+            <h1 className="font-bold text-3xl sm:text-5xl lg:text-[52px] text-white tracking-tight leading-[1.12]">
               Engineered Apparel Sourcing from{' '}
               <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">
                 Bangladesh.
@@ -118,7 +118,7 @@ export function HeroSection() {
             </h1>
 
             {/* Subtext (strictly <= 20 words for instant viewport fit) */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-sans max-w-xl font-normal">
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl font-normal">
               Direct factory access in Bangladesh with precision tech pack execution, AQL 1.5 quality control, and live buyer portal telemetry.
             </p>
 
@@ -148,7 +148,7 @@ export function HeroSection() {
             </div>
 
             {/* Key Trust Signals */}
-            <div className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-400 font-sans border-t border-slate-800/80">
+            <div className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-400 border-t border-slate-800/80">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Zero Subcontracting Guarantee</span>
@@ -176,7 +176,7 @@ export function HeroSection() {
                   <button
                     key={slide.id}
                     onClick={() => setActiveSlideIndex(idx)}
-                    className={`px-3 sm:px-4 py-2 rounded-lg text-xs font-display font-semibold transition-all whitespace-nowrap cursor-pointer select-none flex-1 text-center ${
+                    className={`px-3 sm:px-4 py-2 rounded-lg text-xs font-semibold transition-all whitespace-nowrap cursor-pointer select-none flex-1 text-center ${
                       isActive
                         ? 'bg-amber-400 text-slate-950 shadow-md font-bold'
                         : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
@@ -211,30 +211,30 @@ export function HeroSection() {
 
                 {/* Floating Top-Right Stat Badge */}
                 <div className="absolute top-3.5 right-3.5 backdrop-blur-md bg-slate-950/85 border border-amber-400/30 rounded-xl px-3 sm:px-4 py-2 shadow-xl">
-                  <p className="text-[10px] sm:text-[11px] uppercase font-display font-bold text-amber-400 tracking-wider">
+                  <p className="text-[10px] sm:text-[11px] uppercase font-bold text-amber-400 tracking-wider">
                     {activeSlide.tag}
                   </p>
-                  <p className="text-xs sm:text-sm font-bold text-white font-sans">
+                  <p className="text-xs sm:text-sm font-bold text-white">
                     {activeSlide.highlight}
                   </p>
                 </div>
 
                 {/* Floating Top-Left Status Marker */}
-                <div className="absolute top-3.5 left-3.5 backdrop-blur-md bg-slate-950/80 border border-slate-700/60 rounded-lg px-2.5 py-1 text-[11px] font-mono text-emerald-400 shadow-md">
+                <div className="absolute top-3.5 left-3.5 backdrop-blur-md bg-slate-950/80 border border-slate-700/60 rounded-lg px-2.5 py-1 text-[11px] text-emerald-400 shadow-md">
                   <span>On-Site Factory Telemetry</span>
                 </div>
 
                 {/* Floating Bottom Information Bar */}
                 <div className="absolute bottom-3.5 left-3.5 right-3.5 p-3.5 sm:p-4 rounded-xl bg-slate-950/90 backdrop-blur-md border border-white/10 space-y-1">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-sm sm:text-base font-display font-bold text-white tracking-tight">
+                    <h3 className="text-sm sm:text-base font-bold text-white tracking-tight">
                       {activeSlide.title}
                     </h3>
-                    <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest hidden sm:inline-block">
+                    <span className="text-[10px] text-slate-400 uppercase tracking-widest hidden sm:inline-block">
                       Stage {activeSlideIndex + 1}/4
                     </span>
                   </div>
-                  <p className="text-xs text-slate-300 line-clamp-2 font-sans">
+                  <p className="text-xs text-slate-300 line-clamp-2">
                     {activeSlide.description}
                   </p>
                 </div>
@@ -246,7 +246,7 @@ export function HeroSection() {
             <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between text-xs sm:text-sm">
               <div className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-amber-400 shrink-0" />
-                <span className="text-slate-300 font-sans">
+                <span className="text-slate-300">
                   Target sampling turnaround: <strong className="text-white">7-10 days</strong> from tech pack sign-off
                 </span>
               </div>
@@ -267,13 +267,13 @@ export function HeroSection() {
         <div className="pt-6 sm:pt-8 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           {HERO_STATS.map((stat, i) => (
             <div key={i} className="space-y-1 text-left">
-              <p className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-amber-400 tracking-tight">
+              <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-amber-400 tracking-tight">
                 {stat.value}
               </p>
-              <h4 className="text-xs sm:text-sm font-display font-bold text-white uppercase tracking-wide">
+              <h4 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wide">
                 {stat.label}
               </h4>
-              <p className="text-xs text-slate-400 font-sans">
+              <p className="text-xs text-slate-400">
                 {stat.sub}
               </p>
             </div>

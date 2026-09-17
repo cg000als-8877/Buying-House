@@ -43,7 +43,7 @@ export function OrderProgressBar({
   return (
     <div className={`w-full space-y-1.5 ${className}`}>
       {(showLabel || showPercentage) && (
-        <div className="flex items-center justify-between text-xs font-mono">
+        <div className="flex items-center justify-between text-xs font-medium">
           {showLabel && (
             <span className="text-muted-foreground flex items-center gap-1.5">
               <span>Stage:</span>

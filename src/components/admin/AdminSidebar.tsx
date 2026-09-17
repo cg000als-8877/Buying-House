@@ -124,13 +124,13 @@ export function AdminSidebar({
           className="flex items-center gap-3 group"
         >
           <div className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 group-hover:scale-105 transition-transform">
-            <span className="font-display font-black text-lg">XYZ</span>
+            <span className="font-bold text-lg">XYZ</span>
           </div>
           <div>
-            <div className="font-display font-bold text-base text-white leading-tight">
+            <div className="font-bold text-base text-white leading-tight">
               Buying House
             </div>
-            <div className="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold">
+            <div className="text-[10px] uppercase tracking-widest text-amber-400 font-bold">
               Operations Control
             </div>
           </div>
@@ -139,7 +139,7 @@ export function AdminSidebar({
 
       {/* Nav items */}
       <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
-        <div className="px-3 pb-2 text-[10px] font-mono uppercase tracking-wider text-slate-400 font-semibold">
+        <div className="px-3 pb-2 text-[10px] uppercase tracking-wider text-slate-400 font-semibold">
           Operations Management
         </div>
         {navItems.map((item) => {
@@ -161,7 +161,7 @@ export function AdminSidebar({
               </div>
               {item.badge !== undefined && (
                 <span
-                  className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded-full ${
+                  className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
                     item.active
                       ? 'bg-slate-950 text-amber-400'
                       : 'bg-amber-400/20 text-amber-300 border border-amber-400/30'
@@ -174,7 +174,7 @@ export function AdminSidebar({
           );
         })}
 
-        <div className="pt-6 px-3 pb-2 text-[10px] font-mono uppercase tracking-wider text-slate-400 font-semibold">
+        <div className="pt-6 px-3 pb-2 text-[10px] uppercase tracking-wider text-slate-400 font-semibold">
           Portals
         </div>
         <Link

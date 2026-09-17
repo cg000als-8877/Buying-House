@@ -20,7 +20,7 @@ export function QualityPreview() {
                   <ShieldCheck className="w-4 h-4 text-accent" />
                 </div>
                 <CardTitle className="text-base">{pillar.title}</CardTitle>
-                <CardDescription className="text-xs font-mono text-accent">
+                <CardDescription className="text-xs font-medium text-accent">
                   {pillar.standard}
                 </CardDescription>
               </CardHeader>

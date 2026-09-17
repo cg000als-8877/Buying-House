@@ -61,7 +61,7 @@ export function MetricCard({
         </div>
 
         <div className="flex items-baseline gap-2 mb-1">
-          <span className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground font-mono">
+          <span className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground font-medium">
             {displayVal}
           </span>
         </div>

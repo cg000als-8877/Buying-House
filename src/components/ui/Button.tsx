@@ -26,21 +26,21 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variants: Record<string, string> = {
       primary:
-        'bg-primary text-primary-foreground hover:bg-primary-hover shadow-subtle',
+        'btn-liquid btn-liquid-primary bg-primary text-primary-foreground hover:bg-primary-hover shadow-subtle',
       secondary:
-        'bg-secondary text-secondary-foreground hover:bg-secondary-hover border border-border/60',
+        'bg-secondary text-secondary-foreground hover:bg-secondary-hover border border-border/60 transition-colors',
       outline:
-        'bg-transparent text-foreground border border-border hover:bg-surface-muted hover:text-foreground',
+        'bg-transparent text-foreground border border-border hover:bg-surface-muted hover:text-foreground transition-colors',
       ghost:
-        'bg-transparent text-foreground-secondary hover:text-foreground hover:bg-surface-muted',
+        'bg-transparent text-foreground-secondary hover:text-foreground hover:bg-surface-muted transition-colors',
       destructive:
         'bg-error text-white hover:opacity-90 shadow-subtle',
       danger:
         'bg-error text-white hover:opacity-90 shadow-subtle',
       accent:
-        'bg-accent text-accent-foreground hover:bg-accent-hover shadow-subtle font-semibold',
+        'btn-liquid btn-liquid-accent bg-accent text-accent-foreground hover:bg-accent-hover shadow-subtle font-semibold',
       gold:
-        'bg-accent text-accent-foreground hover:bg-accent-hover shadow-subtle font-semibold',
+        'btn-liquid btn-liquid-gold bg-accent text-accent-foreground hover:bg-accent-hover shadow-subtle font-semibold',
     };
 
     const sizes = {

@@ -318,7 +318,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
     <div className="space-y-8">
       {/* Notice Banner */}
       {notice && (
-        <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-center justify-between">
+        <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-medium flex items-center justify-between">
           <span>{notice}</span>
           <button onClick={() => setNotice(null)} className="text-amber-400 hover:text-white">
             <X className="w-4 h-4" />
@@ -329,7 +329,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
       {/* Header & Controls */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
         <div>
-          <span className="text-xs font-mono uppercase text-amber-400 font-bold">
+          <span className="text-xs font-medium uppercase text-amber-400 font-bold">
             Sampling &amp; Prototyping
           </span>
           <h2 className="text-xl font-serif font-bold text-white">
@@ -367,7 +367,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
           <select
             value={selectedStatusFilter}
             onChange={(e) => setSelectedStatusFilter(e.target.value)}
-            className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+            className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
           >
             <option value="ALL">All Sample States</option>
             <option value="submitted">Submitted (Under Buyer Review)</option>
@@ -412,7 +412,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                   {/* Card Top: Type, Version & Status */}
                   <div className="flex items-start justify-between gap-2 pb-2 border-b border-slate-800">
                     <div>
-                      <span className="text-[10px] font-mono text-amber-400 uppercase font-bold tracking-wider">
+                      <span className="text-[10px] font-medium text-amber-400 uppercase font-bold tracking-wider">
                         Revision v{sample.revisionNumber}
                       </span>
                       <h3 className="font-serif font-bold text-base text-white">
@@ -442,7 +442,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                   </div>
 
                   {/* Dates & Logistics */}
-                  <div className="space-y-1.5 text-xs font-mono text-slate-400">
+                  <div className="space-y-1.5 text-xs font-medium text-slate-400">
                     {sample.targetDate && (
                       <div className="flex justify-between">
                         <span>Target Date:</span>
@@ -471,7 +471,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                   {/* Remarks & Buyer Feedback */}
                   {sample.buyerRemarks && (
                     <div className="p-2.5 rounded-lg bg-slate-950/60 border border-slate-800 text-xs text-slate-300">
-                      <span className="text-[10px] font-mono uppercase text-slate-500 font-bold block">
+                      <span className="text-[10px] font-medium uppercase text-slate-500 font-bold block">
                         Buyer-Facing Spec:
                       </span>
                       <p className="line-clamp-2 mt-0.5">{sample.buyerRemarks}</p>
@@ -480,7 +480,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
 
                   {sample.internalRemarks && (
                     <div className="p-2.5 rounded-lg bg-amber-500/5 border border-amber-500/20 text-xs text-amber-200">
-                      <span className="text-[10px] font-mono uppercase text-amber-400 font-bold flex items-center gap-1">
+                      <span className="text-[10px] font-medium uppercase text-amber-400 font-bold flex items-center gap-1">
                         <Lock className="w-3 h-3" />
                         <span>Internal Note:</span>
                       </span>
@@ -498,7 +498,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                           : 'bg-rose-950/30 border-rose-500/30 text-rose-200'
                       }`}
                     >
-                      <span className="text-[10px] font-mono uppercase font-bold block">
+                      <span className="text-[10px] font-medium uppercase font-bold block">
                         Buyer Decision Feedback:
                       </span>
                       <p className="line-clamp-2 mt-0.5">&quot;{sample.buyerFeedback}&quot;</p>
@@ -517,7 +517,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                     {(sample.attachments?.length || 0) > 0 && (
-                      <span className="text-[11px] font-mono text-slate-500 flex items-center gap-1">
+                      <span className="text-[11px] font-medium text-slate-500 flex items-center gap-1">
                         <Paperclip className="w-3 h-3" />
                         <span>{sample.attachments?.length}</span>
                       </span>
@@ -574,7 +574,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
           <Card className="max-w-lg w-full p-6 bg-slate-900 border-slate-800 space-y-6 shadow-2xl">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
               <div>
-                <span className="text-xs font-mono uppercase text-amber-400 font-bold">
+                <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   New Garment Prototyping
                 </span>
                 <h3 className="font-serif font-bold text-lg text-white">Create Sample Request</h3>
@@ -617,7 +617,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                     type="date"
                     value={createFormData.targetDate}
                     onChange={(e) => setCreateFormData({ ...createFormData, targetDate: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
               </div>
@@ -643,7 +643,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                     onChange={(e) =>
                       setCreateFormData({ ...createFormData, trackingNumber: e.target.value })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
               </div>
@@ -727,7 +727,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                   onChange={(e) =>
                     setSubmitCourierData({ ...submitCourierData, trackingNumber: e.target.value })
                   }
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
 
@@ -750,7 +750,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
           <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4 shadow-2xl">
             <div className="flex items-center justify-between pb-2 border-b border-slate-800">
               <div>
-                <span className="text-xs font-mono uppercase text-amber-400 font-bold">
+                <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   Start Next Round
                 </span>
                 <h3 className="font-serif font-bold text-base text-white">
@@ -788,7 +788,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                   type="date"
                   value={revisionData.targetDate}
                   onChange={(e) => setRevisionData({ ...revisionData, targetDate: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-mono"
+                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
 
@@ -812,7 +812,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono uppercase text-amber-400 font-bold">
+                  <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                     Revision v{activeSampleDetail.revisionNumber}
                   </span>
                   <Badge
@@ -846,14 +846,14 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
 
             {/* Revision Timeline & History */}
             <div className="space-y-3">
-              <h4 className="text-xs font-mono uppercase text-slate-400 font-bold">
+              <h4 className="text-xs font-medium uppercase text-slate-400 font-bold">
                 Revision Decision History
               </h4>
               <div className="space-y-2">
                 {(activeSampleDetail.history || []).map((hist, idx) => (
                   <div
                     key={hist.id || idx}
-                    className="p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs space-y-1 font-mono"
+                    className="p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs space-y-1 font-medium"
                   >
                     <div className="flex items-center justify-between">
                       <span className="text-amber-400 font-bold">Revision #{hist.revisionNumber}</span>
@@ -882,7 +882,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
 
             {/* Attachments Section */}
             <div className="space-y-3 pt-3 border-t border-slate-800">
-              <h4 className="text-xs font-mono uppercase text-slate-400 font-bold">
+              <h4 className="text-xs font-medium uppercase text-slate-400 font-bold">
                 Photos &amp; Tech Spec Attachments
               </h4>
 
@@ -892,7 +892,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                     key={att.id}
                     className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 space-y-1.5 text-xs"
                   >
-                    <div className="flex items-center justify-between text-[10px] font-mono">
+                    <div className="flex items-center justify-between text-[10px] font-medium">
                       <Badge
                         variant={att.visibility === 'buyer' ? 'emerald' : 'amber'}
                         size="sm"
@@ -921,7 +921,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
 
               {/* Upload Attachment Form */}
               <form onSubmit={handleAddAttachment} className="p-3.5 rounded-lg bg-slate-950 border border-slate-800 space-y-3">
-                <span className="text-xs font-mono font-bold text-slate-300 block">Add Attachment / Image</span>
+                <span className="text-xs font-medium font-bold text-slate-300 block">Add Attachment / Image</span>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                   <input
                     type="text"
@@ -949,7 +949,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                         visibility: e.target.value as 'buyer' | 'internal',
                       })
                     }
-                    className="px-3 py-1.5 bg-slate-900 rounded border border-slate-700 text-white font-mono text-xs"
+                    className="px-3 py-1.5 bg-slate-900 rounded border border-slate-700 text-white font-medium text-xs"
                   >
                     <option value="buyer">Buyer Visible</option>
                     <option value="internal">Internal Only</option>
@@ -965,7 +965,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
 
             {/* Comments Thread */}
             <div className="space-y-3 pt-3 border-t border-slate-800">
-              <h4 className="text-xs font-mono uppercase text-slate-400 font-bold">
+              <h4 className="text-xs font-medium uppercase text-slate-400 font-bold">
                 Discussion &amp; Operational Messages
               </h4>
 
@@ -979,7 +979,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                         : 'bg-slate-950 border border-slate-800 text-slate-200'
                     }`}
                   >
-                    <div className="flex items-center justify-between text-[10px] font-mono text-slate-400">
+                    <div className="flex items-center justify-between text-[10px] font-medium text-slate-400">
                       <span>
                         {comm.authorName} ({comm.authorRole})
                         {comm.isInternalOnly && <span className="text-amber-400 ml-1.5">[INTERNAL]</span>}
@@ -999,7 +999,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                   onChange={(e) => setNewCommentText(e.target.value)}
                   className="flex-1 px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
                 />
-                <label className="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
+                <label className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
                   <input
                     type="checkbox"
                     checked={newCommentInternalOnly}

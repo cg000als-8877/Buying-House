@@ -130,13 +130,13 @@ export default function AdminOrdersPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
+            <span className="text-xs font-medium uppercase tracking-widest text-amber-400 font-bold">
               Purchase Order Master
             </span>
-            <span className="text-slate-500">•</span>
-            <span className="text-xs font-mono text-slate-400">{orders.length} Total Registered POs</span>
+            <span className="text-slate-600">/</span>
+            <span className="text-xs font-medium text-slate-400">{orders.length} Total Registered POs</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
             Manufacturing Orders Directory
           </h1>
           <p className="text-sm text-slate-400 mt-1">
@@ -198,7 +198,7 @@ export default function AdminOrdersPage() {
         {hasActiveFilters && (
           <div className="flex items-center justify-between pt-2 border-t border-slate-800/80 text-xs">
             <span className="text-slate-400">
-              Showing <strong className="text-white font-mono">{filteredOrders.length}</strong> of {orders.length} orders
+              Showing <strong className="text-white font-medium">{filteredOrders.length}</strong> of {orders.length} orders
             </span>
             <button
               onClick={handleResetFilters}
@@ -232,7 +232,7 @@ export default function AdminOrdersPage() {
         <Card className="overflow-hidden border-slate-800 bg-slate-900/80">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs text-slate-300">
-              <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase font-mono text-slate-400">
+              <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase font-medium text-slate-400">
                 <tr>
                   <th className="py-3.5 px-4">PO &amp; Style</th>
                   <th className="py-3.5 px-4">Product Name</th>
@@ -244,7 +244,7 @@ export default function AdminOrdersPage() {
                   <th className="py-3.5 px-4 text-right">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60 font-mono">
+              <tbody className="divide-y divide-slate-800/60 font-medium">
                 {filteredOrders.map((order) => (
                   <tr key={order.id} className="hover:bg-slate-800/40 transition-colors">
                     <td className="py-3.5 px-4">

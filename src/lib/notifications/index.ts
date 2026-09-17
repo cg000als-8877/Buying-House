@@ -165,6 +165,63 @@ export const TEST_NOTIFICATION_FIXTURES: AppNotification[] = [
     actionUrl: '/admin/quality',
     createdAt: '2026-09-07T11:30:00Z',
   },
+  {
+    id: 'notif-008',
+    recipientUserId: 'buyer-001',
+    recipientRole: 'Buyer',
+    buyerOrganizationId: 'buyer-org-001',
+    type: 'SAMPLE_APPROVED',
+    category: 'SAMPLE',
+    title: 'Fit Sample Revision Approved',
+    message: 'Proto Sample for Heavyweight Crewneck (PO-2026-0881) approved. Pre-production cutting cleared.',
+    severity: 'success',
+    channel: 'ALL',
+    entityType: 'sample',
+    entityId: 'sample-002',
+    orderId: 'TEST-ORDER-001',
+    relatedOrderId: 'TEST-ORDER-001',
+    isRead: true,
+    read: true,
+    readAt: '2026-09-06T10:00:00Z',
+    actionUrl: '/buyer/orders/TEST-ORDER-001',
+    createdAt: '2026-09-06T09:30:00Z',
+  },
+  {
+    id: 'notif-009',
+    recipientUserId: 'staff-admin-001',
+    recipientRole: 'Admin',
+    type: 'DOCUMENT_UPLOADED',
+    category: 'DOCUMENT',
+    title: 'GOTS Organic Scope Certificate Renewed',
+    message: 'New GOTS Scope Certificate 2026 uploaded for partner factory Apex Composite Knitwear.',
+    severity: 'info',
+    channel: 'ALL',
+    entityType: 'document',
+    entityId: 'doc-demo-009',
+    isRead: false,
+    read: false,
+    actionUrl: '/admin/documents',
+    createdAt: '2026-09-08T08:00:00Z',
+  },
+  {
+    id: 'notif-010',
+    recipientUserId: 'staff-admin-001',
+    recipientRole: 'Admin',
+    type: 'SHIPMENT_DISPATCHED',
+    category: 'SHIPMENT',
+    title: 'Priority Air Freight Dispatched (SHP-2026-0084)',
+    message: 'Lufthansa Cargo MD-11F departed Hazrat Shahjalal International Airport with 15,000 pcs activewear.',
+    severity: 'info',
+    channel: 'ALL',
+    entityType: 'shipment',
+    entityId: 'ship-004',
+    orderId: 'TEST-ORDER-005',
+    relatedOrderId: 'TEST-ORDER-005',
+    isRead: false,
+    read: false,
+    actionUrl: '/admin/shipments',
+    createdAt: '2026-09-07T18:30:00Z',
+  },
 ];
 
 let inMemoryNotifications: AppNotification[] = [...TEST_NOTIFICATION_FIXTURES];
@@ -222,8 +279,14 @@ export async function getNotificationsForUser(
       results = inMemoryNotifications.filter((n) => n.recipientUserId === userId);
     }
   } else {
-    // In-memory filter enforcing strict recipient user ownership
-    results = inMemoryNotifications.filter((n) => n.recipientUserId === userId);
+    // In-memory filter enforcing recipient ownership with dev mode fallback
+    results = inMemoryNotifications.filter((n) => {
+      if (n.recipientUserId === userId) return true;
+      if (userId.startsWith('dev-user')) {
+        return n.recipientRole === 'Buyer' || n.recipientUserId === 'buyer-001';
+      }
+      return false;
+    });
   }
 
   // Apply filters

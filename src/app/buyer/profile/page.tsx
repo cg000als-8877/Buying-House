@@ -24,15 +24,15 @@ export default function BuyerProfilePage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-primary font-bold">
+            <span className="text-xs font-medium uppercase tracking-widest text-primary font-bold">
               Account Settings
             </span>
-            <span className="text-muted-foreground">•</span>
-            <Badge variant="emerald" size="sm" dot>
+            <span className="text-muted-foreground/60">/</span>
+            <Badge variant="emerald" size="sm">
               Verified Buyer
             </Badge>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-foreground">
+          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-foreground tracking-tight">
             Buyer Profile &amp; Organization
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
@@ -69,14 +69,14 @@ export default function BuyerProfilePage() {
           <div className="space-y-3 text-xs">
             <div className="flex justify-between items-center py-1 border-b border-border/40">
               <span className="text-muted-foreground">Organization Tenant ID:</span>
-              <Badge variant="blue" size="sm" className="font-mono font-bold">
+              <Badge variant="blue" size="sm" className="font-medium font-bold">
                 {buyerOrgId}
               </Badge>
             </div>
 
             <div className="flex justify-between items-center py-1 border-b border-border/40">
               <span className="text-muted-foreground">Tenant Access Scope:</span>
-              <span className="font-mono text-emerald-400 font-semibold flex items-center gap-1">
+              <span className="font-medium text-emerald-400 font-semibold flex items-center gap-1">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 Isolated Workspace
               </span>
@@ -84,12 +84,12 @@ export default function BuyerProfilePage() {
 
             <div className="flex justify-between items-center py-1 border-b border-border/40">
               <span className="text-muted-foreground">Account Status:</span>
-              <span className="font-mono text-foreground font-semibold">Active &amp; Verified</span>
+              <span className="font-medium text-foreground font-semibold">Active &amp; Verified</span>
             </div>
 
             <div className="flex justify-between items-center py-1">
               <span className="text-muted-foreground">Assigned Merchandising Hub:</span>
-              <span className="font-mono text-foreground">Dhaka Operational Office</span>
+              <span className="font-medium text-foreground">Dhaka Operational Office</span>
             </div>
           </div>
         </Card>
@@ -118,7 +118,7 @@ export default function BuyerProfilePage() {
 
             <div className="flex justify-between items-center py-1 border-b border-border/40">
               <span className="text-muted-foreground">Email Address:</span>
-              <span className="font-mono text-foreground">
+              <span className="font-medium text-foreground">
                 {user?.email || 'buyer@example.com'}
               </span>
             </div>
@@ -132,7 +132,7 @@ export default function BuyerProfilePage() {
 
             <div className="flex justify-between items-center py-1">
               <span className="text-muted-foreground">User UID:</span>
-              <span className="font-mono text-[11px] text-muted-foreground truncate max-w-[160px]">
+              <span className="font-medium text-[11px] text-muted-foreground truncate max-w-[160px]">
                 {user?.uid || 'buyer-uid-001'}
               </span>
             </div>

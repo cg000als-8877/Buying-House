@@ -31,10 +31,10 @@ export function BuyerHeader({ unreadCount = 0 }: BuyerHeaderProps) {
           </button>
 
           <div className="flex items-center gap-2">
-            <span className="font-display font-bold text-base text-foreground lg:hidden">
+            <span className="font-sans font-bold text-base text-foreground lg:hidden">
               XYZ Buying House
             </span>
-            <span className="hidden sm:inline-block text-xs font-mono text-muted-foreground">
+            <span className="hidden sm:inline-block text-xs font-medium text-muted-foreground">
               Secure Buyer Portal
             </span>
           </div>
@@ -45,7 +45,7 @@ export function BuyerHeader({ unreadCount = 0 }: BuyerHeaderProps) {
           <div className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-full bg-muted/60 border border-border text-xs">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
             <span className="text-muted-foreground">Tenant:</span>
-            <span className="font-mono font-bold text-foreground">
+            <span className="font-medium font-bold text-foreground">
               {user?.buyerOrganizationId || 'buyer-org-001'}
             </span>
           </div>

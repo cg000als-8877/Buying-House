@@ -17,10 +17,10 @@ export default function ProductsPage() {
     <div className="space-y-16 lg:space-y-24 py-12 lg:py-16">
       {/* 1. Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-display">
+        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-sans">
           Illustrative Manufacturing Scope
         </p>
-        <h1 className="font-display font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
+        <h1 className="font-sans font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
           Apparel Categories & Manufacturing Scope.
         </h1>
         <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -77,7 +77,7 @@ export default function ProductsPage() {
             {/* Technical Specifications */}
             <div className="lg:col-span-7 space-y-6">
               <div className="space-y-2">
-                <h2 className="font-display font-bold text-foreground text-h3 tracking-tight">
+                <h2 className="font-sans font-bold text-foreground text-h3 tracking-tight">
                   {category.name}
                 </h2>
                 <p className="text-xs font-semibold uppercase tracking-wider text-accent">

@@ -14,22 +14,22 @@ export function ComplianceSection() {
           
           {/* Left info */}
           <div className="lg:col-span-5 space-y-6">
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400 font-display">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
               Zero-Compromise Ethics &amp; Safety
             </p>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
               Fully Certified, Audited &amp;{' '}
-              <span className="text-emerald-400 font-extrabold">
+              <span className="text-emerald-400 font-bold">
                 Globally Compliant
               </span>
             </h2>
 
-            <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed font-sans">
+            <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed">
               International fashion retailers trust us because our factory ecosystem is continually audited under stringent international social, environmental, and technical benchmarks.
             </p>
 
-            <div className="space-y-3.5 text-sm text-slate-300 font-sans">
+            <div className="space-y-3.5 text-sm text-slate-300">
               <div className="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800">
                 <FileCheck className="w-5 h-5 text-emerald-400 shrink-0" />
                 <span>Downloadable audit certificates &amp; test reports for every batch</span>
@@ -43,7 +43,7 @@ export function ComplianceSection() {
             <div>
               <Link
                 href="/compliance"
-                className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-amber-400 hover:text-amber-300 font-display"
+                className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-amber-400 hover:text-amber-300"
               >
                 <span>Access Our Compliance Certificate Vault</span>
                 <ArrowRight className="w-4 h-4" />
@@ -60,13 +60,13 @@ export function ComplianceSection() {
               >
                 <div className="flex items-start justify-between">
                   <span className="text-3xl">{cert.logo}</span>
-                  <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded bg-slate-800 text-emerald-400 border border-slate-700 font-display">
+                  <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded bg-slate-800 text-emerald-400 border border-slate-700 font-sans">
                     {cert.validity}
                   </span>
                 </div>
 
                 <div>
-                  <h4 className="font-display font-bold text-lg text-white">{cert.name}</h4>
+                  <h4 className="font-sans font-bold text-lg text-white">{cert.name}</h4>
                   <p className="text-xs sm:text-sm text-slate-300 mt-1.5 line-clamp-2 font-sans">{cert.description}</p>
                 </div>
 

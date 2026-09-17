@@ -41,22 +41,22 @@ export function Hero() {
           
           {/* Left Column */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <p ref={badgeRef} className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400 font-display">
+            <p ref={badgeRef} className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
               Full-Spectrum Apparel Sourcing &amp; Manufacturing
             </p>
 
-            <h1 ref={headlineRef} className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.15] tracking-tight">
+            <h1 ref={headlineRef} className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.15] tracking-tight">
               Where Fashion Vision Meets{' '}
-              <span className="text-gold-gradient font-extrabold">
+              <span className="text-gold-gradient font-bold">
                 Flawless Execution.
               </span>
             </h1>
 
-            <p ref={subtextRef} className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-sans font-normal">
+            <p ref={subtextRef} className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
               We empower premier international fashion brands, private labels, and retailers with end-to-end garment manufacturing, certified sustainable fabrics, and AQL 1.5 precision quality control.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs sm:text-sm text-slate-300 font-sans">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs sm:text-sm text-slate-300">
               <div className="flex items-center gap-2 justify-center lg:justify-start">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>OEKO-TEX &amp; GOTS Certified</span>
@@ -71,7 +71,7 @@ export function Hero() {
               </div>
             </div>
 
-            <div ref={ctaRef} className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 font-display">
+            <div ref={ctaRef} className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Link href="/rfq">
                 <Button variant="gold" size="lg" className="w-full sm:w-auto">
                   <span>Request Quotation &amp; Samples</span>
@@ -113,18 +113,18 @@ export function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
                   
                   <div className="absolute top-4 right-4 backdrop-blur-md bg-slate-950/80 border border-amber-500/30 rounded-xl p-3 shadow-lg">
-                    <p className="text-[10px] uppercase font-bold text-amber-400 tracking-wider font-display">AQL 1.5 Quality</p>
-                    <p className="text-lg font-bold text-white font-display">99.4% Pass Rate</p>
+                    <p className="text-[10px] uppercase font-bold text-amber-400 tracking-wider font-sans">AQL 1.5 Quality</p>
+                    <p className="text-lg font-bold text-white font-sans">99.4% Pass Rate</p>
                   </div>
 
                   <div className="absolute bottom-4 left-4 right-4 backdrop-blur-md bg-slate-950/85 border border-white/10 rounded-xl p-4 space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider font-display">
+                      <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider font-sans">
                         Spring / Summer 2026 Ready
                       </span>
                       <span className="text-xs text-slate-300 font-sans">MOQ: 300 Pcs</span>
                     </div>
-                    <h3 className="text-white font-display font-bold text-base">
+                    <h3 className="text-white font-sans font-bold text-base">
                       Premium Organic Heavyweight Series
                     </h3>
                     <p className="text-xs text-slate-300 line-clamp-1 font-sans">

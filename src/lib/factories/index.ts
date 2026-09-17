@@ -67,6 +67,42 @@ export const TEST_FACTORIES: Factory[] = [
     createdAt: '2026-01-20T11:00:00Z',
     updatedAt: '2026-08-30T16:45:00Z',
   },
+  {
+    id: 'fac-unit-activewear',
+    name: 'Velocity Technical Sportswear Ltd.',
+    location: 'Chittagong Export Processing Zone (CEPZ), Bangladesh',
+    specializations: ['Performance Activewear', 'Seamless Knit', 'Moisture-Wicking Tops', 'Four-Way Stretch Leggings'],
+    capacity: '950,000 pcs / month',
+    employeeCount: 2600,
+    certificationIds: ['ISO-9001', 'OEKO-TEX-100', 'BLUESIGN-APPROVED', 'SEDEX-SMETA'],
+    contactInformation: {
+      contactPerson: 'Farhana Sultana (Technical Director)',
+      email: 'farhana@velocitysport.example',
+      phone: '+880 31 712345',
+    },
+    status: 'active',
+    internalNotes: 'Equipped with Santoni seamless circular knitting machines and ultrasonic seam bonding technology.',
+    createdAt: '2026-02-14T08:30:00Z',
+    updatedAt: '2026-08-20T12:00:00Z',
+  },
+  {
+    id: 'fac-unit-outerwear',
+    name: 'Alpine Technical Outerwear & Downwear',
+    location: 'Sreepur, Gazipur, Bangladesh',
+    specializations: ['Bonded Softshells', 'Waterproof Parkas', 'Down-Filled Puffer Jackets', 'Technical Windbreakers'],
+    capacity: '400,000 pcs / month',
+    employeeCount: 1800,
+    certificationIds: ['RDS-DOWN-STANDARD', 'OEKO-TEX-100', 'WRAP-PLATINUM', 'ISO-14001'],
+    contactInformation: {
+      contactPerson: 'Arif Chowdhury (Plant Manager)',
+      email: 'arif@alpineouterwear.example',
+      phone: '+880 2 9944112',
+    },
+    status: 'audited',
+    internalNotes: 'Fully climate-controlled down-filling bays and seam-sealing heat welding machines with automated hydrostatic pressure testers.',
+    createdAt: '2026-03-01T10:00:00Z',
+    updatedAt: '2026-08-28T15:30:00Z',
+  },
 ];
 
 let inMemoryFactories = [...TEST_FACTORIES];

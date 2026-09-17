@@ -303,7 +303,7 @@ export function AdminShipmentWorkspace({
               Logistics &amp; Cargo Control
             </Badge>
             {orderNumber && (
-              <span className="text-xs font-mono text-slate-400">
+              <span className="text-xs font-medium text-slate-400">
                 Order: <strong className="text-amber-400">{orderNumber}</strong>
               </span>
             )}
@@ -342,36 +342,36 @@ export function AdminShipmentWorkspace({
       {metrics && (
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
           <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-slate-400">Total Bookings</span>
-            <div className="text-xl font-bold font-mono text-white">{metrics.totalShipments}</div>
+            <span className="text-[10px] font-medium uppercase text-slate-400">Total Bookings</span>
+            <div className="text-xl font-bold font-medium text-white">{metrics.totalShipments}</div>
           </div>
           <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-sky-400">In Transit</span>
-            <div className="text-xl font-bold font-mono text-sky-400">{metrics.inTransitShipments}</div>
+            <span className="text-[10px] font-medium uppercase text-sky-400">In Transit</span>
+            <div className="text-xl font-bold font-medium text-sky-400">{metrics.inTransitShipments}</div>
           </div>
           <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-amber-400">Ready to Ship</span>
-            <div className="text-xl font-bold font-mono text-amber-400">{metrics.readyToShipShipments}</div>
+            <span className="text-[10px] font-medium uppercase text-amber-400">Ready to Ship</span>
+            <div className="text-xl font-bold font-medium text-amber-400">{metrics.readyToShipShipments}</div>
           </div>
           <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-emerald-400">Delivered</span>
-            <div className="text-xl font-bold font-mono text-emerald-400">{metrics.deliveredShipments}</div>
+            <span className="text-[10px] font-medium uppercase text-emerald-400">Delivered</span>
+            <div className="text-xl font-bold font-medium text-emerald-400">{metrics.deliveredShipments}</div>
           </div>
           <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-rose-400">Delayed</span>
-            <div className="text-xl font-bold font-mono text-rose-400">{metrics.delayedShipments}</div>
+            <span className="text-[10px] font-medium uppercase text-rose-400">Delayed</span>
+            <div className="text-xl font-bold font-medium text-rose-400">{metrics.delayedShipments}</div>
           </div>
           <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-slate-400">Total Volume</span>
-            <div className="text-lg font-bold font-mono text-white">{metrics.totalCBM} CBM</div>
+            <span className="text-[10px] font-medium uppercase text-slate-400">Total Volume</span>
+            <div className="text-lg font-bold font-medium text-white">{metrics.totalCBM} CBM</div>
           </div>
           <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-slate-400">Total Pieces</span>
-            <div className="text-lg font-bold font-mono text-white">{metrics.totalPieces.toLocaleString()}</div>
+            <span className="text-[10px] font-medium uppercase text-slate-400">Total Pieces</span>
+            <div className="text-lg font-bold font-medium text-white">{metrics.totalPieces.toLocaleString()}</div>
           </div>
           <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
-            <span className="text-[10px] font-mono uppercase text-emerald-400">On-Time Rate</span>
-            <div className="text-xl font-bold font-mono text-emerald-400">{metrics.onTimeDeliveryRate}%</div>
+            <span className="text-[10px] font-medium uppercase text-emerald-400">On-Time Rate</span>
+            <div className="text-xl font-bold font-medium text-emerald-400">{metrics.onTimeDeliveryRate}%</div>
           </div>
         </div>
       )}
@@ -394,7 +394,7 @@ export function AdminShipmentWorkspace({
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value as ShipmentStatus | 'ALL')}
-              className="px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-700 text-white focus:outline-none focus:border-amber-400 font-mono"
+              className="px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-700 text-white focus:outline-none focus:border-amber-400 font-medium"
             >
               <option value="ALL">All Statuses</option>
               <option value="PLANNING">Planning</option>
@@ -415,7 +415,7 @@ export function AdminShipmentWorkspace({
             <select
               value={modeFilter}
               onChange={(e) => setModeFilter(e.target.value as TransportMode | 'ALL')}
-              className="px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-700 text-white focus:outline-none focus:border-amber-400 font-mono"
+              className="px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-700 text-white focus:outline-none focus:border-amber-400 font-medium"
             >
               <option value="ALL">All Transport Modes</option>
               <option value="SEA_FCL">Sea FCL (Container)</option>
@@ -447,7 +447,7 @@ export function AdminShipmentWorkspace({
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="border-b border-slate-800 bg-slate-950/60 font-mono text-[11px] text-slate-400 uppercase">
+                <tr className="border-b border-slate-800 bg-slate-950/60 font-medium text-[11px] text-slate-400 uppercase">
                   <th className="p-4">Shipment # / PO</th>
                   <th className="p-4">Destination &amp; Buyer</th>
                   <th className="p-4">Mode &amp; Carrier</th>
@@ -457,7 +457,7 @@ export function AdminShipmentWorkspace({
                   <th className="p-4 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60 font-mono">
+              <tbody className="divide-y divide-slate-800/60 font-medium">
                 {shipments.map((shipment) => (
                   <tr
                     key={shipment.id}
@@ -478,7 +478,7 @@ export function AdminShipmentWorkspace({
                         <MapPin className="w-3 h-3 text-emerald-400 shrink-0" />
                         <span>{shipment.destinationCountry} - {shipment.destinationPort}</span>
                       </div>
-                      <div className="text-xs text-slate-400 font-mono mt-0.5">
+                      <div className="text-xs text-slate-400 font-medium mt-0.5">
                         Org: {shipment.buyerOrganizationName}
                       </div>
                     </td>
@@ -496,7 +496,7 @@ export function AdminShipmentWorkspace({
                         <span className="text-[10px] text-slate-400">({shipment.incoterm})</span>
                       </div>
                       <div className="text-[11px] text-slate-400 font-sans truncate max-w-[180px]">
-                        {shipment.carrier} • {shipment.forwarder}
+                        {shipment.carrier} | {shipment.forwarder}
                       </div>
                     </td>
 
@@ -505,7 +505,7 @@ export function AdminShipmentWorkspace({
                         {shipment.totalCartons} ctns / {shipment.totalPieces.toLocaleString()} pcs
                       </div>
                       <div className="text-[11px] text-slate-400">
-                        {shipment.totalCBM} CBM • {shipment.totalGrossWeightKG.toLocaleString()} kg
+                        {shipment.totalCBM} CBM | {shipment.totalGrossWeightKG.toLocaleString()} kg
                       </div>
                     </td>
 
@@ -520,7 +520,7 @@ export function AdminShipmentWorkspace({
 
                     <td className="p-4">
                       <div className="flex flex-col gap-1 items-start">
-                        <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full ${
+                        <span className={`text-[10px] font-medium font-bold px-2 py-0.5 rounded-full ${
                           shipment.status === 'DELIVERED'
                             ? 'bg-emerald-950 text-emerald-300 border border-emerald-800'
                             : shipment.status === 'IN_TRANSIT'
@@ -571,13 +571,13 @@ export function AdminShipmentWorkspace({
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-800">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-mono font-bold text-amber-400 px-2 py-0.5 rounded bg-amber-400/10 border border-amber-400/30">
+                <span className="text-xs font-medium font-bold text-amber-400 px-2 py-0.5 rounded bg-amber-400/10 border border-amber-400/30">
                   {selectedShipment.shipmentNumber}
                 </span>
-                <span className="text-xs font-mono text-slate-300">
+                <span className="text-xs font-medium text-slate-300">
                   PO: <strong>{selectedShipment.orderNumber}</strong>
                 </span>
-                <span className="text-xs font-mono text-slate-400">
+                <span className="text-xs font-medium text-slate-400">
                   Buyer: <strong>{selectedShipment.buyerOrganizationName}</strong>
                 </span>
               </div>
@@ -611,7 +611,7 @@ export function AdminShipmentWorkspace({
           </div>
 
           {/* Module Sub-tabs */}
-          <div className="flex border-b border-slate-800 gap-2 overflow-x-auto text-xs font-mono">
+          <div className="flex border-b border-slate-800 gap-2 overflow-x-auto text-xs font-medium">
             <button
               onClick={() => setActiveTab('overview')}
               className={`pb-2.5 px-3 border-b-2 font-bold transition-colors ${
@@ -680,7 +680,7 @@ export function AdminShipmentWorkspace({
 
           {/* Sub-tab 1: Commercial & Vessel Specs */}
           {activeTab === 'overview' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-xs font-mono">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-xs font-medium">
               <Card className="p-4 bg-slate-950/60 border-slate-800 space-y-3">
                 <h4 className="font-serif font-bold text-sm text-white pb-2 border-b border-slate-800">
                   Carrier &amp; Forwarding Agent
@@ -817,7 +817,7 @@ export function AdminShipmentWorkspace({
                       {readiness.qualityGate.passed ? 'PASSED' : 'BLOCKED'}
                     </Badge>
                   </div>
-                  <div className="space-y-1.5 text-xs font-mono">
+                  <div className="space-y-1.5 text-xs font-medium">
                     <div className="flex justify-between">
                       <span className="text-slate-400">Total Inspections:</span>
                       <span className="text-white">{readiness.qualityGate.inspectionCount}</span>
@@ -853,7 +853,7 @@ export function AdminShipmentWorkspace({
                       {readiness.productionGate.completionPercentage}%
                     </Badge>
                   </div>
-                  <div className="space-y-1.5 text-xs font-mono">
+                  <div className="space-y-1.5 text-xs font-medium">
                     <div className="flex justify-between">
                       <span className="text-slate-400">PO Quantity:</span>
                       <span className="text-white">{readiness.productionGate.requiredQuantity.toLocaleString()} pcs</span>
@@ -877,7 +877,7 @@ export function AdminShipmentWorkspace({
                       {readiness.documentGate.totalRequiredCount - readiness.documentGate.pendingRequiredCount} / {readiness.documentGate.totalRequiredCount}
                     </Badge>
                   </div>
-                  <div className="space-y-1.5 text-xs font-mono">
+                  <div className="space-y-1.5 text-xs font-medium">
                     <div className="flex justify-between">
                       <span className="text-slate-400">Required Documents:</span>
                       <span className="text-white">{readiness.documentGate.totalRequiredCount}</span>
@@ -894,7 +894,7 @@ export function AdminShipmentWorkspace({
 
               {readiness.reasons.length > 0 && (
                 <Card className="p-4 bg-rose-950/30 border-rose-900/60 space-y-2">
-                  <span className="text-xs font-mono font-bold text-rose-400 uppercase">
+                  <span className="text-xs font-medium font-bold text-rose-400 uppercase">
                     Blocking Issue Details:
                   </span>
                   <ul className="space-y-1 text-xs text-rose-200 list-disc list-inside">
@@ -912,9 +912,9 @@ export function AdminShipmentWorkspace({
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <h4 className="font-serif font-bold text-white text-base">Export Packing List Line Items</h4>
+                  <h4 className="font-sans font-bold text-white text-base">Export Packing List Line Items</h4>
                   <p className="text-xs text-slate-400">
-                    Calculated carton metrics: {selectedShipment.totalCartons} cartons • {selectedShipment.totalPieces.toLocaleString()} pieces • {selectedShipment.totalCBM} CBM • {selectedShipment.totalGrossWeightKG.toLocaleString()} kg Gross
+                    Calculated carton metrics: {selectedShipment.totalCartons} cartons | {selectedShipment.totalPieces.toLocaleString()} pieces | {selectedShipment.totalCBM} CBM | {selectedShipment.totalGrossWeightKG.toLocaleString()} kg Gross
                   </p>
                 </div>
                 {canWrite && (
@@ -965,7 +965,7 @@ export function AdminShipmentWorkspace({
                         required
                         value={packStartCarton}
                         onChange={(e) => setPackStartCarton(Number(e.target.value))}
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono"
+                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
                       />
                     </div>
                     <div>
@@ -976,7 +976,7 @@ export function AdminShipmentWorkspace({
                         required
                         value={packEndCarton}
                         onChange={(e) => setPackEndCarton(Number(e.target.value))}
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono"
+                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
                       />
                     </div>
                     <div>
@@ -987,7 +987,7 @@ export function AdminShipmentWorkspace({
                         required
                         value={packPiecesPerCarton}
                         onChange={(e) => setPackPiecesPerCarton(Number(e.target.value))}
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono"
+                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
                       />
                     </div>
                     <div>
@@ -998,21 +998,21 @@ export function AdminShipmentWorkspace({
                           value={packLength}
                           onChange={(e) => setPackLength(Number(e.target.value))}
                           placeholder="L"
-                          className="w-1/3 px-1.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono text-center"
+                          className="w-1/3 px-1.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium text-center"
                         />
                         <input
                           type="number"
                           value={packWidth}
                           onChange={(e) => setPackWidth(Number(e.target.value))}
                           placeholder="W"
-                          className="w-1/3 px-1.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono text-center"
+                          className="w-1/3 px-1.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium text-center"
                         />
                         <input
                           type="number"
                           value={packHeight}
                           onChange={(e) => setPackHeight(Number(e.target.value))}
                           placeholder="H"
-                          className="w-1/3 px-1.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono text-center"
+                          className="w-1/3 px-1.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium text-center"
                         />
                       </div>
                     </div>
@@ -1024,7 +1024,7 @@ export function AdminShipmentWorkspace({
                         required
                         value={packGrossWeight}
                         onChange={(e) => setPackGrossWeight(Number(e.target.value))}
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono"
+                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
                       />
                     </div>
                     <div>
@@ -1035,7 +1035,7 @@ export function AdminShipmentWorkspace({
                         required
                         value={packNetWeight}
                         onChange={(e) => setPackNetWeight(Number(e.target.value))}
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono"
+                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
                       />
                     </div>
                     <div className="sm:col-span-2 lg:col-span-4 flex justify-end gap-2 pt-2">
@@ -1064,7 +1064,7 @@ export function AdminShipmentWorkspace({
 
               {/* Packing Table */}
               <div className="overflow-x-auto rounded-lg border border-slate-800">
-                <table className="w-full text-left text-xs border-collapse font-mono">
+                <table className="w-full text-left text-xs border-collapse font-medium">
                   <thead>
                     <tr className="bg-slate-950 border-b border-slate-800 text-slate-400 text-[11px] uppercase">
                       <th className="p-3">Carton Range</th>
@@ -1123,7 +1123,7 @@ export function AdminShipmentWorkspace({
                         <FileText className="w-4 h-4 text-amber-400 shrink-0" />
                         <div>
                           <div className="text-xs font-bold text-white font-sans">{doc.documentName}</div>
-                          <span className="text-[10px] font-mono text-slate-400">{doc.documentType}</span>
+                          <span className="text-[10px] font-medium text-slate-400">{doc.documentType}</span>
                         </div>
                       </div>
                       <Badge
@@ -1143,7 +1143,7 @@ export function AdminShipmentWorkspace({
                     </div>
 
                     {doc.fileName && (
-                      <div className="p-2 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300 flex items-center justify-between">
+                      <div className="p-2 rounded bg-slate-900 border border-slate-800 text-[11px] font-medium text-slate-300 flex items-center justify-between">
                         <span className="truncate">{doc.fileName}</span>
                         {doc.fileUrl && (
                           <a
@@ -1235,7 +1235,7 @@ export function AdminShipmentWorkspace({
                       <select
                         value={eventStatus}
                         onChange={(e) => setEventStatus(e.target.value as ShipmentStatus)}
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-mono"
+                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
                       >
                         <option value="BOOKED">Booked</option>
                         <option value="READY_TO_SHIP">Ready To Ship</option>
@@ -1293,17 +1293,17 @@ export function AdminShipmentWorkspace({
                     <div className="flex-1 p-4 rounded-xl bg-slate-950/70 border border-slate-800 space-y-1">
                       <div className="flex flex-wrap items-center justify-between gap-2">
                         <span className="text-xs font-bold text-white font-sans">{evt.title}</span>
-                        <span className="text-[11px] font-mono text-slate-400">
+                        <span className="text-[11px] font-medium text-slate-400">
                           {new Date(evt.timestamp).toLocaleString()}
                         </span>
                       </div>
                       <div className="text-xs text-slate-300 font-sans">{evt.description}</div>
-                      <div className="flex items-center gap-3 text-[10px] font-mono text-slate-400 pt-1">
+                      <div className="flex items-center gap-3 text-[10px] font-medium text-slate-400 pt-1">
                         <span className="flex items-center gap-1 text-emerald-400">
                           <MapPin className="w-3 h-3" />
                           {evt.location}
                         </span>
-                        <span>•</span>
+                        <span className="text-slate-700">|</span>
                         <span>Recorded by: {evt.createdByName}</span>
                       </div>
                     </div>
@@ -1321,7 +1321,7 @@ export function AdminShipmentWorkspace({
           <Card className="w-full max-w-lg bg-slate-900 border-slate-700 p-6 space-y-5 shadow-2xl">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
               <div>
-                <span className="text-xs font-mono text-amber-400 font-bold uppercase">Lifecycle Progression</span>
+                <span className="text-xs font-medium text-amber-400 font-bold uppercase">Lifecycle Progression</span>
                 <h4 className="font-serif font-bold text-lg text-white">
                   Update Stage for {selectedShipment.shipmentNumber}
                 </h4>
@@ -1348,7 +1348,7 @@ export function AdminShipmentWorkspace({
                 <select
                   value={targetStatus}
                   onChange={(e) => setTargetStatus(e.target.value as ShipmentStatus)}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-mono"
+                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
                 >
                   <option value="BOOKING_REQUESTED">Booking Requested</option>
                   <option value="BOOKED">Booked</option>

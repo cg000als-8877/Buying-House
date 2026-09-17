@@ -15,7 +15,7 @@ export default function GlobalError({
 
   return (
     <div className="min-h-[60vh] flex flex-col items-center justify-center p-6 text-center space-y-4">
-      <span className="text-xs font-mono uppercase tracking-widest text-error font-bold">System Exception</span>
+      <span className="text-xs font-medium uppercase tracking-widest text-error font-bold">System Exception</span>
       <h2 className="text-2xl font-bold text-foreground">Something went wrong</h2>
       <p className="text-xs text-muted-foreground max-w-md">
         An unexpected error occurred. Please try again or contact system support.
