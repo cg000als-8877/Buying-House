@@ -23,10 +23,10 @@ export function CTASection({
   secondaryCtaHref = '/services',
 }: CTASectionProps) {
   return (
-    <section className="relative overflow-hidden p-8 sm:p-14 rounded-2xl border border-border bg-gradient-to-b from-surface via-surface to-background-secondary text-center space-y-6 shadow-medium">
+    <section className="relative overflow-hidden p-8 sm:p-14 rounded-xl border border-border bg-surface text-center space-y-6 shadow-subtle">
       <div className="max-w-2xl mx-auto space-y-4">
         {badge && (
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-sans">
+          <p className="text-label text-accent font-semibold tracking-widest uppercase">
             {badge}
           </p>
         )}
@@ -35,13 +35,13 @@ export function CTASection({
           {title}
         </h2>
 
-        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-sans">
+        <p className="text-body text-muted-foreground leading-relaxed">
           {description}
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
           <Link href={primaryCtaHref}>
-            <Button variant="primary" size="lg" className="gap-2">
+            <Button variant="gold" size="md" className="gap-2 font-semibold text-xs uppercase tracking-wider">
               <Mail className="w-4 h-4" />
               {primaryCtaText}
               <ArrowRight className="w-4 h-4" />
@@ -49,7 +49,7 @@ export function CTASection({
           </Link>
 
           <Link href={secondaryCtaHref}>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="md" className="text-xs font-semibold">
               {secondaryCtaText}
             </Button>
           </Link>

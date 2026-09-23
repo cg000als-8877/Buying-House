@@ -175,7 +175,7 @@ export function BuyerNotificationCenter() {
               </Badge>
             )}
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-foreground">
+          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-foreground">
             Notifications &amp; Alerts
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
@@ -344,10 +344,9 @@ export function BuyerNotificationCenter() {
                           {notif.title}
                         </h4>
                         {isUnread && (
-                          <span
-                            className="w-2 h-2 rounded-full bg-primary shrink-0"
-                            title="Unread"
-                          />
+                          <Badge variant="warning" size="sm">
+                            Unread
+                          </Badge>
                         )}
                       </div>
 
@@ -416,7 +415,7 @@ export function BuyerNotificationCenter() {
           <Card className="max-w-lg w-full p-6 space-y-6 bg-card border-border shadow-2xl animate-in fade-in zoom-in-95 duration-150">
             <div className="flex items-center justify-between pb-4 border-b border-border">
               <div>
-                <h3 className="text-lg font-serif font-bold text-foreground">
+                <h3 className="text-lg font-sans font-bold text-foreground">
                   Communication Preferences
                 </h3>
                 <p className="text-xs text-muted-foreground mt-0.5">

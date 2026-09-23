@@ -59,7 +59,7 @@ export default function BuyerProfilePage() {
               <Building2 className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="font-serif font-bold text-base text-foreground">
+              <h2 className="font-sans font-bold text-base text-foreground">
                 Buyer Organization Tenant
               </h2>
               <p className="text-xs text-muted-foreground">Scoped data isolation workspace</p>
@@ -101,7 +101,7 @@ export default function BuyerProfilePage() {
               <User className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="font-serif font-bold text-base text-foreground">
+              <h2 className="font-sans font-bold text-base text-foreground">
                 User Identity &amp; Credentials
               </h2>
               <p className="text-xs text-muted-foreground">Authenticated representative</p>

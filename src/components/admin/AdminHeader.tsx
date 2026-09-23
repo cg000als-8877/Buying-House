@@ -19,23 +19,23 @@ export function AdminHeader({ unreadCount = 0 }: AdminHeaderProps) {
 
   return (
     <>
-      <header className="sticky top-0 z-30 h-16 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 flex items-center justify-between px-4 sm:px-6 lg:px-8">
+      <header className="sticky top-0 z-30 h-16 bg-card/85 backdrop-blur-md border-b border-border flex items-center justify-between px-4 sm:px-6 lg:px-8 transition-colors">
         {/* Mobile menu toggle & title */}
         <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="lg:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors"
             aria-label="Open operations menu"
           >
             <Menu className="w-5 h-5" />
           </button>
 
           <div className="flex items-center gap-2">
-            <span className="font-sans font-bold text-base text-white lg:hidden">
+            <span className="font-sans font-bold text-base text-foreground lg:hidden">
               XYZ Operations
             </span>
-            <span className="hidden sm:inline-block text-xs font-medium text-slate-400">
+            <span className="hidden sm:inline-block text-xs font-medium text-muted-foreground">
               Internal Control Center
             </span>
           </div>
@@ -43,10 +43,10 @@ export function AdminHeader({ unreadCount = 0 }: AdminHeaderProps) {
 
         {/* Right Actions */}
         <div className="flex items-center gap-3">
-          <div className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs">
-            <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
-            <span className="text-slate-400">Clearance:</span>
-            <Badge variant="amber" size="sm">
+          <div className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-full bg-secondary border border-border text-xs">
+            <ShieldCheck className="w-3.5 h-3.5 text-accent" />
+            <span className="text-muted-foreground">Clearance:</span>
+            <Badge variant="warning" size="sm">
               {user?.role || 'Staff'}
             </Badge>
           </div>
@@ -59,11 +59,11 @@ export function AdminHeader({ unreadCount = 0 }: AdminHeaderProps) {
           />
 
           {/* User Avatar */}
-          <div className="flex items-center gap-2 p-1.5 rounded-lg bg-slate-800/60 border border-slate-700/60">
-            <div className="w-7 h-7 rounded-full bg-amber-400/20 border border-amber-400/30 flex items-center justify-center text-amber-400 font-bold text-xs">
+          <div className="flex items-center gap-2 p-1.5 rounded-lg bg-secondary border border-border">
+            <div className="w-7 h-7 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center text-accent font-bold text-xs">
               {user?.displayName ? user.displayName.charAt(0).toUpperCase() : 'A'}
             </div>
-            <span className="hidden md:inline-block text-xs font-medium text-slate-200 max-w-[130px] truncate">
+            <span className="hidden md:inline-block text-xs font-medium text-foreground max-w-[130px] truncate">
               {user?.displayName || user?.email?.split('@')[0] || 'Admin'}
             </span>
           </div>
@@ -79,7 +79,7 @@ export function AdminHeader({ unreadCount = 0 }: AdminHeaderProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 z-40 bg-black/70 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
             />
 
             <motion.div
@@ -87,24 +87,25 @@ export function AdminHeader({ unreadCount = 0 }: AdminHeaderProps) {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 250 }}
-              className="fixed inset-y-0 left-0 z-50 w-72 max-w-[85vw] bg-slate-900 shadow-2xl lg:hidden flex flex-col"
+              className="fixed inset-y-0 left-0 z-50 w-72 max-w-[85vw] bg-card shadow-2xl lg:hidden flex flex-col"
             >
               <div className="absolute top-4 right-4 z-10">
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                  className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
                   aria-label="Close navigation menu"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
-              <AdminSidebar
-                unreadCount={unreadCount}
-                onNavigate={() => setMobileMenuOpen(false)}
-                className="h-full border-none"
-              />
+              <div className="flex-1 overflow-y-auto pt-2">
+                <AdminSidebar
+                  unreadCount={unreadCount}
+                  onNavigate={() => setMobileMenuOpen(false)}
+                />
+              </div>
             </motion.div>
           </>
         )}

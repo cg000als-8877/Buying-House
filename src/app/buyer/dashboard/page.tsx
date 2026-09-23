@@ -202,7 +202,7 @@ export default function BuyerDashboardPage() {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-lg font-serif font-bold text-foreground">
+            <h2 className="text-lg font-sans font-bold text-foreground">
               Recent Purchase Orders
             </h2>
             <p className="text-xs text-muted-foreground">

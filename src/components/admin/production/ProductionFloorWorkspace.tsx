@@ -401,7 +401,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
             <span className="text-xs font-medium uppercase text-amber-400 font-bold">
               Sequential Workflow
             </span>
-            <h3 className="font-serif font-bold text-lg text-white">
+            <h3 className="font-sans font-bold text-lg text-white">
               Configured Production Stages
             </h3>
           </div>
@@ -503,7 +503,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
               <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                 Output Analytics
               </span>
-              <h3 className="font-serif font-bold text-lg text-white">
+              <h3 className="font-sans font-bold text-lg text-white">
                 Daily Output vs Planned Volume
               </h3>
             </div>
@@ -536,7 +536,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
             <span className="text-xs font-medium uppercase text-amber-400 font-bold">
               Factory Reporting Stream
             </span>
-            <h3 className="font-serif font-bold text-lg text-white">
+            <h3 className="font-sans font-bold text-lg text-white">
               Daily Production Logs &amp; Variance
             </h3>
           </div>
@@ -712,7 +712,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
             <span className="text-xs font-medium uppercase text-amber-400 font-bold">
               Visual Documentation
             </span>
-            <h3 className="font-serif font-bold text-lg text-white">
+            <h3 className="font-sans font-bold text-lg text-white">
               Inspection &amp; Factory Floor Photos
             </h3>
           </div>
@@ -774,7 +774,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   Daily Telemetry Entry
                 </span>
-                <h3 className="font-serif font-bold text-lg text-white">
+                <h3 className="font-sans font-bold text-lg text-white">
                   Record Floor Output for PO {order.orderNumber}
                 </h3>
               </div>
@@ -964,7 +964,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
       {rejectingId && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
           <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4">
-            <h3 className="font-serif font-bold text-base text-white">Reject Production Submission</h3>
+            <h3 className="font-sans font-bold text-base text-white">Reject Production Submission</h3>
             <p className="text-xs text-slate-400">
               Provide feedback or instructions on why this daily production record cannot be published.
             </p>
@@ -998,7 +998,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
           <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4">
             <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-              <h3 className="font-serif font-bold text-base text-white">Attach Inspection Photo</h3>
+              <h3 className="font-sans font-bold text-base text-white">Attach Inspection Photo</h3>
               <button onClick={() => setIsPhotoModalOpen(false)} className="text-slate-400 hover:text-white">
                 <X className="w-5 h-5" />
               </button>
@@ -1062,7 +1062,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
           <Card className="max-w-xl w-full p-6 bg-slate-900 border-slate-800 space-y-4 max-h-[85vh] overflow-y-auto">
             <div className="flex items-center justify-between pb-2 border-b border-slate-800">
               <div>
-                <h3 className="font-serif font-bold text-base text-white">Configure Production Pipeline</h3>
+                <h3 className="font-sans font-bold text-base text-white">Configure Production Pipeline</h3>
                 <p className="text-xs text-slate-400">Enable, disable, or adjust target volumes for this order.</p>
               </div>
               <button onClick={() => setIsConfigureStagesModalOpen(false)} className="text-slate-400 hover:text-white">

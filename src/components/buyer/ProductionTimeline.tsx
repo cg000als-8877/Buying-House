@@ -27,12 +27,12 @@ export function ProductionTimeline({ orderNumber, styleName, milestones }: Produ
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-800">
         <div>
           <span className="text-xs text-amber-400 font-medium font-bold">LIVE PRODUCTION PIPELINE</span>
-          <h3 className="text-xl font-serif font-bold text-white">
+          <h3 className="text-xl font-sans font-bold text-white">
             {styleName} <span className="text-sm font-medium text-slate-400">({orderNumber})</span>
           </h3>
         </div>
         <div className="flex items-center gap-2">
-          <Badge variant="emerald" size="sm" dot>
+          <Badge variant="emerald" size="sm">
             QA Monitored
           </Badge>
           <span className="text-xs text-slate-400">AQL 1.5 Protocol</span>
@@ -52,7 +52,7 @@ export function ProductionTimeline({ orderNumber, styleName, milestones }: Produ
               transition={{ delay: idx * 0.08 }}
               className="relative space-y-2"
             >
-              {/* Dot icon */}
+              {/* icon */}
               <div
                 className={`absolute -left-6 sm:-left-8 top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center border transition-all ${
                   isDone

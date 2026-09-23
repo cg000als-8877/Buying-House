@@ -79,7 +79,7 @@ export default function AdminAuditLogsPage() {
           <div className="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mx-auto">
             <Lock className="w-6 h-6" />
           </div>
-          <h2 className="font-serif font-bold text-xl text-white">
+          <h2 className="font-sans font-bold text-xl text-white">
             Security Clearance Restricted
           </h2>
           <p className="text-xs text-slate-400 max-w-md mx-auto">

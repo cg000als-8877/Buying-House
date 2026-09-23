@@ -204,7 +204,7 @@ export default function AdminFactoryDetailPage() {
           <div className="flex items-center justify-between pb-3 border-b border-slate-800">
             <div className="flex items-center gap-2">
               <Info className="w-4 h-4 text-blue-400" />
-              <h2 className="font-serif font-bold text-base text-white">
+              <h2 className="font-sans font-bold text-base text-white">
                 Public Capability &amp; Compliance Data
               </h2>
             </div>
@@ -236,7 +236,7 @@ export default function AdminFactoryDetailPage() {
               </span>
               <div className="flex flex-wrap gap-2">
                 {factory.certificationIds.map((c) => (
-                  <Badge key={c} variant="emerald" size="sm" dot>
+                  <Badge key={c} variant="emerald" size="sm">
                     {c}
                   </Badge>
                 ))}
@@ -259,7 +259,7 @@ export default function AdminFactoryDetailPage() {
           <div className="flex items-center justify-between pb-3 border-b border-slate-800">
             <div className="flex items-center gap-2">
               <Lock className="w-4 h-4 text-amber-400" />
-              <h2 className="font-serif font-bold text-base text-white">
+              <h2 className="font-sans font-bold text-base text-white">
                 Internal Operational &amp; Contact Telemetry
               </h2>
             </div>
@@ -310,7 +310,7 @@ export default function AdminFactoryDetailPage() {
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-lg font-serif font-bold text-white">
+            <h2 className="text-lg font-sans font-bold text-white">
               Allocated Purchase Orders ({orders.length})
             </h2>
             <p className="text-xs text-slate-400">

@@ -10,14 +10,14 @@ export function ProcessTimeline() {
         {WORKFLOW_STAGES.slice(0, 4).map((stage) => (
           <div
             key={stage.step}
-            className="p-5 rounded-lg border border-border bg-surface flex flex-col justify-between space-y-4 hover:border-border-strong transition-colors"
+            className="p-5 rounded-lg border border-border bg-card shadow-subtle flex flex-col justify-between space-y-4 hover:border-accent/40 transition-colors"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="w-8 h-8 rounded-md bg-secondary text-foreground font-medium font-bold text-sm flex items-center justify-center border border-border">
+                <span className="w-8 h-8 rounded-md bg-secondary text-foreground font-bold text-xs flex items-center justify-center border border-border">
                   0{stage.step}
                 </span>
-                <Badge variant="neutral" size="sm">
+                <Badge variant="secondary" size="sm">
                   <Clock className="w-3 h-3 mr-1 text-accent" />
                   {stage.timelineEstimate}
                 </Badge>
@@ -33,12 +33,12 @@ export function ProcessTimeline() {
               </div>
             </div>
 
-            <div className="pt-3 border-t border-border/60">
-              <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">
-                Key Milestone Deliverable:
+            <div className="pt-3 border-t border-border">
+              <p className="text-label text-muted-foreground mb-1">
+                Key Deliverable:
               </p>
               <div className="flex items-center gap-1.5 text-xs text-foreground-secondary">
-                <CheckCircle2 className="w-3.5 h-3.5 text-success shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
                 <span className="truncate">{stage.keyOutputs[0]}</span>
               </div>
             </div>
@@ -50,14 +50,14 @@ export function ProcessTimeline() {
         {WORKFLOW_STAGES.slice(4, 7).map((stage) => (
           <div
             key={stage.step}
-            className="p-5 rounded-lg border border-border bg-surface flex flex-col justify-between space-y-4 hover:border-border-strong transition-colors"
+            className="p-5 rounded-lg border border-border bg-card shadow-subtle flex flex-col justify-between space-y-4 hover:border-accent/40 transition-colors"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="w-8 h-8 rounded-md bg-secondary text-foreground font-medium font-bold text-sm flex items-center justify-center border border-border">
+                <span className="w-8 h-8 rounded-md bg-secondary text-foreground font-bold text-xs flex items-center justify-center border border-border">
                   0{stage.step}
                 </span>
-                <Badge variant="neutral" size="sm">
+                <Badge variant="secondary" size="sm">
                   <Clock className="w-3 h-3 mr-1 text-accent" />
                   {stage.timelineEstimate}
                 </Badge>
@@ -73,12 +73,12 @@ export function ProcessTimeline() {
               </div>
             </div>
 
-            <div className="pt-3 border-t border-border/60">
-              <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">
-                Key Milestone Deliverable:
+            <div className="pt-3 border-t border-border">
+              <p className="text-label text-muted-foreground mb-1">
+                Key Deliverable:
               </p>
               <div className="flex items-center gap-1.5 text-xs text-foreground-secondary">
-                <CheckCircle2 className="w-3.5 h-3.5 text-success shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
                 <span className="truncate">{stage.keyOutputs[0]}</span>
               </div>
             </div>

@@ -19,41 +19,41 @@
 
   /* ==========================================================================
      LIGHT THEME (Default)
-     International Corporate Palette — High Contrast, Clean, Professional
+     Haute Manufacture & Technical Telemetry: Warm Alabaster, Deep Ink, Refined Brass
      ========================================================================== */
   :root {
-    --background: #ffffff;
-    --background-secondary: #f8fafc;
+    --background: #fbfbfa;
+    --background-secondary: #f4f4f1;
 
     --surface: #ffffff;
-    --surface-muted: #f1f5f9;
+    --surface-muted: #f4f4f2;
     --surface-elevated: #ffffff;
 
     --card: #ffffff;
-    --card-hover: #f8fafc;
+    --card-hover: #f9f9f8;
 
-    --foreground: #0f172a;
-    --foreground-secondary: #334155;
-    --muted-foreground: #64748b;
+    --foreground: #111827;
+    --foreground-secondary: #374151;
+    --muted-foreground: #6b7280;
     --foreground-inverse: #ffffff;
 
-    --border: #e2e8f0;
-    --border-subtle: #f1f5f9;
-    --border-strong: #cbd5e1;
+    --border: #e5e7eb;
+    --border-subtle: #f0f0ee;
+    --border-strong: #d1d5db;
 
-    --primary: #0f172a;
-    --primary-hover: #1e293b;
+    --primary: #111827;
+    --primary-hover: #1f2937;
     --primary-foreground: #ffffff;
 
-    --secondary: #f1f5f9;
-    --secondary-hover: #e2e8f0;
-    --secondary-foreground: #0f172a;
+    --secondary: #f3f4f6;
+    --secondary-hover: #e5e7eb;
+    --secondary-foreground: #111827;
 
-    --accent: #d97706;
-    --accent-hover: #b45309;
+    --accent: #b48c36;
+    --accent-hover: #99742a;
     --accent-foreground: #ffffff;
 
-    --muted: #f1f5f9;
+    --muted: #f3f4f6;
 
     --success: #059669;
     --success-subtle: #ecfdf5;
@@ -75,58 +75,58 @@
     --info-border: #bae6fd;
     --info-foreground: #075985;
 
-    --ring: #0f172a;
-    --disabled: #94a3b8;
-    --selected: #f1f5f9;
+    --ring: #111827;
+    --disabled: #9ca3af;
+    --selected: #f3f4f6;
 
     --radius-sm: 0.25rem;
-    --radius-md: 0.5rem;
-    --radius-lg: 0.75rem;
-    --radius-xl: 1rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
 
-    --shadow-subtle: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
-    --shadow-elevated: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-subtle: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.06), 0 2px 4px -2px rgb(0 0 0 / 0.04);
+    --shadow-elevated: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
   }
 
   /* ==========================================================================
      DARK THEME
-     Deep Technical Slate / Carbon — Restrained, High Legibility, Low Eye-Strain
+     Obsidian Carbon & Technical Telemetry
      ========================================================================== */
   .dark,
   [data-theme="dark"] {
-    --background: #090d12;
+    --background: #0b0f14;
     --background-secondary: #0f141c;
 
-    --surface: #131b24;
-    --surface-muted: #18222d;
-    --surface-elevated: #1e2a38;
+    --surface: #111720;
+    --surface-muted: #17202c;
+    --surface-elevated: #1d2837;
 
-    --card: #131b24;
-    --card-hover: #18222d;
+    --card: #111720;
+    --card-hover: #161e2a;
 
-    --foreground: #f8fafc;
-    --foreground-secondary: #cbd5e1;
-    --muted-foreground: #94a3b8;
-    --foreground-inverse: #090d12;
+    --foreground: #f9fafb;
+    --foreground-secondary: #d1d5db;
+    --muted-foreground: #9ca3af;
+    --foreground-inverse: #0b0f14;
 
-    --border: #243342;
-    --border-subtle: #1a2632;
-    --border-strong: #334658;
+    --border: #232d3b;
+    --border-subtle: #18222d;
+    --border-strong: #334155;
 
-    --primary: #f8fafc;
-    --primary-hover: #e2e8f0;
-    --primary-foreground: #090d12;
+    --primary: #f9fafb;
+    --primary-hover: #e5e7eb;
+    --primary-foreground: #0b0f14;
 
-    --secondary: #1e2a38;
-    --secondary-hover: #28384b;
-    --secondary-foreground: #f8fafc;
+    --secondary: #17202c;
+    --secondary-hover: #202c3c;
+    --secondary-foreground: #f9fafb;
 
-    --accent: #f59e0b;
-    --accent-hover: #fbbf24;
-    --accent-foreground: #090d12;
+    --accent: #d4af37;
+    --accent-hover: #e5be49;
+    --accent-foreground: #0b0f14;
 
-    --muted: #1e2a38;
+    --muted: #17202c;
 
     --success: #10b981;
     --success-subtle: rgba(16, 185, 129, 0.12);
@@ -148,13 +148,13 @@
     --info-border: rgba(56, 189, 248, 0.25);
     --info-foreground: #7dd3fc;
 
-    --ring: #38bdf8;
-    --disabled: #475569;
-    --selected: #1e2a38;
+    --ring: #d4af37;
+    --disabled: #4b5563;
+    --selected: #17202c;
 
-    --shadow-subtle: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
-    --shadow-elevated: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+    --shadow-subtle: 0 1px 2px 0 rgb(0 0 0 / 0.35);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.45), 0 2px 4px -2px rgb(0 0 0 / 0.35);
+    --shadow-elevated: 0 10px 15px -3px rgb(0 0 0 / 0.55), 0 4px 6px -4px rgb(0 0 0 / 0.45);
   }
 }
 
@@ -167,7 +167,8 @@
     color: var(--foreground);
     background-color: var(--background);
     font-family: var(--font-manrope), sans-serif;
-    font-feature-settings: normal;
+    font-feature-settings: "zero" 0, "ss01" 0 !important;
+    font-variant-numeric: normal !important;
     overflow-x: hidden;
   }
 
@@ -185,7 +186,7 @@
 @layer utilities {
   .text-display {
     font-family: var(--font-manrope), sans-serif;
-    font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
     line-height: 1.12;
     font-weight: 700;
     letter-spacing: -0.025em;
@@ -193,15 +194,15 @@
 
   .text-h1 {
     font-family: var(--font-manrope), sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.18;
+    font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+    line-height: 1.2;
     font-weight: 700;
     letter-spacing: -0.02em;
   }
 
   .text-h2 {
     font-family: var(--font-manrope), sans-serif;
-    font-size: clamp(1.625rem, 3vw, 2.25rem);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
     line-height: 1.25;
     font-weight: 700;
     letter-spacing: -0.015em;
@@ -209,7 +210,7 @@
 
   .text-h3 {
     font-family: var(--font-manrope), sans-serif;
-    font-size: clamp(1.25rem, 2vw, 1.625rem);
+    font-size: clamp(1.2rem, 1.8vw, 1.5rem);
     line-height: 1.35;
     font-weight: 600;
     letter-spacing: -0.01em;
@@ -217,7 +218,7 @@
 
   .text-h4 {
     font-family: var(--font-manrope), sans-serif;
-    font-size: 1.1875rem;
+    font-size: 1.125rem;
     line-height: 1.45;
     font-weight: 600;
     letter-spacing: -0.005em;
@@ -225,14 +226,14 @@
 
   .text-body-lg {
     font-family: var(--font-manrope), sans-serif;
-    font-size: 1.1875rem;
+    font-size: 1.125rem;
     line-height: 1.65;
     font-weight: 400;
   }
 
   .text-body {
     font-family: var(--font-manrope), sans-serif;
-    font-size: 1rem;
+    font-size: 0.9375rem;
     line-height: 1.6;
     font-weight: 400;
   }
@@ -253,16 +254,16 @@
 
   .text-label {
     font-family: var(--font-manrope), sans-serif;
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     line-height: 1.25;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
   }
 
   .text-nav {
     font-family: var(--font-manrope), sans-serif;
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     line-height: 1.3;
     font-weight: 500;
     letter-spacing: 0.01em;
@@ -311,38 +312,38 @@
 
   /* Liquid fill variants */
   .btn-liquid-gold {
-    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    background: #b48c36;
     color: #ffffff;
-    border: 1px solid rgba(245, 158, 11, 0.4);
+    border: 1px solid rgba(180, 140, 54, 0.4);
   }
   .btn-liquid-gold::before {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    background: #99742a;
   }
 
   .btn-liquid-primary {
-    background: #0f172a;
+    background: #111827;
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.12);
   }
   .dark .btn-liquid-primary {
-    background: #1e293b;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: #f9fafb;
+    color: #0b0f14;
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
   .btn-liquid-primary::before {
-    background: #334155;
+    background: #1f2937;
   }
   .dark .btn-liquid-primary::before {
-    background: #0f172a;
+    background: #e5e7eb;
   }
 
   .btn-liquid-accent {
-    background: #d97706;
+    background: #b48c36;
     color: #ffffff;
-    border: 1px solid #b45309;
+    border: 1px solid #99742a;
   }
   .btn-liquid-accent::before {
-    background: #f59e0b;
+    background: #99742a;
   }
 }
 

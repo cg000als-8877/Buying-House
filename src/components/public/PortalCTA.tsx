@@ -28,11 +28,11 @@ export function PortalCTA() {
   ];
 
   return (
-    <section className="p-8 sm:p-12 rounded-xl border border-border bg-surface-muted/40 shadow-subtle space-y-8">
+    <section className="p-8 sm:p-12 rounded-xl border border-border bg-surface shadow-subtle space-y-8">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left Copy */}
         <div className="lg:col-span-7 space-y-4">
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-sans">
+          <p className="text-label text-accent font-semibold tracking-widest uppercase">
             Platform Telemetry
           </p>
           <h3 className="font-sans font-bold text-foreground text-h2 tracking-tight">
@@ -44,7 +44,7 @@ export function PortalCTA() {
 
           <div className="pt-2">
             <Link href="/buyer/login">
-              <Button variant="primary" size="md" className="gap-2 font-medium">
+              <Button variant="primary" size="md" className="gap-2 font-semibold text-xs uppercase tracking-wider">
                 <ShieldCheck className="w-4 h-4 text-accent" />
                 Sign In to Buyer Portal
                 <ArrowRight className="w-4 h-4" />
@@ -60,7 +60,7 @@ export function PortalCTA() {
             return (
               <div
                 key={idx}
-                className="p-4 rounded-lg bg-surface border border-border space-y-2 hover:border-border-strong transition-colors"
+                className="p-4 rounded-lg bg-surface-muted/50 border border-border space-y-2 hover:border-accent/40 transition-colors"
               >
                 <div className="w-7 h-7 rounded bg-secondary flex items-center justify-center text-accent">
                   <Icon className="w-4 h-4" />

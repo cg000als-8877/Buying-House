@@ -287,7 +287,7 @@ export default function AdminBuyersPage() {
                         <Badge
                           variant={isActive ? 'emerald' : isPending ? 'amber' : 'rose'}
                           size="sm"
-                          dot
+                         
                         >
                           {org.status}
                         </Badge>
@@ -328,7 +328,7 @@ export default function AdminBuyersPage() {
                   <Building2 className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="font-serif font-bold text-base text-white">
+                  <h3 className="font-sans font-bold text-base text-white">
                     Provision Buyer Organization
                   </h3>
                   <p className="text-xs text-slate-400">Creates a new isolated tenant boundary</p>

@@ -392,7 +392,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
           <span className="text-xs font-medium uppercase text-amber-400 font-bold">
             Document Repository &amp; Storage
           </span>
-          <h2 className="text-xl sm:text-2xl font-serif font-bold text-white">
+          <h2 className="text-xl sm:text-2xl font-sans font-bold text-white">
             {initialOrderId ? 'Order Document Vault' : 'Enterprise Document Vault'}
           </h2>
         </div>
@@ -721,7 +721,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   File Ingestion Vault
                 </span>
-                <h3 className="font-serif font-bold text-lg text-white">Upload New Business Document</h3>
+                <h3 className="font-sans font-bold text-lg text-white">Upload New Business Document</h3>
               </div>
               <button onClick={() => setIsUploadModalOpen(false)} className="text-slate-400 hover:text-white">
                 <X className="w-5 h-5" />
@@ -869,7 +869,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   Next Version: v{revisingDoc.version + 1}
                 </span>
-                <h3 className="font-serif font-bold text-base text-white">Upload Document Revision</h3>
+                <h3 className="font-sans font-bold text-base text-white">Upload Document Revision</h3>
               </div>
               <button onClick={() => setRevisingDoc(null)} className="text-slate-400 hover:text-white">
                 <X className="w-5 h-5" />
@@ -934,7 +934,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   Immutable Audit Chain
                 </span>
-                <h3 className="font-serif font-bold text-lg text-white">
+                <h3 className="font-sans font-bold text-lg text-white">
                   Version History: {historyDoc.title}
                 </h3>
               </div>
@@ -1011,7 +1011,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
           <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4 shadow-2xl">
             <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-              <h3 className="font-serif font-bold text-base text-white">Edit Document Metadata</h3>
+              <h3 className="font-sans font-bold text-base text-white">Edit Document Metadata</h3>
               <button onClick={() => setEditingDoc(null)} className="text-slate-400 hover:text-white">
                 <X className="w-5 h-5" />
               </button>
@@ -1091,7 +1091,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
           <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4 shadow-2xl">
             <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-              <h3 className="font-serif font-bold text-base text-white">Archive Document</h3>
+              <h3 className="font-sans font-bold text-base text-white">Archive Document</h3>
               <button onClick={() => setArchivingDoc(null)} className="text-slate-400 hover:text-white">
                 <X className="w-5 h-5" />
               </button>

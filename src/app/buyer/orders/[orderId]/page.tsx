@@ -329,7 +329,7 @@ export default function OrderDetailPage() {
               <div className="flex items-center justify-between pb-3 border-b border-border">
                 <div>
                   <span className="text-xs font-medium uppercase text-primary font-bold">Floor Telemetry</span>
-                  <h3 className="font-serif font-bold text-lg text-foreground">
+                  <h3 className="font-sans font-bold text-lg text-foreground">
                     Manufacturing Departmental Status
                   </h3>
                 </div>
@@ -376,7 +376,7 @@ export default function OrderDetailPage() {
           <div className="space-y-6">
             {/* Order Specifications Card */}
             <Card className="p-6 bg-card/80 border-border/80 space-y-4">
-              <h3 className="font-serif font-bold text-base text-foreground pb-2 border-b border-border">
+              <h3 className="font-sans font-bold text-base text-foreground pb-2 border-b border-border">
                 Order Specifications
               </h3>
 
@@ -420,7 +420,7 @@ export default function OrderDetailPage() {
             <Card className="p-6 bg-card/80 border-border/80 space-y-3">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <h3 className="font-serif font-bold text-base text-foreground">
+                <h3 className="font-sans font-bold text-base text-foreground">
                   Compliance &amp; Quality
                 </h3>
               </div>
@@ -428,7 +428,7 @@ export default function OrderDetailPage() {
                 Inspected in accordance with ISO 2859-1 (AQL 1.5 Major / 2.5 Minor) sampling plans.
               </p>
               <div className="pt-2">
-                <Badge variant="emerald" size="sm" dot>
+                <Badge variant="emerald" size="sm">
                   Verified QA Compliance
                 </Badge>
               </div>

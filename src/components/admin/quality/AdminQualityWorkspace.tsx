@@ -568,7 +568,7 @@ export function AdminQualityWorkspace({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <h2 className="font-serif font-bold text-xl sm:text-2xl text-white">
+            <h2 className="font-sans font-bold text-xl sm:text-2xl text-white">
               Quality Assurance &amp; AQL Inspection Vault
             </h2>
             <Badge variant="blue" size="sm">
@@ -820,7 +820,7 @@ export function AdminQualityWorkspace({
 
                         <td className="p-3.5">
                           {insp.published ? (
-                            <Badge variant="emerald" size="sm" dot>
+                            <Badge variant="emerald" size="sm">
                               Published to Buyer
                             </Badge>
                           ) : (
@@ -958,7 +958,7 @@ export function AdminQualityWorkspace({
       {activeTab === 'calculator' && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <Card className="lg:col-span-1 p-6 bg-slate-900/90 border-slate-800 space-y-4">
-            <h3 className="font-serif font-bold text-base text-white border-b border-slate-800 pb-2 flex items-center gap-2">
+            <h3 className="font-sans font-bold text-base text-white border-b border-slate-800 pb-2 flex items-center gap-2">
               <Sliders className="w-4 h-4 text-amber-400" />
               <span>Inspection Parameters</span>
             </h3>
@@ -1060,7 +1060,7 @@ export function AdminQualityWorkspace({
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <div>
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">ISO 2859-1 Calculation Output</span>
-                <h3 className="font-serif font-bold text-lg text-white">Statistical AQL Result</h3>
+                <h3 className="font-sans font-bold text-lg text-white">Statistical AQL Result</h3>
               </div>
               {interactiveCalcResult && getResultBadge(interactiveCalcResult.result)}
             </div>
@@ -1194,7 +1194,7 @@ export function AdminQualityWorkspace({
 
             {/* Defect Itemized Breakdown */}
             <div className="space-y-3">
-              <h4 className="font-serif font-bold text-sm text-white flex items-center justify-between">
+              <h4 className="font-sans font-bold text-sm text-white flex items-center justify-between">
                 <span>Defect Itemization ({selectedInspection.defects.length})</span>
                 <span className="text-xs font-medium text-slate-400">Total: {selectedInspection.totalDefects} units</span>
               </h4>
@@ -1234,7 +1234,7 @@ export function AdminQualityWorkspace({
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <ShieldAlert className="w-4 h-4 text-amber-400" />
-                  <h4 className="font-serif font-bold text-sm text-white">Corrective Action Plan (CAP)</h4>
+                  <h4 className="font-sans font-bold text-sm text-white">Corrective Action Plan (CAP)</h4>
                 </div>
 
                 {!selectedInspection.correctiveAction && canWrite && (
@@ -1347,7 +1347,7 @@ export function AdminQualityWorkspace({
           <Card className="w-full max-w-3xl bg-slate-900 border-slate-800 p-6 space-y-6 my-8">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
               <div>
-                <h3 className="font-serif font-bold text-lg text-white">Record Quality Inspection</h3>
+                <h3 className="font-sans font-bold text-lg text-white">Record Quality Inspection</h3>
                 <p className="text-xs text-slate-400">Conduct multi-stage audit with real-time ISO 2859-1 AQL evaluation.</p>
               </div>
               <button onClick={() => setIsCreateModalOpen(false)} className="text-slate-400 hover:text-white">
@@ -1655,7 +1655,7 @@ export function AdminQualityWorkspace({
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
           <Card className="w-full max-w-xl bg-slate-900 border-slate-800 p-6 space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-              <h3 className="font-serif font-bold text-lg text-white">Record Laboratory Test Report</h3>
+              <h3 className="font-sans font-bold text-lg text-white">Record Laboratory Test Report</h3>
               <button onClick={() => setIsLabModalOpen(false)} className="text-slate-400 hover:text-white">
                 <X className="w-5 h-5" />
               </button>
@@ -1759,7 +1759,7 @@ export function AdminQualityWorkspace({
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
           <Card className="w-full max-w-lg bg-slate-900 border-slate-800 p-6 space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-              <h3 className="font-serif font-bold text-lg text-white">Create Corrective Action Plan (CAP)</h3>
+              <h3 className="font-sans font-bold text-lg text-white">Create Corrective Action Plan (CAP)</h3>
               <button onClick={() => setIsCapModalOpen(false)} className="text-slate-400 hover:text-white">
                 <X className="w-5 h-5" />
               </button>
@@ -1827,7 +1827,7 @@ export function AdminQualityWorkspace({
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
           <Card className="w-full max-w-md bg-slate-900 border-slate-800 p-6 space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-              <h3 className="font-serif font-bold text-lg text-white">Schedule Re-Inspection</h3>
+              <h3 className="font-sans font-bold text-lg text-white">Schedule Re-Inspection</h3>
               <button onClick={() => setIsReinspectModalOpen(false)} className="text-slate-400 hover:text-white">
                 <X className="w-5 h-5" />
               </button>

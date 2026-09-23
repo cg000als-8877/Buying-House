@@ -83,7 +83,7 @@ describe('UI Primitives Design System', () => {
 
   describe('Badge', () => {
     it('renders semantic status variants correctly', () => {
-      render(<Badge variant="success" dot>Approved</Badge>);
+      render(<Badge variant="success">Approved</Badge>);
       expect(screen.getByText('Approved')).toBeInTheDocument();
     });
 

@@ -396,7 +396,7 @@ export default function AdminUsersPage() {
                       {/* Account Status Selector */}
                       <td className="py-3.5 px-4">
                         {isSelf ? (
-                          <Badge variant="emerald" size="sm" dot>
+                          <Badge variant="emerald" size="sm">
                             {u.status}
                           </Badge>
                         ) : (
@@ -474,7 +474,7 @@ export default function AdminUsersPage() {
                   <UserPlus className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="font-serif font-bold text-base text-white">
+                  <h3 className="font-sans font-bold text-base text-white">
                     Provision / Invite User Account
                   </h3>
                   <p className="text-xs text-slate-400">Assign role clearance and tenant organization</p>

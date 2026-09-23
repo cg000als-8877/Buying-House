@@ -72,7 +72,7 @@ export default function AdminSettingsPage() {
       <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
         <div className="flex items-center gap-2.5 pb-3 border-b border-slate-800">
           <Building2 className="w-5 h-5 text-amber-400" />
-          <h2 className="font-serif font-bold text-base text-white">
+          <h2 className="font-sans font-bold text-base text-white">
             Headquarters &amp; Corporate Identity
           </h2>
         </div>
@@ -104,7 +104,7 @@ export default function AdminSettingsPage() {
       <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
         <div className="flex items-center gap-2.5 pb-3 border-b border-slate-800">
           <Sliders className="w-5 h-5 text-indigo-400" />
-          <h2 className="font-serif font-bold text-base text-white">
+          <h2 className="font-sans font-bold text-base text-white">
             Manufacturing &amp; QA Standard Thresholds
           </h2>
         </div>
@@ -130,7 +130,7 @@ export default function AdminSettingsPage() {
       <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
         <div className="flex items-center gap-2.5 pb-3 border-b border-slate-800">
           <ShieldCheck className="w-5 h-5 text-emerald-400" />
-          <h2 className="font-serif font-bold text-base text-white">
+          <h2 className="font-sans font-bold text-base text-white">
             Security &amp; Tenant Isolation Governance
           </h2>
         </div>
@@ -141,7 +141,7 @@ export default function AdminSettingsPage() {
               <span className="font-semibold text-white block">Multi-Tenant Scoped Firestore Rules</span>
               <span className="text-[11px] text-slate-400">Enforces belongsToBuyerOrg() across orders and inspection data</span>
             </div>
-            <Badge variant="emerald" size="sm" dot>
+            <Badge variant="emerald" size="sm">
               Active Enforced
             </Badge>
           </div>
@@ -151,7 +151,7 @@ export default function AdminSettingsPage() {
               <span className="font-semibold text-white block">Role-Based Clearance Matrix (7 Roles)</span>
               <span className="text-[11px] text-slate-400">Strict granular operation mapping via src/lib/auth/permissions.ts</span>
             </div>
-            <Badge variant="emerald" size="sm" dot>
+            <Badge variant="emerald" size="sm">
               Active Enforced
             </Badge>
           </div>
@@ -161,7 +161,7 @@ export default function AdminSettingsPage() {
               <span className="font-semibold text-white block">Immutable Security Audit Trail</span>
               <span className="text-[11px] text-slate-400">Append-only event stream stored in Firestore with server timestamps</span>
             </div>
-            <Badge variant="emerald" size="sm" dot>
+            <Badge variant="emerald" size="sm">
               Active Enforced
             </Badge>
           </div>

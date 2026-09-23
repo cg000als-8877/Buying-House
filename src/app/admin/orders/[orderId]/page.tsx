@@ -301,7 +301,7 @@ export default function AdminOrderDetailPage() {
               <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                 <div>
                   <span className="text-xs font-medium uppercase text-amber-400 font-bold">Floor Telemetry</span>
-                  <h3 className="font-serif font-bold text-lg text-white">
+                  <h3 className="font-sans font-bold text-lg text-white">
                     Factory Line Operational Status
                   </h3>
                 </div>
@@ -347,7 +347,7 @@ export default function AdminOrderDetailPage() {
           {/* Right Column (1/3): Key Specifications & Allocation */}
           <div className="space-y-6">
             <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
-              <h3 className="font-serif font-bold text-base text-white pb-2 border-b border-slate-800">
+              <h3 className="font-sans font-bold text-base text-white pb-2 border-b border-slate-800">
                 Order Technical Master
               </h3>
 
@@ -394,7 +394,7 @@ export default function AdminOrderDetailPage() {
             <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-3">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <h3 className="font-serif font-bold text-base text-white">
+                <h3 className="font-sans font-bold text-base text-white">
                   Compliance &amp; Quality
                 </h3>
               </div>
@@ -420,7 +420,7 @@ export default function AdminOrderDetailPage() {
           <div className="w-12 h-12 rounded-2xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-400 mx-auto">
             <Sparkles className="w-6 h-6" />
           </div>
-          <h3 className="font-serif font-bold text-lg text-white">
+          <h3 className="font-sans font-bold text-lg text-white">
             {TABS.find((t) => t.id === activeTab)?.label} Module
           </h3>
           <p className="text-xs text-slate-400 max-w-md mx-auto">

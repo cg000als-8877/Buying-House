@@ -192,7 +192,7 @@ export default function CreateOrderPage() {
 
       {/* Header Banner */}
       <div className="pb-4 border-b border-slate-800">
-        <h1 className="text-2xl font-serif font-bold text-white">
+        <h1 className="text-2xl font-sans font-bold text-white">
           Create Purchase Order
         </h1>
         <p className="text-xs text-slate-400 mt-1">

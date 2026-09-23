@@ -25,11 +25,11 @@ export function DocumentList({ documents }: DocumentListProps) {
           <span className="text-xs font-medium text-emerald-400 font-bold uppercase tracking-wider">
             Verified Vault
           </span>
-          <h3 className="font-serif font-bold text-lg text-white">
+          <h3 className="font-sans font-bold text-lg text-white">
             Order Documentation &amp; Test Certificates
           </h3>
         </div>
-        <Badge variant="emerald" size="sm" dot>
+        <Badge variant="emerald" size="sm">
           SSL Encrypted
         </Badge>
       </div>

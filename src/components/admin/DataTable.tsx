@@ -48,7 +48,7 @@ export function DataTable<T extends { id: string | number }>({
                     {onView && (
                       <button
                         onClick={() => onView(row)}
-                        className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                        className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
                         title="View Details"
                       >
                         <Eye className="w-3.5 h-3.5" />
@@ -57,7 +57,7 @@ export function DataTable<T extends { id: string | number }>({
                     {onEdit && (
                       <button
                         onClick={() => onEdit(row)}
-                        className="p-1.5 rounded-lg text-amber-400 hover:text-amber-300 hover:bg-slate-800 transition-colors"
+                        className="p-1.5 rounded-lg text-accent hover:text-accent/80 hover:bg-muted/80 transition-colors"
                         title="Edit Record"
                       >
                         <Edit className="w-3.5 h-3.5" />
@@ -66,7 +66,7 @@ export function DataTable<T extends { id: string | number }>({
                     {onDelete && (
                       <button
                         onClick={() => onDelete(row)}
-                        className="p-1.5 rounded-lg text-rose-400 hover:text-rose-300 hover:bg-slate-800 transition-colors"
+                        className="p-1.5 rounded-lg text-rose-500 hover:text-rose-600 hover:bg-muted/80 transition-colors"
                         title="Delete Record"
                       >
                         <Trash2 className="w-3.5 h-3.5" />

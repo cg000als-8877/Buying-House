@@ -20,7 +20,7 @@ function renderFormattedTitle(title: string) {
       (part.startsWith('_') && part.endsWith('_') && part.length > 2)
     ) {
       return (
-        <span key={index} className="italic font-normal text-amber-400">
+        <span key={index} className="font-semibold text-accent">
           {part.slice(1, -1)}
         </span>
       );
@@ -43,26 +43,24 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        'space-y-4 max-w-3xl',
+        'space-y-3 max-w-3xl',
         align === 'center' ? 'mx-auto text-center' : 'text-left',
         className
       )}
       {...props}
     >
       {badge && (
-        <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-500 font-sans">
+        <p className="text-label text-accent font-semibold tracking-widest uppercase">
           {badge}
         </p>
       )}
       <HeadingTag
-        className={cn(
-          'font-sans font-bold text-foreground tracking-tight text-h2 leading-tight'
-        )}
+        className="font-sans font-bold text-foreground tracking-tight text-h2 leading-tight"
       >
         {renderFormattedTitle(title)}
       </HeadingTag>
       {description && (
-        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto font-sans">
+        <p className="text-body text-muted-foreground leading-relaxed">
           {description}
         </p>
       )}

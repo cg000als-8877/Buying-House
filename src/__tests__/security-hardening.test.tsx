@@ -1,4 +1,4 @@
-﻿import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { User, UserRole } from '@/types/auth';
 import { hasPermission, ROLE_PERMISSIONS } from '@/lib/auth/permissions';
 import { canAccessBuyerOrganization, isAccountActive } from '@/lib/auth/session';
@@ -7,7 +7,7 @@ import { exportReportToCSV } from '@/lib/reporting';
 import { calculatePercentage, calculateTrendPercentage } from '@/lib/reporting/calculations';
 import { logSecurityEvent } from '@/lib/audit';
 
-describe('STEP 16 — Production Hardening & Security Audit Verification', () => {
+describe('STEP 16 � Production Hardening & Security Audit Verification', () => {
   const superAdminUser: User = {
     uid: 'admin-root-001',
     email: 'superadmin@xyzbuyinghouse.com',

@@ -181,7 +181,7 @@ export function BuyerShipmentView({
               </span>
             )}
           </div>
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-foreground mt-1">
+          <h2 className="text-2xl sm:text-3xl font-sans font-bold text-foreground mt-1">
             Shipments &amp; Consignments
           </h2>
           <p className="text-xs sm:text-sm text-muted-foreground">
@@ -378,7 +378,7 @@ export function BuyerShipmentView({
           <div className="flex items-center justify-between pb-4 border-b border-border">
             <div>
               <span className="text-xs font-medium text-primary font-bold">Consignment Telemetry Details</span>
-              <h3 className="text-xl font-serif font-bold text-foreground">
+              <h3 className="text-xl font-sans font-bold text-foreground">
                 {selectedShipment.shipmentNumber}: Destination: {selectedShipment.destinationPort}
               </h3>
             </div>
@@ -395,7 +395,7 @@ export function BuyerShipmentView({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-medium">
             {/* Specs */}
             <Card className="p-4 bg-muted/30 border-border space-y-2.5">
-              <h4 className="font-serif font-bold text-sm text-foreground pb-1 border-b border-border">
+              <h4 className="font-sans font-bold text-sm text-foreground pb-1 border-b border-border">
                 Cargo &amp; Shipping Line
               </h4>
               <div className="flex justify-between">
@@ -426,7 +426,7 @@ export function BuyerShipmentView({
 
             {/* Metrics */}
             <Card className="p-4 bg-muted/30 border-border space-y-2.5">
-              <h4 className="font-serif font-bold text-sm text-foreground pb-1 border-b border-border">
+              <h4 className="font-sans font-bold text-sm text-foreground pb-1 border-b border-border">
                 Packing &amp; Weights
               </h4>
               <div className="flex justify-between">
@@ -457,7 +457,7 @@ export function BuyerShipmentView({
 
             {/* Delivery Status */}
             <Card className="p-4 bg-muted/30 border-border space-y-2.5">
-              <h4 className="font-serif font-bold text-sm text-foreground pb-1 border-b border-border">
+              <h4 className="font-sans font-bold text-sm text-foreground pb-1 border-b border-border">
                 Delivery Receipt Status
               </h4>
               {selectedShipment.deliveryConfirmation?.confirmed ? (
@@ -498,7 +498,7 @@ export function BuyerShipmentView({
 
           {/* Commercial Documents Checklist */}
           <div className="space-y-3 pt-2">
-            <h4 className="font-serif font-bold text-sm text-foreground">
+            <h4 className="font-sans font-bold text-sm text-foreground">
               Commercial Shipping Documents &amp; Certificates
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -534,7 +534,7 @@ export function BuyerShipmentView({
           {/* Packing List Breakdown */}
           {packingItems.length > 0 && (
             <div className="space-y-3 pt-4 border-t border-border">
-              <h4 className="font-serif font-bold text-sm text-foreground">
+              <h4 className="font-sans font-bold text-sm text-foreground">
                 Packing List Breakdown ({packingItems.length} line items)
               </h4>
               <div className="overflow-x-auto border border-border rounded-lg">
@@ -581,14 +581,14 @@ export function BuyerShipmentView({
 
           {/* Chronological Milestone Timeline */}
           <div className="space-y-3 pt-4 border-t border-border">
-            <h4 className="font-serif font-bold text-sm text-foreground">
+            <h4 className="font-sans font-bold text-sm text-foreground">
               Cargo Tracking Milestones
             </h4>
             <div className="space-y-3 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-border">
               {events.map((evt) => (
                 <div key={evt.id} className="relative flex items-start gap-4 pl-1">
-                  <div className="w-6 h-6 rounded-full bg-card border-2 border-primary flex items-center justify-center shrink-0 z-10">
-                    <div className="w-2 h-2 rounded-full bg-primary" />
+                  <div className="w-6 h-6 rounded bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0 z-10 text-primary">
+                    <MapPin className="w-3.5 h-3.5 text-accent" />
                   </div>
                   <div className="flex-1 p-3.5 rounded-xl bg-muted/30 border border-border space-y-1">
                     <div className="flex flex-wrap items-center justify-between gap-2">
@@ -617,7 +617,7 @@ export function BuyerShipmentView({
             <div className="flex items-center justify-between pb-3 border-b border-border">
               <div>
                 <span className="text-xs font-medium text-primary font-bold uppercase">Consignee Acknowledgment</span>
-                <h4 className="font-serif font-bold text-lg text-foreground">
+                <h4 className="font-sans font-bold text-lg text-foreground">
                   Confirm Delivery Receipt ({selectedShipment.shipmentNumber})
                 </h4>
               </div>
@@ -640,7 +640,7 @@ export function BuyerShipmentView({
             {confirmSuccess ? (
               <div className="p-6 text-center space-y-2 bg-emerald-950/40 border border-emerald-800 rounded-xl text-emerald-300">
                 <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto" />
-                <h5 className="font-serif font-bold text-base text-white">Delivery Confirmed Successfully</h5>
+                <h5 className="font-sans font-bold text-base text-white">Delivery Confirmed Successfully</h5>
                 <p className="text-xs text-emerald-200">
                   Consignment receipt and signature have been recorded in the platform audit registry.
                 </p>

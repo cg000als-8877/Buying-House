@@ -10,17 +10,17 @@ export function QualityPreview() {
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {QUALITY_PILLARS.map((pillar, idx) => (
-          <Card key={idx} hoverEffect className="flex flex-col justify-between bg-surface border-border">
+          <Card key={idx} hoverEffect className="flex flex-col justify-between bg-card border-border shadow-subtle">
             <div>
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
-                  <Badge variant="neutral" size="sm">
+                  <Badge variant="secondary" size="sm">
                     {pillar.stage}
                   </Badge>
                   <ShieldCheck className="w-4 h-4 text-accent" />
                 </div>
                 <CardTitle className="text-base">{pillar.title}</CardTitle>
-                <CardDescription className="text-xs font-medium text-accent">
+                <CardDescription className="text-xs font-semibold text-accent">
                   {pillar.standard}
                 </CardDescription>
               </CardHeader>
@@ -31,7 +31,7 @@ export function QualityPreview() {
                 <ul className="space-y-1.5 text-[11px] text-muted-foreground">
                   {pillar.checkpoints.slice(0, 2).map((cp, cIdx) => (
                     <li key={cIdx} className="flex items-start gap-1.5">
-                      <Check className="w-3 h-3 text-success shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
                       <span>{cp}</span>
                     </li>
                   ))}

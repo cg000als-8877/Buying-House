@@ -12,43 +12,42 @@ export function PublicHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
-  // Desktop primary links (filter down slightly for top bar space, all links accessible via mobile/dropdown)
   const desktopLinks = MAIN_NAV_ITEMS.filter((item) =>
     ['Home', 'About', 'Services', 'Products', 'Quality', 'Compliance', 'Factories', 'Contact'].includes(item.name)
   );
 
   return (
     <>
-      <header className="border-b border-border/80 bg-surface/90 backdrop-blur-md sticky top-0 z-40 transition-colors">
+      <header className="border-b border-border bg-surface/90 backdrop-blur-md sticky top-0 z-40 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
           {/* Logo / Company Title */}
           <Link
             href="/"
             className="flex items-center gap-2.5 font-sans font-bold text-base sm:text-lg text-foreground tracking-tight select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
           >
-            <span className="w-8 h-8 rounded-md bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs tracking-wider shadow-subtle">
+            <span className="w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs tracking-wider shadow-subtle">
               XYZ
             </span>
             <div className="flex flex-col">
-              <span className="leading-tight">XYZ Buying House</span>
-              <span className="text-[10px] text-muted-foreground font-normal tracking-wide uppercase">
+              <span className="leading-tight text-sm sm:text-base font-bold text-foreground">XYZ Buying House</span>
+              <span className="text-[10px] text-muted-foreground font-medium tracking-wider uppercase">
                 Apparel Sourcing Platform
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-xs font-medium">
+          <nav className="hidden lg:flex items-center gap-1 text-xs font-medium">
             {desktopLinks.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-2.5 py-1.5 rounded-md transition-colors ${
+                  className={`px-3 py-1.5 rounded-md transition-colors ${
                     isActive
-                      ? 'bg-secondary text-foreground font-semibold'
-                      : 'text-foreground-secondary hover:text-foreground hover:bg-surface-muted'
+                      ? 'bg-secondary text-foreground font-semibold shadow-subtle'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-surface-muted'
                   }`}
                 >
                   {item.name}
@@ -60,13 +59,13 @@ export function PublicHeader() {
           {/* Desktop Action CTAs */}
           <div className="hidden sm:flex items-center gap-2.5">
             <Link href="/buyer/login">
-              <Button variant="outline" size="sm" className="gap-1.5 font-medium text-xs">
+              <Button variant="outline" size="sm" className="gap-1.5 font-semibold text-xs">
                 <ShieldCheck className="w-3.5 h-3.5 text-accent" />
                 Buyer Portal
               </Button>
             </Link>
             <Link href="/contact">
-              <Button variant="primary" size="sm" className="gap-1.5 text-xs">
+              <Button variant="gold" size="sm" className="gap-1.5 text-xs font-semibold uppercase tracking-wider">
                 Submit RFQ
                 <ArrowRight className="w-3.5 h-3.5" />
               </Button>
@@ -84,7 +83,7 @@ export function PublicHeader() {
               type="button"
               onClick={() => setMobileOpen(true)}
               aria-label="Open mobile navigation menu"
-              className="p-2 rounded-md text-foreground-secondary hover:text-foreground hover:bg-surface-muted transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-surface-muted transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <Menu className="w-5 h-5" />
             </button>

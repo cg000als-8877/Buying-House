@@ -332,7 +332,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
           <span className="text-xs font-medium uppercase text-amber-400 font-bold">
             Sampling &amp; Prototyping
           </span>
-          <h2 className="text-xl font-serif font-bold text-white">
+          <h2 className="text-xl font-sans font-bold text-white">
             Sample Development Pipeline
           </h2>
         </div>
@@ -415,7 +415,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                       <span className="text-[10px] font-medium text-amber-400 uppercase font-bold tracking-wider">
                         Revision v{sample.revisionNumber}
                       </span>
-                      <h3 className="font-serif font-bold text-base text-white">
+                      <h3 className="font-sans font-bold text-base text-white">
                         {sample.sampleType}
                       </h3>
                     </div>
@@ -577,7 +577,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   New Garment Prototyping
                 </span>
-                <h3 className="font-serif font-bold text-lg text-white">Create Sample Request</h3>
+                <h3 className="font-sans font-bold text-lg text-white">Create Sample Request</h3>
               </div>
               <button onClick={() => setIsCreateModalOpen(false)} className="text-slate-400 hover:text-white">
                 <X className="w-5 h-5" />
@@ -694,7 +694,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
           <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4 shadow-2xl">
             <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-              <h3 className="font-serif font-bold text-base text-white">
+              <h3 className="font-sans font-bold text-base text-white">
                 Submit {submittingSample.sampleType} (v{submittingSample.revisionNumber})
               </h3>
               <button onClick={() => setSubmittingSample(null)} className="text-slate-400 hover:text-white">
@@ -753,7 +753,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   Start Next Round
                 </span>
-                <h3 className="font-serif font-bold text-base text-white">
+                <h3 className="font-sans font-bold text-base text-white">
                   Initiate Revision v{revisingSample.revisionNumber + 1} for {revisingSample.sampleType}
                 </h3>
               </div>
@@ -832,7 +832,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                     {activeSampleDetail.status}
                   </Badge>
                 </div>
-                <h3 className="font-serif font-bold text-xl text-white">
+                <h3 className="font-sans font-bold text-xl text-white">
                   {activeSampleDetail.sampleType} Workspace
                 </h3>
               </div>

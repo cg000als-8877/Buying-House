@@ -308,7 +308,7 @@ export function AdminShipmentWorkspace({
               </span>
             )}
           </div>
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mt-1">
+          <h2 className="text-2xl sm:text-3xl font-sans font-bold text-white mt-1">
             Shipment &amp; Logistics Management
           </h2>
           <p className="text-xs sm:text-sm text-slate-400">
@@ -581,7 +581,7 @@ export function AdminShipmentWorkspace({
                   Buyer: <strong>{selectedShipment.buyerOrganizationName}</strong>
                 </span>
               </div>
-              <h3 className="text-xl font-serif font-bold text-white">
+              <h3 className="text-xl font-sans font-bold text-white">
                 Cargo Operational Workspace: {selectedShipment.destinationCountry} ({selectedShipment.destinationPort})
               </h3>
             </div>
@@ -682,7 +682,7 @@ export function AdminShipmentWorkspace({
           {activeTab === 'overview' && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-xs font-medium">
               <Card className="p-4 bg-slate-950/60 border-slate-800 space-y-3">
-                <h4 className="font-serif font-bold text-sm text-white pb-2 border-b border-slate-800">
+                <h4 className="font-sans font-bold text-sm text-white pb-2 border-b border-slate-800">
                   Carrier &amp; Forwarding Agent
                 </h4>
                 <div className="space-y-2">
@@ -710,7 +710,7 @@ export function AdminShipmentWorkspace({
               </Card>
 
               <Card className="p-4 bg-slate-950/60 border-slate-800 space-y-3">
-                <h4 className="font-serif font-bold text-sm text-white pb-2 border-b border-slate-800">
+                <h4 className="font-sans font-bold text-sm text-white pb-2 border-b border-slate-800">
                   Vessel &amp; Container Allocation
                 </h4>
                 <div className="space-y-2">
@@ -738,7 +738,7 @@ export function AdminShipmentWorkspace({
               </Card>
 
               <Card className="p-4 bg-slate-950/60 border-slate-800 space-y-3">
-                <h4 className="font-serif font-bold text-sm text-white pb-2 border-b border-slate-800">
+                <h4 className="font-sans font-bold text-sm text-white pb-2 border-b border-slate-800">
                   Schedule &amp; Internal Notes
                 </h4>
                 <div className="space-y-2">
@@ -790,7 +790,7 @@ export function AdminShipmentWorkspace({
                     <ShieldAlert className="w-6 h-6 text-rose-400" />
                   )}
                   <div>
-                    <h4 className="font-serif font-bold text-base text-white">
+                    <h4 className="font-sans font-bold text-base text-white">
                       {readiness.isReady
                         ? 'All Pre-Shipment Quality & Production Gates Passed'
                         : readiness.qualityGate.overrideApplied
@@ -812,7 +812,7 @@ export function AdminShipmentWorkspace({
                 {/* Gate 1: Quality Gate */}
                 <Card className="p-5 bg-slate-950/70 border-slate-800 space-y-3">
                   <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                    <h5 className="font-serif font-bold text-white text-sm">1. Quality &amp; AQL Gate</h5>
+                    <h5 className="font-sans font-bold text-white text-sm">1. Quality &amp; AQL Gate</h5>
                     <Badge variant={readiness.qualityGate.passed ? 'emerald' : 'rose'} size="sm">
                       {readiness.qualityGate.passed ? 'PASSED' : 'BLOCKED'}
                     </Badge>
@@ -848,7 +848,7 @@ export function AdminShipmentWorkspace({
                 {/* Gate 2: Production Gate */}
                 <Card className="p-5 bg-slate-950/70 border-slate-800 space-y-3">
                   <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                    <h5 className="font-serif font-bold text-white text-sm">2. Packing &amp; Volume Gate</h5>
+                    <h5 className="font-sans font-bold text-white text-sm">2. Packing &amp; Volume Gate</h5>
                     <Badge variant={readiness.productionGate.passed ? 'emerald' : 'amber'} size="sm">
                       {readiness.productionGate.completionPercentage}%
                     </Badge>
@@ -872,7 +872,7 @@ export function AdminShipmentWorkspace({
                 {/* Gate 3: Document Gate */}
                 <Card className="p-5 bg-slate-950/70 border-slate-800 space-y-3">
                   <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                    <h5 className="font-serif font-bold text-white text-sm">3. Documents Gate</h5>
+                    <h5 className="font-sans font-bold text-white text-sm">3. Documents Gate</h5>
                     <Badge variant={readiness.documentGate.isComplete ? 'emerald' : 'amber'} size="sm">
                       {readiness.documentGate.totalRequiredCount - readiness.documentGate.pendingRequiredCount} / {readiness.documentGate.totalRequiredCount}
                     </Badge>
@@ -933,7 +933,7 @@ export function AdminShipmentWorkspace({
               {/* Add Packing Form */}
               {isAddingPacking && (
                 <Card className="p-5 bg-slate-950 border-amber-400/40 space-y-4">
-                  <h5 className="font-serif font-bold text-sm text-amber-400">Add Export Carton Range</h5>
+                  <h5 className="font-sans font-bold text-sm text-amber-400">Add Export Carton Range</h5>
                   <form onSubmit={handleAddPackingItem} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
                     <div>
                       <label className="block text-slate-400 mb-1">Style Number</label>
@@ -1109,7 +1109,7 @@ export function AdminShipmentWorkspace({
           {activeTab === 'documents' && (
             <div className="space-y-4">
               <div>
-                <h4 className="font-serif font-bold text-white text-base">Commercial Shipping Documents</h4>
+                <h4 className="font-sans font-bold text-white text-base">Commercial Shipping Documents</h4>
                 <p className="text-xs text-slate-400">
                   Customs declaration, transport title deeds, origin certificates and invoice checklist.
                 </p>
@@ -1186,7 +1186,7 @@ export function AdminShipmentWorkspace({
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <h4 className="font-serif font-bold text-white text-base">Cargo Milestone Progression</h4>
+                  <h4 className="font-sans font-bold text-white text-base">Cargo Milestone Progression</h4>
                   <p className="text-xs text-slate-400">
                     Chronological dispatch events, port departures, feeder vessel transfers, and customs gates.
                   </p>
@@ -1206,7 +1206,7 @@ export function AdminShipmentWorkspace({
 
               {isAddingEvent && (
                 <Card className="p-5 bg-slate-950 border-amber-400/40 space-y-4">
-                  <h5 className="font-serif font-bold text-sm text-amber-400">Record Carrier / Port Milestone</h5>
+                  <h5 className="font-sans font-bold text-sm text-amber-400">Record Carrier / Port Milestone</h5>
                   <form onSubmit={handleAddEvent} className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                     <div>
                       <label className="block text-slate-400 mb-1">Milestone Title</label>
@@ -1287,8 +1287,8 @@ export function AdminShipmentWorkspace({
               <div className="space-y-4 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-slate-800">
                 {events.map((evt) => (
                   <div key={evt.id} className="relative flex items-start gap-4 pl-1">
-                    <div className="w-6 h-6 rounded-full bg-slate-950 border-2 border-amber-400 flex items-center justify-center shrink-0 z-10">
-                      <div className="w-2 h-2 rounded-full bg-amber-400" />
+                    <div className="w-6 h-6 rounded bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0 z-10 text-primary">
+                      <MapPin className="w-3.5 h-3.5 text-accent" />
                     </div>
                     <div className="flex-1 p-4 rounded-xl bg-slate-950/70 border border-slate-800 space-y-1">
                       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -1322,7 +1322,7 @@ export function AdminShipmentWorkspace({
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
               <div>
                 <span className="text-xs font-medium text-amber-400 font-bold uppercase">Lifecycle Progression</span>
-                <h4 className="font-serif font-bold text-lg text-white">
+                <h4 className="font-sans font-bold text-lg text-white">
                   Update Stage for {selectedShipment.shipmentNumber}
                 </h4>
               </div>

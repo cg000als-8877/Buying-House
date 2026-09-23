@@ -163,7 +163,7 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
             <span className="text-xs font-medium uppercase text-primary font-bold">
               Production Workflow
             </span>
-            <h3 className="font-serif font-bold text-lg text-foreground">
+            <h3 className="font-sans font-bold text-lg text-foreground">
               Garment Manufacturing Pipeline
             </h3>
           </div>
@@ -238,7 +238,7 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
               <span className="text-xs font-medium uppercase text-primary font-bold">
                 Output Progress
               </span>
-              <h3 className="font-serif font-bold text-lg text-foreground">
+              <h3 className="font-sans font-bold text-lg text-foreground">
                 Daily Manufacturing Output
               </h3>
             </div>
@@ -271,7 +271,7 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
             <span className="text-xs font-medium uppercase text-primary font-bold">
               Verified Log Stream
             </span>
-            <h3 className="font-serif font-bold text-lg text-foreground">
+            <h3 className="font-sans font-bold text-lg text-foreground">
               Daily Production Reporting History
             </h3>
           </div>
@@ -336,7 +336,7 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
             <span className="text-xs font-medium uppercase text-primary font-bold">
               Factory Floor Documentation
             </span>
-            <h3 className="font-serif font-bold text-lg text-foreground">
+            <h3 className="font-sans font-bold text-lg text-foreground">
               Production &amp; Inspection Snapshots
             </h3>
           </div>

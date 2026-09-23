@@ -1,4 +1,4 @@
-﻿import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import {
   getSamplesByOrder,
   getSamplesForBuyer,
@@ -27,7 +27,7 @@ vi.mock('next/navigation', () => ({
   useSearchParams: () => new URLSearchParams(),
 }));
 
-describe('Sample Management & Buyer Approval Workflow — Step 10 Verification', () => {
+describe('Sample Management & Buyer Approval Workflow � Step 10 Verification', () => {
   const staffActor = { uid: 'staff-sample-001', role: 'Merchandiser', displayName: 'Jane Merch' };
   const buyerActor = {
     uid: 'buyer-001',

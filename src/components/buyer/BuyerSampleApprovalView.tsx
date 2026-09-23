@@ -198,7 +198,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
           <span className="text-xs font-medium uppercase text-primary font-bold">
             Fit, Proto &amp; Pre-Production Approvals
           </span>
-          <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground">
+          <h2 className="text-xl sm:text-2xl font-sans font-bold text-foreground">
             Garment Sample Development
           </h2>
         </div>
@@ -245,7 +245,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
                           </span>
                         )}
                       </div>
-                      <h3 className="font-serif font-bold text-lg text-foreground mt-0.5">
+                      <h3 className="font-sans font-bold text-lg text-foreground mt-0.5">
                         {sample.sampleType}
                       </h3>
                     </div>
@@ -374,7 +374,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
                 <span className="text-xs font-medium uppercase text-primary font-bold">
                   Buyer Quality Verification
                 </span>
-                <h3 className="font-serif font-bold text-lg text-foreground">
+                <h3 className="font-sans font-bold text-lg text-foreground">
                   Record Decision: {decisionModalSample.sampleType} (v{decisionModalSample.revisionNumber})
                 </h3>
               </div>
@@ -491,7 +491,7 @@ export function BuyerSampleApprovalView({ order, buyerOrgId }: BuyerSampleApprov
                 <span className="text-xs font-medium uppercase text-primary font-bold">
                   Revision v{selectedSample.revisionNumber}
                 </span>
-                <h3 className="font-serif font-bold text-xl text-foreground">
+                <h3 className="font-sans font-bold text-xl text-foreground">
                   {selectedSample.sampleType} Specifications
                 </h3>
               </div>

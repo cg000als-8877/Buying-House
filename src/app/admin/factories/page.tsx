@@ -270,13 +270,13 @@ export default function AdminFactoriesPage() {
                       <span className="text-[10px] font-medium text-amber-400 font-semibold uppercase block">
                         {factory.id}
                       </span>
-                      <h3 className="font-serif font-bold text-base text-white hover:text-amber-400 transition-colors">
+                      <h3 className="font-sans font-bold text-base text-white hover:text-amber-400 transition-colors">
                         <Link href={`/admin/factories/${factory.id}`}>
                           {factory.name}
                         </Link>
                       </h3>
                     </div>
-                    <Badge variant={isAudited ? 'emerald' : 'blue'} size="sm" dot>
+                    <Badge variant={isAudited ? 'emerald' : 'blue'} size="sm">
                       {factory.status}
                     </Badge>
                   </div>
@@ -343,7 +343,7 @@ export default function AdminFactoriesPage() {
                   <Factory className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="font-serif font-bold text-base text-white">
+                  <h3 className="font-sans font-bold text-base text-white">
                     Register Manufacturing Unit
                   </h3>
                   <p className="text-xs text-slate-400">Technical capacity &amp; compliance profile</p>

@@ -26,7 +26,7 @@ export function ProductionChart({
           <span className="text-xs font-medium text-amber-400 font-bold uppercase tracking-wider">
             Volume Allocation
           </span>
-          <h3 className="font-serif font-bold text-lg text-white">{title}</h3>
+          <h3 className="font-sans font-bold text-lg text-white">{title}</h3>
         </div>
         <div className="text-right">
           <span className="text-xs text-slate-400 block">Total Live Units</span>

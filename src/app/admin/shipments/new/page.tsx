@@ -125,7 +125,7 @@ export default function NewShipmentPage() {
           <Badge variant="amber" size="sm">
             Cargo Booking Workflow
           </Badge>
-          <h2 className="text-2xl font-serif font-bold text-white mt-1">
+          <h2 className="text-2xl font-sans font-bold text-white mt-1">
             Initialize New Shipment Booking Plan
           </h2>
           <p className="text-xs text-slate-400">
@@ -142,7 +142,7 @@ export default function NewShipmentPage() {
         <form onSubmit={handleSubmit} className="space-y-6 text-xs">
           {/* Section 1: Order Selection */}
           <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-4">
-            <h3 className="font-serif font-bold text-sm text-amber-400">
+            <h3 className="font-sans font-bold text-sm text-amber-400">
               1. Purchase Order Linking
             </h3>
             <div>
@@ -171,7 +171,7 @@ export default function NewShipmentPage() {
 
           {/* Section 2: Carrier & Transport Mode */}
           <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-4">
-            <h3 className="font-serif font-bold text-sm text-amber-400">
+            <h3 className="font-sans font-bold text-sm text-amber-400">
               2. Carrier &amp; Logistics Service Provider
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -235,7 +235,7 @@ export default function NewShipmentPage() {
 
           {/* Section 3: Routing & Port Schedule */}
           <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-4">
-            <h3 className="font-serif font-bold text-sm text-amber-400">
+            <h3 className="font-sans font-bold text-sm text-amber-400">
               3. Port Routing &amp; Vessel Details
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

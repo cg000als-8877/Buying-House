@@ -174,7 +174,7 @@ export default function AdminBuyerDetailPage() {
               <Badge
                 variant={org.status === 'active' ? 'emerald' : org.status === 'pending' ? 'amber' : 'rose'}
                 size="md"
-                dot
+               
               >
                 {org.status.toUpperCase()} ACCOUNT
               </Badge>
@@ -228,7 +228,7 @@ export default function AdminBuyerDetailPage() {
         <div className="space-y-6">
           {/* Contact & Profile */}
           <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
-            <h3 className="font-serif font-bold text-base text-white pb-2 border-b border-slate-800">
+            <h3 className="font-sans font-bold text-base text-white pb-2 border-b border-slate-800">
               Organization Information
             </h3>
 
@@ -277,7 +277,7 @@ export default function AdminBuyerDetailPage() {
             <div className="flex items-center justify-between pb-2 border-b border-slate-800">
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-amber-400" />
-                <h3 className="font-serif font-bold text-base text-white">
+                <h3 className="font-sans font-bold text-base text-white">
                   Buyer Representatives ({buyerUsers.length})
                 </h3>
               </div>
@@ -309,7 +309,7 @@ export default function AdminBuyerDetailPage() {
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-lg font-serif font-bold text-white">
+              <h2 className="text-lg font-sans font-bold text-white">
                 Purchase Orders ({orders.length})
               </h2>
               <p className="text-xs text-slate-400">

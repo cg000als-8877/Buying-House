@@ -126,7 +126,7 @@ export function BuyerDocumentVaultView({ initialOrderId }: BuyerDocumentVaultVie
           <span className="text-xs font-medium uppercase text-primary font-bold">
             Verified Files &amp; Technical Assets
           </span>
-          <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground">
+          <h2 className="text-xl sm:text-2xl font-sans font-bold text-foreground">
             {initialOrderId ? 'Order Specifications & Documentation Vault' : 'Buyer Document Vault'}
           </h2>
         </div>
