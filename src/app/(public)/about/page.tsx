@@ -4,9 +4,9 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
 import { ShieldCheck, Target, Compass } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About XYZ Buying House | Apparel Sourcing & Manufacturing Management',
+  title: 'About Avenel Global | Apparel Sourcing & Manufacturing Management',
   description:
-    'Learn about XYZ Buying House: our mission, technical merchandising operations, ethical compliance standards, and digital production management in Bangladesh.',
+    'Learn about Avenel Global: our mission, technical merchandising operations, ethical compliance standards, and digital production management in Bangladesh.',
 };
 
 export default function AboutPage() {
@@ -40,7 +40,7 @@ export default function AboutPage() {
           Bridging International Fashion Brands with Bangladesh Manufacturing.
         </h1>
         <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          XYZ Buying House is a full-service apparel sourcing, merchandising, and quality governance partner operating from Dhaka, Bangladesh.
+          Avenel Global is a full-service apparel sourcing, merchandising, and quality governance partner operating from Dhaka, Bangladesh.
         </p>
       </section>
 

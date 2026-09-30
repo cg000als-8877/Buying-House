@@ -149,7 +149,7 @@ export default function BuyerProfilePage() {
           </h3>
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
-          In strict adherence to the XYZ Buying House data protection model, all purchase orders, inline QC reports, pre-production approvals, and commercial documents are queried exclusively with server-validated tenant organization constraints. Access to data from other buyer organizations is strictly prohibited by Cloud Firestore security rules.
+          In strict adherence to the Avenel Global data protection model, all purchase orders, inline QC reports, pre-production approvals, and commercial documents are queried exclusively with server-validated tenant organization constraints. Access to data from other buyer organizations is strictly prohibited by Cloud Firestore security rules.
         </p>
       </Card>
     </div>

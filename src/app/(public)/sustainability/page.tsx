@@ -8,7 +8,7 @@ import { Leaf, Check } from 'lucide-react';
 import { Alert } from '@/components/ui/Alert';
 
 export const metadata: Metadata = {
-  title: 'Responsible Sourcing & Sustainability Framework | XYZ Buying House',
+  title: 'Responsible Sourcing & Sustainability Framework | Avenel Global',
   description:
     'Responsible apparel sourcing framework in Bangladesh: organic and recycled material options, reduced-water laundering pathways, energy conservation, and packaging circularity.',
 };

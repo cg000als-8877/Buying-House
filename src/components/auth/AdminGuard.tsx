@@ -36,7 +36,7 @@ export function AdminGuard({ children }: { children: React.ReactNode }) {
     return (
       <div className="max-w-md mx-auto my-20 p-6 space-y-4">
         <Alert variant="error" title="Restricted Area">
-          Access restricted to authorized XYZ Buying House internal staff. Your account ({user?.role}) does not have administrative clearance.
+          Access restricted to authorized Avenel Global internal staff. Your account ({user?.role}) does not have administrative clearance.
         </Alert>
         <div className="flex justify-center gap-3">
           <Button variant="outline" size="sm" onClick={() => router.push('/buyer/dashboard')}>

@@ -7,9 +7,9 @@ import { Badge } from '@/components/ui/Badge';
 import { Check } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Quality Assurance & AQL Standards | XYZ Buying House',
+  title: 'Quality Assurance & AQL Standards | Avenel Global',
   description:
-    'XYZ Buying House quality management framework in Bangladesh: 4-Point fabric inspection, inline defect mapping, AQL 1.5/2.5 statistical audits, and comprehensive lab testing protocols.',
+    'Avenel Global quality management framework in Bangladesh: 4-Point fabric inspection, inline defect mapping, AQL 1.5/2.5 statistical audits, and comprehensive lab testing protocols.',
 };
 
 export default function QualityPage() {

@@ -233,7 +233,7 @@ describe('Admin & Staff Operations Portal — Step 8 Verification', () => {
       const invited = await inviteUser(
         {
           displayName: 'Rashidul Islam',
-          email: 'rashid.merch@xyzbuyinghouse.com',
+          email: 'rashid.merch@avenelglobal.com',
           role: 'Merchandiser',
         },
         { uid: 'staff-admin-001', role: 'Super Admin' }
@@ -241,7 +241,7 @@ describe('Admin & Staff Operations Portal — Step 8 Verification', () => {
 
       expect(invited.uid).toBeDefined();
       expect(invited.status).toBe('invited');
-      expect(invited.email).toBe('rashid.merch@xyzbuyinghouse.com');
+      expect(invited.email).toBe('rashid.merch@avenelglobal.com');
     });
   });
 

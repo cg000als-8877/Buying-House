@@ -109,7 +109,7 @@ export function InquiryForm() {
           Your inquiry has been received by the system.
         </h3>
         <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
-          Thank you for contacting XYZ Buying House. Your inquiry has been processed and logged in the system. Full automated notification routing will be enabled once production communication providers are configured.
+          Thank you for contacting Avenel Global. Your inquiry has been processed and logged in the system. Full automated notification routing will be enabled once production communication providers are configured.
         </p>
         <div className="pt-2">
           <Button

@@ -87,7 +87,7 @@ describe('Authentication & Security Foundation', () => {
 
     const staffUser: User = {
       uid: 'staff-uid',
-      email: 'merchandiser@xyz.com',
+      email: 'merchandiser@avenelglobal.com',
       displayName: 'Lead Merchandiser',
       role: 'Merchandiser',
       buyerOrganizationId: null,
@@ -150,7 +150,7 @@ describe('Authentication & Security Foundation', () => {
         'Invalid email address or password. Please verify your credentials.'
       );
       expect(mapAuthError({ code: 'auth/user-disabled' })).toBe(
-        'This account has been deactivated. Please contact your XYZ Buying House representative.'
+        'This account has been deactivated. Please contact your Avenel Global representative.'
       );
       expect(mapAuthError({ code: 'auth/too-many-requests' })).toBe(
         'Too many unsuccessful attempts. Access is temporarily restricted for security. Please try again later.'

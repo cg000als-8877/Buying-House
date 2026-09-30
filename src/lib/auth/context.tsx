@@ -33,7 +33,7 @@ export interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const DEV_STORAGE_KEY = 'xyz_auth_dev_session';
+const DEV_STORAGE_KEY = 'avenel_auth_dev_session';
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
@@ -126,7 +126,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           setIsLoading(false);
           return {
             success: false,
-            error: 'This account has been deactivated or suspended. Please contact your XYZ representative.',
+            error: 'This account has been deactivated or suspended. Please contact your Avenel Global representative.',
           };
         }
 
@@ -206,7 +206,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const devLogin = useCallback((role: UserRole, buyerOrgId?: string) => {
     const devUser: User = {
       uid: `dev-user-${Date.now()}`,
-      email: `${role.toLowerCase().replace(/\s+/g, '.')}@xyzbuyinghouse.com`,
+      email: `${role.toLowerCase().replace(/\s+/g, '.')}@avenelglobal.com`,
       displayName: `${role} (Dev Mode)`,
       role,
       buyerOrganizationId: role === 'Buyer' ? buyerOrgId || 'org-nordic' : null,

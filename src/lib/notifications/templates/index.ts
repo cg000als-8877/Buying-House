@@ -24,7 +24,7 @@ const EMAIL_HEADER = `
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XYZ Buying House Notification</title>
+  <title>Avenel Global Notification</title>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }
     .container { max-width: 600px; margin: 0 auto; background-color: #1e293b; border: 1px solid #334155; border-radius: 12px; overflow: hidden; }
@@ -45,7 +45,7 @@ const EMAIL_HEADER = `
 <body>
   <div class="container">
     <div class="header">
-      <h1 class="brand">XYZ Buying House</h1>
+      <h1 class="brand">Avenel Global</h1>
       <div style="font-size: 11px; color: #94a3b8; margin-top: 4px;">Supply Chain Telemetry &amp; Operations</div>
     </div>
     <div class="content">
@@ -54,7 +54,7 @@ const EMAIL_HEADER = `
 const EMAIL_FOOTER = `
     </div>
     <div class="footer">
-      <p style="margin: 0 0 8px 0;">This is an automated operational notification from XYZ Buying House platform.</p>
+      <p style="margin: 0 0 8px 0;">This is an automated operational notification from Avenel Global platform.</p>
       <p style="margin: 0;">Dhaka, Bangladesh &bull; Certified Export Operations &bull; Strict Tenant Confidentiality</p>
     </div>
   </div>
@@ -81,7 +81,7 @@ export function renderEmailTemplate(templateKey: string, ctx: EmailTemplateConte
       return {
         subject,
         html,
-        text: `Dear ${ctx.recipientName},\nYour order ${ctx.orderNumber} has a new milestone update.\nView: ${ctx.actionUrl || 'https://xyzbuyinghouse.com'}`,
+        text: `Dear ${ctx.recipientName},\nYour order ${ctx.orderNumber} has a new milestone update.\nView: ${ctx.actionUrl || 'https://avenelglobal.com'}`,
       };
     }
 
@@ -293,12 +293,12 @@ export function renderEmailTemplate(templateKey: string, ctx: EmailTemplateConte
     }
 
     default: {
-      const subject = `[Notification] XYZ Buying House Operations Notice`;
+      const subject = `[Notification] Avenel Global Operations Notice`;
       const html = `
         ${EMAIL_HEADER}
         <h2 class="title">Operational Notification</h2>
         <p class="body-text">Dear ${ctx.recipientName},</p>
-        <p class="body-text">You have received a new operational notification on the XYZ Buying House platform.</p>
+        <p class="body-text">You have received a new operational notification on the Avenel Global platform.</p>
         ${ctx.actionUrl ? `<p><a href="${ctx.actionUrl}" class="btn">View Notification</a></p>` : ''}
         ${EMAIL_FOOTER}
       `;

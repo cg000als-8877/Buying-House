@@ -15,7 +15,7 @@ import { logSecurityEvent } from '@/lib/audit';
 export const TEST_STAFF_USERS: User[] = [
   {
     uid: 'staff-admin-001',
-    email: 'admin@xyzbuyinghouse.com',
+    email: 'admin@avenelglobal.com',
     displayName: 'Rahim Chowdhury (Managing Director)',
     role: 'Super Admin',
     status: 'active',
@@ -26,7 +26,7 @@ export const TEST_STAFF_USERS: User[] = [
   },
   {
     uid: 'staff-ops-001',
-    email: 'ops.lead@xyzbuyinghouse.com',
+    email: 'ops.lead@avenelglobal.com',
     displayName: 'Farhana Yasmin (Head of Operations)',
     role: 'Operations Manager',
     status: 'active',
@@ -37,7 +37,7 @@ export const TEST_STAFF_USERS: User[] = [
   },
   {
     uid: 'merch-001',
-    email: 'tarek.merch@xyzbuyinghouse.com',
+    email: 'tarek.merch@avenelglobal.com',
     displayName: 'Tarek Mahmud (Senior Merchandiser)',
     role: 'Merchandiser',
     status: 'active',
@@ -48,7 +48,7 @@ export const TEST_STAFF_USERS: User[] = [
   },
   {
     uid: 'merch-002',
-    email: 'nusrat.merch@xyzbuyinghouse.com',
+    email: 'nusrat.merch@avenelglobal.com',
     displayName: 'Nusrat Jahan (Knitwear Merchandiser)',
     role: 'Merchandiser',
     status: 'active',
@@ -59,7 +59,7 @@ export const TEST_STAFF_USERS: User[] = [
   },
   {
     uid: 'qc-lead-001',
-    email: 'qc.lead@xyzbuyinghouse.com',
+    email: 'qc.lead@avenelglobal.com',
     displayName: 'Al-Amin Hossain (Chief QA Auditor)',
     role: 'QC Staff',
     status: 'active',

@@ -33,7 +33,7 @@ export function AdminHeader({ unreadCount = 0 }: AdminHeaderProps) {
 
           <div className="flex items-center gap-2">
             <span className="font-sans font-bold text-base text-foreground lg:hidden">
-              XYZ Operations
+              Avenel Operations
             </span>
             <span className="hidden sm:inline-block text-xs font-medium text-muted-foreground">
               Internal Control Center

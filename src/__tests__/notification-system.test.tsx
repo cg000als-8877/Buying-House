@@ -248,7 +248,7 @@ describe('Notifications, Email & Communication Automation — Step 14 Verificati
         recipients: [
           {
             userId: 'staff-merch-001',
-            email: 'merch@xyzbuyinghouse.com',
+            email: 'merch@avenelglobal.com',
             name: 'A. Rahman',
             role: 'Merchandiser' as UserRole,
           },
@@ -292,11 +292,11 @@ describe('Notifications, Email & Communication Automation — Step 14 Verificati
         isBuyer: true,
         orderNumber: 'PO-2026-0881',
         sampleType: 'Fit Sample',
-        actionUrl: 'https://xyzbuyinghouse.com/buyer/orders/TEST-ORDER-001',
+        actionUrl: 'https://avenelglobal.com/buyer/orders/TEST-ORDER-001',
       });
 
       expect(sampleEmail.subject).toContain('Sample Approval Requested');
-      expect(sampleEmail.html).toContain('XYZ Buying House');
+      expect(sampleEmail.html).toContain('Avenel Global');
       expect(sampleEmail.html).toContain('Fit Sample');
       expect(sampleEmail.html).toContain('PO-2026-0881');
       expect(sampleEmail.text).toContain('Morten Lindqvist');
@@ -308,7 +308,7 @@ describe('Notifications, Email & Communication Automation — Step 14 Verificati
         isBuyer: true,
         orderNumber: 'PO-2026-0881',
         delayReason: 'Supply chain fabric shipment variance',
-        actionUrl: 'https://xyzbuyinghouse.com/buyer/orders/TEST-ORDER-001',
+        actionUrl: 'https://avenelglobal.com/buyer/orders/TEST-ORDER-001',
       });
 
       expect(delayEmail.html).not.toContain('internal_notes');

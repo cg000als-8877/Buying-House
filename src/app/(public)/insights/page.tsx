@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/Badge';
 import { Clock, Calendar, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Apparel Sourcing Insights & Technical Guides | XYZ Buying House',
+  title: 'Apparel Sourcing Insights & Technical Guides | Avenel Global',
   description:
     'Technical apparel sourcing insights, AQL quality standards breakdown, Bangladesh manufacturing lead-time guides, and garment tech pack preparation tips.',
 };

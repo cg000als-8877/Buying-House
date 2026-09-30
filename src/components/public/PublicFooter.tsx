@@ -13,10 +13,8 @@ export function PublicFooter() {
           {/* Brand & Mission Overview */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2.5 font-sans font-bold text-base text-foreground">
-              <span className="w-7 h-7 rounded bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs tracking-wider shadow-subtle">
-                XYZ
-              </span>
-              <span>XYZ Buying House</span>
+              <span className="w-7 h-7 rounded bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs tracking-wider shadow-subtle">AG</span>
+              <span>Avenel Global</span>
             </Link>
             <p className="text-muted-foreground text-xs leading-relaxed max-w-sm">
               An apparel sourcing and manufacturing management platform operating in Bangladesh. Connecting international fashion brands, retailers, and importers with compliant, high-efficiency manufacturing facilities.
@@ -28,7 +26,7 @@ export function PublicFooter() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-accent shrink-0" />
-                <span className="font-medium text-[11px]">sourcing@xyzbuyinghouse.com</span>
+                <span className="font-medium text-[11px]">sourcing@avenelglobal.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-accent shrink-0" />
@@ -112,7 +110,7 @@ export function PublicFooter() {
 
         {/* Bottom Copyright & Legal Links */}
         <div className="mt-12 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-muted-foreground">
-          <p>&copy; {currentYear} XYZ Buying House Platform. All rights reserved.</p>
+          <p>&copy; {currentYear} Avenel Global Platform. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="/compliance" className="hover:text-foreground transition-colors">
               Social Compliance

@@ -6,9 +6,9 @@ import { Badge } from '@/components/ui/Badge';
 import { Scale, CheckCircle2, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Social Compliance & Ethical Governance | XYZ Buying House',
+  title: 'Social Compliance & Ethical Governance | Avenel Global',
   description:
-    'XYZ Buying House compliance oversight in Bangladesh: ethical labor standards, building/fire safety integrity, environmental management, and zero unauthorized subcontracting.',
+    'Avenel Global compliance oversight in Bangladesh: ethical labor standards, building/fire safety integrity, environmental management, and zero unauthorized subcontracting.',
 };
 
 export default function CompliancePage() {

@@ -3,9 +3,9 @@ import { SectionHeading, FactoryGrid, CTASection } from '@/components/public';
 import { Alert } from '@/components/ui/Alert';
 
 export const metadata: Metadata = {
-  title: 'Factory Network & Manufacturing Hubs | XYZ Buying House',
+  title: 'Factory Network & Manufacturing Hubs | Avenel Global',
   description:
-    'Overview of XYZ Buying House garment manufacturing network framework in Bangladesh. Factory profiles, capabilities, certifications, and capacity allocations published upon verification.',
+    'Overview of Avenel Global garment manufacturing network framework in Bangladesh. Factory profiles, capabilities, certifications, and capacity allocations published upon verification.',
 };
 
 export default function FactoriesPage() {

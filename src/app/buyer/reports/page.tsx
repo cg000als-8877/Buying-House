@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { BuyerReportingDashboard } from '@/components/buyer/BuyerReportingDashboard';
 
 export const metadata: Metadata = {
-  title: 'Reports & Sourcing Analytics | Buyer Portal | XYZ Buying House',
+  title: 'Reports & Sourcing Analytics | Buyer Portal | Avenel Global',
   description: 'Tenant-isolated management reporting and sourcing intelligence for buyer accounts.',
 };
 

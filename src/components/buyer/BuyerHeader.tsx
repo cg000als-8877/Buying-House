@@ -32,7 +32,7 @@ export function BuyerHeader({ unreadCount = 0 }: BuyerHeaderProps) {
 
           <div className="flex items-center gap-2">
             <span className="font-sans font-bold text-base text-foreground lg:hidden">
-              XYZ Buying House
+              Avenel Global
             </span>
             <span className="hidden sm:inline-block text-xs font-medium text-muted-foreground">
               Secure Buyer Portal

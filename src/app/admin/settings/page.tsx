@@ -83,7 +83,7 @@ export default function AdminSettingsPage() {
             <input
               type="text"
               readOnly
-              value="XYZ Buying House & Sourcing Atelier Ltd."
+              value="Avenel Global Sourcing Ltd."
               className="w-full px-3 py-2 bg-slate-950 rounded-lg border border-slate-800 text-white font-medium"
             />
           </div>

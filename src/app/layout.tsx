@@ -11,7 +11,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "XYZ Buying House | Apparel Sourcing Platform",
+  title: "Avenel Global | Apparel Sourcing Platform",
   description: "B2B Apparel Sourcing, Ethical Garment Manufacturing Management, and Buyer Order Telemetry.",
 };
 

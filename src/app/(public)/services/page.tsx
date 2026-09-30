@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { CheckCircle2, FileCheck, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Services | XYZ Buying House: Apparel Sourcing, Sampling & Production',
+  title: 'Services | Avenel Global: Apparel Sourcing, Sampling & Production',
   description:
     'Comprehensive garment sourcing and buying house services in Bangladesh: vendor sourcing, tech pack development, Proto sampling, inline AQL quality control, compliance oversight, and export logistics.',
 };

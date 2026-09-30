@@ -8,7 +8,7 @@ export async function GET() {
   return NextResponse.json(
     {
       status: 'ok',
-      service: 'xyz-buying-house-platform',
+      service: 'avenel-global-platform',
       timestamp: new Date().toISOString(),
       version: '0.1.0',
     },

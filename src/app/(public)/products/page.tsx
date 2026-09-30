@@ -7,9 +7,9 @@ import { Button } from '@/components/ui/Button';
 import { Clock, Layers, Sparkles, Scissors, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Apparel Capabilities & Product Categories | XYZ Buying House',
+  title: 'Apparel Capabilities & Product Categories | Avenel Global',
   description:
-    'Explore XYZ Buying House garment manufacturing capabilities across Circular Knitwear, Woven Tops & Bottoms, Denim, Technical Outerwear, and Performance Activewear.',
+    'Explore Avenel Global garment manufacturing capabilities across Circular Knitwear, Woven Tops & Bottoms, Denim, Technical Outerwear, and Performance Activewear.',
 };
 
 export default function ProductsPage() {

@@ -135,7 +135,7 @@ export class ProductionEmailAdapter implements EmailProvider {
 
   constructor(apiKey?: string, fromAddress?: string) {
     this.apiKey = apiKey || process.env.EMAIL_API_KEY || '';
-    this.fromAddress = fromAddress || process.env.EMAIL_FROM || 'notifications@xyzbuyinghouse.com';
+    this.fromAddress = fromAddress || process.env.EMAIL_FROM || 'notifications@avenelglobal.com';
   }
 
   async sendEmail(payload: EmailPayload): Promise<EmailDeliveryResult> {

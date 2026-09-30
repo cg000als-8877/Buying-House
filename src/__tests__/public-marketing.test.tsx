@@ -33,7 +33,7 @@ describe('Public Marketing Website Components', () => {
         </AuthProvider>
       );
 
-      expect(screen.getByText('XYZ Buying House')).toBeInTheDocument();
+      expect(screen.getByText('Avenel Global')).toBeInTheDocument();
       expect(screen.getByText('Services')).toBeInTheDocument();
       expect(screen.getByText('Products')).toBeInTheDocument();
       expect(screen.getByText('Quality')).toBeInTheDocument();

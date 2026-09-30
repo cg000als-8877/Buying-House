@@ -97,7 +97,7 @@ export function BuyerSidebar({
           className="flex items-center gap-3 group"
         >
           <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
-            <span className="font-bold text-lg">XYZ</span>
+            <span className="font-bold text-lg">AG</span>
           </div>
           <div>
             <div className="font-bold text-base text-foreground leading-tight">
@@ -169,7 +169,7 @@ export function BuyerSidebar({
           target="_blank"
           className="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors"
         >
-          <span>XYZ Public Portal</span>
+          <span>Avenel Global Public Site</span>
           <ExternalLink className="w-3.5 h-3.5" />
         </Link>
       </nav>

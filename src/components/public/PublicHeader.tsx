@@ -25,11 +25,9 @@ export function PublicHeader() {
             href="/"
             className="flex items-center gap-2.5 font-sans font-bold text-base sm:text-lg text-foreground tracking-tight select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
           >
-            <span className="w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs tracking-wider shadow-subtle">
-              XYZ
-            </span>
+            <span className="w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs tracking-wider shadow-subtle">AG</span>
             <div className="flex flex-col">
-              <span className="leading-tight text-sm sm:text-base font-bold text-foreground">XYZ Buying House</span>
+              <span className="leading-tight text-sm sm:text-base font-bold text-foreground">Avenel Global</span>
               <span className="text-[10px] text-muted-foreground font-medium tracking-wider uppercase">
                 Apparel Sourcing Platform
               </span>

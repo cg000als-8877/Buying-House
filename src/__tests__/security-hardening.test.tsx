@@ -7,10 +7,10 @@ import { exportReportToCSV } from '@/lib/reporting';
 import { calculatePercentage, calculateTrendPercentage } from '@/lib/reporting/calculations';
 import { logSecurityEvent } from '@/lib/audit';
 
-describe('STEP 16 — Production Hardening & Security Audit Verification', () => {
+describe('STEP 16 ï¿½ Production Hardening & Security Audit Verification', () => {
   const superAdminUser: User = {
     uid: 'admin-root-001',
-    email: 'superadmin@xyzbuyinghouse.com',
+    email: 'superadmin@avenelglobal.com',
     displayName: 'Super Admin',
     role: 'Super Admin',
     buyerOrganizationId: null,
@@ -43,7 +43,7 @@ describe('STEP 16 — Production Hardening & Security Audit Verification', () => {
 
   const inactiveUser: User = {
     uid: 'user-suspended-001',
-    email: 'suspended@xyzbuyinghouse.com',
+    email: 'suspended@avenelglobal.com',
     displayName: 'Suspended Merchandiser',
     role: 'Merchandiser',
     buyerOrganizationId: null,
@@ -54,7 +54,7 @@ describe('STEP 16 — Production Hardening & Security Audit Verification', () => {
 
   const qcStaffUser: User = {
     uid: 'staff-qc-001',
-    email: 'qc.staff@xyzbuyinghouse.com',
+    email: 'qc.staff@avenelglobal.com',
     displayName: 'QC Lead',
     role: 'QC Staff',
     buyerOrganizationId: null,
@@ -69,7 +69,7 @@ describe('STEP 16 — Production Hardening & Security Audit Verification', () => {
       expect(res1.success).toBe(true);
       expect(res1.message).toContain('If an account exists with this email address, password reset instructions have been sent.');
 
-      const res2 = await requestPasswordReset('superadmin@xyzbuyinghouse.com');
+      const res2 = await requestPasswordReset('superadmin@avenelglobal.com');
       expect(res2.success).toBe(true);
       expect(res2.message).toContain('If an account exists with this email address, password reset instructions have been sent.');
     });

@@ -65,9 +65,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
               {/* Header inside drawer */}
               <div className="flex items-center justify-between border-b border-border/80 pb-4">
                 <div className="flex items-center gap-2">
-                  <span className="w-7 h-7 rounded bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs">
-                    XYZ
-                  </span>
+                  <span className="w-7 h-7 rounded bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs">AG</span>
                   <span className="font-semibold text-sm text-foreground">Navigation</span>
                 </div>
                 <button

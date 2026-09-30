@@ -55,7 +55,7 @@ export default function AdminLoginPage() {
       setErrorMessage(result.error || 'Authentication failed.');
     } else {
       if (!isStaffRole(result.user?.role)) {
-        setErrorMessage('Access denied. This console is restricted to authorized XYZ Buying House staff members.');
+        setErrorMessage('Access denied. This console is restricted to authorized Avenel Global staff members.');
         return;
       }
       router.push(redirectUrl);
@@ -87,7 +87,7 @@ export default function AdminLoginPage() {
             Internal Staff Console
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">
-            XYZ Operations Center
+            Avenel Global Operations Center
           </h1>
           <p className="text-xs sm:text-sm text-muted-foreground">
             Role-based production management, factory tracking, and order governance.
@@ -117,7 +117,7 @@ export default function AdminLoginPage() {
                 type="email"
                 autoComplete="email"
                 required
-                placeholder="staff@xyzbuyinghouse.com"
+                placeholder="staff@avenelglobal.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 icon={<Mail className="w-4 h-4" />}
@@ -240,7 +240,7 @@ export default function AdminLoginPage() {
               label="Staff Email"
               type="email"
               required
-              placeholder="staff@xyzbuyinghouse.com"
+              placeholder="staff@avenelglobal.com"
               value={resetEmail}
               onChange={(e) => setResetEmail(e.target.value)}
               icon={<Mail className="w-4 h-4" />}

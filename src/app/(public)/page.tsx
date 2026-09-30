@@ -12,11 +12,11 @@ import {
 } from '@/components/public';
 
 export const metadata: Metadata = {
-  title: 'XYZ Buying House | Bangladesh Apparel Sourcing & Manufacturing Management',
+  title: 'Avenel Global | Bangladesh Apparel Sourcing & Manufacturing Management',
   description:
     'Premier Bangladesh apparel buying house managing vendor sourcing, proto sampling, AQL quality control, ethical compliance, and digital order telemetry for global fashion brands.',
   openGraph: {
-    title: 'XYZ Buying House | Apparel Sourcing Platform',
+    title: 'Avenel Global | Apparel Sourcing Platform',
     description:
       'Reliable apparel sourcing, ethical manufacturing management, and order telemetry from Bangladesh.',
     type: 'website',

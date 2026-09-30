@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { CapabilitySection, CTASection, PortalCTA } from '@/components/public';
 
 export const metadata: Metadata = {
-  title: 'Sourcing & Production Capabilities | XYZ Buying House',
+  title: 'Sourcing & Production Capabilities | Avenel Global',
   description:
-    'Explore XYZ Buying House technical capabilities in Bangladesh: CAD pattern grading, direct mill yarn sourcing, critical path telemetry, and certified on-site AQL inspection.',
+    'Explore Avenel Global technical capabilities in Bangladesh: CAD pattern grading, direct mill yarn sourcing, critical path telemetry, and certified on-site AQL inspection.',
 };
 
 export default function CapabilitiesPage() {

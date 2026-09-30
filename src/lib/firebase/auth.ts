@@ -33,7 +33,7 @@ export function mapAuthError(error: unknown): string {
     case 'auth/invalid-credential':
       return 'Invalid email address or password. Please verify your credentials.';
     case 'auth/user-disabled':
-      return 'This account has been deactivated. Please contact your XYZ Buying House representative.';
+      return 'This account has been deactivated. Please contact your Avenel Global representative.';
     case 'auth/too-many-requests':
       return 'Too many unsuccessful attempts. Access is temporarily restricted for security. Please try again later.';
     case 'auth/network-request-failed':

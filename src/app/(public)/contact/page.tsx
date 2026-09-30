@@ -4,9 +4,9 @@ import { Card } from '@/components/ui/Card';
 import { Mail, MapPin, Phone, Clock, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact & Sourcing RFQ Submission | XYZ Buying House',
+  title: 'Contact & Sourcing RFQ Submission | Avenel Global',
   description:
-    'Submit your apparel sourcing inquiry or tech pack to XYZ Buying House in Bangladesh. Receive itemized FOB costing, mill feasibility, and sampling schedules within 24-48 hours.',
+    'Submit your apparel sourcing inquiry or tech pack to Avenel Global in Bangladesh. Receive itemized FOB costing, mill feasibility, and sampling schedules within 24-48 hours.',
 };
 
 export default function ContactPage() {
@@ -18,7 +18,7 @@ export default function ContactPage() {
           Business Inquiries &amp; RFQ
         </p>
         <h1 className="font-sans font-bold text-foreground text-h1 tracking-tight max-w-3xl mx-auto">
-          Initiate a Sourcing Inquiry with XYZ Buying House.
+          Initiate a Sourcing Inquiry with Avenel Global.
         </h1>
         <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
           Submit your tech pack, target quantities, and delivery milestones. Our merchandising team will conduct feasibility and cost-sheet analysis.
@@ -110,7 +110,7 @@ export default function ContactPage() {
                 <span>Commercial Non-Disclosure Policy</span>
               </div>
               <p className="text-muted-foreground leading-relaxed text-[11px]">
-                XYZ Buying House adheres to strict non-disclosure obligations. Your brand designs, tech packs, BOM specs, and pricing structures will never be shared outside authorized factory management.
+                Avenel Global adheres to strict non-disclosure obligations. Your brand designs, tech packs, BOM specs, and pricing structures will never be shared outside authorized factory management.
               </p>
             </div>
           </div>
