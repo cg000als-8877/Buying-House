@@ -303,7 +303,7 @@ export function AdminShipmentWorkspace({
               Logistics &amp; Cargo Control
             </Badge>
             {orderNumber && (
-              <span className="text-xs font-medium text-slate-400">
+              <span className="text-xs font-medium text-muted-foreground">
                 Order: <strong className="text-amber-400">{orderNumber}</strong>
               </span>
             )}
@@ -311,7 +311,7 @@ export function AdminShipmentWorkspace({
           <h2 className="text-2xl sm:text-3xl font-sans font-bold text-white mt-1">
             Shipment &amp; Logistics Management
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400">
+          <p className="text-xs sm:text-sm text-muted-foreground">
             End-to-end cargo dispatch pipeline, packing validation, commercial documents &amp; milestone telemetry.
           </p>
         </div>
@@ -321,7 +321,7 @@ export function AdminShipmentWorkspace({
             variant="outline"
             size="sm"
             onClick={loadData}
-            className="gap-2 text-xs text-slate-300 border-slate-700 hover:text-white"
+            className="gap-2 text-xs text-muted-foreground border-border hover:text-white"
           >
             <RefreshCw className="w-3.5 h-3.5" />
             <span>Refresh</span>
@@ -341,35 +341,35 @@ export function AdminShipmentWorkspace({
       {/* KPI Metrics Summary Strip */}
       {metrics && (
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-          <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
-            <span className="text-[10px] font-medium uppercase text-slate-400">Total Bookings</span>
+          <div className="p-3.5 rounded-xl bg-card border border-border space-y-1">
+            <span className="text-[10px] font-medium uppercase text-muted-foreground">Total Bookings</span>
             <div className="text-xl font-bold font-medium text-white">{metrics.totalShipments}</div>
           </div>
-          <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
+          <div className="p-3.5 rounded-xl bg-card border border-border space-y-1">
             <span className="text-[10px] font-medium uppercase text-sky-400">In Transit</span>
             <div className="text-xl font-bold font-medium text-sky-400">{metrics.inTransitShipments}</div>
           </div>
-          <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
+          <div className="p-3.5 rounded-xl bg-card border border-border space-y-1">
             <span className="text-[10px] font-medium uppercase text-amber-400">Ready to Ship</span>
             <div className="text-xl font-bold font-medium text-amber-400">{metrics.readyToShipShipments}</div>
           </div>
-          <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
+          <div className="p-3.5 rounded-xl bg-card border border-border space-y-1">
             <span className="text-[10px] font-medium uppercase text-emerald-400">Delivered</span>
             <div className="text-xl font-bold font-medium text-emerald-400">{metrics.deliveredShipments}</div>
           </div>
-          <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
+          <div className="p-3.5 rounded-xl bg-card border border-border space-y-1">
             <span className="text-[10px] font-medium uppercase text-rose-400">Delayed</span>
             <div className="text-xl font-bold font-medium text-rose-400">{metrics.delayedShipments}</div>
           </div>
-          <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
-            <span className="text-[10px] font-medium uppercase text-slate-400">Total Volume</span>
+          <div className="p-3.5 rounded-xl bg-card border border-border space-y-1">
+            <span className="text-[10px] font-medium uppercase text-muted-foreground">Total Volume</span>
             <div className="text-lg font-bold font-medium text-white">{metrics.totalCBM} CBM</div>
           </div>
-          <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
-            <span className="text-[10px] font-medium uppercase text-slate-400">Total Pieces</span>
+          <div className="p-3.5 rounded-xl bg-card border border-border space-y-1">
+            <span className="text-[10px] font-medium uppercase text-muted-foreground">Total Pieces</span>
             <div className="text-lg font-bold font-medium text-white">{metrics.totalPieces.toLocaleString()}</div>
           </div>
-          <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
+          <div className="p-3.5 rounded-xl bg-card border border-border space-y-1">
             <span className="text-[10px] font-medium uppercase text-emerald-400">On-Time Rate</span>
             <div className="text-xl font-bold font-medium text-emerald-400">{metrics.onTimeDeliveryRate}%</div>
           </div>
@@ -377,16 +377,16 @@ export function AdminShipmentWorkspace({
       )}
 
       {/* Filter Toolbar */}
-      <Card className="p-4 bg-slate-900/80 border-slate-800">
+      <Card className="p-4 bg-card border-border">
         <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
           <div className="relative flex-1 w-full">
-            <Search className="absolute left-3 top-2.5 w-4 h-4 text-slate-400" />
+            <Search className="absolute left-3 top-2.5 w-4 h-4 text-muted-foreground" />
             <input
               type="text"
               placeholder="Search by Shipment #, PO #, Carrier, Forwarder, Port..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 text-xs bg-slate-950 rounded-lg border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
+              className="w-full pl-9 pr-4 py-2 text-xs bg-card rounded-lg border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-amber-400"
             />
           </div>
 
@@ -394,7 +394,7 @@ export function AdminShipmentWorkspace({
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value as ShipmentStatus | 'ALL')}
-              className="px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-700 text-white focus:outline-none focus:border-amber-400 font-medium"
+              className="px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
             >
               <option value="ALL">All Statuses</option>
               <option value="PLANNING">Planning</option>
@@ -415,7 +415,7 @@ export function AdminShipmentWorkspace({
             <select
               value={modeFilter}
               onChange={(e) => setModeFilter(e.target.value as TransportMode | 'ALL')}
-              className="px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-700 text-white focus:outline-none focus:border-amber-400 font-medium"
+              className="px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
             >
               <option value="ALL">All Transport Modes</option>
               <option value="SEA_FCL">Sea FCL (Container)</option>
@@ -436,18 +436,18 @@ export function AdminShipmentWorkspace({
           <Skeleton className="h-16 w-full" />
         </div>
       ) : shipments.length === 0 ? (
-        <Card className="p-12 text-center border-slate-800">
+        <Card className="p-12 text-center border-border">
           <EmptyState
             title="No Shipments Found"
             description="No active shipments or cargo bookings matched your search filter criteria."
           />
         </Card>
       ) : (
-        <Card className="overflow-hidden bg-slate-900/90 border-slate-800">
+        <Card className="overflow-hidden bg-card border-border">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="border-b border-slate-800 bg-slate-950/60 font-medium text-[11px] text-slate-400 uppercase">
+                <tr className="border-b border-border bg-card font-medium text-[11px] text-muted-foreground uppercase">
                   <th className="p-4">Shipment # / PO</th>
                   <th className="p-4">Destination &amp; Buyer</th>
                   <th className="p-4">Mode &amp; Carrier</th>
@@ -467,7 +467,7 @@ export function AdminShipmentWorkspace({
                   >
                     <td className="p-4">
                       <div className="font-bold text-amber-400">{shipment.shipmentNumber}</div>
-                      <div className="text-[11px] text-slate-400 flex items-center gap-1 mt-0.5">
+                      <div className="text-[11px] text-muted-foreground flex items-center gap-1 mt-0.5">
                         <Package className="w-3 h-3" />
                         <span>{shipment.orderNumber}</span>
                       </div>
@@ -478,13 +478,13 @@ export function AdminShipmentWorkspace({
                         <MapPin className="w-3 h-3 text-emerald-400 shrink-0" />
                         <span>{shipment.destinationCountry} - {shipment.destinationPort}</span>
                       </div>
-                      <div className="text-xs text-slate-400 font-medium mt-0.5">
+                      <div className="text-xs text-muted-foreground font-medium mt-0.5">
                         Org: {shipment.buyerOrganizationName}
                       </div>
                     </td>
 
                     <td className="p-4">
-                      <div className="flex items-center gap-1.5 text-slate-200">
+                      <div className="flex items-center gap-1.5 text-foreground">
                         {shipment.transportMode === 'AIR' ? (
                           <Plane className="w-3.5 h-3.5 text-sky-400" />
                         ) : shipment.transportMode.startsWith('SEA') ? (
@@ -493,9 +493,9 @@ export function AdminShipmentWorkspace({
                           <Truck className="w-3.5 h-3.5 text-amber-400" />
                         )}
                         <span className="font-bold">{shipment.transportMode}</span>
-                        <span className="text-[10px] text-slate-400">({shipment.incoterm})</span>
+                        <span className="text-[10px] text-muted-foreground">({shipment.incoterm})</span>
                       </div>
-                      <div className="text-[11px] text-slate-400 font-sans truncate max-w-[180px]">
+                      <div className="text-[11px] text-muted-foreground font-sans truncate max-w-[180px]">
                         {shipment.carrier} | {shipment.forwarder}
                       </div>
                     </td>
@@ -504,16 +504,16 @@ export function AdminShipmentWorkspace({
                       <div className="text-white font-bold">
                         {shipment.totalCartons} ctns / {shipment.totalPieces.toLocaleString()} pcs
                       </div>
-                      <div className="text-[11px] text-slate-400">
+                      <div className="text-[11px] text-muted-foreground">
                         {shipment.totalCBM} CBM | {shipment.totalGrossWeightKG.toLocaleString()} kg
                       </div>
                     </td>
 
                     <td className="p-4">
-                      <div className="text-slate-300">
+                      <div className="text-muted-foreground">
                         ETD: <span className="text-white">{shipment.plannedShipDate}</span>
                       </div>
-                      <div className="text-slate-300">
+                      <div className="text-muted-foreground">
                         ETA: <span className="text-amber-300">{shipment.estimatedDeliveryDate}</span>
                       </div>
                     </td>
@@ -527,7 +527,7 @@ export function AdminShipmentWorkspace({
                             ? 'bg-sky-950 text-sky-300 border border-sky-800'
                             : shipment.status === 'READY_TO_SHIP'
                             ? 'bg-amber-950 text-amber-300 border border-amber-800'
-                            : 'bg-slate-800 text-slate-300'
+                            : 'bg-slate-800 text-muted-foreground'
                         }`}>
                           {shipment.status.replace(/_/g, ' ')}
                         </span>
@@ -566,18 +566,18 @@ export function AdminShipmentWorkspace({
 
       {/* Shipment Detailed Inspection Workspace Drawer */}
       {selectedShipment && (
-        <Card className="p-6 bg-slate-900/95 border-amber-400/30 shadow-2xl space-y-6">
+        <Card className="p-6 bg-card border-amber-400/30 shadow-2xl space-y-6">
           {/* Header */}
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-border">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-medium font-bold text-amber-400 px-2 py-0.5 rounded bg-amber-400/10 border border-amber-400/30">
                   {selectedShipment.shipmentNumber}
                 </span>
-                <span className="text-xs font-medium text-slate-300">
+                <span className="text-xs font-medium text-muted-foreground">
                   PO: <strong>{selectedShipment.orderNumber}</strong>
                 </span>
-                <span className="text-xs font-medium text-slate-400">
+                <span className="text-xs font-medium text-muted-foreground">
                   Buyer: <strong>{selectedShipment.buyerOrganizationName}</strong>
                 </span>
               </div>
@@ -603,7 +603,7 @@ export function AdminShipmentWorkspace({
                 variant="ghost"
                 size="sm"
                 onClick={() => setSelectedShipment(null)}
-                className="text-slate-400 hover:text-white"
+                className="text-muted-foreground hover:text-white"
               >
                 <X className="w-4 h-4" />
               </Button>
@@ -611,13 +611,13 @@ export function AdminShipmentWorkspace({
           </div>
 
           {/* Module Sub-tabs */}
-          <div className="flex border-b border-slate-800 gap-2 overflow-x-auto text-xs font-medium">
+          <div className="flex border-b border-border gap-2 overflow-x-auto text-xs font-medium">
             <button
               onClick={() => setActiveTab('overview')}
               className={`pb-2.5 px-3 border-b-2 font-bold transition-colors ${
                 activeTab === 'overview'
                   ? 'border-amber-400 text-amber-400'
-                  : 'border-transparent text-slate-400 hover:text-slate-200'
+                  : 'border-transparent text-muted-foreground hover:text-foreground'
               }`}
             >
               1. Commercial &amp; Vessel Specs
@@ -627,7 +627,7 @@ export function AdminShipmentWorkspace({
               className={`pb-2.5 px-3 border-b-2 font-bold transition-colors flex items-center gap-1.5 ${
                 activeTab === 'readiness'
                   ? 'border-amber-400 text-amber-400'
-                  : 'border-transparent text-slate-400 hover:text-slate-200'
+                  : 'border-transparent text-muted-foreground hover:text-foreground'
               }`}
             >
               <span>2. Readiness &amp; Quality Gates</span>
@@ -642,7 +642,7 @@ export function AdminShipmentWorkspace({
               className={`pb-2.5 px-3 border-b-2 font-bold transition-colors flex items-center gap-1.5 ${
                 activeTab === 'packing'
                   ? 'border-amber-400 text-amber-400'
-                  : 'border-transparent text-slate-400 hover:text-slate-200'
+                  : 'border-transparent text-muted-foreground hover:text-foreground'
               }`}
             >
               <span>3. Packing List Breakdown</span>
@@ -655,7 +655,7 @@ export function AdminShipmentWorkspace({
               className={`pb-2.5 px-3 border-b-2 font-bold transition-colors flex items-center gap-1.5 ${
                 activeTab === 'documents'
                   ? 'border-amber-400 text-amber-400'
-                  : 'border-transparent text-slate-400 hover:text-slate-200'
+                  : 'border-transparent text-muted-foreground hover:text-foreground'
               }`}
             >
               <span>4. Shipping Documents</span>
@@ -668,7 +668,7 @@ export function AdminShipmentWorkspace({
               className={`pb-2.5 px-3 border-b-2 font-bold transition-colors flex items-center gap-1.5 ${
                 activeTab === 'tracking'
                   ? 'border-amber-400 text-amber-400'
-                  : 'border-transparent text-slate-400 hover:text-slate-200'
+                  : 'border-transparent text-muted-foreground hover:text-foreground'
               }`}
             >
               <span>5. Live Tracking Events</span>
@@ -681,88 +681,88 @@ export function AdminShipmentWorkspace({
           {/* Sub-tab 1: Commercial & Vessel Specs */}
           {activeTab === 'overview' && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-xs font-medium">
-              <Card className="p-4 bg-slate-950/60 border-slate-800 space-y-3">
-                <h4 className="font-sans font-bold text-sm text-white pb-2 border-b border-slate-800">
+              <Card className="p-4 bg-card border-border space-y-3">
+                <h4 className="font-sans font-bold text-sm text-white pb-2 border-b border-border">
                   Carrier &amp; Forwarding Agent
                 </h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Carrier Line:</span>
+                    <span className="text-muted-foreground">Carrier Line:</span>
                     <span className="text-white font-bold">{selectedShipment.carrier}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Freight Forwarder:</span>
+                    <span className="text-muted-foreground">Freight Forwarder:</span>
                     <span className="text-white">{selectedShipment.forwarder}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Incoterm:</span>
+                    <span className="text-muted-foreground">Incoterm:</span>
                     <span className="text-amber-400 font-bold">{selectedShipment.incoterm}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Transport Mode:</span>
+                    <span className="text-muted-foreground">Transport Mode:</span>
                     <span className="text-white">{selectedShipment.transportMode}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Booking Ref:</span>
-                    <span className="text-slate-200">{selectedShipment.bookingReference || 'N/A'}</span>
+                    <span className="text-muted-foreground">Booking Ref:</span>
+                    <span className="text-foreground">{selectedShipment.bookingReference || 'N/A'}</span>
                   </div>
                 </div>
               </Card>
 
-              <Card className="p-4 bg-slate-950/60 border-slate-800 space-y-3">
-                <h4 className="font-sans font-bold text-sm text-white pb-2 border-b border-slate-800">
+              <Card className="p-4 bg-card border-border space-y-3">
+                <h4 className="font-sans font-bold text-sm text-white pb-2 border-b border-border">
                   Vessel &amp; Container Allocation
                 </h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Vessel / Flight:</span>
+                    <span className="text-muted-foreground">Vessel / Flight:</span>
                     <span className="text-white font-bold">{selectedShipment.vesselFlightNumber || 'TBD'}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Voyage / Flight #:</span>
+                    <span className="text-muted-foreground">Voyage / Flight #:</span>
                     <span className="text-white">{selectedShipment.voyageNumber || 'TBD'}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Container Number:</span>
+                    <span className="text-muted-foreground">Container Number:</span>
                     <span className="text-amber-400 font-bold">{selectedShipment.containerNumber || 'TBD'}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Custom Seal Number:</span>
+                    <span className="text-muted-foreground">Custom Seal Number:</span>
                     <span className="text-white">{selectedShipment.sealNumber || 'TBD'}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Bill of Lading / AWB:</span>
+                    <span className="text-muted-foreground">Bill of Lading / AWB:</span>
                     <span className="text-emerald-400 font-bold">{selectedShipment.billOfLadingNumber || selectedShipment.airWaybillNumber || 'Pending Issuance'}</span>
                   </div>
                 </div>
               </Card>
 
-              <Card className="p-4 bg-slate-950/60 border-slate-800 space-y-3">
-                <h4 className="font-sans font-bold text-sm text-white pb-2 border-b border-slate-800">
+              <Card className="p-4 bg-card border-border space-y-3">
+                <h4 className="font-sans font-bold text-sm text-white pb-2 border-b border-border">
                   Schedule &amp; Internal Notes
                 </h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Port of Loading:</span>
+                    <span className="text-muted-foreground">Port of Loading:</span>
                     <span className="text-white">{selectedShipment.portOfLoading}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Destination Port:</span>
+                    <span className="text-muted-foreground">Destination Port:</span>
                     <span className="text-white">{selectedShipment.destinationPort}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Actual Ship Date:</span>
+                    <span className="text-muted-foreground">Actual Ship Date:</span>
                     <span className="text-white">{selectedShipment.actualShipDate || 'Not yet dispatched'}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Actual Delivery:</span>
+                    <span className="text-muted-foreground">Actual Delivery:</span>
                     <span className="text-white">{selectedShipment.actualDeliveryDate || 'In Progress'}</span>
                   </div>
                 </div>
                 {selectedShipment.internalNotes && (
-                  <div className="pt-2 border-t border-slate-800">
+                  <div className="pt-2 border-t border-border">
                     <span className="text-[10px] text-amber-400 font-bold block mb-1">Internal Operational Notes:</span>
-                    <p className="text-[11px] text-slate-300 italic bg-slate-900 p-2 rounded">
+                    <p className="text-[11px] text-muted-foreground italic bg-card p-2 rounded">
                       {selectedShipment.internalNotes}
                     </p>
                   </div>
@@ -797,7 +797,7 @@ export function AdminShipmentWorkspace({
                         ? 'Shipment Approved via Manager Quality Override'
                         : 'Readiness Gates Blocked: Unmet Pre-Shipment Conditions'}
                     </h4>
-                    <p className="text-xs text-slate-300">
+                    <p className="text-xs text-muted-foreground">
                       {readiness.isReady
                         ? 'Order is fully verified for export dispatch with 0 critical defects and verified commercial packing list.'
                         : readiness.qualityGate.overrideApplied
@@ -810,8 +810,8 @@ export function AdminShipmentWorkspace({
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Gate 1: Quality Gate */}
-                <Card className="p-5 bg-slate-950/70 border-slate-800 space-y-3">
-                  <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+                <Card className="p-5 bg-card border-border space-y-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-border">
                     <h5 className="font-sans font-bold text-white text-sm">1. Quality &amp; AQL Gate</h5>
                     <Badge variant={readiness.qualityGate.passed ? 'emerald' : 'rose'} size="sm">
                       {readiness.qualityGate.passed ? 'PASSED' : 'BLOCKED'}
@@ -819,25 +819,25 @@ export function AdminShipmentWorkspace({
                   </div>
                   <div className="space-y-1.5 text-xs font-medium">
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Total Inspections:</span>
+                      <span className="text-muted-foreground">Total Inspections:</span>
                       <span className="text-white">{readiness.qualityGate.inspectionCount}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Passed Audits:</span>
+                      <span className="text-muted-foreground">Passed Audits:</span>
                       <span className="text-emerald-400 font-bold">{readiness.qualityGate.passedInspections}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Failed Audits:</span>
+                      <span className="text-muted-foreground">Failed Audits:</span>
                       <span className="text-rose-400">{readiness.qualityGate.failedInspections}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Open CAPs:</span>
+                      <span className="text-muted-foreground">Open CAPs:</span>
                       <span className={readiness.qualityGate.openCapsCount > 0 ? 'text-rose-400 font-bold' : 'text-emerald-400'}>
                         {readiness.qualityGate.openCapsCount}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Critical Defects:</span>
+                      <span className="text-muted-foreground">Critical Defects:</span>
                       <span className={readiness.qualityGate.criticalDefectsCount > 0 ? 'text-rose-400 font-bold' : 'text-emerald-400'}>
                         {readiness.qualityGate.criticalDefectsCount}
                       </span>
@@ -846,8 +846,8 @@ export function AdminShipmentWorkspace({
                 </Card>
 
                 {/* Gate 2: Production Gate */}
-                <Card className="p-5 bg-slate-950/70 border-slate-800 space-y-3">
-                  <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+                <Card className="p-5 bg-card border-border space-y-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-border">
                     <h5 className="font-sans font-bold text-white text-sm">2. Packing &amp; Volume Gate</h5>
                     <Badge variant={readiness.productionGate.passed ? 'emerald' : 'amber'} size="sm">
                       {readiness.productionGate.completionPercentage}%
@@ -855,23 +855,23 @@ export function AdminShipmentWorkspace({
                   </div>
                   <div className="space-y-1.5 text-xs font-medium">
                     <div className="flex justify-between">
-                      <span className="text-slate-400">PO Quantity:</span>
+                      <span className="text-muted-foreground">PO Quantity:</span>
                       <span className="text-white">{readiness.productionGate.requiredQuantity.toLocaleString()} pcs</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Packed Quantity:</span>
+                      <span className="text-muted-foreground">Packed Quantity:</span>
                       <span className="text-white font-bold">{readiness.productionGate.packedQuantity.toLocaleString()} pcs</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Packing Status:</span>
+                      <span className="text-muted-foreground">Packing Status:</span>
                       <span className="text-amber-400">{selectedShipment.packingStatus}</span>
                     </div>
                   </div>
                 </Card>
 
                 {/* Gate 3: Document Gate */}
-                <Card className="p-5 bg-slate-950/70 border-slate-800 space-y-3">
-                  <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+                <Card className="p-5 bg-card border-border space-y-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-border">
                     <h5 className="font-sans font-bold text-white text-sm">3. Documents Gate</h5>
                     <Badge variant={readiness.documentGate.isComplete ? 'emerald' : 'amber'} size="sm">
                       {readiness.documentGate.totalRequiredCount - readiness.documentGate.pendingRequiredCount} / {readiness.documentGate.totalRequiredCount}
@@ -879,11 +879,11 @@ export function AdminShipmentWorkspace({
                   </div>
                   <div className="space-y-1.5 text-xs font-medium">
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Required Documents:</span>
+                      <span className="text-muted-foreground">Required Documents:</span>
                       <span className="text-white">{readiness.documentGate.totalRequiredCount}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Pending Upload/Verify:</span>
+                      <span className="text-muted-foreground">Pending Upload/Verify:</span>
                       <span className={readiness.documentGate.pendingRequiredCount > 0 ? 'text-amber-400 font-bold' : 'text-emerald-400'}>
                         {readiness.documentGate.pendingRequiredCount}
                       </span>
@@ -913,7 +913,7 @@ export function AdminShipmentWorkspace({
               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="font-sans font-bold text-white text-base">Export Packing List Line Items</h4>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-muted-foreground">
                     Calculated carton metrics: {selectedShipment.totalCartons} cartons | {selectedShipment.totalPieces.toLocaleString()} pieces | {selectedShipment.totalCBM} CBM | {selectedShipment.totalGrossWeightKG.toLocaleString()} kg Gross
                   </p>
                 </div>
@@ -932,110 +932,110 @@ export function AdminShipmentWorkspace({
 
               {/* Add Packing Form */}
               {isAddingPacking && (
-                <Card className="p-5 bg-slate-950 border-amber-400/40 space-y-4">
+                <Card className="p-5 bg-card border-amber-400/40 space-y-4">
                   <h5 className="font-sans font-bold text-sm text-amber-400">Add Export Carton Range</h5>
                   <form onSubmit={handleAddPackingItem} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
                     <div>
-                      <label className="block text-slate-400 mb-1">Style Number</label>
+                      <label className="block text-muted-foreground mb-1">Style Number</label>
                       <input
                         type="text"
                         required
                         value={packStyleNumber}
                         onChange={(e) => setPackStyleNumber(e.target.value)}
                         placeholder="e.g. STY-KNIT-402"
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white"
+                        className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white"
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-400 mb-1">Color / Shade</label>
+                      <label className="block text-muted-foreground mb-1">Color / Shade</label>
                       <input
                         type="text"
                         required
                         value={packColor}
                         onChange={(e) => setPackColor(e.target.value)}
                         placeholder="e.g. Navy Blue"
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white"
+                        className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white"
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-400 mb-1">Carton Start #</label>
+                      <label className="block text-muted-foreground mb-1">Carton Start #</label>
                       <input
                         type="number"
                         min="1"
                         required
                         value={packStartCarton}
                         onChange={(e) => setPackStartCarton(Number(e.target.value))}
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
+                        className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white font-medium"
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-400 mb-1">Carton End #</label>
+                      <label className="block text-muted-foreground mb-1">Carton End #</label>
                       <input
                         type="number"
                         min={packStartCarton}
                         required
                         value={packEndCarton}
                         onChange={(e) => setPackEndCarton(Number(e.target.value))}
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
+                        className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white font-medium"
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-400 mb-1">Pcs Per Carton</label>
+                      <label className="block text-muted-foreground mb-1">Pcs Per Carton</label>
                       <input
                         type="number"
                         min="1"
                         required
                         value={packPiecesPerCarton}
                         onChange={(e) => setPackPiecesPerCarton(Number(e.target.value))}
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
+                        className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white font-medium"
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-400 mb-1">Dimensions (L x W x H cm)</label>
+                      <label className="block text-muted-foreground mb-1">Dimensions (L x W x H cm)</label>
                       <div className="flex gap-1">
                         <input
                           type="number"
                           value={packLength}
                           onChange={(e) => setPackLength(Number(e.target.value))}
                           placeholder="L"
-                          className="w-1/3 px-1.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium text-center"
+                          className="w-1/3 px-1.5 py-1.5 bg-card border border-border rounded text-white font-medium text-center"
                         />
                         <input
                           type="number"
                           value={packWidth}
                           onChange={(e) => setPackWidth(Number(e.target.value))}
                           placeholder="W"
-                          className="w-1/3 px-1.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium text-center"
+                          className="w-1/3 px-1.5 py-1.5 bg-card border border-border rounded text-white font-medium text-center"
                         />
                         <input
                           type="number"
                           value={packHeight}
                           onChange={(e) => setPackHeight(Number(e.target.value))}
                           placeholder="H"
-                          className="w-1/3 px-1.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium text-center"
+                          className="w-1/3 px-1.5 py-1.5 bg-card border border-border rounded text-white font-medium text-center"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-slate-400 mb-1">Gross Weight (KG)</label>
+                      <label className="block text-muted-foreground mb-1">Gross Weight (KG)</label>
                       <input
                         type="number"
                         step="0.1"
                         required
                         value={packGrossWeight}
                         onChange={(e) => setPackGrossWeight(Number(e.target.value))}
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
+                        className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white font-medium"
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-400 mb-1">Net Weight (KG)</label>
+                      <label className="block text-muted-foreground mb-1">Net Weight (KG)</label>
                       <input
                         type="number"
                         step="0.1"
                         required
                         value={packNetWeight}
                         onChange={(e) => setPackNetWeight(Number(e.target.value))}
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
+                        className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white font-medium"
                       />
                     </div>
                     <div className="sm:col-span-2 lg:col-span-4 flex justify-end gap-2 pt-2">
@@ -1044,7 +1044,7 @@ export function AdminShipmentWorkspace({
                         variant="ghost"
                         size="sm"
                         onClick={() => setIsAddingPacking(false)}
-                        className="text-slate-400"
+                        className="text-muted-foreground"
                       >
                         Cancel
                       </Button>
@@ -1063,10 +1063,10 @@ export function AdminShipmentWorkspace({
               )}
 
               {/* Packing Table */}
-              <div className="overflow-x-auto rounded-lg border border-slate-800">
+              <div className="overflow-x-auto rounded-lg border border-border">
                 <table className="w-full text-left text-xs border-collapse font-medium">
                   <thead>
-                    <tr className="bg-slate-950 border-b border-slate-800 text-slate-400 text-[11px] uppercase">
+                    <tr className="bg-card border-b border-border text-muted-foreground text-[11px] uppercase">
                       <th className="p-3">Carton Range</th>
                       <th className="p-3">Style / Color</th>
                       <th className="p-3">Cartons</th>
@@ -1077,7 +1077,7 @@ export function AdminShipmentWorkspace({
                       <th className="p-3">Gross / Net (kg)</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800/60 bg-slate-900/40">
+                  <tbody className="divide-y divide-slate-800/60 bg-card">
                     {packingItems.map((item) => (
                       <tr key={item.id} className="hover:bg-slate-800/30">
                         <td className="p-3 font-bold text-amber-400">
@@ -1085,16 +1085,16 @@ export function AdminShipmentWorkspace({
                         </td>
                         <td className="p-3 font-sans">
                           <span className="text-white font-semibold">{item.styleNumber}</span>
-                          <span className="text-slate-400 block text-[11px]">{item.color}</span>
+                          <span className="text-muted-foreground block text-[11px]">{item.color}</span>
                         </td>
                         <td className="p-3 text-white">{item.totalCartons}</td>
-                        <td className="p-3 text-slate-300">{item.piecesPerCarton}</td>
+                        <td className="p-3 text-muted-foreground">{item.piecesPerCarton}</td>
                         <td className="p-3 text-emerald-400 font-bold">{item.totalPieces.toLocaleString()}</td>
-                        <td className="p-3 text-slate-400">
+                        <td className="p-3 text-muted-foreground">
                           {item.lengthCM}x{item.widthCM}x{item.heightCM}
                         </td>
                         <td className="p-3 text-white font-bold">{item.totalCBM}</td>
-                        <td className="p-3 text-slate-300">
+                        <td className="p-3 text-muted-foreground">
                           {item.grossWeightKG} / {item.netWeightKG}
                         </td>
                       </tr>
@@ -1110,20 +1110,20 @@ export function AdminShipmentWorkspace({
             <div className="space-y-4">
               <div>
                 <h4 className="font-sans font-bold text-white text-base">Commercial Shipping Documents</h4>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-muted-foreground">
                   Customs declaration, transport title deeds, origin certificates and invoice checklist.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {documents.map((doc) => (
-                  <Card key={doc.id} className="p-4 bg-slate-950/70 border-slate-800 space-y-3">
+                  <Card key={doc.id} className="p-4 bg-card border-border space-y-3">
                     <div className="flex items-start justify-between gap-2">
                       <div className="flex items-center gap-2">
                         <FileText className="w-4 h-4 text-amber-400 shrink-0" />
                         <div>
                           <div className="text-xs font-bold text-white font-sans">{doc.documentName}</div>
-                          <span className="text-[10px] font-medium text-slate-400">{doc.documentType}</span>
+                          <span className="text-[10px] font-medium text-muted-foreground">{doc.documentType}</span>
                         </div>
                       </div>
                       <Badge
@@ -1143,7 +1143,7 @@ export function AdminShipmentWorkspace({
                     </div>
 
                     {doc.fileName && (
-                      <div className="p-2 rounded bg-slate-900 border border-slate-800 text-[11px] font-medium text-slate-300 flex items-center justify-between">
+                      <div className="p-2 rounded bg-card border border-border text-[11px] font-medium text-muted-foreground flex items-center justify-between">
                         <span className="truncate">{doc.fileName}</span>
                         {doc.fileUrl && (
                           <a
@@ -1159,11 +1159,11 @@ export function AdminShipmentWorkspace({
                     )}
 
                     {doc.notes && (
-                      <p className="text-[11px] text-slate-400 italic">{doc.notes}</p>
+                      <p className="text-[11px] text-muted-foreground italic">{doc.notes}</p>
                     )}
 
                     {canWrite && doc.status !== 'VERIFIED' && (
-                      <div className="pt-2 border-t border-slate-800/80 flex justify-end">
+                      <div className="pt-2 border-t border-border flex justify-end">
                         <Button
                           variant="outline"
                           size="sm"
@@ -1187,7 +1187,7 @@ export function AdminShipmentWorkspace({
               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="font-sans font-bold text-white text-base">Cargo Milestone Progression</h4>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-muted-foreground">
                     Chronological dispatch events, port departures, feeder vessel transfers, and customs gates.
                   </p>
                 </div>
@@ -1205,37 +1205,37 @@ export function AdminShipmentWorkspace({
               </div>
 
               {isAddingEvent && (
-                <Card className="p-5 bg-slate-950 border-amber-400/40 space-y-4">
+                <Card className="p-5 bg-card border-amber-400/40 space-y-4">
                   <h5 className="font-sans font-bold text-sm text-amber-400">Record Carrier / Port Milestone</h5>
                   <form onSubmit={handleAddEvent} className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                     <div>
-                      <label className="block text-slate-400 mb-1">Milestone Title</label>
+                      <label className="block text-muted-foreground mb-1">Milestone Title</label>
                       <input
                         type="text"
                         required
                         value={eventTitle}
                         onChange={(e) => setEventTitle(e.target.value)}
                         placeholder="e.g. Transshipment Discharged at Colombo Port"
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white"
+                        className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white"
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-400 mb-1">Location</label>
+                      <label className="block text-muted-foreground mb-1">Location</label>
                       <input
                         type="text"
                         required
                         value={eventLocation}
                         onChange={(e) => setEventLocation(e.target.value)}
                         placeholder="e.g. Colombo Port, Sri Lanka"
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white"
+                        className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white"
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-400 mb-1">Stage Status</label>
+                      <label className="block text-muted-foreground mb-1">Stage Status</label>
                       <select
                         value={eventStatus}
                         onChange={(e) => setEventStatus(e.target.value as ShipmentStatus)}
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
+                        className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white font-medium"
                       >
                         <option value="BOOKED">Booked</option>
                         <option value="READY_TO_SHIP">Ready To Ship</option>
@@ -1249,14 +1249,14 @@ export function AdminShipmentWorkspace({
                       </select>
                     </div>
                     <div>
-                      <label className="block text-slate-400 mb-1">Detailed Description</label>
+                      <label className="block text-muted-foreground mb-1">Detailed Description</label>
                       <input
                         type="text"
                         required
                         value={eventDesc}
                         onChange={(e) => setEventDesc(e.target.value)}
                         placeholder="e.g. Container transferred to connecting mother vessel."
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white"
+                        className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white"
                       />
                     </div>
                     <div className="sm:col-span-2 flex justify-end gap-2 pt-2">
@@ -1265,7 +1265,7 @@ export function AdminShipmentWorkspace({
                         variant="ghost"
                         size="sm"
                         onClick={() => setIsAddingEvent(false)}
-                        className="text-slate-400"
+                        className="text-muted-foreground"
                       >
                         Cancel
                       </Button>
@@ -1290,15 +1290,15 @@ export function AdminShipmentWorkspace({
                     <div className="w-6 h-6 rounded bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0 z-10 text-primary">
                       <MapPin className="w-3.5 h-3.5 text-accent" />
                     </div>
-                    <div className="flex-1 p-4 rounded-xl bg-slate-950/70 border border-slate-800 space-y-1">
+                    <div className="flex-1 p-4 rounded-xl bg-card border border-border space-y-1">
                       <div className="flex flex-wrap items-center justify-between gap-2">
                         <span className="text-xs font-bold text-white font-sans">{evt.title}</span>
-                        <span className="text-[11px] font-medium text-slate-400">
+                        <span className="text-[11px] font-medium text-muted-foreground">
                           {new Date(evt.timestamp).toLocaleString()}
                         </span>
                       </div>
-                      <div className="text-xs text-slate-300 font-sans">{evt.description}</div>
-                      <div className="flex items-center gap-3 text-[10px] font-medium text-slate-400 pt-1">
+                      <div className="text-xs text-muted-foreground font-sans">{evt.description}</div>
+                      <div className="flex items-center gap-3 text-[10px] font-medium text-muted-foreground pt-1">
                         <span className="flex items-center gap-1 text-emerald-400">
                           <MapPin className="w-3 h-3" />
                           {evt.location}
@@ -1318,8 +1318,8 @@ export function AdminShipmentWorkspace({
       {/* Stage Progression Modal */}
       {statusModalOpen && selectedShipment && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <Card className="w-full max-w-lg bg-slate-900 border-slate-700 p-6 space-y-5 shadow-2xl">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+          <Card className="w-full max-w-lg bg-card border-border p-6 space-y-5 shadow-2xl">
+            <div className="flex items-center justify-between pb-3 border-b border-border">
               <div>
                 <span className="text-xs font-medium text-amber-400 font-bold uppercase">Lifecycle Progression</span>
                 <h4 className="font-sans font-bold text-lg text-white">
@@ -1330,7 +1330,7 @@ export function AdminShipmentWorkspace({
                 variant="ghost"
                 size="sm"
                 onClick={() => setStatusModalOpen(false)}
-                className="text-slate-400 hover:text-white"
+                className="text-muted-foreground hover:text-white"
               >
                 <X className="w-4 h-4" />
               </Button>
@@ -1344,11 +1344,11 @@ export function AdminShipmentWorkspace({
 
             <form onSubmit={handleStatusTransition} className="space-y-4 text-xs">
               <div>
-                <label className="block text-slate-300 font-medium mb-1">Target Stage</label>
+                <label className="block text-muted-foreground font-medium mb-1">Target Stage</label>
                 <select
                   value={targetStatus}
                   onChange={(e) => setTargetStatus(e.target.value as ShipmentStatus)}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                  className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                 >
                   <option value="BOOKING_REQUESTED">Booking Requested</option>
                   <option value="BOOKED">Booked</option>
@@ -1366,24 +1366,24 @@ export function AdminShipmentWorkspace({
               </div>
 
               <div>
-                <label className="block text-slate-300 font-medium mb-1">Location / Port Milestone</label>
+                <label className="block text-muted-foreground font-medium mb-1">Location / Port Milestone</label>
                 <input
                   type="text"
                   value={statusLocation}
                   onChange={(e) => setStatusLocation(e.target.value)}
                   placeholder="e.g. Chittagong Port CFS Bay 2"
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white"
+                  className="w-full px-3 py-2 bg-card border border-border rounded text-white"
                 />
               </div>
 
               <div>
-                <label className="block text-slate-300 font-medium mb-1">Operational Remarks / Note</label>
+                <label className="block text-muted-foreground font-medium mb-1">Operational Remarks / Note</label>
                 <textarea
                   rows={2}
                   value={statusNote}
                   onChange={(e) => setStatusNote(e.target.value)}
                   placeholder="Notes on customs clearance, seal confirmation, carrier handoff..."
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white"
+                  className="w-full px-3 py-2 bg-card border border-border rounded text-white"
                 />
               </div>
 
@@ -1396,7 +1396,7 @@ export function AdminShipmentWorkspace({
                       id="overrideCheck"
                       checked={overrideGate}
                       onChange={(e) => setOverrideGate(e.target.checked)}
-                      className="rounded border-slate-700 text-amber-400 focus:ring-amber-400 bg-slate-900"
+                      className="rounded border-border text-amber-400 focus:ring-amber-400 bg-card"
                     />
                     <label htmlFor="overrideCheck" className="text-amber-300 font-bold text-xs cursor-pointer">
                       Authorized Manager Quality / Production Gate Override
@@ -1404,7 +1404,7 @@ export function AdminShipmentWorkspace({
                   </div>
                   {overrideGate && (
                     <div className="pt-2">
-                      <label className="block text-slate-400 mb-1">
+                      <label className="block text-muted-foreground mb-1">
                         Mandatory Justification Reason (Audit Logged):
                       </label>
                       <input
@@ -1413,20 +1413,20 @@ export function AdminShipmentWorkspace({
                         value={overrideReason}
                         onChange={(e) => setOverrideReason(e.target.value)}
                         placeholder="e.g. Concession granted by buyer for minor shade variance Lot #4."
-                        className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white"
+                        className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white"
                       />
                     </div>
                   )}
                 </div>
               )}
 
-              <div className="flex justify-end gap-2 pt-3 border-t border-slate-800">
+              <div className="flex justify-end gap-2 pt-3 border-t border-border">
                 <Button
                   type="button"
                   variant="ghost"
                   size="sm"
                   onClick={() => setStatusModalOpen(false)}
-                  className="text-slate-400"
+                  className="text-muted-foreground"
                 >
                   Cancel
                 </Button>

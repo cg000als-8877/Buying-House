@@ -525,7 +525,7 @@ export function AdminQualityWorkspace({
         );
       default:
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-medium bg-slate-800 text-slate-300">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-medium bg-slate-800 text-muted-foreground">
             <Clock className="w-3 h-3" /> PENDING
           </span>
         );
@@ -575,7 +575,7 @@ export function AdminQualityWorkspace({
               ISO 2859-1 Engine
             </Badge>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-muted-foreground mt-1">
             Standard ANSI/ASQ Z1.4 sampling, defect classifications, AQL evaluations, and accredited laboratory certificates.
           </p>
         </div>
@@ -586,7 +586,7 @@ export function AdminQualityWorkspace({
               variant="outline"
               size="sm"
               onClick={() => setIsLabModalOpen(true)}
-              className="gap-1.5 text-xs text-slate-300 border-slate-700 hover:text-white"
+              className="gap-1.5 text-xs text-muted-foreground border-border hover:text-white"
             >
               <FlaskConical className="w-3.5 h-3.5 text-sky-400" />
               <span>Record Lab Report</span>
@@ -630,37 +630,37 @@ export function AdminQualityWorkspace({
       {/* Summary KPI Cards */}
       {metrics && (
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
-          <Card className="p-4 bg-slate-900/80 border-slate-800 space-y-1">
-            <span className="text-[10px] font-medium uppercase text-slate-400">Total Audits</span>
+          <Card className="p-4 bg-card border-border space-y-1">
+            <span className="text-[10px] font-medium uppercase text-muted-foreground">Total Audits</span>
             <div className="text-xl font-bold font-medium text-white">{metrics.totalInspections}</div>
-            <div className="text-[10px] text-slate-500">Across workflow</div>
+            <div className="text-[10px] text-muted-foreground">Across workflow</div>
           </Card>
 
-          <Card className="p-4 bg-slate-900/80 border-slate-800 space-y-1">
+          <Card className="p-4 bg-card border-border space-y-1">
             <span className="text-[10px] font-medium uppercase text-emerald-400">Pass Rate</span>
             <div className="text-xl font-bold font-medium text-emerald-400">{metrics.passRatePercentage}%</div>
             <div className="text-[10px] text-emerald-400/70">{metrics.passedCount} Passed audits</div>
           </Card>
 
-          <Card className="p-4 bg-slate-900/80 border-slate-800 space-y-1">
+          <Card className="p-4 bg-card border-border space-y-1">
             <span className="text-[10px] font-medium uppercase text-amber-400">Conditional</span>
             <div className="text-xl font-bold font-medium text-amber-400">{metrics.conditionalCount}</div>
             <div className="text-[10px] text-amber-400/70">Minor tolerance only</div>
           </Card>
 
-          <Card className="p-4 bg-slate-900/80 border-slate-800 space-y-1">
+          <Card className="p-4 bg-card border-border space-y-1">
             <span className="text-[10px] font-medium uppercase text-rose-400">Failed Audits</span>
             <div className="text-xl font-bold font-medium text-rose-400">{metrics.failedCount}</div>
             <div className="text-[10px] text-rose-400/70">Threshold exceeded</div>
           </Card>
 
-          <Card className="p-4 bg-slate-900/80 border-slate-800 space-y-1">
+          <Card className="p-4 bg-card border-border space-y-1">
             <span className="text-[10px] font-medium uppercase text-amber-400">Open CAPs</span>
             <div className="text-xl font-bold font-medium text-white">{metrics.openCorrectiveActions}</div>
-            <div className="text-[10px] text-slate-400">Pending verification</div>
+            <div className="text-[10px] text-muted-foreground">Pending verification</div>
           </Card>
 
-          <Card className="p-4 bg-slate-900/80 border-slate-800 space-y-1">
+          <Card className="p-4 bg-card border-border space-y-1">
             <span className="text-[10px] font-medium uppercase text-sky-400">Lab Reports</span>
             <div className="text-xl font-bold font-medium text-sky-400">{metrics.totalLabReports}</div>
             <div className="text-[10px] text-sky-400/70">Accredited tests</div>
@@ -669,13 +669,13 @@ export function AdminQualityWorkspace({
       )}
 
       {/* Main Tabs Navigation */}
-      <div className="flex border-b border-slate-800 gap-2">
+      <div className="flex border-b border-border gap-2">
         <button
           onClick={() => setActiveTab('inspections')}
           className={`px-4 py-2.5 text-xs font-semibold whitespace-nowrap transition-colors border-b-2 -mb-px ${
             activeTab === 'inspections'
-              ? 'border-amber-400 text-amber-400 font-bold bg-slate-900/50'
-              : 'border-transparent text-slate-400 hover:text-slate-200'
+              ? 'border-amber-400 text-amber-400 font-bold bg-card'
+              : 'border-transparent text-muted-foreground hover:text-foreground'
           }`}
         >
           Factory Inspections ({inspections.length})
@@ -684,8 +684,8 @@ export function AdminQualityWorkspace({
           onClick={() => setActiveTab('labReports')}
           className={`px-4 py-2.5 text-xs font-semibold whitespace-nowrap transition-colors border-b-2 -mb-px ${
             activeTab === 'labReports'
-              ? 'border-amber-400 text-amber-400 font-bold bg-slate-900/50'
-              : 'border-transparent text-slate-400 hover:text-slate-200'
+              ? 'border-amber-400 text-amber-400 font-bold bg-card'
+              : 'border-transparent text-muted-foreground hover:text-foreground'
           }`}
         >
           Laboratory Test Reports ({labReports.length})
@@ -694,8 +694,8 @@ export function AdminQualityWorkspace({
           onClick={() => setActiveTab('calculator')}
           className={`px-4 py-2.5 text-xs font-semibold whitespace-nowrap transition-colors border-b-2 -mb-px ${
             activeTab === 'calculator'
-              ? 'border-amber-400 text-amber-400 font-bold bg-slate-900/50'
-              : 'border-transparent text-slate-400 hover:text-slate-200'
+              ? 'border-amber-400 text-amber-400 font-bold bg-card'
+              : 'border-transparent text-muted-foreground hover:text-foreground'
           }`}
         >
           Interactive AQL Calculator
@@ -708,13 +708,13 @@ export function AdminQualityWorkspace({
           {/* Filter Toolbar */}
           <div className="flex flex-col sm:flex-row gap-3">
             <div className="relative flex-1">
-              <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+              <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
               <input
                 type="text"
                 placeholder="Search PO, style, factory, or inspector..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 bg-slate-900 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
+                className="w-full pl-9 pr-3 py-2 bg-card border border-border rounded-lg text-xs text-white placeholder:text-muted-foreground focus:outline-none focus:border-amber-400"
               />
             </div>
 
@@ -722,7 +722,7 @@ export function AdminQualityWorkspace({
               <select
                 value={typeFilter}
                 onChange={(e) => setTypeFilter(e.target.value)}
-                className="px-2.5 py-2 bg-slate-900 border border-slate-800 rounded-lg text-xs text-slate-300 focus:outline-none focus:border-amber-400"
+                className="px-2.5 py-2 bg-card border border-border rounded-lg text-xs text-muted-foreground focus:outline-none focus:border-amber-400"
               >
                 <option value="ALL">All Types</option>
                 {INSPECTION_TYPES.map((t) => (
@@ -735,7 +735,7 @@ export function AdminQualityWorkspace({
               <select
                 value={resultFilter}
                 onChange={(e) => setResultFilter(e.target.value)}
-                className="px-2.5 py-2 bg-slate-900 border border-slate-800 rounded-lg text-xs text-slate-300 focus:outline-none focus:border-amber-400"
+                className="px-2.5 py-2 bg-card border border-border rounded-lg text-xs text-muted-foreground focus:outline-none focus:border-amber-400"
               >
                 <option value="ALL">All Results</option>
                 <option value="PASS">Pass</option>
@@ -753,17 +753,17 @@ export function AdminQualityWorkspace({
               <Skeleton className="h-20 w-full" />
             </Card>
           ) : filteredInspections.length === 0 ? (
-            <Card className="p-12 text-center border-slate-800">
+            <Card className="p-12 text-center border-border">
               <EmptyState
                 title="No Quality Inspections Found"
                 description="No inspection records match the current filter criteria."
               />
             </Card>
           ) : (
-            <Card className="overflow-hidden border-slate-800 bg-slate-900/60">
+            <Card className="overflow-hidden border-border bg-card">
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs text-slate-300">
-                  <thead className="bg-slate-950/80 text-slate-400 font-medium uppercase text-[10px] border-b border-slate-800">
+                <table className="w-full text-left text-xs text-muted-foreground">
+                  <thead className="bg-card text-muted-foreground font-medium uppercase text-[10px] border-b border-border">
                     <tr>
                       <th className="p-3.5">Order / PO</th>
                       <th className="p-3.5">Inspection Type</th>
@@ -780,19 +780,19 @@ export function AdminQualityWorkspace({
                       <tr key={insp.id} className="hover:bg-slate-800/40 transition-colors">
                         <td className="p-3.5">
                           <div className="font-medium font-bold text-amber-400">{insp.orderNumber}</div>
-                          <div className="text-[11px] text-slate-400">{insp.styleNumber}</div>
+                          <div className="text-[11px] text-muted-foreground">{insp.styleNumber}</div>
                         </td>
 
                         <td className="p-3.5">
                           <div className="font-medium text-white">{getInspectionTypeLabel(insp.inspectionType)}</div>
-                          <div className="text-[11px] text-slate-500 font-medium">Factory: {insp.factoryId}</div>
+                          <div className="text-[11px] text-muted-foreground font-medium">Factory: {insp.factoryId}</div>
                         </td>
 
                         <td className="p-3.5 font-medium">
-                          <div className="text-slate-200">
+                          <div className="text-foreground">
                             <strong>{insp.inspectedQuantity} pcs</strong>
                           </div>
-                          <div className="text-[11px] text-slate-400">
+                          <div className="text-[11px] text-muted-foreground">
                             Level {insp.aqlLevel} (Ac: {insp.maxAllowedMajor} Maj / {insp.maxAllowedMinor} Min)
                           </div>
                         </td>
@@ -805,7 +805,7 @@ export function AdminQualityWorkspace({
                             <span className="px-1.5 py-0.5 rounded bg-amber-950 text-amber-400 border border-amber-800/60 font-medium text-[10px]" title="Major">
                               {insp.majorDefects} Maj
                             </span>
-                            <span className="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-medium text-[10px]" title="Minor">
+                            <span className="px-1.5 py-0.5 rounded bg-slate-800 text-muted-foreground font-medium text-[10px]" title="Minor">
                               {insp.minorDefects} Min
                             </span>
                           </div>
@@ -814,8 +814,8 @@ export function AdminQualityWorkspace({
                         <td className="p-3.5">{getResultBadge(insp.result)}</td>
 
                         <td className="p-3.5">
-                          <div className="font-medium text-slate-300">{insp.inspectionDate}</div>
-                          <div className="text-[11px] text-slate-500">{insp.inspectorName}</div>
+                          <div className="font-medium text-muted-foreground">{insp.inspectionDate}</div>
+                          <div className="text-[11px] text-muted-foreground">{insp.inspectorName}</div>
                         </td>
 
                         <td className="p-3.5">
@@ -836,7 +836,7 @@ export function AdminQualityWorkspace({
                               variant="ghost"
                               size="sm"
                               onClick={() => setSelectedInspection(insp)}
-                              className="h-7 text-xs gap-1 text-slate-300 hover:text-white"
+                              className="h-7 text-xs gap-1 text-muted-foreground hover:text-white"
                             >
                               <Eye className="w-3.5 h-3.5 text-amber-400" />
                               <span>Inspect</span>
@@ -867,10 +867,10 @@ export function AdminQualityWorkspace({
       {/* TAB 2: LAB TEST REPORTS */}
       {activeTab === 'labReports' && (
         <div className="space-y-4">
-          <Card className="overflow-hidden border-slate-800 bg-slate-900/60">
+          <Card className="overflow-hidden border-border bg-card">
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs text-slate-300">
-                <thead className="bg-slate-950/80 text-slate-400 font-medium uppercase text-[10px] border-b border-slate-800">
+              <table className="w-full text-left text-xs text-muted-foreground">
+                <thead className="bg-card text-muted-foreground font-medium uppercase text-[10px] border-b border-border">
                   <tr>
                     <th className="p-3.5">Report ID</th>
                     <th className="p-3.5">Test Category</th>
@@ -893,17 +893,17 @@ export function AdminQualityWorkspace({
                         {report.testCategory}
                       </td>
 
-                      <td className="p-3.5 text-slate-300">
+                      <td className="p-3.5 text-muted-foreground">
                         {report.labName}
                       </td>
 
-                      <td className="p-3.5 font-medium text-slate-300">
+                      <td className="p-3.5 font-medium text-muted-foreground">
                         {report.orderNumber || report.orderId}
                       </td>
 
                       <td className="p-3.5">
-                        <div className="font-medium text-slate-300">{report.reportDate}</div>
-                        <div className="text-[11px] text-slate-500 truncate max-w-[140px]">{report.sampleReference}</div>
+                        <div className="font-medium text-muted-foreground">{report.reportDate}</div>
+                        <div className="text-[11px] text-muted-foreground truncate max-w-[140px]">{report.sampleReference}</div>
                       </td>
 
                       <td className="p-3.5">
@@ -942,7 +942,7 @@ export function AdminQualityWorkspace({
                             Publish
                           </Button>
                         ) : (
-                          <span className="text-slate-500 font-medium text-[11px]">Draft</span>
+                          <span className="text-muted-foreground font-medium text-[11px]">Draft</span>
                         )}
                       </td>
                     </tr>
@@ -957,30 +957,30 @@ export function AdminQualityWorkspace({
       {/* TAB 3: INTERACTIVE AQL CALCULATOR */}
       {activeTab === 'calculator' && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <Card className="lg:col-span-1 p-6 bg-slate-900/90 border-slate-800 space-y-4">
-            <h3 className="font-sans font-bold text-base text-white border-b border-slate-800 pb-2 flex items-center gap-2">
+          <Card className="lg:col-span-1 p-6 bg-card border-border space-y-4">
+            <h3 className="font-sans font-bold text-base text-white border-b border-border pb-2 flex items-center gap-2">
               <Sliders className="w-4 h-4 text-amber-400" />
               <span>Inspection Parameters</span>
             </h3>
 
             <div className="space-y-3 text-xs">
               <div>
-                <label className="text-slate-400 font-medium block mb-1">Lot Size (Total Order Quantity):</label>
+                <label className="text-muted-foreground font-medium block mb-1">Lot Size (Total Order Quantity):</label>
                 <input
                   type="number"
                   min="1"
                   value={calcLotSize}
                   onChange={(e) => setCalcLotSize(Number(e.target.value))}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                  className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                 />
               </div>
 
               <div>
-                <label className="text-slate-400 font-medium block mb-1">Inspection Level:</label>
+                <label className="text-muted-foreground font-medium block mb-1">Inspection Level:</label>
                 <select
                   value={calcLevel}
                   onChange={(e) => setCalcLevel(e.target.value as InspectionLevel)}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                  className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                 >
                   <option value="GI">Level I (Reduced)</option>
                   <option value="GII">Level II (Normal - Industry Standard)</option>
@@ -990,11 +990,11 @@ export function AdminQualityWorkspace({
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Major AQL:</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Major AQL:</label>
                   <select
                     value={calcMajorAQL}
                     onChange={(e) => setCalcMajorAQL(Number(e.target.value))}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                   >
                     <option value="1.0">1.0</option>
                     <option value="1.5">1.5</option>
@@ -1004,11 +1004,11 @@ export function AdminQualityWorkspace({
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Minor AQL:</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Minor AQL:</label>
                   <select
                     value={calcMinorAQL}
                     onChange={(e) => setCalcMinorAQL(Number(e.target.value))}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                   >
                     <option value="1.5">1.5</option>
                     <option value="2.5">2.5</option>
@@ -1018,7 +1018,7 @@ export function AdminQualityWorkspace({
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-slate-800 space-y-2">
+              <div className="pt-2 border-t border-border space-y-2">
                 <label className="text-amber-400 font-medium block font-bold">Simulate Sample Defects Found:</label>
                 <div className="grid grid-cols-3 gap-2">
                   <div>
@@ -1028,7 +1028,7 @@ export function AdminQualityWorkspace({
                       min="0"
                       value={calcCriticalDefects}
                       onChange={(e) => setCalcCriticalDefects(Number(e.target.value))}
-                      className="w-full px-2 py-1 bg-slate-950 border border-slate-700 rounded text-rose-400 font-medium"
+                      className="w-full px-2 py-1 bg-card border border-border rounded text-rose-400 font-medium"
                     />
                   </div>
                   <div>
@@ -1038,17 +1038,17 @@ export function AdminQualityWorkspace({
                       min="0"
                       value={calcMajorDefects}
                       onChange={(e) => setCalcMajorDefects(Number(e.target.value))}
-                      className="w-full px-2 py-1 bg-slate-950 border border-slate-700 rounded text-amber-400 font-medium"
+                      className="w-full px-2 py-1 bg-card border border-border rounded text-amber-400 font-medium"
                     />
                   </div>
                   <div>
-                    <span className="text-[10px] text-slate-300 block font-medium">Minor:</span>
+                    <span className="text-[10px] text-muted-foreground block font-medium">Minor:</span>
                     <input
                       type="number"
                       min="0"
                       value={calcMinorDefects}
                       onChange={(e) => setCalcMinorDefects(Number(e.target.value))}
-                      className="w-full px-2 py-1 bg-slate-950 border border-slate-700 rounded text-slate-300 font-medium"
+                      className="w-full px-2 py-1 bg-card border border-border rounded text-muted-foreground font-medium"
                     />
                   </div>
                 </div>
@@ -1056,8 +1056,8 @@ export function AdminQualityWorkspace({
             </div>
           </Card>
 
-          <Card className="lg:col-span-2 p-6 bg-slate-900/90 border-slate-800 space-y-6">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+          <Card className="lg:col-span-2 p-6 bg-card border-border space-y-6">
+            <div className="flex items-center justify-between border-b border-border pb-3">
               <div>
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">ISO 2859-1 Calculation Output</span>
                 <h3 className="font-sans font-bold text-lg text-white">Statistical AQL Result</h3>
@@ -1068,27 +1068,27 @@ export function AdminQualityWorkspace({
             {interactiveCalcResult ? (
               <div className="space-y-6">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                  <div className="p-3 bg-slate-950 rounded border border-slate-800">
-                    <span className="text-[10px] font-medium text-slate-400">Code Letter</span>
+                  <div className="p-3 bg-card rounded border border-border">
+                    <span className="text-[10px] font-medium text-muted-foreground">Code Letter</span>
                     <div className="text-xl font-bold font-medium text-amber-400">{interactiveCalcResult.codeLetter}</div>
                   </div>
-                  <div className="p-3 bg-slate-950 rounded border border-slate-800">
-                    <span className="text-[10px] font-medium text-slate-400">Sample Size</span>
+                  <div className="p-3 bg-card rounded border border-border">
+                    <span className="text-[10px] font-medium text-muted-foreground">Sample Size</span>
                     <div className="text-xl font-bold font-medium text-white">{interactiveCalcResult.sampleSize} pcs</div>
                   </div>
-                  <div className="p-3 bg-slate-950 rounded border border-slate-800">
-                    <span className="text-[10px] font-medium text-slate-400">Major Ac / Re</span>
+                  <div className="p-3 bg-card rounded border border-border">
+                    <span className="text-[10px] font-medium text-muted-foreground">Major Ac / Re</span>
                     <div className="text-xl font-bold font-medium text-emerald-400">{interactiveCalcResult.maxAllowedMajor} / {interactiveCalcResult.maxAllowedMajor + 1}</div>
                   </div>
-                  <div className="p-3 bg-slate-950 rounded border border-slate-800">
-                    <span className="text-[10px] font-medium text-slate-400">Minor Ac / Re</span>
+                  <div className="p-3 bg-card rounded border border-border">
+                    <span className="text-[10px] font-medium text-muted-foreground">Minor Ac / Re</span>
                     <div className="text-xl font-bold font-medium text-sky-400">{interactiveCalcResult.maxAllowedMinor} / {interactiveCalcResult.maxAllowedMinor + 1}</div>
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+                <div className="p-4 rounded-xl bg-card border border-border space-y-2">
                   <h4 className="font-medium text-xs font-bold text-white uppercase">Evaluation Breakdown</h4>
-                  <ul className="space-y-1.5 text-xs text-slate-300">
+                  <ul className="space-y-1.5 text-xs text-muted-foreground">
                     <li className="flex items-center justify-between">
                       <span>Critical Defects:</span>
                       <strong className={interactiveCalcResult.actualCritical > 0 ? 'text-rose-400 font-medium' : 'text-emerald-400 font-medium'}>
@@ -1125,7 +1125,7 @@ export function AdminQualityWorkspace({
                 )}
               </div>
             ) : (
-              <p className="text-xs text-slate-500">Please provide valid numeric parameters.</p>
+              <p className="text-xs text-muted-foreground">Please provide valid numeric parameters.</p>
             )}
           </Card>
         </div>
@@ -1134,9 +1134,9 @@ export function AdminQualityWorkspace({
       {/* INSPECTION DETAIL DRAWER / MODAL */}
       {selectedInspection && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex justify-end">
-          <div className="w-full max-w-2xl bg-slate-900 border-l border-slate-800 h-full overflow-y-auto p-6 space-y-6">
+          <div className="w-full max-w-2xl bg-card border-l border-border h-full overflow-y-auto p-6 space-y-6">
             {/* Header */}
-            <div className="flex items-start justify-between pb-4 border-b border-slate-800">
+            <div className="flex items-start justify-between pb-4 border-b border-border">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <span className="font-medium text-xs font-bold text-amber-400">
@@ -1156,39 +1156,39 @@ export function AdminQualityWorkspace({
                 <h3 className="font-sans font-bold text-xl text-white">
                   {getInspectionTypeLabel(selectedInspection.inspectionType)}
                 </h3>
-                <p className="text-xs text-slate-400 font-medium">
+                <p className="text-xs text-muted-foreground font-medium">
                   PO: {selectedInspection.orderNumber} | Style: {selectedInspection.styleNumber} | Factory: {selectedInspection.factoryId}
                 </p>
               </div>
 
               <button
                 onClick={() => setSelectedInspection(null)}
-                className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800"
+                className="p-1 rounded-lg text-muted-foreground hover:text-white hover:bg-slate-800"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* AQL Metrics Banner */}
-            <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-slate-950 border border-slate-800 text-center font-medium">
+            <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-card border border-border text-center font-medium">
               <div>
-                <span className="text-[10px] text-slate-400 uppercase">Sample Inspected</span>
+                <span className="text-[10px] text-muted-foreground uppercase">Sample Inspected</span>
                 <div className="text-lg font-bold text-white">{selectedInspection.sampleSize} pcs</div>
-                <span className="text-[10px] text-slate-500">Lot: {selectedInspection.orderQuantity.toLocaleString()}</span>
+                <span className="text-[10px] text-muted-foreground">Lot: {selectedInspection.orderQuantity.toLocaleString()}</span>
               </div>
               <div>
-                <span className="text-[10px] text-slate-400 uppercase">Major Defects</span>
+                <span className="text-[10px] text-muted-foreground uppercase">Major Defects</span>
                 <div className={`text-lg font-bold ${selectedInspection.majorDefects > selectedInspection.maxAllowedMajor ? 'text-rose-400' : 'text-emerald-400'}`}>
                   {selectedInspection.majorDefects} / {selectedInspection.maxAllowedMajor}
                 </div>
-                <span className="text-[10px] text-slate-500">AQL {selectedInspection.aqlMajor}</span>
+                <span className="text-[10px] text-muted-foreground">AQL {selectedInspection.aqlMajor}</span>
               </div>
               <div>
-                <span className="text-[10px] text-slate-400 uppercase">Minor Defects</span>
+                <span className="text-[10px] text-muted-foreground uppercase">Minor Defects</span>
                 <div className={`text-lg font-bold ${selectedInspection.minorDefects > selectedInspection.maxAllowedMinor ? 'text-rose-400' : 'text-emerald-400'}`}>
                   {selectedInspection.minorDefects} / {selectedInspection.maxAllowedMinor}
                 </div>
-                <span className="text-[10px] text-slate-500">AQL {selectedInspection.aqlMinor}</span>
+                <span className="text-[10px] text-muted-foreground">AQL {selectedInspection.aqlMinor}</span>
               </div>
             </div>
 
@@ -1196,17 +1196,17 @@ export function AdminQualityWorkspace({
             <div className="space-y-3">
               <h4 className="font-sans font-bold text-sm text-white flex items-center justify-between">
                 <span>Defect Itemization ({selectedInspection.defects.length})</span>
-                <span className="text-xs font-medium text-slate-400">Total: {selectedInspection.totalDefects} units</span>
+                <span className="text-xs font-medium text-muted-foreground">Total: {selectedInspection.totalDefects} units</span>
               </h4>
 
               {selectedInspection.defects.length === 0 ? (
-                <div className="p-4 rounded-lg bg-slate-950/50 border border-slate-800/80 text-center text-xs text-slate-500">
+                <div className="p-4 rounded-lg bg-card border border-border text-center text-xs text-muted-foreground">
                   Zero non-conformances detected in audited sample units.
                 </div>
               ) : (
                 <div className="space-y-2">
                   {selectedInspection.defects.map((d, i) => (
-                    <div key={i} className="p-3 rounded-lg bg-slate-950 border border-slate-800/80 flex items-start justify-between gap-3">
+                    <div key={i} className="p-3 rounded-lg bg-card border border-border flex items-start justify-between gap-3">
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
                           <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium font-bold ${
@@ -1214,14 +1214,14 @@ export function AdminQualityWorkspace({
                               ? 'bg-rose-950 text-rose-400 border border-rose-800'
                               : d.severity === 'MAJOR'
                               ? 'bg-amber-950 text-amber-400 border border-amber-800'
-                              : 'bg-slate-800 text-slate-300'
+                              : 'bg-slate-800 text-muted-foreground'
                           }`}>
                             {d.severity} ({d.quantity}x)
                           </span>
                           <span className="text-xs font-semibold text-white">{d.category}</span>
-                          {d.location && <span className="text-xs text-slate-400 font-medium">| {d.location}</span>}
+                          {d.location && <span className="text-xs text-muted-foreground font-medium">| {d.location}</span>}
                         </div>
-                        <p className="text-xs text-slate-300">{d.description}</p>
+                        <p className="text-xs text-muted-foreground">{d.description}</p>
                       </div>
                     </div>
                   ))}
@@ -1230,7 +1230,7 @@ export function AdminQualityWorkspace({
             </div>
 
             {/* Corrective Action Plan (CAP) Section */}
-            <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+            <div className="p-4 rounded-xl bg-card border border-border space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <ShieldAlert className="w-4 h-4 text-amber-400" />
@@ -1261,27 +1261,27 @@ export function AdminQualityWorkspace({
               {selectedInspection.correctiveAction ? (
                 <div className="space-y-2 text-xs">
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-400">Resolution Status:</span>
+                    <span className="text-muted-foreground">Resolution Status:</span>
                     <Badge variant={selectedInspection.correctiveAction.status === 'verified' ? 'emerald' : 'amber'} size="sm">
                       {selectedInspection.correctiveAction.status.toUpperCase()}
                     </Badge>
                   </div>
                   <div>
-                    <span className="text-slate-400 font-medium">Action Required:</span>
-                    <p className="text-slate-200 mt-0.5 font-medium">{selectedInspection.correctiveAction.actionRequired}</p>
+                    <span className="text-muted-foreground font-medium">Action Required:</span>
+                    <p className="text-foreground mt-0.5 font-medium">{selectedInspection.correctiveAction.actionRequired}</p>
                   </div>
-                  <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-400 font-medium pt-1">
+                  <div className="grid grid-cols-2 gap-2 text-[11px] text-muted-foreground font-medium pt-1">
                     <div>Responsible: <strong className="text-white">{selectedInspection.correctiveAction.responsibleParty}</strong></div>
                     <div>Due Date: <strong className="text-amber-400">{selectedInspection.correctiveAction.dueDate}</strong></div>
                   </div>
 
                   {canWrite && selectedInspection.correctiveAction.status !== 'verified' && (
-                    <div className="flex gap-2 pt-2 border-t border-slate-800">
+                    <div className="flex gap-2 pt-2 border-t border-border">
                       <Button
                         variant="outline"
                         size="sm"
                         onClick={() => handleUpdateCapStatus('completed')}
-                        className="h-7 text-xs text-sky-400 border-slate-700"
+                        className="h-7 text-xs text-sky-400 border-border"
                       >
                         Mark Completed
                       </Button>
@@ -1297,26 +1297,26 @@ export function AdminQualityWorkspace({
                   )}
                 </div>
               ) : (
-                <p className="text-xs text-slate-500">No active corrective action required for this audit round.</p>
+                <p className="text-xs text-muted-foreground">No active corrective action required for this audit round.</p>
               )}
             </div>
 
             {/* Internal Confidential Notes */}
             {selectedInspection.internalNotes && (
-              <div className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 space-y-1">
+              <div className="p-4 rounded-xl bg-card border border-border space-y-1">
                 <div className="text-[11px] font-medium uppercase text-amber-400 font-bold">Internal QA Auditor Notes (Staff Only)</div>
-                <p className="text-xs text-slate-300 leading-relaxed">{selectedInspection.internalNotes}</p>
+                <p className="text-xs text-muted-foreground leading-relaxed">{selectedInspection.internalNotes}</p>
               </div>
             )}
 
             {/* Actions Bar */}
-            <div className="flex items-center justify-between pt-4 border-t border-slate-800">
+            <div className="flex items-center justify-between pt-4 border-t border-border">
               {canReinspect && (
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => setIsReinspectModalOpen(true)}
-                  className="gap-1.5 text-xs text-amber-400 border-slate-700 hover:text-white"
+                  className="gap-1.5 text-xs text-amber-400 border-border hover:text-white"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                   <span>Schedule Re-Inspection</span>
@@ -1344,13 +1344,13 @@ export function AdminQualityWorkspace({
       {/* CREATE INSPECTION MODAL */}
       {isCreateModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-          <Card className="w-full max-w-3xl bg-slate-900 border-slate-800 p-6 space-y-6 my-8">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+          <Card className="w-full max-w-3xl bg-card border-border p-6 space-y-6 my-8">
+            <div className="flex items-center justify-between pb-3 border-b border-border">
               <div>
                 <h3 className="font-sans font-bold text-lg text-white">Record Quality Inspection</h3>
-                <p className="text-xs text-slate-400">Conduct multi-stage audit with real-time ISO 2859-1 AQL evaluation.</p>
+                <p className="text-xs text-muted-foreground">Conduct multi-stage audit with real-time ISO 2859-1 AQL evaluation.</p>
               </div>
-              <button onClick={() => setIsCreateModalOpen(false)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setIsCreateModalOpen(false)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -1364,11 +1364,11 @@ export function AdminQualityWorkspace({
             <form onSubmit={handleCreateInspection} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Inspection Stage / Type *</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Inspection Stage / Type *</label>
                   <select
                     value={formData.inspectionType}
                     onChange={(e) => setFormData({ ...formData, inspectionType: e.target.value as InspectionType })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                   >
                     {INSPECTION_TYPES.map((t) => (
                       <option key={t} value={t}>{getInspectionTypeLabel(t)}</option>
@@ -1377,67 +1377,67 @@ export function AdminQualityWorkspace({
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Inspection Date *</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Inspection Date *</label>
                   <input
                     type="date"
                     required
                     value={formData.inspectionDate}
                     onChange={(e) => setFormData({ ...formData, inspectionDate: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Factory Unit *</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Factory Unit *</label>
                   <input
                     type="text"
                     required
                     value={formData.factoryId}
                     onChange={(e) => setFormData({ ...formData, factoryId: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">PO Number *</label>
+                  <label className="text-muted-foreground font-medium block mb-1">PO Number *</label>
                   <input
                     type="text"
                     required
                     value={formData.orderNumber}
                     onChange={(e) => setFormData({ ...formData, orderNumber: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Style Code *</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Style Code *</label>
                   <input
                     type="text"
                     required
                     value={formData.styleNumber}
                     onChange={(e) => setFormData({ ...formData, styleNumber: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Buyer Organization *</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Buyer Organization *</label>
                   <input
                     type="text"
                     required
                     value={formData.buyerOrganizationId}
                     onChange={(e) => setFormData({ ...formData, buyerOrganizationId: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                   />
                 </div>
               </div>
 
               {/* Quantities & AQL Configuration */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs p-3.5 bg-slate-950 rounded-xl border border-slate-800">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs p-3.5 bg-card rounded-xl border border-border">
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Order Quantity</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Order Quantity</label>
                   <input
                     type="number"
                     min="1"
@@ -1448,28 +1448,28 @@ export function AdminQualityWorkspace({
                       const standardSampleSize = getSampleSize(qty, formData.aqlLevel);
                       setFormData({ ...formData, orderQuantity: qty, inspectedQuantity: standardSampleSize });
                     }}
-                    className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Sample Size (Units)</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Sample Size (Units)</label>
                   <input
                     type="number"
                     min="1"
                     required
                     value={formData.inspectedQuantity}
                     onChange={(e) => setFormData({ ...formData, inspectedQuantity: Number(e.target.value) })}
-                    className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Major AQL</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Major AQL</label>
                   <select
                     value={formData.aqlMajor}
                     onChange={(e) => setFormData({ ...formData, aqlMajor: Number(e.target.value) })}
-                    className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white font-medium"
                   >
                     <option value="1.0">1.0</option>
                     <option value="1.5">1.5</option>
@@ -1479,11 +1479,11 @@ export function AdminQualityWorkspace({
                 </div>
 
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Minor AQL</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Minor AQL</label>
                   <select
                     value={formData.aqlMinor}
                     onChange={(e) => setFormData({ ...formData, aqlMinor: Number(e.target.value) })}
-                    className="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-2.5 py-1.5 bg-card border border-border rounded text-white font-medium"
                   >
                     <option value="1.5">1.5</option>
                     <option value="2.5">2.5</option>
@@ -1502,7 +1502,7 @@ export function AdminQualityWorkspace({
                     variant="outline"
                     size="sm"
                     onClick={handleAddDefectLine}
-                    className="h-7 text-xs text-amber-400 border-slate-700 hover:text-white"
+                    className="h-7 text-xs text-amber-400 border-border hover:text-white"
                   >
                     <Plus className="w-3.5 h-3.5" />
                     <span>Add Defect</span>
@@ -1510,16 +1510,16 @@ export function AdminQualityWorkspace({
                 </div>
 
                 {formDefects.length === 0 ? (
-                  <p className="text-xs text-slate-500 italic">No defects entered. Audit will evaluate as 0 defects (Pass).</p>
+                  <p className="text-xs text-muted-foreground italic">No defects entered. Audit will evaluate as 0 defects (Pass).</p>
                 ) : (
                   <div className="space-y-2 max-h-56 overflow-y-auto pr-1">
                     {formDefects.map((defect, idx) => (
-                      <div key={idx} className="p-3 bg-slate-950 rounded-lg border border-slate-800 grid grid-cols-1 sm:grid-cols-12 gap-2 text-xs items-center">
+                      <div key={idx} className="p-3 bg-card rounded-lg border border-border grid grid-cols-1 sm:grid-cols-12 gap-2 text-xs items-center">
                         <div className="sm:col-span-3">
                           <select
                             value={defect.category}
                             onChange={(e) => handleDefectChange(idx, 'category', e.target.value as DefectCategory)}
-                            className="w-full px-2 py-1.5 bg-slate-900 border border-slate-700 rounded text-white text-[11px]"
+                            className="w-full px-2 py-1.5 bg-card border border-border rounded text-white text-[11px]"
                           >
                             {DEFECT_CATEGORIES.map((c) => (
                               <option key={c} value={c}>{c}</option>
@@ -1531,7 +1531,7 @@ export function AdminQualityWorkspace({
                           <select
                             value={defect.severity}
                             onChange={(e) => handleDefectChange(idx, 'severity', e.target.value as DefectSeverity)}
-                            className="w-full px-2 py-1.5 bg-slate-900 border border-slate-700 rounded text-white text-[11px]"
+                            className="w-full px-2 py-1.5 bg-card border border-border rounded text-white text-[11px]"
                           >
                             {DEFECT_SEVERITIES.map((s) => (
                               <option key={s} value={s}>{s}</option>
@@ -1546,7 +1546,7 @@ export function AdminQualityWorkspace({
                             placeholder="Qty"
                             value={defect.quantity}
                             onChange={(e) => handleDefectChange(idx, 'quantity', Number(e.target.value))}
-                            className="w-full px-2 py-1.5 bg-slate-900 border border-slate-700 rounded text-white font-medium text-[11px]"
+                            className="w-full px-2 py-1.5 bg-card border border-border rounded text-white font-medium text-[11px]"
                           />
                         </div>
 
@@ -1556,7 +1556,7 @@ export function AdminQualityWorkspace({
                             placeholder="Description & location..."
                             value={defect.description}
                             onChange={(e) => handleDefectChange(idx, 'description', e.target.value)}
-                            className="w-full px-2 py-1.5 bg-slate-900 border border-slate-700 rounded text-white text-[11px]"
+                            className="w-full px-2 py-1.5 bg-card border border-border rounded text-white text-[11px]"
                           />
                         </div>
 
@@ -1564,7 +1564,7 @@ export function AdminQualityWorkspace({
                           <button
                             type="button"
                             onClick={() => handleRemoveDefectLine(idx)}
-                            className="text-slate-500 hover:text-rose-400 p-1"
+                            className="text-muted-foreground hover:text-rose-400 p-1"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
                           </button>
@@ -1577,9 +1577,9 @@ export function AdminQualityWorkspace({
 
               {/* Live AQL Evaluation Preview */}
               {liveAQLResult && (
-                <div className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
+                <div className="p-3.5 rounded-xl bg-card border border-border flex items-center justify-between">
                   <div className="text-xs space-y-0.5">
-                    <span className="text-slate-400 font-medium uppercase text-[10px]">Deterministic AQL Calculation:</span>
+                    <span className="text-muted-foreground font-medium uppercase text-[10px]">Deterministic AQL Calculation:</span>
                     <div className="font-medium text-xs text-white">
                       Code Letter: <strong>{liveAQLResult.codeLetter}</strong> | Total Defects: <strong>{liveAQLResult.totalDefects}</strong> (Ac: {liveAQLResult.maxAllowedMajor} Maj / {liveAQLResult.maxAllowedMinor} Min)
                     </div>
@@ -1591,13 +1591,13 @@ export function AdminQualityWorkspace({
               {/* Remarks */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Public Remarks (Buyer Visible)</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Public Remarks (Buyer Visible)</label>
                   <textarea
                     rows={2}
                     placeholder="General observations, line tension status..."
                     value={formData.remarks}
                     onChange={(e) => setFormData({ ...formData, remarks: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white"
                   />
                 </div>
 
@@ -1608,18 +1608,18 @@ export function AdminQualityWorkspace({
                     placeholder="Confidential factory communications..."
                     value={formData.internalNotes}
                     onChange={(e) => setFormData({ ...formData, internalNotes: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white"
                   />
                 </div>
               </div>
 
-              <div className="flex items-center justify-between pt-4 border-t border-slate-800">
-                <label className="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+              <div className="flex items-center justify-between pt-4 border-t border-border">
+                <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
                   <input
                     type="checkbox"
                     checked={formData.published}
                     onChange={(e) => setFormData({ ...formData, published: e.target.checked })}
-                    className="rounded bg-slate-950 border-slate-700 text-amber-400 focus:ring-0"
+                    className="rounded bg-card border-border text-amber-400 focus:ring-0"
                   />
                   <span>Publish report immediately upon saving</span>
                 </label>
@@ -1630,7 +1630,7 @@ export function AdminQualityWorkspace({
                     variant="ghost"
                     size="sm"
                     onClick={() => setIsCreateModalOpen(false)}
-                    className="text-xs text-slate-400"
+                    className="text-xs text-muted-foreground"
                   >
                     Cancel
                   </Button>
@@ -1653,21 +1653,21 @@ export function AdminQualityWorkspace({
       {/* CREATE LAB TEST REPORT MODAL */}
       {isLabModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <Card className="w-full max-w-xl bg-slate-900 border-slate-800 p-6 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+          <Card className="w-full max-w-xl bg-card border-border p-6 space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-border">
               <h3 className="font-sans font-bold text-lg text-white">Record Laboratory Test Report</h3>
-              <button onClick={() => setIsLabModalOpen(false)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setIsLabModalOpen(false)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             <form onSubmit={handleCreateLabReport} className="space-y-3 text-xs">
               <div>
-                <label className="text-slate-400 font-medium block mb-1">Test Category *</label>
+                <label className="text-muted-foreground font-medium block mb-1">Test Category *</label>
                 <select
                   value={labFormData.testCategory}
                   onChange={(e) => setLabFormData({ ...labFormData, testCategory: e.target.value as LabTestCategory })}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white"
+                  className="w-full px-3 py-2 bg-card border border-border rounded text-white"
                 >
                   {LAB_TEST_CATEGORIES.map((c) => (
                     <option key={c} value={c}>{c}</option>
@@ -1677,44 +1677,44 @@ export function AdminQualityWorkspace({
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Accredited Laboratory *</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Accredited Laboratory *</label>
                   <input
                     type="text"
                     required
                     value={labFormData.labName}
                     onChange={(e) => setLabFormData({ ...labFormData, labName: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white"
                   />
                 </div>
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Report Date *</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Report Date *</label>
                   <input
                     type="date"
                     required
                     value={labFormData.reportDate}
                     onChange={(e) => setLabFormData({ ...labFormData, reportDate: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-slate-400 font-medium block mb-1">Sample Reference / Material Swatch</label>
+                <label className="text-muted-foreground font-medium block mb-1">Sample Reference / Material Swatch</label>
                 <input
                   type="text"
                   value={labFormData.sampleReference}
                   onChange={(e) => setLabFormData({ ...labFormData, sampleReference: e.target.value })}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white"
+                  className="w-full px-3 py-2 bg-card border border-border rounded text-white"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Test Result</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Test Result</label>
                   <select
                     value={labFormData.result}
                     onChange={(e) => setLabFormData({ ...labFormData, result: e.target.value as 'PASS' | 'FAIL' | 'CONDITIONAL' })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                   >
                     <option value="PASS">PASS</option>
                     <option value="CONDITIONAL">CONDITIONAL</option>
@@ -1722,11 +1722,11 @@ export function AdminQualityWorkspace({
                   </select>
                 </div>
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Verification Status</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Verification Status</label>
                   <select
                     value={labFormData.verificationStatus}
                     onChange={(e) => setLabFormData({ ...labFormData, verificationStatus: e.target.value as 'VERIFIED' | 'VERIFICATION_REQUIRED' })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                   >
                     <option value="VERIFIED">VERIFIED</option>
                     <option value="VERIFICATION_REQUIRED">VERIFICATION_REQUIRED</option>
@@ -1734,13 +1734,13 @@ export function AdminQualityWorkspace({
                 </div>
               </div>
 
-              <div className="flex items-center justify-between pt-3 border-t border-slate-800">
-                <label className="flex items-center gap-2 text-xs text-slate-300">
+              <div className="flex items-center justify-between pt-3 border-t border-border">
+                <label className="flex items-center gap-2 text-xs text-muted-foreground">
                   <input
                     type="checkbox"
                     checked={labFormData.published}
                     onChange={(e) => setLabFormData({ ...labFormData, published: e.target.checked })}
-                    className="rounded bg-slate-950 border-slate-700 text-amber-400"
+                    className="rounded bg-card border-border text-amber-400"
                   />
                   <span>Publish to Buyer Portal</span>
                 </label>
@@ -1757,61 +1757,61 @@ export function AdminQualityWorkspace({
       {/* CREATE CAP MODAL */}
       {isCapModalOpen && selectedInspection && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <Card className="w-full max-w-lg bg-slate-900 border-slate-800 p-6 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+          <Card className="w-full max-w-lg bg-card border-border p-6 space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-border">
               <h3 className="font-sans font-bold text-lg text-white">Create Corrective Action Plan (CAP)</h3>
-              <button onClick={() => setIsCapModalOpen(false)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setIsCapModalOpen(false)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             <form onSubmit={handleCreateCap} className="space-y-3 text-xs">
               <div>
-                <label className="text-slate-400 font-medium block mb-1">Issue Description *</label>
+                <label className="text-muted-foreground font-medium block mb-1">Issue Description *</label>
                 <textarea
                   required
                   rows={2}
                   value={capFormData.issueDescription}
                   onChange={(e) => setCapFormData({ ...capFormData, issueDescription: e.target.value })}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white"
+                  className="w-full px-3 py-2 bg-card border border-border rounded text-white"
                 />
               </div>
 
               <div>
-                <label className="text-slate-400 font-medium block mb-1">Action Required *</label>
+                <label className="text-muted-foreground font-medium block mb-1">Action Required *</label>
                 <textarea
                   required
                   rows={2}
                   value={capFormData.actionRequired}
                   onChange={(e) => setCapFormData({ ...capFormData, actionRequired: e.target.value })}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white"
+                  className="w-full px-3 py-2 bg-card border border-border rounded text-white"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Responsible Party *</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Responsible Party *</label>
                   <input
                     type="text"
                     required
                     value={capFormData.responsibleParty}
                     onChange={(e) => setCapFormData({ ...capFormData, responsibleParty: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white"
                   />
                 </div>
                 <div>
-                  <label className="text-slate-400 font-medium block mb-1">Due Date *</label>
+                  <label className="text-muted-foreground font-medium block mb-1">Due Date *</label>
                   <input
                     type="date"
                     required
                     value={capFormData.dueDate}
                     onChange={(e) => setCapFormData({ ...capFormData, dueDate: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white font-medium"
+                    className="w-full px-3 py-2 bg-card border border-border rounded text-white font-medium"
                   />
                 </div>
               </div>
 
-              <div className="flex justify-end gap-2 pt-3 border-t border-slate-800">
+              <div className="flex justify-end gap-2 pt-3 border-t border-border">
                 <Button type="button" variant="ghost" size="sm" onClick={() => setIsCapModalOpen(false)}>Cancel</Button>
                 <Button type="submit" variant="primary" size="sm" disabled={isSubmitting} className="bg-amber-400 text-slate-950 font-bold">
                   {isSubmitting ? 'Saving...' : 'Register CAP'}
@@ -1825,32 +1825,32 @@ export function AdminQualityWorkspace({
       {/* SCHEDULE RE-INSPECTION MODAL */}
       {isReinspectModalOpen && selectedInspection && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <Card className="w-full max-w-md bg-slate-900 border-slate-800 p-6 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+          <Card className="w-full max-w-md bg-card border-border p-6 space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-border">
               <h3 className="font-sans font-bold text-lg text-white">Schedule Re-Inspection</h3>
-              <button onClick={() => setIsReinspectModalOpen(false)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setIsReinspectModalOpen(false)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             <form onSubmit={handleCreateReinspection} className="space-y-3 text-xs">
-              <p className="text-slate-400 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 This will create a linked <strong>REINSPECTION</strong> audit round for {selectedInspection.orderNumber} to verify corrective fixes.
               </p>
 
               <div>
-                <label className="text-slate-400 font-medium block mb-1">Reason / Scope *</label>
+                <label className="text-muted-foreground font-medium block mb-1">Reason / Scope *</label>
                 <textarea
                   required
                   rows={3}
                   placeholder="e.g. 100% sorting completed on washing line. Verifying replacement panels..."
                   value={reinspectReason}
                   onChange={(e) => setReinspectReason(e.target.value)}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-white"
+                  className="w-full px-3 py-2 bg-card border border-border rounded text-white"
                 />
               </div>
 
-              <div className="flex justify-end gap-2 pt-3 border-t border-slate-800">
+              <div className="flex justify-end gap-2 pt-3 border-t border-border">
                 <Button type="button" variant="ghost" size="sm" onClick={() => setIsReinspectModalOpen(false)}>Cancel</Button>
                 <Button type="submit" variant="primary" size="sm" disabled={isSubmitting} className="bg-amber-400 text-slate-950 font-bold">
                   {isSubmitting ? 'Scheduling...' : 'Confirm Re-Inspection'}

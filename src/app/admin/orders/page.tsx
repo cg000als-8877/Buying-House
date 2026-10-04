@@ -127,19 +127,19 @@ export default function AdminOrdersPage() {
   return (
     <div className="max-w-7xl mx-auto space-y-8">
       {/* Page Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-xs font-medium uppercase tracking-widest text-amber-400 font-bold">
               Purchase Order Master
             </span>
             <span className="text-slate-600">/</span>
-            <span className="text-xs font-medium text-slate-400">{orders.length} Total Registered POs</span>
+            <span className="text-xs font-medium text-muted-foreground">{orders.length} Total Registered POs</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
             Manufacturing Orders Directory
           </h1>
-          <p className="text-sm text-slate-400 mt-1">
+          <p className="text-sm text-muted-foreground mt-1">
             Central operational registry for all purchase orders, factory allocations, and critical milestone tracking.
           </p>
         </div>
@@ -153,16 +153,16 @@ export default function AdminOrdersPage() {
       </div>
 
       {/* Filter and Search Bar */}
-      <Card className="p-4 sm:p-5 bg-slate-900/80 border-slate-800 space-y-3">
+      <Card className="p-4 sm:p-5 bg-card border-border space-y-3">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           <div className="relative lg:col-span-2">
-            <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search by PO #, style #, buyer, factory, merchandiser..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 focus:outline-none focus:border-amber-400 text-white placeholder:text-slate-600"
+              className="w-full pl-9 pr-4 py-2 text-xs bg-card rounded-lg border border-border focus:outline-none focus:border-amber-400 text-white placeholder:text-slate-600"
             />
           </div>
 
@@ -170,7 +170,7 @@ export default function AdminOrdersPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 focus:outline-none focus:border-amber-400 text-white"
+              className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border focus:outline-none focus:border-amber-400 text-white"
             >
               {STATUS_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
@@ -184,7 +184,7 @@ export default function AdminOrdersPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 focus:outline-none focus:border-amber-400 text-white"
+              className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border focus:outline-none focus:border-amber-400 text-white"
             >
               {SORT_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
@@ -196,8 +196,8 @@ export default function AdminOrdersPage() {
         </div>
 
         {hasActiveFilters && (
-          <div className="flex items-center justify-between pt-2 border-t border-slate-800/80 text-xs">
-            <span className="text-slate-400">
+          <div className="flex items-center justify-between pt-2 border-t border-border text-xs">
+            <span className="text-muted-foreground">
               Showing <strong className="text-white font-medium">{filteredOrders.length}</strong> of {orders.length} orders
             </span>
             <button
@@ -229,10 +229,10 @@ export default function AdminOrdersPage() {
           />
         </Card>
       ) : (
-        <Card className="overflow-hidden border-slate-800 bg-slate-900/80">
+        <Card className="overflow-hidden border-border bg-card">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs text-slate-300">
-              <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase font-medium text-slate-400">
+            <table className="w-full text-left text-xs text-muted-foreground">
+              <thead className="bg-card border-b border-border text-[11px] uppercase font-medium text-muted-foreground">
                 <tr>
                   <th className="py-3.5 px-4">PO &amp; Style</th>
                   <th className="py-3.5 px-4">Product Name</th>
@@ -249,24 +249,24 @@ export default function AdminOrdersPage() {
                   <tr key={order.id} className="hover:bg-slate-800/40 transition-colors">
                     <td className="py-3.5 px-4">
                       <span className="font-bold text-white block">{order.orderNumber}</span>
-                      <span className="text-[11px] text-slate-400 font-sans">{order.styleNumber}</span>
+                      <span className="text-[11px] text-muted-foreground font-sans">{order.styleNumber}</span>
                     </td>
-                    <td className="py-3.5 px-4 text-slate-200 font-sans truncate max-w-[180px]">
+                    <td className="py-3.5 px-4 text-foreground font-sans truncate max-w-[180px]">
                       {order.productName}
                     </td>
-                    <td className="py-3.5 px-4 text-slate-300">
+                    <td className="py-3.5 px-4 text-muted-foreground">
                       {order.buyerOrganizationId}
                     </td>
-                    <td className="py-3.5 px-4 text-slate-400">
+                    <td className="py-3.5 px-4 text-muted-foreground">
                       {order.factoryId}
                     </td>
-                    <td className="py-3.5 px-4 text-slate-200 font-bold">
+                    <td className="py-3.5 px-4 text-foreground font-bold">
                       {order.quantity.toLocaleString()} pcs
                     </td>
                     <td className="py-3.5 px-4 font-sans">
                       <OrderStatusBadge status={order.currentStatus} size="sm" />
                     </td>
-                    <td className="py-3.5 px-4 text-slate-300">
+                    <td className="py-3.5 px-4 text-muted-foreground">
                       {order.exFactoryDate}
                     </td>
                     <td className="py-3.5 px-4 text-right font-sans">
@@ -274,7 +274,7 @@ export default function AdminOrdersPage() {
                         <Button
                           variant="outline"
                           size="sm"
-                          className="h-7 text-xs text-amber-400 border-slate-700 hover:bg-slate-800"
+                          className="h-7 text-xs text-amber-400 border-border hover:bg-slate-800"
                         >
                           <span>Workspace</span>
                           <ArrowRight className="w-3 h-3 ml-1" />

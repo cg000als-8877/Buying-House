@@ -20,7 +20,7 @@ export interface DocumentListProps {
 export function DocumentList({ documents }: DocumentListProps) {
   return (
     <Card className="p-6 space-y-4">
-      <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+      <div className="flex items-center justify-between pb-3 border-b border-border">
         <div>
           <span className="text-xs font-medium text-emerald-400 font-bold uppercase tracking-wider">
             Verified Vault
@@ -41,7 +41,7 @@ export function DocumentList({ documents }: DocumentListProps) {
             className="py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group hover:bg-slate-800/30 px-2 rounded-xl transition-colors"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center text-amber-400 shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-card border border-border flex items-center justify-center text-amber-400 shrink-0">
                 <FileText className="w-5 h-5" />
               </div>
               <div>
@@ -55,7 +55,7 @@ export function DocumentList({ documents }: DocumentListProps) {
                     </span>
                   )}
                 </div>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-muted-foreground">
                   {doc.type} | {doc.fileSize} | Uploaded {doc.uploadDate}
                 </p>
               </div>

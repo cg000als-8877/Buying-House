@@ -214,19 +214,19 @@ export default function AdminUsersPage() {
   return (
     <div className="max-w-7xl mx-auto space-y-8">
       {/* Page Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-xs font-medium uppercase tracking-widest text-amber-400 font-bold">
               Access Control &amp; RBAC
             </span>
             <span className="text-slate-600">/</span>
-            <span className="text-xs font-medium text-slate-400">{users.length} Users</span>
+            <span className="text-xs font-medium text-muted-foreground">{users.length} Users</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
             User Directory &amp; Role Management
           </h1>
-          <p className="text-sm text-slate-400 mt-1">
+          <p className="text-sm text-muted-foreground mt-1">
             Staff clearance assignments, buyer organization linking, and administrative account controls.
           </p>
         </div>
@@ -253,16 +253,16 @@ export default function AdminUsersPage() {
       )}
 
       {/* Filter and Search Bar */}
-      <Card className="p-4 sm:p-5 bg-slate-900/80 border-slate-800 space-y-3">
+      <Card className="p-4 sm:p-5 bg-card border-border space-y-3">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div className="relative">
-            <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search by name, email, or org..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 focus:outline-none focus:border-amber-400 text-white placeholder:text-slate-600"
+              className="w-full pl-9 pr-4 py-2 text-xs bg-card rounded-lg border border-border focus:outline-none focus:border-amber-400 text-white placeholder:text-slate-600"
             />
           </div>
 
@@ -270,7 +270,7 @@ export default function AdminUsersPage() {
             <select
               value={roleFilter}
               onChange={(e) => setRoleFilter(e.target.value)}
-              className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 focus:outline-none focus:border-amber-400 text-white"
+              className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border focus:outline-none focus:border-amber-400 text-white"
             >
               <option value="ALL">All System Roles</option>
               {SYSTEM_ROLES.map((r) => (
@@ -285,7 +285,7 @@ export default function AdminUsersPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 focus:outline-none focus:border-amber-400 text-white"
+              className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border focus:outline-none focus:border-amber-400 text-white"
             >
               <option value="ALL">All Account Statuses</option>
               <option value="active">Active Accounts</option>
@@ -297,8 +297,8 @@ export default function AdminUsersPage() {
         </div>
 
         {(searchQuery || roleFilter !== 'ALL' || statusFilter !== 'ALL') && (
-          <div className="flex items-center justify-between pt-2 border-t border-slate-800/80 text-xs">
-            <span className="text-slate-400">
+          <div className="flex items-center justify-between pt-2 border-t border-border text-xs">
+            <span className="text-muted-foreground">
               Showing <strong className="text-white font-medium">{filteredUsers.length}</strong> of {users.length} users
             </span>
             <button
@@ -334,10 +334,10 @@ export default function AdminUsersPage() {
           />
         </Card>
       ) : (
-        <Card className="overflow-hidden border-slate-800 bg-slate-900/80">
+        <Card className="overflow-hidden border-border bg-card">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs text-slate-300">
-              <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase font-medium text-slate-400">
+            <table className="w-full text-left text-xs text-muted-foreground">
+              <thead className="bg-card border-b border-border text-[11px] uppercase font-medium text-muted-foreground">
                 <tr>
                   <th className="py-3.5 px-4">User Details</th>
                   <th className="py-3.5 px-4">System Role</th>
@@ -355,7 +355,7 @@ export default function AdminUsersPage() {
                     <tr key={u.uid} className="hover:bg-slate-800/40 transition-colors">
                       <td className="py-3.5 px-4">
                         <div className="flex items-center gap-2.5">
-                          <div className="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-amber-400 text-xs">
+                          <div className="w-7 h-7 rounded-full bg-slate-800 border border-border flex items-center justify-center font-bold text-amber-400 text-xs">
                             {u.displayName ? u.displayName.charAt(0).toUpperCase() : 'U'}
                           </div>
                           <div>
@@ -367,7 +367,7 @@ export default function AdminUsersPage() {
                                 </span>
                               )}
                             </span>
-                            <span className="text-[11px] font-medium text-slate-400">{u.email}</span>
+                            <span className="text-[11px] font-medium text-muted-foreground">{u.email}</span>
                           </div>
                         </div>
                       </td>
@@ -382,7 +382,7 @@ export default function AdminUsersPage() {
                           <select
                             value={u.role}
                             onChange={(e) => handleRoleUpdate(u.uid, e.target.value as UserRole)}
-                            className="px-2 py-1 text-xs bg-slate-950 rounded border border-slate-700 text-white font-medium focus:outline-none focus:border-amber-400"
+                            className="px-2 py-1 text-xs bg-card rounded border border-border text-white font-medium focus:outline-none focus:border-amber-400"
                           >
                             {SYSTEM_ROLES.map((r) => (
                               <option key={r} value={r}>
@@ -403,7 +403,7 @@ export default function AdminUsersPage() {
                           <select
                             value={u.status}
                             onChange={(e) => handleStatusUpdate(u.uid, e.target.value as UserStatus)}
-                            className="px-2 py-1 text-xs bg-slate-950 rounded border border-slate-700 text-white font-medium focus:outline-none focus:border-amber-400"
+                            className="px-2 py-1 text-xs bg-card rounded border border-border text-white font-medium focus:outline-none focus:border-amber-400"
                           >
                             <option value="active">Active</option>
                             <option value="invited">Invited</option>
@@ -419,7 +419,7 @@ export default function AdminUsersPage() {
                           <select
                             value={u.buyerOrganizationId || ''}
                             onChange={(e) => handleOrgAssignment(u.uid, e.target.value)}
-                            className="px-2 py-1 text-xs bg-slate-950 rounded border border-slate-700 text-amber-400 font-medium focus:outline-none focus:border-amber-400 max-w-[150px]"
+                            className="px-2 py-1 text-xs bg-card rounded border border-border text-amber-400 font-medium focus:outline-none focus:border-amber-400 max-w-[150px]"
                           >
                             <option value="">Unassigned</option>
                             {buyerOrgs.map((org) => (
@@ -429,13 +429,13 @@ export default function AdminUsersPage() {
                             ))}
                           </select>
                         ) : (
-                          <span className="font-medium text-slate-500 text-[11px]">
+                          <span className="font-medium text-muted-foreground text-[11px]">
                             Internal Staff
                           </span>
                         )}
                       </td>
 
-                      <td className="py-3.5 px-4 text-slate-400 font-medium text-[11px]">
+                      <td className="py-3.5 px-4 text-muted-foreground font-medium text-[11px]">
                         {u.lastLoginAt ? (
                           new Date(u.lastLoginAt).toLocaleDateString()
                         ) : (
@@ -449,7 +449,7 @@ export default function AdminUsersPage() {
                         ) : (
                           <button
                             onClick={() => handleStatusUpdate(u.uid, u.status === 'active' ? 'suspended' : 'active')}
-                            className="text-[11px] text-slate-400 hover:text-amber-400 underline font-medium"
+                            className="text-[11px] text-muted-foreground hover:text-amber-400 underline font-medium"
                           >
                             {u.status === 'active' ? 'Suspend Account' : 'Activate Account'}
                           </button>
@@ -467,8 +467,8 @@ export default function AdminUsersPage() {
       {/* Invite / Provision User Modal */}
       {isInviteModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl space-y-4">
-            <div className="flex items-center justify-between p-6 pb-4 border-b border-slate-800">
+          <div className="bg-card border border-border rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl space-y-4">
+            <div className="flex items-center justify-between p-6 pb-4 border-b border-border">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-lg bg-amber-400/20 text-amber-400 flex items-center justify-center">
                   <UserPlus className="w-4 h-4" />
@@ -477,12 +477,12 @@ export default function AdminUsersPage() {
                   <h3 className="font-sans font-bold text-base text-white">
                     Provision / Invite User Account
                   </h3>
-                  <p className="text-xs text-slate-400">Assign role clearance and tenant organization</p>
+                  <p className="text-xs text-muted-foreground">Assign role clearance and tenant organization</p>
                 </div>
               </div>
               <button
                 onClick={() => setIsInviteModalOpen(false)}
-                className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800"
+                className="text-muted-foreground hover:text-white p-1 rounded-lg hover:bg-slate-800"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -496,7 +496,7 @@ export default function AdminUsersPage() {
               )}
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Full Name <span className="text-rose-400">*</span>
                 </label>
                 <input
@@ -505,12 +505,12 @@ export default function AdminUsersPage() {
                   placeholder="e.g. Nusrat Jahan"
                   value={inviteData.displayName}
                   onChange={(e) => setInviteData({ ...inviteData, displayName: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Corporate / Buyer Email Address <span className="text-rose-400">*</span>
                 </label>
                 <input
@@ -519,19 +519,19 @@ export default function AdminUsersPage() {
                   placeholder="user@example.com"
                   value={inviteData.email}
                   onChange={(e) => setInviteData({ ...inviteData, email: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     System Role <span className="text-rose-400">*</span>
                   </label>
                   <select
                     value={inviteData.role}
                     onChange={(e) => setInviteData({ ...inviteData, role: e.target.value as UserRole })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                   >
                     {SYSTEM_ROLES.map((r) => (
                       <option key={r} value={r}>
@@ -543,13 +543,13 @@ export default function AdminUsersPage() {
 
                 {inviteData.role === 'Buyer' ? (
                   <div className="space-y-1">
-                    <label className="text-xs font-semibold text-slate-300">
+                    <label className="text-xs font-semibold text-muted-foreground">
                       Buyer Organization <span className="text-rose-400">*</span>
                     </label>
                     <select
                       value={inviteData.buyerOrganizationId}
                       onChange={(e) => setInviteData({ ...inviteData, buyerOrganizationId: e.target.value })}
-                      className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-amber-400 focus:outline-none focus:border-amber-400 font-medium"
+                      className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-amber-400 focus:outline-none focus:border-amber-400 font-medium"
                     >
                       <option value="">Select Tenant Organization</option>
                       {buyerOrgs.map((org) => (
@@ -561,17 +561,17 @@ export default function AdminUsersPage() {
                   </div>
                 ) : (
                   <div className="space-y-1">
-                    <label className="text-xs font-semibold text-slate-400">
+                    <label className="text-xs font-semibold text-muted-foreground">
                       Organization Scope
                     </label>
-                    <div className="px-3 py-2 text-xs bg-slate-950/60 rounded-lg border border-slate-800/80 text-slate-500 font-medium">
+                    <div className="px-3 py-2 text-xs bg-card rounded-lg border border-border text-muted-foreground font-medium">
                       Internal HQ Hub
                     </div>
                   </div>
                 )}
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-800">
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-border">
                 <Button
                   type="button"
                   variant="ghost"

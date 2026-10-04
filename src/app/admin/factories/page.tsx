@@ -160,19 +160,19 @@ export default function AdminFactoriesPage() {
   return (
     <div className="max-w-7xl mx-auto space-y-8">
       {/* Page Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-xs font-medium uppercase tracking-widest text-amber-400 font-bold">
               Manufacturing Units
             </span>
             <span className="text-slate-600">/</span>
-            <span className="text-xs font-medium text-slate-400">{factories.length} Registered Units</span>
+            <span className="text-xs font-medium text-muted-foreground">{factories.length} Registered Units</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
             Partner Factories Directory
           </h1>
-          <p className="text-sm text-slate-400 mt-1">
+          <p className="text-sm text-muted-foreground mt-1">
             Manufacturing capacity registry, verified audit status, and technical specialization metrics.
           </p>
         </div>
@@ -189,16 +189,16 @@ export default function AdminFactoriesPage() {
       </div>
 
       {/* Filter and Search Bar */}
-      <Card className="p-4 sm:p-5 bg-slate-900/80 border-slate-800 space-y-3">
+      <Card className="p-4 sm:p-5 bg-card border-border space-y-3">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div className="relative sm:col-span-2">
-            <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search by factory name, division, specialization..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 focus:outline-none focus:border-amber-400 text-white placeholder:text-slate-600"
+              className="w-full pl-9 pr-4 py-2 text-xs bg-card rounded-lg border border-border focus:outline-none focus:border-amber-400 text-white placeholder:text-slate-600"
             />
           </div>
 
@@ -206,7 +206,7 @@ export default function AdminFactoriesPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 focus:outline-none focus:border-amber-400 text-white"
+              className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border focus:outline-none focus:border-amber-400 text-white"
             >
               <option value="ALL">All Audit Statuses</option>
               <option value="audited">Verified Audited Units</option>
@@ -217,8 +217,8 @@ export default function AdminFactoriesPage() {
         </div>
 
         {(searchQuery || statusFilter !== 'ALL') && (
-          <div className="flex items-center justify-between pt-2 border-t border-slate-800/80 text-xs">
-            <span className="text-slate-400">
+          <div className="flex items-center justify-between pt-2 border-t border-border text-xs">
+            <span className="text-muted-foreground">
               Showing <strong className="text-white font-medium">{filteredFactories.length}</strong> of {factories.length} factories
             </span>
             <button
@@ -262,7 +262,7 @@ export default function AdminFactoriesPage() {
             return (
               <Card
                 key={factory.id}
-                className="p-6 bg-slate-900/80 border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between space-y-4"
+                className="p-6 bg-card border-border hover:border-border transition-all flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-2">
@@ -281,8 +281,8 @@ export default function AdminFactoriesPage() {
                     </Badge>
                   </div>
 
-                  <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                    <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <MapPin className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
                     <span className="truncate">{factory.location}</span>
                   </div>
 
@@ -291,37 +291,37 @@ export default function AdminFactoriesPage() {
                     {factory.specializations.slice(0, 3).map((spec) => (
                       <span
                         key={spec}
-                        className="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-950 text-slate-300 border border-slate-800"
+                        className="text-[10px] font-medium px-2 py-0.5 rounded bg-card text-muted-foreground border border-border"
                       >
                         {spec}
                       </span>
                     ))}
                     {factory.specializations.length > 3 && (
-                      <span className="text-[10px] font-medium text-slate-500 px-1 py-0.5">
+                      <span className="text-[10px] font-medium text-muted-foreground px-1 py-0.5">
                         +{factory.specializations.length - 3} more
                       </span>
                     )}
                   </div>
 
                   {/* Metrics */}
-                  <div className="pt-2 border-t border-slate-800/80 grid grid-cols-2 gap-2 text-xs">
+                  <div className="pt-2 border-t border-border grid grid-cols-2 gap-2 text-xs">
                     <div>
-                      <span className="text-[10px] text-slate-500 uppercase block font-medium">Monthly Capacity</span>
+                      <span className="text-[10px] text-muted-foreground uppercase block font-medium">Monthly Capacity</span>
                       <strong className="text-white font-medium text-[11px]">{factory.capacity}</strong>
                     </div>
                     <div>
-                      <span className="text-[10px] text-slate-500 uppercase block font-medium">Active POs</span>
+                      <span className="text-[10px] text-muted-foreground uppercase block font-medium">Active POs</span>
                       <strong className="text-amber-400 font-medium text-[11px]">{activeCount} Orders</strong>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
-                  <span className="text-[11px] font-medium text-slate-500">
+                <div className="pt-3 border-t border-border flex items-center justify-between">
+                  <span className="text-[11px] font-medium text-muted-foreground">
                     {factory.certificationIds.length} Certifications
                   </span>
                   <Link href={`/admin/factories/${factory.id}`}>
-                    <Button variant="outline" size="sm" className="h-7 text-xs text-amber-400 border-slate-700">
+                    <Button variant="outline" size="sm" className="h-7 text-xs text-amber-400 border-border">
                       <span>View Profile</span>
                       <ArrowRight className="w-3 h-3 ml-1" />
                     </Button>
@@ -336,8 +336,8 @@ export default function AdminFactoriesPage() {
       {/* Register Factory Modal */}
       {isCreateModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl space-y-4">
-            <div className="flex items-center justify-between p-6 pb-4 border-b border-slate-800">
+          <div className="bg-card border border-border rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl space-y-4">
+            <div className="flex items-center justify-between p-6 pb-4 border-b border-border">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-lg bg-amber-400/20 text-amber-400 flex items-center justify-center">
                   <Factory className="w-4 h-4" />
@@ -346,12 +346,12 @@ export default function AdminFactoriesPage() {
                   <h3 className="font-sans font-bold text-base text-white">
                     Register Manufacturing Unit
                   </h3>
-                  <p className="text-xs text-slate-400">Technical capacity &amp; compliance profile</p>
+                  <p className="text-xs text-muted-foreground">Technical capacity &amp; compliance profile</p>
                 </div>
               </div>
               <button
                 onClick={() => setIsCreateModalOpen(false)}
-                className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800"
+                className="text-muted-foreground hover:text-white p-1 rounded-lg hover:bg-slate-800"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -365,7 +365,7 @@ export default function AdminFactoriesPage() {
               )}
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Factory Name <span className="text-rose-400">*</span>
                 </label>
                 <input
@@ -374,12 +374,12 @@ export default function AdminFactoriesPage() {
                   placeholder="e.g. Apex Composite Knitwear Ltd."
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Location (Division / Industrial Hub) <span className="text-rose-400">*</span>
                 </label>
                 <input
@@ -388,13 +388,13 @@ export default function AdminFactoriesPage() {
                   placeholder="e.g. Gazipur, Dhaka Division, Bangladesh"
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Monthly Capacity
                   </label>
                   <input
@@ -402,18 +402,18 @@ export default function AdminFactoriesPage() {
                     placeholder="e.g. 1,000,000 pcs / month"
                     value={formData.capacity}
                     onChange={(e) => setFormData({ ...formData, capacity: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Audit Status
                   </label>
                   <select
                     value={formData.status}
                     onChange={(e) => setFormData({ ...formData, status: e.target.value as 'audited' | 'active' | 'inactive' })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                   >
                     <option value="audited">Verified Audited</option>
                     <option value="active">Active Operations</option>
@@ -423,7 +423,7 @@ export default function AdminFactoriesPage() {
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Specializations (comma separated)
                 </label>
                 <input
@@ -431,12 +431,12 @@ export default function AdminFactoriesPage() {
                   placeholder="e.g. Circular Knitwear, Single Jersey, Heavy Fleece"
                   value={formData.specializations}
                   onChange={(e) => setFormData({ ...formData, specializations: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Certifications (comma separated)
                 </label>
                 <input
@@ -444,12 +444,12 @@ export default function AdminFactoriesPage() {
                   placeholder="e.g. OEKO-TEX-100, WRAP-GOLD, SEDEX-SMETA"
                   value={formData.certificationIds}
                   onChange={(e) => setFormData({ ...formData, certificationIds: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Internal Operational Notes
                 </label>
                 <textarea
@@ -457,11 +457,11 @@ export default function AdminFactoriesPage() {
                   placeholder="Equipment specs, line configurations, audit remarks..."
                   value={formData.internalNotes}
                   onChange={(e) => setFormData({ ...formData, internalNotes: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 resize-none"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 resize-none"
                 />
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-800">
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-border">
                 <Button
                   type="button"
                   variant="ghost"

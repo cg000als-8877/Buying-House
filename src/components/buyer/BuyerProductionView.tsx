@@ -355,7 +355,7 @@ export function BuyerProductionView({ order, buyerOrgId }: BuyerProductionViewPr
                 key={photo.id}
                 className="group relative rounded-xl overflow-hidden bg-muted/40 border border-border/80 space-y-2"
               >
-                <div className="aspect-video w-full overflow-hidden bg-slate-900">
+                <div className="aspect-video w-full overflow-hidden bg-card">
                   <img
                     src={photo.url || photo.storagePath}
                     alt={photo.caption || 'Production photo'}

@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ShieldCheck, ArrowRight } from 'lucide-react';
 import { MAIN_NAV_ITEMS } from '@/data/public/navigation';
 import { Button } from '@/components/ui/Button';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { drawerSlideRight, modalBackdrop } from '@/lib/animations/variants';
 
 export interface MobileNavigationProps {
@@ -102,6 +103,10 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
 
             {/* Bottom Actions inside drawer */}
             <div className="pt-6 border-t border-border/80 space-y-3">
+              <div className="flex items-center justify-between pb-1">
+                <span className="text-xs text-muted-foreground font-medium">Display Theme</span>
+                <ThemeToggle size="sm" showLabel />
+              </div>
               <Link href="/buyer/login" onClick={onClose} className="block w-full">
                 <Button variant="outline" size="sm" className="w-full justify-between">
                   <span className="flex items-center gap-2">

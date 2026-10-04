@@ -145,16 +145,16 @@ describe('Production Calculation Engine — Step 9 Verification', () => {
 
   describe('6. determineStageStatus', () => {
     it('returns not_started when cumulative is 0', () => {
-      expect(determineStageStatus(1000, 0, '2026-10-01')).toBe('not_started');
+      expect(determineStageStatus(1000, 0, '2099-10-01')).toBe('not_started');
     });
 
     it('returns in_progress when partially produced', () => {
-      expect(determineStageStatus(1000, 450, '2026-10-01')).toBe('in_progress');
+      expect(determineStageStatus(1000, 450, '2099-10-01')).toBe('in_progress');
     });
 
     it('returns completed when target is met or exceeded', () => {
-      expect(determineStageStatus(1000, 1000, '2026-10-01')).toBe('completed');
-      expect(determineStageStatus(1000, 1050, '2026-10-01')).toBe('completed');
+      expect(determineStageStatus(1000, 1000, '2099-10-01')).toBe('completed');
+      expect(determineStageStatus(1000, 1050, '2099-10-01')).toBe('completed');
     });
   });
 

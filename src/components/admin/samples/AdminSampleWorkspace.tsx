@@ -327,7 +327,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
       )}
 
       {/* Header & Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border">
         <div>
           <span className="text-xs font-medium uppercase text-amber-400 font-bold">
             Sampling &amp; Prototyping
@@ -353,13 +353,13 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
       {/* Filter & Search Bar */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <div className="relative sm:col-span-2">
-          <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+          <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
           <input
             type="text"
             placeholder="Search sample type, courier tracking #, or remarks..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+            className="w-full pl-9 pr-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
           />
         </div>
 
@@ -367,7 +367,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
           <select
             value={selectedStatusFilter}
             onChange={(e) => setSelectedStatusFilter(e.target.value)}
-            className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+            className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
           >
             <option value="ALL">All Sample States</option>
             <option value="submitted">Submitted (Under Buyer Review)</option>
@@ -398,7 +398,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
             return (
               <Card
                 key={sample.id}
-                className={`p-5 bg-slate-900/90 border-slate-800 space-y-4 hover:border-slate-700 transition-all flex flex-col justify-between ${
+                className={`p-5 bg-card border-border space-y-4 hover:border-border transition-all flex flex-col justify-between ${
                   isApproved
                     ? 'border-emerald-500/30'
                     : isChangesRequested
@@ -410,7 +410,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
               >
                 <div className="space-y-3">
                   {/* Card Top: Type, Version & Status */}
-                  <div className="flex items-start justify-between gap-2 pb-2 border-b border-slate-800">
+                  <div className="flex items-start justify-between gap-2 pb-2 border-b border-border">
                     <div>
                       <span className="text-[10px] font-medium text-amber-400 uppercase font-bold tracking-wider">
                         Revision v{sample.revisionNumber}
@@ -442,7 +442,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                   </div>
 
                   {/* Dates & Logistics */}
-                  <div className="space-y-1.5 text-xs font-medium text-slate-400">
+                  <div className="space-y-1.5 text-xs font-medium text-muted-foreground">
                     {sample.targetDate && (
                       <div className="flex justify-between">
                         <span>Target Date:</span>
@@ -456,7 +456,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                       </div>
                     )}
                     {sample.trackingNumber && (
-                      <div className="flex justify-between items-center pt-1 border-t border-slate-800/60">
+                      <div className="flex justify-between items-center pt-1 border-t border-border">
                         <span className="flex items-center gap-1 text-[11px] text-amber-400">
                           <Truck className="w-3.5 h-3.5" />
                           <span>{sample.courierName || 'Courier'}:</span>
@@ -470,8 +470,8 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
 
                   {/* Remarks & Buyer Feedback */}
                   {sample.buyerRemarks && (
-                    <div className="p-2.5 rounded-lg bg-slate-950/60 border border-slate-800 text-xs text-slate-300">
-                      <span className="text-[10px] font-medium uppercase text-slate-500 font-bold block">
+                    <div className="p-2.5 rounded-lg bg-card border border-border text-xs text-muted-foreground">
+                      <span className="text-[10px] font-medium uppercase text-muted-foreground font-bold block">
                         Buyer-Facing Spec:
                       </span>
                       <p className="line-clamp-2 mt-0.5">{sample.buyerRemarks}</p>
@@ -507,7 +507,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                 </div>
 
                 {/* Card Bottom: Actions */}
-                <div className="pt-3 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2">
+                <div className="pt-3 border-t border-border flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => setActiveSampleDetail(sample)}
@@ -517,7 +517,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                     {(sample.attachments?.length || 0) > 0 && (
-                      <span className="text-[11px] font-medium text-slate-500 flex items-center gap-1">
+                      <span className="text-[11px] font-medium text-muted-foreground flex items-center gap-1">
                         <Paperclip className="w-3 h-3" />
                         <span>{sample.attachments?.length}</span>
                       </span>
@@ -570,16 +570,16 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
 
       {/* Create Sample Modal */}
       {isCreateModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <Card className="max-w-lg w-full p-6 bg-slate-900 border-slate-800 space-y-6 shadow-2xl">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-card backdrop-blur-sm">
+          <Card className="max-w-lg w-full p-6 bg-card border-border space-y-6 shadow-2xl">
+            <div className="flex items-center justify-between pb-3 border-b border-border">
               <div>
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   New Garment Prototyping
                 </span>
                 <h3 className="font-sans font-bold text-lg text-white">Create Sample Request</h3>
               </div>
-              <button onClick={() => setIsCreateModalOpen(false)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setIsCreateModalOpen(false)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -593,7 +593,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
             <form onSubmit={handleCreateSample} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Sample Type <span className="text-rose-400">*</span>
                   </label>
                   <select
@@ -601,7 +601,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                     onChange={(e) =>
                       setCreateFormData({ ...createFormData, sampleType: e.target.value as SampleType })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                   >
                     {SAMPLE_TYPES.map((type) => (
                       <option key={type} value={type}>
@@ -612,30 +612,30 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">Target Delivery Date</label>
+                  <label className="text-xs font-semibold text-muted-foreground">Target Delivery Date</label>
                   <input
                     type="date"
                     value={createFormData.targetDate}
                     onChange={(e) => setCreateFormData({ ...createFormData, targetDate: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">Courier / Carrier</label>
+                  <label className="text-xs font-semibold text-muted-foreground">Courier / Carrier</label>
                   <input
                     type="text"
                     placeholder="e.g. DHL Express, FedEx"
                     value={createFormData.courierName}
                     onChange={(e) => setCreateFormData({ ...createFormData, courierName: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">Airway Bill / Tracking #</label>
+                  <label className="text-xs font-semibold text-muted-foreground">Airway Bill / Tracking #</label>
                   <input
                     type="text"
                     placeholder="e.g. DHL-9981-2244"
@@ -643,13 +643,13 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                     onChange={(e) =>
                       setCreateFormData({ ...createFormData, trackingNumber: e.target.value })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Buyer-Facing Description &amp; Technical Notes
                 </label>
                 <textarea
@@ -657,12 +657,12 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                   placeholder="e.g. 1st Fit sample in base size M. Fabric composition 100% Cotton Single Jersey 180 GSM."
                   value={createFormData.buyerRemarks}
                   onChange={(e) => setCreateFormData({ ...createFormData, buyerRemarks: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 resize-none"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 resize-none"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Internal Factory / Merchandiser Notes (Confidential)
                 </label>
                 <textarea
@@ -672,11 +672,11 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                   onChange={(e) =>
                     setCreateFormData({ ...createFormData, internalRemarks: e.target.value })
                   }
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 resize-none"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 resize-none"
                 />
               </div>
 
-              <div className="flex justify-end gap-2 pt-4 border-t border-slate-800">
+              <div className="flex justify-end gap-2 pt-4 border-t border-border">
                 <Button type="button" variant="ghost" size="sm" onClick={() => setIsCreateModalOpen(false)}>
                   Cancel
                 </Button>
@@ -691,35 +691,35 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
 
       {/* Submit for Review Modal */}
       {submittingSample && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4 shadow-2xl">
-            <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-card backdrop-blur-sm">
+          <Card className="max-w-md w-full p-6 bg-card border-border space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between pb-2 border-b border-border">
               <h3 className="font-sans font-bold text-base text-white">
                 Submit {submittingSample.sampleType} (v{submittingSample.revisionNumber})
               </h3>
-              <button onClick={() => setSubmittingSample(null)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setSubmittingSample(null)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-muted-foreground">
               Provide physical dispatch tracking information so the buyer can track garment shipment for fitting.
             </p>
 
             <form onSubmit={handleSubmitForReview} className="space-y-3">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">Courier Provider</label>
+                <label className="text-xs font-semibold text-muted-foreground">Courier Provider</label>
                 <input
                   type="text"
                   value={submitCourierData.courierName}
                   onChange={(e) =>
                     setSubmitCourierData({ ...submitCourierData, courierName: e.target.value })
                   }
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">Airway Bill / Tracking Number</label>
+                <label className="text-xs font-semibold text-muted-foreground">Airway Bill / Tracking Number</label>
                 <input
                   type="text"
                   placeholder="e.g. DHL-8890-4122-BD"
@@ -727,11 +727,11 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                   onChange={(e) =>
                     setSubmitCourierData({ ...submitCourierData, trackingNumber: e.target.value })
                   }
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
 
-              <div className="flex justify-end gap-2 pt-3 border-t border-slate-800">
+              <div className="flex justify-end gap-2 pt-3 border-t border-border">
                 <Button type="button" variant="ghost" size="sm" onClick={() => setSubmittingSample(null)}>
                   Cancel
                 </Button>
@@ -746,9 +746,9 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
 
       {/* Create Revision Modal */}
       {revisingSample && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4 shadow-2xl">
-            <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-card backdrop-blur-sm">
+          <Card className="max-w-md w-full p-6 bg-card border-border space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between pb-2 border-b border-border">
               <div>
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   Start Next Round
@@ -757,7 +757,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                   Initiate Revision v{revisingSample.revisionNumber + 1} for {revisingSample.sampleType}
                 </h3>
               </div>
-              <button onClick={() => setRevisingSample(null)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setRevisingSample(null)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -770,7 +770,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
 
             <form onSubmit={handleCreateRevision} className="space-y-3">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Revision Notes &amp; Action Plan <span className="text-rose-400">*</span>
                 </label>
                 <textarea
@@ -778,21 +778,21 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                   placeholder="e.g. Adjusting chest width by +1.5cm and changing collar rib tension as requested by buyer."
                   value={revisionData.revisionNotes}
                   onChange={(e) => setRevisionData({ ...revisionData, revisionNotes: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 resize-none"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 resize-none"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">Target Completion Date</label>
+                <label className="text-xs font-semibold text-muted-foreground">Target Completion Date</label>
                 <input
                   type="date"
                   value={revisionData.targetDate}
                   onChange={(e) => setRevisionData({ ...revisionData, targetDate: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
 
-              <div className="flex justify-end gap-2 pt-3 border-t border-slate-800">
+              <div className="flex justify-end gap-2 pt-3 border-t border-border">
                 <Button type="button" variant="ghost" size="sm" onClick={() => setRevisingSample(null)}>
                   Cancel
                 </Button>
@@ -807,9 +807,9 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
 
       {/* Comprehensive Sample Detail Drawer / Modal */}
       {activeSampleDetail && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <Card className="max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 bg-slate-900 border-slate-800 space-y-6 shadow-2xl">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-card backdrop-blur-sm">
+          <Card className="max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 bg-card border-border space-y-6 shadow-2xl">
+            <div className="flex items-center justify-between pb-3 border-b border-border">
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-medium uppercase text-amber-400 font-bold">
@@ -838,7 +838,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
               </div>
               <button
                 onClick={() => setActiveSampleDetail(null)}
-                className="text-slate-400 hover:text-white"
+                className="text-muted-foreground hover:text-white"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -846,22 +846,22 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
 
             {/* Revision Timeline & History */}
             <div className="space-y-3">
-              <h4 className="text-xs font-medium uppercase text-slate-400 font-bold">
+              <h4 className="text-xs font-medium uppercase text-muted-foreground font-bold">
                 Revision Decision History
               </h4>
               <div className="space-y-2">
                 {(activeSampleDetail.history || []).map((hist, idx) => (
                   <div
                     key={hist.id || idx}
-                    className="p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs space-y-1 font-medium"
+                    className="p-3 rounded-lg bg-card border border-border text-xs space-y-1 font-medium"
                   >
                     <div className="flex items-center justify-between">
                       <span className="text-amber-400 font-bold">Revision #{hist.revisionNumber}</span>
-                      <span className="text-slate-500 text-[10px]">
+                      <span className="text-muted-foreground text-[10px]">
                         {hist.decidedAt ? hist.decidedAt.split('T')[0] : hist.submittedAt ? hist.submittedAt.split('T')[0] : hist.createdAt.split('T')[0]}
                       </span>
                     </div>
-                    <div className="text-slate-300 font-sans">
+                    <div className="text-muted-foreground font-sans">
                       {hist.decision ? (
                         <span>
                           Decision: <strong className="uppercase text-white">{hist.decision.replace('_', ' ')}</strong>
@@ -871,7 +871,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                       )}
                     </div>
                     {hist.feedback && (
-                      <p className="text-slate-400 font-sans italic bg-slate-900/60 p-2 rounded mt-1">
+                      <p className="text-muted-foreground font-sans italic bg-card p-2 rounded mt-1">
                         &quot;{hist.feedback}&quot;
                       </p>
                     )}
@@ -881,8 +881,8 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
             </div>
 
             {/* Attachments Section */}
-            <div className="space-y-3 pt-3 border-t border-slate-800">
-              <h4 className="text-xs font-medium uppercase text-slate-400 font-bold">
+            <div className="space-y-3 pt-3 border-t border-border">
+              <h4 className="text-xs font-medium uppercase text-muted-foreground font-bold">
                 Photos &amp; Tech Spec Attachments
               </h4>
 
@@ -890,7 +890,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                 {(activeSampleDetail.attachments || []).map((att) => (
                   <div
                     key={att.id}
-                    className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 space-y-1.5 text-xs"
+                    className="p-2.5 rounded-lg bg-card border border-border space-y-1.5 text-xs"
                   >
                     <div className="flex items-center justify-between text-[10px] font-medium">
                       <Badge
@@ -914,14 +914,14 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                         className="w-full h-24 object-cover rounded"
                       />
                     )}
-                    {att.caption && <p className="text-slate-400 text-[11px] truncate">{att.caption}</p>}
+                    {att.caption && <p className="text-muted-foreground text-[11px] truncate">{att.caption}</p>}
                   </div>
                 ))}
               </div>
 
               {/* Upload Attachment Form */}
-              <form onSubmit={handleAddAttachment} className="p-3.5 rounded-lg bg-slate-950 border border-slate-800 space-y-3">
-                <span className="text-xs font-medium font-bold text-slate-300 block">Add Attachment / Image</span>
+              <form onSubmit={handleAddAttachment} className="p-3.5 rounded-lg bg-card border border-border space-y-3">
+                <span className="text-xs font-medium font-bold text-muted-foreground block">Add Attachment / Image</span>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                   <input
                     type="text"
@@ -930,7 +930,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                     onChange={(e) =>
                       setAttachmentFormData({ ...attachmentFormData, fileName: e.target.value })
                     }
-                    className="px-3 py-1.5 bg-slate-900 rounded border border-slate-700 text-white"
+                    className="px-3 py-1.5 bg-card rounded border border-border text-white"
                   />
                   <input
                     type="url"
@@ -939,7 +939,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                     onChange={(e) =>
                       setAttachmentFormData({ ...attachmentFormData, url: e.target.value })
                     }
-                    className="px-3 py-1.5 bg-slate-900 rounded border border-slate-700 text-white"
+                    className="px-3 py-1.5 bg-card rounded border border-border text-white"
                   />
                   <select
                     value={attachmentFormData.visibility}
@@ -949,7 +949,7 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                         visibility: e.target.value as 'buyer' | 'internal',
                       })
                     }
-                    className="px-3 py-1.5 bg-slate-900 rounded border border-slate-700 text-white font-medium text-xs"
+                    className="px-3 py-1.5 bg-card rounded border border-border text-white font-medium text-xs"
                   >
                     <option value="buyer">Buyer Visible</option>
                     <option value="internal">Internal Only</option>
@@ -964,8 +964,8 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
             </div>
 
             {/* Comments Thread */}
-            <div className="space-y-3 pt-3 border-t border-slate-800">
-              <h4 className="text-xs font-medium uppercase text-slate-400 font-bold">
+            <div className="space-y-3 pt-3 border-t border-border">
+              <h4 className="text-xs font-medium uppercase text-muted-foreground font-bold">
                 Discussion &amp; Operational Messages
               </h4>
 
@@ -976,10 +976,10 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                     className={`p-3 rounded-lg text-xs space-y-1 ${
                       comm.isInternalOnly
                         ? 'bg-amber-950/20 border border-amber-500/20 text-amber-200'
-                        : 'bg-slate-950 border border-slate-800 text-slate-200'
+                        : 'bg-card border border-border text-foreground'
                     }`}
                   >
-                    <div className="flex items-center justify-between text-[10px] font-medium text-slate-400">
+                    <div className="flex items-center justify-between text-[10px] font-medium text-muted-foreground">
                       <span>
                         {comm.authorName} ({comm.authorRole})
                         {comm.isInternalOnly && <span className="text-amber-400 ml-1.5">[INTERNAL]</span>}
@@ -997,14 +997,14 @@ export function AdminSampleWorkspace({ order }: AdminSampleWorkspaceProps) {
                   placeholder="Type a comment or instruction..."
                   value={newCommentText}
                   onChange={(e) => setNewCommentText(e.target.value)}
-                  className="flex-1 px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="flex-1 px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 />
-                <label className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
+                <label className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
                   <input
                     type="checkbox"
                     checked={newCommentInternalOnly}
                     onChange={(e) => setNewCommentInternalOnly(e.target.checked)}
-                    className="rounded bg-slate-900 border-slate-700"
+                    className="rounded bg-card border-border"
                   />
                   <span>Internal</span>
                 </label>

@@ -29,7 +29,7 @@ export default function AdminSettingsPage() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       {/* Page Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-xs font-medium uppercase tracking-widest text-amber-400 font-bold">
@@ -43,7 +43,7 @@ export default function AdminSettingsPage() {
           <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
             Platform Operations &amp; Security Settings
           </h1>
-          <p className="text-sm text-slate-400 mt-1">
+          <p className="text-sm text-muted-foreground mt-1">
             Manage global operational parameters, QA inspection thresholds, and tenant security defaults.
           </p>
         </div>
@@ -69,8 +69,8 @@ export default function AdminSettingsPage() {
       )}
 
       {/* Organization Info */}
-      <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
-        <div className="flex items-center gap-2.5 pb-3 border-b border-slate-800">
+      <Card className="p-6 bg-card border-border space-y-4">
+        <div className="flex items-center gap-2.5 pb-3 border-b border-border">
           <Building2 className="w-5 h-5 text-amber-400" />
           <h2 className="font-sans font-bold text-base text-white">
             Headquarters &amp; Corporate Identity
@@ -79,30 +79,30 @@ export default function AdminSettingsPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
           <div className="space-y-1">
-            <label className="text-slate-400 font-semibold">Buying House Legal Entity</label>
+            <label className="text-muted-foreground font-semibold">Buying House Legal Entity</label>
             <input
               type="text"
               readOnly
               value="Avenel Global Sourcing Ltd."
-              className="w-full px-3 py-2 bg-slate-950 rounded-lg border border-slate-800 text-white font-medium"
+              className="w-full px-3 py-2 bg-card rounded-lg border border-border text-white font-medium"
             />
           </div>
 
           <div className="space-y-1">
-            <label className="text-slate-400 font-semibold">Primary Operations Hub</label>
+            <label className="text-muted-foreground font-semibold">Primary Operations Hub</label>
             <input
               type="text"
               readOnly
               value="Gulshan-2, Dhaka-1212, Bangladesh"
-              className="w-full px-3 py-2 bg-slate-950 rounded-lg border border-slate-800 text-white"
+              className="w-full px-3 py-2 bg-card rounded-lg border border-border text-white"
             />
           </div>
         </div>
       </Card>
 
       {/* Quality Control Parameters */}
-      <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
-        <div className="flex items-center gap-2.5 pb-3 border-b border-slate-800">
+      <Card className="p-6 bg-card border-border space-y-4">
+        <div className="flex items-center gap-2.5 pb-3 border-b border-border">
           <Sliders className="w-5 h-5 text-indigo-400" />
           <h2 className="font-sans font-bold text-base text-white">
             Manufacturing &amp; QA Standard Thresholds
@@ -111,15 +111,15 @@ export default function AdminSettingsPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-medium">
           <div className="space-y-1">
-            <label className="text-slate-400 font-sans font-semibold">Default Sampling Standard</label>
-            <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-white">
+            <label className="text-muted-foreground font-sans font-semibold">Default Sampling Standard</label>
+            <div className="p-2.5 rounded-lg bg-card border border-border text-white">
               ISO 2859-1 (AQL 1.5 Major / 2.5 Minor)
             </div>
           </div>
 
           <div className="space-y-1">
-            <label className="text-slate-400 font-sans font-semibold">Fabric Inspection Protocol</label>
-            <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-white">
+            <label className="text-muted-foreground font-sans font-semibold">Fabric Inspection Protocol</label>
+            <div className="p-2.5 rounded-lg bg-card border border-border text-white">
               ASTM D5430 (4-Point Standard)
             </div>
           </div>
@@ -127,8 +127,8 @@ export default function AdminSettingsPage() {
       </Card>
 
       {/* Security & Access Policies */}
-      <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
-        <div className="flex items-center gap-2.5 pb-3 border-b border-slate-800">
+      <Card className="p-6 bg-card border-border space-y-4">
+        <div className="flex items-center gap-2.5 pb-3 border-b border-border">
           <ShieldCheck className="w-5 h-5 text-emerald-400" />
           <h2 className="font-sans font-bold text-base text-white">
             Security &amp; Tenant Isolation Governance
@@ -136,30 +136,30 @@ export default function AdminSettingsPage() {
         </div>
 
         <div className="space-y-2.5 text-xs">
-          <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-between">
+          <div className="p-3 rounded-lg bg-card border border-border flex items-center justify-between">
             <div>
               <span className="font-semibold text-white block">Multi-Tenant Scoped Firestore Rules</span>
-              <span className="text-[11px] text-slate-400">Enforces belongsToBuyerOrg() across orders and inspection data</span>
+              <span className="text-[11px] text-muted-foreground">Enforces belongsToBuyerOrg() across orders and inspection data</span>
             </div>
             <Badge variant="emerald" size="sm">
               Active Enforced
             </Badge>
           </div>
 
-          <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-between">
+          <div className="p-3 rounded-lg bg-card border border-border flex items-center justify-between">
             <div>
               <span className="font-semibold text-white block">Role-Based Clearance Matrix (7 Roles)</span>
-              <span className="text-[11px] text-slate-400">Strict granular operation mapping via src/lib/auth/permissions.ts</span>
+              <span className="text-[11px] text-muted-foreground">Strict granular operation mapping via src/lib/auth/permissions.ts</span>
             </div>
             <Badge variant="emerald" size="sm">
               Active Enforced
             </Badge>
           </div>
 
-          <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-between">
+          <div className="p-3 rounded-lg bg-card border border-border flex items-center justify-between">
             <div>
               <span className="font-semibold text-white block">Immutable Security Audit Trail</span>
-              <span className="text-[11px] text-slate-400">Append-only event stream stored in Firestore with server timestamps</span>
+              <span className="text-[11px] text-muted-foreground">Append-only event stream stored in Firestore with server timestamps</span>
             </div>
             <Badge variant="emerald" size="sm">
               Active Enforced

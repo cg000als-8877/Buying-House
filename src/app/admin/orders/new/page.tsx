@@ -171,11 +171,11 @@ export default function CreateOrderPage() {
       {/* Navigation Breadcrumb */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 text-xs font-medium">
-          <Link href="/admin/dashboard" className="text-slate-400 hover:text-white">
+          <Link href="/admin/dashboard" className="text-muted-foreground hover:text-white">
             Dashboard
           </Link>
           <span className="text-slate-600">/</span>
-          <Link href="/admin/orders" className="text-slate-400 hover:text-white">
+          <Link href="/admin/orders" className="text-muted-foreground hover:text-white">
             Orders
           </Link>
           <span className="text-slate-600">/</span>
@@ -183,7 +183,7 @@ export default function CreateOrderPage() {
         </div>
 
         <Link href="/admin/orders">
-          <Button variant="ghost" size="sm" className="gap-2 text-xs text-slate-400 hover:text-white">
+          <Button variant="ghost" size="sm" className="gap-2 text-xs text-muted-foreground hover:text-white">
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Cancel</span>
           </Button>
@@ -191,17 +191,17 @@ export default function CreateOrderPage() {
       </div>
 
       {/* Header Banner */}
-      <div className="pb-4 border-b border-slate-800">
+      <div className="pb-4 border-b border-border">
         <h1 className="text-2xl font-sans font-bold text-white">
           Create Purchase Order
         </h1>
-        <p className="text-xs text-slate-400 mt-1">
+        <p className="text-xs text-muted-foreground mt-1">
           Register a purchase order, assign manufacturing line capacity, and schedule production milestones.
         </p>
       </div>
 
       {/* Form Card */}
-      <Card className="p-6 sm:p-8 bg-slate-900/90 border-slate-800">
+      <Card className="p-6 sm:p-8 bg-card border-border">
         <form onSubmit={handleSubmit} className="space-y-6">
           {formErrors.submit && (
             <div className="p-3 rounded-lg bg-rose-950/60 border border-rose-800/80 text-rose-300 text-xs">
@@ -211,19 +211,19 @@ export default function CreateOrderPage() {
 
           {/* Section 1: Order Identification & Client */}
           <div className="space-y-4">
-            <h3 className="text-xs font-medium uppercase tracking-wider text-amber-400 font-bold pb-2 border-b border-slate-800">
+            <h3 className="text-xs font-medium uppercase tracking-wider text-amber-400 font-bold pb-2 border-b border-border">
               1. Order Identification &amp; Tenant Assignment
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Buyer Organization <span className="text-rose-400">*</span>
                 </label>
                 <select
                   value={formData.buyerOrganizationId}
                   onChange={(e) => setFormData({ ...formData, buyerOrganizationId: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 >
                   {buyers.map((b) => (
                     <option key={b.id} value={b.id}>
@@ -237,7 +237,7 @@ export default function CreateOrderPage() {
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   PO Number <span className="text-rose-400">*</span>
                 </label>
                 <input
@@ -246,7 +246,7 @@ export default function CreateOrderPage() {
                   placeholder="PO-2026-XXXX"
                   value={formData.orderNumber}
                   onChange={(e) => setFormData({ ...formData, orderNumber: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
                 {formErrors.orderNumber && (
                   <p className="text-[11px] text-rose-400">{formErrors.orderNumber}</p>
@@ -257,13 +257,13 @@ export default function CreateOrderPage() {
 
           {/* Section 2: Product Specifications */}
           <div className="space-y-4">
-            <h3 className="text-xs font-medium uppercase tracking-wider text-amber-400 font-bold pb-2 border-b border-slate-800">
+            <h3 className="text-xs font-medium uppercase tracking-wider text-amber-400 font-bold pb-2 border-b border-border">
               2. Product &amp; Garment Details
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Style Code / Reference <span className="text-rose-400">*</span>
                 </label>
                 <input
@@ -272,7 +272,7 @@ export default function CreateOrderPage() {
                   placeholder="e.g. STY-KNIT-402"
                   value={formData.styleNumber}
                   onChange={(e) => setFormData({ ...formData, styleNumber: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
                 {formErrors.styleNumber && (
                   <p className="text-[11px] text-rose-400">{formErrors.styleNumber}</p>
@@ -280,13 +280,13 @@ export default function CreateOrderPage() {
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Product Category <span className="text-rose-400">*</span>
                 </label>
                 <select
                   value={formData.category}
                   onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 >
                   {APPAREL_CATEGORIES.map((cat) => (
                     <option key={cat} value={cat}>
@@ -298,7 +298,7 @@ export default function CreateOrderPage() {
             </div>
 
             <div className="space-y-1">
-              <label className="text-xs font-semibold text-slate-300">
+              <label className="text-xs font-semibold text-muted-foreground">
                 Product Name / Description <span className="text-rose-400">*</span>
               </label>
               <input
@@ -307,7 +307,7 @@ export default function CreateOrderPage() {
                 placeholder="e.g. 240 GSM Combed Cotton Heavyweight Crewneck T-Shirt"
                 value={formData.productName}
                 onChange={(e) => setFormData({ ...formData, productName: e.target.value })}
-                className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
               />
               {formErrors.productName && (
                 <p className="text-[11px] text-rose-400">{formErrors.productName}</p>
@@ -316,7 +316,7 @@ export default function CreateOrderPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Total Order Quantity (pcs) <span className="text-rose-400">*</span>
                 </label>
                 <input
@@ -325,7 +325,7 @@ export default function CreateOrderPage() {
                   min={1}
                   value={formData.quantity}
                   onChange={(e) => setFormData({ ...formData, quantity: Number(e.target.value) })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
                 {formErrors.quantity && (
                   <p className="text-[11px] text-rose-400">{formErrors.quantity}</p>
@@ -333,7 +333,7 @@ export default function CreateOrderPage() {
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Target FOB Unit Price (Optional)
                 </label>
                 <input
@@ -342,18 +342,18 @@ export default function CreateOrderPage() {
                   placeholder="e.g. 4.50"
                   value={formData.unitPrice}
                   onChange={(e) => setFormData({ ...formData, unitPrice: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Currency
                 </label>
                 <select
                   value={formData.currency}
                   onChange={(e) => setFormData({ ...formData, currency: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 >
                   <option value="USD">USD ($)</option>
                   <option value="EUR">EUR (€)</option>
@@ -365,19 +365,19 @@ export default function CreateOrderPage() {
 
           {/* Section 3: Manufacturing & Operations Allocation */}
           <div className="space-y-4">
-            <h3 className="text-xs font-medium uppercase tracking-wider text-amber-400 font-bold pb-2 border-b border-slate-800">
+            <h3 className="text-xs font-medium uppercase tracking-wider text-amber-400 font-bold pb-2 border-b border-border">
               3. Factory Allocation &amp; Merchandising Schedule
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Assigned Factory Unit <span className="text-rose-400">*</span>
                 </label>
                 <select
                   value={formData.factoryId}
                   onChange={(e) => setFormData({ ...formData, factoryId: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 >
                   {factories.map((f) => (
                     <option key={f.id} value={f.id}>
@@ -391,13 +391,13 @@ export default function CreateOrderPage() {
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Assigned Merchandiser <span className="text-rose-400">*</span>
                 </label>
                 <select
                   value={formData.assignedMerchandiserId}
                   onChange={(e) => setFormData({ ...formData, assignedMerchandiserId: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 >
                   {merchandisers.map((m) => (
                     <option key={m.uid} value={m.uid}>
@@ -410,7 +410,7 @@ export default function CreateOrderPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Order Date <span className="text-rose-400">*</span>
                 </label>
                 <input
@@ -418,12 +418,12 @@ export default function CreateOrderPage() {
                   required
                   value={formData.orderDate}
                   onChange={(e) => setFormData({ ...formData, orderDate: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Ex-Factory Date <span className="text-rose-400">*</span>
                 </label>
                 <input
@@ -431,7 +431,7 @@ export default function CreateOrderPage() {
                   required
                   value={formData.exFactoryDate}
                   onChange={(e) => setFormData({ ...formData, exFactoryDate: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
                 {formErrors.exFactoryDate && (
                   <p className="text-[11px] text-rose-400">{formErrors.exFactoryDate}</p>
@@ -439,27 +439,27 @@ export default function CreateOrderPage() {
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Target Port Dispatch
                 </label>
                 <input
                   type="date"
                   value={formData.shipmentDate}
                   onChange={(e) => setFormData({ ...formData, shipmentDate: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Priority Level
                 </label>
                 <select
                   value={formData.priority}
                   onChange={(e) => setFormData({ ...formData, priority: e.target.value as PriorityLevel })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 >
                   <option value="low">Low Priority</option>
                   <option value="medium">Medium Standard</option>
@@ -469,13 +469,13 @@ export default function CreateOrderPage() {
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Initial Workflow Stage
                 </label>
                 <select
                   value={formData.currentStatus}
                   onChange={(e) => setFormData({ ...formData, currentStatus: e.target.value as OrderStatus })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 >
                   <option value="Order Confirmation">Order Confirmation</option>
                   <option value="Inquiry">Inquiry</option>
@@ -488,7 +488,7 @@ export default function CreateOrderPage() {
           </div>
 
           {/* Form Actions */}
-          <div className="flex items-center justify-end gap-3 pt-6 border-t border-slate-800">
+          <div className="flex items-center justify-end gap-3 pt-6 border-t border-border">
             <Link href="/admin/orders">
               <Button type="button" variant="ghost" size="sm">
                 Cancel

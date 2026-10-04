@@ -88,7 +88,7 @@ export default function AdminDashboardPage() {
   return (
     <div className="max-w-7xl mx-auto space-y-8">
       {/* Header Banner */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-border">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-xs font-medium uppercase tracking-widest text-amber-400 font-bold">
@@ -102,7 +102,7 @@ export default function AdminDashboardPage() {
           <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
             Manufacturing &amp; Merchandising Overview
           </h1>
-          <p className="text-sm text-slate-400 mt-1">
+          <p className="text-sm text-muted-foreground mt-1">
             Live order progression across partner factory units, QA audit statuses, and upcoming ex-factory milestones.
           </p>
         </div>
@@ -136,73 +136,73 @@ export default function AdminDashboardPage() {
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {/* Active Orders */}
-          <Card className="p-4 bg-slate-900/80 border-slate-800 hover:border-amber-400/40 transition-colors">
-            <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold block truncate">
+          <Card className="p-4 bg-card border-border hover:border-amber-400/40 transition-colors">
+            <span className="text-[11px] font-medium text-muted-foreground uppercase font-semibold block truncate">
               Active Orders
             </span>
             <div className="text-2xl font-bold font-medium text-white mt-1">
               {stats.activeOrdersCount}
             </div>
-            <span className="text-[10px] text-slate-500">In-flight POs</span>
+            <span className="text-[10px] text-muted-foreground">In-flight POs</span>
           </Card>
 
           {/* In Production */}
-          <Card className="p-4 bg-slate-900/80 border-slate-800 hover:border-indigo-400/40 transition-colors">
-            <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold block truncate">
+          <Card className="p-4 bg-card border-border hover:border-indigo-400/40 transition-colors">
+            <span className="text-[11px] font-medium text-muted-foreground uppercase font-semibold block truncate">
               In Production
             </span>
             <div className="text-2xl font-bold font-medium text-indigo-400 mt-1">
               {stats.inProductionCount}
             </div>
-            <span className="text-[10px] text-slate-500">Cut &amp; Sew</span>
+            <span className="text-[10px] text-muted-foreground">Cut &amp; Sew</span>
           </Card>
 
           {/* Delayed / Urgent */}
-          <Card className={`p-4 bg-slate-900/80 border-slate-800 transition-colors ${
+          <Card className={`p-4 bg-card border-border transition-colors ${
             stats.delayedOrdersCount > 0 ? 'border-rose-500/40 bg-rose-950/20' : ''
           }`}>
-            <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold block truncate">
+            <span className="text-[11px] font-medium text-muted-foreground uppercase font-semibold block truncate">
               Critical Attention
             </span>
             <div className={`text-2xl font-bold font-medium mt-1 ${
-              stats.delayedOrdersCount > 0 ? 'text-rose-400' : 'text-slate-300'
+              stats.delayedOrdersCount > 0 ? 'text-rose-400' : 'text-muted-foreground'
             }`}>
               {stats.delayedOrdersCount}
             </div>
-            <span className="text-[10px] text-slate-500">Ex-factory risks</span>
+            <span className="text-[10px] text-muted-foreground">Ex-factory risks</span>
           </Card>
 
           {/* Pending Samples */}
-          <Card className="p-4 bg-slate-900/80 border-slate-800 hover:border-purple-400/40 transition-colors">
-            <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold block truncate">
+          <Card className="p-4 bg-card border-border hover:border-purple-400/40 transition-colors">
+            <span className="text-[11px] font-medium text-muted-foreground uppercase font-semibold block truncate">
               Sample Reviews
             </span>
             <div className="text-2xl font-bold font-medium text-purple-400 mt-1">
               {stats.pendingSampleApprovalsCount}
             </div>
-            <span className="text-[10px] text-slate-500">Proto / PP review</span>
+            <span className="text-[10px] text-muted-foreground">Proto / PP review</span>
           </Card>
 
           {/* Upcoming Ex-Factory */}
-          <Card className="p-4 bg-slate-900/80 border-slate-800 hover:border-amber-400/40 transition-colors">
-            <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold block truncate">
+          <Card className="p-4 bg-card border-border hover:border-amber-400/40 transition-colors">
+            <span className="text-[11px] font-medium text-muted-foreground uppercase font-semibold block truncate">
               Upcoming Ex-Fac
             </span>
             <div className="text-2xl font-bold font-medium text-amber-400 mt-1">
               {stats.upcomingExFactoryCount}
             </div>
-            <span className="text-[10px] text-slate-500">Next 45 days</span>
+            <span className="text-[10px] text-muted-foreground">Next 45 days</span>
           </Card>
 
           {/* QC / Shipments */}
-          <Card className="p-4 bg-slate-900/80 border-slate-800 hover:border-emerald-400/40 transition-colors">
-            <span className="text-[11px] font-medium text-slate-400 uppercase font-semibold block truncate">
+          <Card className="p-4 bg-card border-border hover:border-emerald-400/40 transition-colors">
+            <span className="text-[11px] font-medium text-muted-foreground uppercase font-semibold block truncate">
               QC &amp; Shipments
             </span>
             <div className="text-2xl font-bold font-medium text-emerald-400 mt-1">
               {stats.upcomingShipmentsCount}
             </div>
-            <span className="text-[10px] text-slate-500">AQL audit / Port</span>
+            <span className="text-[10px] text-muted-foreground">AQL audit / Port</span>
           </Card>
         </div>
       )}
@@ -221,7 +221,7 @@ export default function AdminDashboardPage() {
               <div key={order.id} className="py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div className="space-y-0.5">
                   <span className="font-medium font-bold text-white">{order.orderNumber}</span> - {order.productName} ({order.quantity.toLocaleString()} pcs)
-                  <div className="text-[11px] text-slate-400">
+                  <div className="text-[11px] text-muted-foreground">
                     Ex-Factory: <strong className="text-rose-300 font-medium">{order.exFactoryDate}</strong> | Factory: <span className="font-medium">{order.factoryId}</span> | Merchandiser: <span className="font-medium">{order.assignedMerchandiserId}</span>
                   </div>
                 </div>
@@ -248,7 +248,7 @@ export default function AdminDashboardPage() {
               <h2 className="text-lg font-sans font-bold text-white">
                 Recent Purchase Orders
               </h2>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-muted-foreground">
                 Floor status tracking across all buyer accounts.
               </p>
             </div>
@@ -277,10 +277,10 @@ export default function AdminDashboardPage() {
               />
             </Card>
           ) : (
-            <Card className="overflow-hidden border-slate-800 bg-slate-900/80">
+            <Card className="overflow-hidden border-border bg-card">
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs text-slate-300">
-                  <thead className="bg-slate-950/80 border-b border-slate-800 text-[11px] uppercase font-medium text-slate-400">
+                <table className="w-full text-left text-xs text-muted-foreground">
+                  <thead className="bg-card border-b border-border text-[11px] uppercase font-medium text-muted-foreground">
                     <tr>
                       <th className="py-3 px-4">PO &amp; Style</th>
                       <th className="py-3 px-4">Buyer Org</th>
@@ -295,18 +295,18 @@ export default function AdminDashboardPage() {
                       <tr key={order.id} className="hover:bg-slate-800/40 transition-colors">
                         <td className="py-3 px-4">
                           <span className="font-bold text-white block">{order.orderNumber}</span>
-                          <span className="text-[11px] text-slate-400 font-sans">{order.styleNumber}</span>
+                          <span className="text-[11px] text-muted-foreground font-sans">{order.styleNumber}</span>
                         </td>
-                        <td className="py-3 px-4 text-slate-300">
+                        <td className="py-3 px-4 text-muted-foreground">
                           {order.buyerOrganizationId}
                         </td>
-                        <td className="py-3 px-4 text-slate-200">
+                        <td className="py-3 px-4 text-foreground">
                           {order.quantity.toLocaleString()} pcs
                         </td>
                         <td className="py-3 px-4">
                           <OrderStatusBadge status={order.currentStatus} size="sm" />
                         </td>
-                        <td className="py-3 px-4 text-slate-300">
+                        <td className="py-3 px-4 text-muted-foreground">
                           {order.exFactoryDate}
                         </td>
                         <td className="py-3 px-4 text-right">
@@ -332,14 +332,14 @@ export default function AdminDashboardPage() {
               Recent Audit Activity
             </h2>
             <Link href="/admin/audit-logs">
-              <Button variant="ghost" size="sm" className="gap-1 text-xs text-slate-400 hover:text-white">
+              <Button variant="ghost" size="sm" className="gap-1 text-xs text-muted-foreground hover:text-white">
                 <History className="w-3.5 h-3.5" />
                 <span>Full Log</span>
               </Button>
             </Link>
           </div>
 
-          <Card className="p-5 bg-slate-900/80 border-slate-800 space-y-4">
+          <Card className="p-5 bg-card border-border space-y-4">
             {isLoading ? (
               <div className="space-y-3">
                 {[1, 2, 3].map((n) => (
@@ -347,7 +347,7 @@ export default function AdminDashboardPage() {
                 ))}
               </div>
             ) : auditLogs.length === 0 ? (
-              <p className="text-xs text-slate-500 text-center py-4">No recent security events logged.</p>
+              <p className="text-xs text-muted-foreground text-center py-4">No recent security events logged.</p>
             ) : (
               <div className="divide-y divide-slate-800/80 space-y-3 text-xs">
                 {auditLogs.map((log) => (
@@ -356,14 +356,14 @@ export default function AdminDashboardPage() {
                       <span className="font-medium font-semibold text-amber-400 text-[11px]">
                         {log.action}
                       </span>
-                      <span className="text-[10px] text-slate-500 font-medium">
+                      <span className="text-[10px] text-muted-foreground font-medium">
                         {new Date(log.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                       </span>
                     </div>
-                    <p className="text-slate-300 text-[11px]">
+                    <p className="text-muted-foreground text-[11px]">
                       Actor: <span className="text-white font-medium">{log.actorRole}</span> ({log.actorUid})
                     </p>
-                    <p className="text-slate-500 text-[10px] font-medium">
+                    <p className="text-muted-foreground text-[10px] font-medium">
                       Target: {log.entityType} ({log.entityId})
                     </p>
                   </div>

@@ -8,6 +8,7 @@ import { useAuth } from '@/lib/auth/context';
 import { Badge } from '@/components/ui/Badge';
 import { AdminSidebar } from './AdminSidebar';
 import { NotificationBellPopover } from '@/components/notifications/NotificationBellPopover';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 interface AdminHeaderProps {
   unreadCount?: number;
@@ -57,6 +58,9 @@ export function AdminHeader({ unreadCount = 0 }: AdminHeaderProps) {
             isStaff={true}
             notificationCenterUrl="/admin/notifications"
           />
+
+          {/* Theme Switcher */}
+          <ThemeToggle size="sm" />
 
           {/* User Avatar */}
           <div className="flex items-center gap-2 p-1.5 rounded-lg bg-secondary border border-border">

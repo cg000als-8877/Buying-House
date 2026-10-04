@@ -318,7 +318,7 @@ export function BuyerShipmentView({
                       {shipment.destinationCountry} - {shipment.destinationPort}
                     </span>
                     <span className="text-border">|</span>
-                    <span className="flex items-center gap-1 text-slate-300">
+                    <span className="flex items-center gap-1 text-muted-foreground">
                       {shipment.transportMode === 'AIR' ? (
                         <Plane className="w-3.5 h-3.5 text-sky-400" />
                       ) : (
@@ -469,9 +469,9 @@ export function BuyerShipmentView({
                   <div className="text-[11px] text-muted-foreground space-y-1 pt-1">
                     <div>Signatory: <strong className="text-foreground">{selectedShipment.deliveryConfirmation.buyerSignatureName}</strong></div>
                     <div>Received: <strong className="text-foreground">{selectedShipment.deliveryConfirmation.receivedQuantity?.toLocaleString()} pcs</strong></div>
-                    <div>Confirmed At: <span className="text-slate-300">{new Date(selectedShipment.deliveryConfirmation.confirmedAt || '').toLocaleString()}</span></div>
+                    <div>Confirmed At: <span className="text-muted-foreground">{new Date(selectedShipment.deliveryConfirmation.confirmedAt || '').toLocaleString()}</span></div>
                     {selectedShipment.deliveryConfirmation.conditionNotes && (
-                      <p className="italic bg-card p-2 rounded text-slate-300">
+                      <p className="italic bg-card p-2 rounded text-muted-foreground">
                         {selectedShipment.deliveryConfirmation.conditionNotes}
                       </p>
                     )}

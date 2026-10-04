@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '@/lib/auth/context';
 import { BuyerSidebar } from './BuyerSidebar';
 import { NotificationBellPopover } from '@/components/notifications/NotificationBellPopover';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 interface BuyerHeaderProps {
   unreadCount?: number;
@@ -56,6 +57,9 @@ export function BuyerHeader({ unreadCount = 0 }: BuyerHeaderProps) {
             isStaff={false}
             notificationCenterUrl="/buyer/notifications"
           />
+
+          {/* Theme Switcher */}
+          <ThemeToggle size="sm" />
 
           {/* Profile Quick Pill */}
           <Link

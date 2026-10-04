@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, ShieldCheck, ArrowRight } from 'lucide-react';
 import { MAIN_NAV_ITEMS } from '@/data/public/navigation';
 import { Button } from '@/components/ui/Button';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { MobileNavigation } from './MobileNavigation';
 
 export function PublicHeader() {
@@ -56,6 +57,7 @@ export function PublicHeader() {
 
           {/* Desktop Action CTAs */}
           <div className="hidden sm:flex items-center gap-2.5">
+            <ThemeToggle size="sm" />
             <Link href="/buyer/login">
               <Button variant="outline" size="sm" className="gap-1.5 font-semibold text-xs">
                 <ShieldCheck className="w-3.5 h-3.5 text-accent" />
@@ -72,6 +74,7 @@ export function PublicHeader() {
 
           {/* Mobile Menu Toggle Button */}
           <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle size="sm" />
             <Link href="/buyer/login" className="sm:hidden">
               <Button variant="outline" size="xs">
                 <ShieldCheck className="w-3.5 h-3.5 text-accent" />

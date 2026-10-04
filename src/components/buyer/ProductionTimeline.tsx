@@ -24,18 +24,18 @@ export interface ProductionTimelineProps {
 export function ProductionTimeline({ orderNumber, styleName, milestones }: ProductionTimelineProps) {
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-border">
         <div>
           <span className="text-xs text-amber-400 font-medium font-bold">LIVE PRODUCTION PIPELINE</span>
           <h3 className="text-xl font-sans font-bold text-white">
-            {styleName} <span className="text-sm font-medium text-slate-400">({orderNumber})</span>
+            {styleName} <span className="text-sm font-medium text-muted-foreground">({orderNumber})</span>
           </h3>
         </div>
         <div className="flex items-center gap-2">
           <Badge variant="emerald" size="sm">
             QA Monitored
           </Badge>
-          <span className="text-xs text-slate-400">AQL 1.5 Protocol</span>
+          <span className="text-xs text-muted-foreground">AQL 1.5 Protocol</span>
         </div>
       </div>
 
@@ -59,7 +59,7 @@ export function ProductionTimeline({ orderNumber, styleName, milestones }: Produ
                     ? 'bg-emerald-950 border-emerald-500 text-emerald-400'
                     : isInProgress
                     ? 'bg-amber-950 border-amber-400 text-amber-400 animate-pulse'
-                    : 'bg-slate-900 border-slate-700 text-slate-600'
+                    : 'bg-card border-border text-slate-600'
                 }`}
               >
                 {isDone ? (
@@ -70,13 +70,13 @@ export function ProductionTimeline({ orderNumber, styleName, milestones }: Produ
               </div>
 
               {/* Card info */}
-              <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1.5">
+              <div className="p-4 rounded-2xl bg-card border border-border space-y-1.5">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                   <div className="flex items-center gap-2">
                     <h4 className="font-sans font-bold text-sm sm:text-base text-white">
                       {step.title}
                     </h4>
-                    <span className="text-[11px] text-slate-500 font-medium">| {step.department}</span>
+                    <span className="text-[11px] text-muted-foreground font-medium">| {step.department}</span>
                   </div>
                   <Badge
                     variant={isDone ? 'emerald' : isInProgress ? 'amber' : 'slate'}
@@ -86,13 +86,13 @@ export function ProductionTimeline({ orderNumber, styleName, milestones }: Produ
                   </Badge>
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-slate-400 pt-1">
+                <div className="flex items-center justify-between text-xs text-muted-foreground pt-1">
                   <span>Target: {step.targetDate}</span>
                   {step.actualDate && <span className="text-emerald-400">Completed: {step.actualDate}</span>}
                 </div>
 
                 {step.notes && (
-                  <p className="text-xs text-slate-300 bg-slate-950/60 p-2.5 rounded-lg border border-slate-800/80 mt-2">
+                  <p className="text-xs text-muted-foreground bg-card p-2.5 rounded-lg border border-border mt-2">
                     💬 <strong className="text-amber-300">Merchandiser Note:</strong> {step.notes}
                   </p>
                 )}

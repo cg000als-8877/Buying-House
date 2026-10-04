@@ -150,19 +150,19 @@ export default function AdminBuyersPage() {
   return (
     <div className="max-w-7xl mx-auto space-y-8">
       {/* Page Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-xs font-medium uppercase tracking-widest text-amber-400 font-bold">
               Client Directory
             </span>
             <span className="text-slate-600">/</span>
-            <span className="text-xs font-medium text-slate-400">{buyers.length} Organizations</span>
+            <span className="text-xs font-medium text-muted-foreground">{buyers.length} Organizations</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-sans font-bold text-white tracking-tight">
             Buyer Organizations
           </h1>
-          <p className="text-sm text-slate-400 mt-1">
+          <p className="text-sm text-muted-foreground mt-1">
             Provision and manage tenant organizations, assigned accounts, and historical order volumes.
           </p>
         </div>
@@ -179,16 +179,16 @@ export default function AdminBuyersPage() {
       </div>
 
       {/* Filter and Search Bar */}
-      <Card className="p-4 sm:p-5 bg-slate-900/80 border-slate-800 space-y-3">
+      <Card className="p-4 sm:p-5 bg-card border-border space-y-3">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div className="relative sm:col-span-2">
-            <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search by company name, country, or email..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 focus:outline-none focus:border-amber-400 text-white placeholder:text-slate-600"
+              className="w-full pl-9 pr-4 py-2 text-xs bg-card rounded-lg border border-border focus:outline-none focus:border-amber-400 text-white placeholder:text-slate-600"
             />
           </div>
 
@@ -196,7 +196,7 @@ export default function AdminBuyersPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value as 'ALL' | BuyerOrgStatus)}
-              className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 focus:outline-none focus:border-amber-400 text-white"
+              className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border focus:outline-none focus:border-amber-400 text-white"
             >
               <option value="ALL">All Account Statuses</option>
               <option value="active">Active Accounts</option>
@@ -207,8 +207,8 @@ export default function AdminBuyersPage() {
         </div>
 
         {(searchQuery || statusFilter !== 'ALL') && (
-          <div className="flex items-center justify-between pt-2 border-t border-slate-800/80 text-xs">
-            <span className="text-slate-400">
+          <div className="flex items-center justify-between pt-2 border-t border-border text-xs">
+            <span className="text-muted-foreground">
               Showing <strong className="text-white font-medium">{filteredBuyers.length}</strong> of {buyers.length} organizations
             </span>
             <button
@@ -243,10 +243,10 @@ export default function AdminBuyersPage() {
           />
         </Card>
       ) : (
-        <Card className="overflow-hidden border-slate-800 bg-slate-900/80">
+        <Card className="overflow-hidden border-border bg-card">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs text-slate-300">
-              <thead className="bg-slate-950 border-b border-slate-800 text-[11px] uppercase font-medium text-slate-400">
+            <table className="w-full text-left text-xs text-muted-foreground">
+              <thead className="bg-card border-b border-border text-[11px] uppercase font-medium text-muted-foreground">
                 <tr>
                   <th className="py-3.5 px-4">Organization Name</th>
                   <th className="py-3.5 px-4">Country</th>
@@ -266,18 +266,18 @@ export default function AdminBuyersPage() {
                     <tr key={org.id} className="hover:bg-slate-800/40 transition-colors">
                       <td className="py-3.5 px-4">
                         <span className="font-semibold text-white block text-sm">{org.name}</span>
-                        <span className="text-[10px] font-medium text-slate-500">ID: {org.id}</span>
+                        <span className="text-[10px] font-medium text-muted-foreground">ID: {org.id}</span>
                       </td>
-                      <td className="py-3.5 px-4 text-slate-300">
+                      <td className="py-3.5 px-4 text-muted-foreground">
                         {org.country}
                       </td>
-                      <td className="py-3.5 px-4 text-slate-400 space-y-0.5">
-                        <div className="flex items-center gap-1.5 font-medium text-[11px] text-slate-300">
-                          <Mail className="w-3 h-3 text-slate-500" />
+                      <td className="py-3.5 px-4 text-muted-foreground space-y-0.5">
+                        <div className="flex items-center gap-1.5 font-medium text-[11px] text-muted-foreground">
+                          <Mail className="w-3 h-3 text-muted-foreground" />
                           <span>{org.contactEmail}</span>
                         </div>
                         {org.contactPhone && (
-                          <div className="flex items-center gap-1.5 font-medium text-[10px] text-slate-500">
+                          <div className="flex items-center gap-1.5 font-medium text-[10px] text-muted-foreground">
                             <Phone className="w-3 h-3 text-slate-600" />
                             <span>{org.contactPhone}</span>
                           </div>
@@ -293,7 +293,7 @@ export default function AdminBuyersPage() {
                         </Badge>
                       </td>
                       <td className="py-3.5 px-4">
-                        <span className="font-medium font-bold text-white px-2 py-0.5 rounded bg-slate-800 border border-slate-700">
+                        <span className="font-medium font-bold text-white px-2 py-0.5 rounded bg-slate-800 border border-border">
                           {activeCount} Active
                         </span>
                       </td>
@@ -302,7 +302,7 @@ export default function AdminBuyersPage() {
                           <Button
                             variant="outline"
                             size="sm"
-                            className="h-7 text-xs text-amber-400 border-slate-700 hover:bg-slate-800"
+                            className="h-7 text-xs text-amber-400 border-border hover:bg-slate-800"
                           >
                             <span>Manage</span>
                             <ArrowRight className="w-3 h-3 ml-1" />
@@ -321,8 +321,8 @@ export default function AdminBuyersPage() {
       {/* Provision Buyer Organization Modal */}
       {isCreateModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl space-y-4">
-            <div className="flex items-center justify-between p-6 pb-4 border-b border-slate-800">
+          <div className="bg-card border border-border rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl space-y-4">
+            <div className="flex items-center justify-between p-6 pb-4 border-b border-border">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-lg bg-amber-400/20 text-amber-400 flex items-center justify-center">
                   <Building2 className="w-4 h-4" />
@@ -331,12 +331,12 @@ export default function AdminBuyersPage() {
                   <h3 className="font-sans font-bold text-base text-white">
                     Provision Buyer Organization
                   </h3>
-                  <p className="text-xs text-slate-400">Creates a new isolated tenant boundary</p>
+                  <p className="text-xs text-muted-foreground">Creates a new isolated tenant boundary</p>
                 </div>
               </div>
               <button
                 onClick={() => setIsCreateModalOpen(false)}
-                className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800"
+                className="text-muted-foreground hover:text-white p-1 rounded-lg hover:bg-slate-800"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -350,7 +350,7 @@ export default function AdminBuyersPage() {
               )}
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Company Name <span className="text-rose-400">*</span>
                 </label>
                 <input
@@ -359,13 +359,13 @@ export default function AdminBuyersPage() {
                   placeholder="e.g. Nordic Trend House A/S"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Country <span className="text-rose-400">*</span>
                   </label>
                   <input
@@ -374,18 +374,18 @@ export default function AdminBuyersPage() {
                     placeholder="e.g. Denmark"
                     value={formData.country}
                     onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Account Status
                   </label>
                   <select
                     value={formData.status}
                     onChange={(e) => setFormData({ ...formData, status: e.target.value as BuyerOrgStatus })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                   >
                     <option value="active">Active</option>
                     <option value="pending">Pending Review</option>
@@ -396,7 +396,7 @@ export default function AdminBuyersPage() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Contact Email <span className="text-rose-400">*</span>
                   </label>
                   <input
@@ -405,12 +405,12 @@ export default function AdminBuyersPage() {
                     placeholder="sourcing@example.com"
                     value={formData.contactEmail}
                     onChange={(e) => setFormData({ ...formData, contactEmail: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Phone Number
                   </label>
                   <input
@@ -418,13 +418,13 @@ export default function AdminBuyersPage() {
                     placeholder="+45 33 12 34 56"
                     value={formData.contactPhone}
                     onChange={(e) => setFormData({ ...formData, contactPhone: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Website URL
                 </label>
                 <input
@@ -432,12 +432,12 @@ export default function AdminBuyersPage() {
                   placeholder="https://company.example.com"
                   value={formData.website}
                   onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Internal Notes &amp; Sourcing Requirements
                 </label>
                 <textarea
@@ -445,11 +445,11 @@ export default function AdminBuyersPage() {
                   placeholder="Category focus, fabric requirements, delivery terms..."
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 resize-none"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 resize-none"
                 />
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-800">
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-border">
                 <Button
                   type="button"
                   variant="ghost"

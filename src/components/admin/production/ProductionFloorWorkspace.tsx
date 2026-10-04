@@ -324,38 +324,38 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
       {/* Production Overview KPIs */}
       {summary && (
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
-          <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold block">
+          <Card className="p-4 bg-card border-border space-y-1">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold block">
               Order Volume
             </span>
             <div className="text-xl font-bold text-white font-medium">
-              {summary.orderQuantity.toLocaleString()} <span className="text-xs text-slate-500">pcs</span>
+              {summary.orderQuantity.toLocaleString()} <span className="text-xs text-muted-foreground">pcs</span>
             </div>
-            <span className="text-[10px] text-slate-400">Total Purchase Order Target</span>
+            <span className="text-[10px] text-muted-foreground">Total Purchase Order Target</span>
           </Card>
 
-          <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold block">
+          <Card className="p-4 bg-card border-border space-y-1">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold block">
               Cumulative Output
             </span>
             <div className="text-xl font-bold text-emerald-400 font-medium">
-              {summary.completedQuantity.toLocaleString()} <span className="text-xs text-slate-500">pcs</span>
+              {summary.completedQuantity.toLocaleString()} <span className="text-xs text-muted-foreground">pcs</span>
             </div>
-            <span className="text-[10px] text-slate-400">Current Output Stage</span>
+            <span className="text-[10px] text-muted-foreground">Current Output Stage</span>
           </Card>
 
-          <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold block">
+          <Card className="p-4 bg-card border-border space-y-1">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold block">
               Remaining Balance
             </span>
             <div className="text-xl font-bold text-amber-400 font-medium">
-              {summary.remainingQuantity.toLocaleString()} <span className="text-xs text-slate-500">pcs</span>
+              {summary.remainingQuantity.toLocaleString()} <span className="text-xs text-muted-foreground">pcs</span>
             </div>
-            <span className="text-[10px] text-slate-400">Balance to complete</span>
+            <span className="text-[10px] text-muted-foreground">Balance to complete</span>
           </Card>
 
-          <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold block">
+          <Card className="p-4 bg-card border-border space-y-1">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold block">
               Completion Progress
             </span>
             <div className="text-xl font-bold text-white font-medium flex items-center gap-1.5">
@@ -369,8 +369,8 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
             </div>
           </Card>
 
-          <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1 col-span-2 lg:col-span-1">
-            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold block">
+          <Card className="p-4 bg-card border-border space-y-1 col-span-2 lg:col-span-1">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold block">
               Line Operational Health
             </span>
             <div className="pt-1">
@@ -387,7 +387,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                 {summary.status}
               </Badge>
             </div>
-            <span className="text-[10px] text-slate-400 block pt-0.5">
+            <span className="text-[10px] text-muted-foreground block pt-0.5">
               Active: {summary.currentStageName}
             </span>
           </Card>
@@ -395,8 +395,8 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
       )}
 
       {/* Production Pipeline Stepper */}
-      <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+      <Card className="p-6 bg-card border-border space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
           <div>
             <span className="text-xs font-medium uppercase text-amber-400 font-bold">
               Sequential Workflow
@@ -410,7 +410,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
               variant="outline"
               size="sm"
               onClick={() => setIsConfigureStagesModalOpen(true)}
-              className="text-xs text-slate-300 border-slate-700"
+              className="text-xs text-muted-foreground border-border"
             >
               <Layers className="w-3.5 h-3.5 mr-1.5" />
               <span>Configure Pipeline</span>
@@ -444,11 +444,11 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                     ? 'bg-amber-950/20 border-amber-400/40 text-amber-300 shadow-sm'
                     : isDelayed
                     ? 'bg-rose-950/20 border-rose-500/40 text-rose-300'
-                    : 'bg-slate-950/40 border-slate-800/80 text-slate-400 opacity-80'
+                    : 'bg-card border-border text-muted-foreground opacity-80'
                 }`}
               >
-                <div className="flex items-center justify-between gap-1 pb-1.5 border-b border-slate-800/60">
-                  <span className="text-[10px] font-medium font-bold uppercase text-slate-400">
+                <div className="flex items-center justify-between gap-1 pb-1.5 border-b border-border">
+                  <span className="text-[10px] font-medium font-bold uppercase text-muted-foreground">
                     Step {stage.sequence}
                   </span>
                   <Badge
@@ -464,15 +464,15 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                 </h4>
 
                 <div className="pt-2 space-y-1 text-[11px] font-medium">
-                  <div className="flex justify-between text-slate-400">
+                  <div className="flex justify-between text-muted-foreground">
                     <span>Cumulative:</span>
                     <span className="text-white font-bold">{stage.cumulativeQuantity.toLocaleString()}</span>
                   </div>
-                  <div className="flex justify-between text-slate-400">
+                  <div className="flex justify-between text-muted-foreground">
                     <span>Achievement:</span>
                     <span className="text-amber-400 font-bold">{stage.achievementPercent}%</span>
                   </div>
-                  <div className="flex justify-between text-slate-400">
+                  <div className="flex justify-between text-muted-foreground">
                     <span>Variance:</span>
                     <span
                       className={
@@ -485,7 +485,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                 </div>
 
                 {stage.lastUpdateDate && (
-                  <div className="mt-2 pt-1.5 border-t border-slate-800/60 text-[10px] font-medium text-slate-500 truncate">
+                  <div className="mt-2 pt-1.5 border-t border-border text-[10px] font-medium text-muted-foreground truncate">
                     Updated: {stage.lastUpdateDate}
                   </div>
                 )}
@@ -497,8 +497,8 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
 
       {/* Production Output Trend Chart */}
       {chartData.length > 0 && (
-        <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
-          <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+        <Card className="p-6 bg-card border-border space-y-4">
+          <div className="flex items-center justify-between pb-2 border-b border-border">
             <div>
               <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                 Output Analytics
@@ -507,7 +507,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                 Daily Output vs Planned Volume
               </h3>
             </div>
-            <span className="text-xs font-medium text-slate-400">Units (Pcs)</span>
+            <span className="text-xs font-medium text-muted-foreground">Units (Pcs)</span>
           </div>
 
           <div className="h-64 w-full pt-4">
@@ -530,8 +530,8 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
       )}
 
       {/* Daily Production Logs Table */}
-      <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-slate-800">
+      <Card className="p-6 bg-card border-border space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-border">
           <div>
             <span className="text-xs font-medium uppercase text-amber-400 font-bold">
               Factory Reporting Stream
@@ -540,19 +540,19 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
               Daily Production Logs &amp; Variance
             </h3>
           </div>
-          <span className="text-xs font-medium text-slate-400">{filteredUpdates.length} Records</span>
+          <span className="text-xs font-medium text-muted-foreground">{filteredUpdates.length} Records</span>
         </div>
 
         {/* Search & Filtering Bar */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div className="relative">
-            <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+            <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
             <input
               type="text"
               placeholder="Search remarks, issues, or stage..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+              className="w-full pl-9 pr-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
             />
           </div>
 
@@ -560,7 +560,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
             <select
               value={selectedStageFilter}
               onChange={(e) => setSelectedStageFilter(e.target.value)}
-              className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+              className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
             >
               <option value="ALL">All Production Stages</option>
               {stages.map((s) => (
@@ -575,7 +575,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
             <select
               value={selectedStatusFilter}
               onChange={(e) => setSelectedStatusFilter(e.target.value)}
-              className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+              className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
             >
               <option value="ALL">All Publication States</option>
               <option value="published">Published to Buyer</option>
@@ -596,7 +596,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="border-b border-slate-800 text-slate-400 font-medium text-[11px] uppercase">
+                <tr className="border-b border-border text-muted-foreground font-medium text-[11px] uppercase">
                   <th className="py-3 px-3">Date</th>
                   <th className="py-3 px-3">Stage</th>
                   <th className="py-3 px-3 text-right">Planned</th>
@@ -621,8 +621,8 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                       <td className="py-3 px-3 text-white font-semibold whitespace-nowrap">
                         {log.productionDate || log.date}
                       </td>
-                      <td className="py-3 px-3 font-sans text-slate-200">{log.stageName}</td>
-                      <td className="py-3 px-3 text-right text-slate-400">
+                      <td className="py-3 px-3 font-sans text-foreground">{log.stageName}</td>
+                      <td className="py-3 px-3 text-right text-muted-foreground">
                         {log.plannedQuantity.toLocaleString()}
                       </td>
                       <td className="py-3 px-3 text-right text-white font-bold">
@@ -638,7 +638,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                       <td className="py-3 px-3 text-right text-amber-400 font-bold">
                         {log.achievementPercent}%
                       </td>
-                      <td className="py-3 px-3 text-right text-slate-300">
+                      <td className="py-3 px-3 text-right text-muted-foreground">
                         {log.cumulativeQuantity.toLocaleString()}
                       </td>
                       <td className="py-3 px-3 font-sans">
@@ -664,7 +664,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                               variant="outline"
                               size="sm"
                               onClick={() => handleStatusTransition(log.id, 'submit')}
-                              className="text-[11px] px-2 py-0.5 border-slate-700 text-amber-300 hover:bg-slate-800"
+                              className="text-[11px] px-2 py-0.5 border-border text-amber-300 hover:bg-slate-800"
                             >
                               Submit
                             </Button>
@@ -706,8 +706,8 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
       </Card>
 
       {/* Production Photo Gallery */}
-      <Card className="p-6 bg-slate-900/80 border-slate-800 space-y-4">
-        <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+      <Card className="p-6 bg-card border-border space-y-4">
+        <div className="flex items-center justify-between pb-3 border-b border-border">
           <div>
             <span className="text-xs font-medium uppercase text-amber-400 font-bold">
               Visual Documentation
@@ -720,7 +720,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
             variant="outline"
             size="sm"
             onClick={() => setIsPhotoModalOpen(true)}
-            className="text-xs text-slate-300 border-slate-700 gap-1.5"
+            className="text-xs text-muted-foreground border-border gap-1.5"
           >
             <Camera className="w-3.5 h-3.5" />
             <span>Upload Photo</span>
@@ -737,9 +737,9 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
             {photos.map((photo) => (
               <div
                 key={photo.id}
-                className="group relative rounded-xl overflow-hidden bg-slate-950 border border-slate-800 space-y-2"
+                className="group relative rounded-xl overflow-hidden bg-card border border-border space-y-2"
               >
-                <div className="aspect-video w-full overflow-hidden bg-slate-900">
+                <div className="aspect-video w-full overflow-hidden bg-card">
                   <img
                     src={photo.url || photo.storagePath}
                     alt={photo.caption || 'Production photo'}
@@ -747,8 +747,8 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                   />
                 </div>
                 <div className="p-2.5 space-y-1 text-xs">
-                  <p className="text-slate-300 line-clamp-2">{photo.caption || 'Factory floor inspection'}</p>
-                  <div className="flex items-center justify-between text-[10px] font-medium text-slate-500 pt-1">
+                  <p className="text-muted-foreground line-clamp-2">{photo.caption || 'Factory floor inspection'}</p>
+                  <div className="flex items-center justify-between text-[10px] font-medium text-muted-foreground pt-1">
                     <span>{photo.createdAt?.split('T')[0]}</span>
                     <button
                       onClick={() => handleDeletePhoto(photo.id)}
@@ -767,9 +767,9 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
 
       {/* Record Daily Log Modal */}
       {isLogModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <Card className="max-w-xl w-full p-6 bg-slate-900 border-slate-800 shadow-2xl space-y-6">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-card backdrop-blur-sm">
+          <Card className="max-w-xl w-full p-6 bg-card border-border shadow-2xl space-y-6">
+            <div className="flex items-center justify-between pb-3 border-b border-border">
               <div>
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   Daily Telemetry Entry
@@ -780,7 +780,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
               </div>
               <button
                 onClick={() => setIsLogModalOpen(false)}
-                className="text-slate-400 hover:text-white"
+                className="text-muted-foreground hover:text-white"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -795,13 +795,13 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
             <form className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Production Stage <span className="text-rose-400">*</span>
                   </label>
                   <select
                     value={formData.productionStageId}
                     onChange={(e) => setFormData({ ...formData, productionStageId: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                   >
                     {stages.map((s) => (
                       <option key={s.id} value={s.id}>
@@ -812,21 +812,21 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Production Date <span className="text-rose-400">*</span>
                   </label>
                   <input
                     type="date"
                     value={formData.productionDate}
                     onChange={(e) => setFormData({ ...formData, productionDate: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Planned Target Qty (pcs) <span className="text-rose-400">*</span>
                   </label>
                   <input
@@ -836,12 +836,12 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                     onChange={(e) =>
                       setFormData({ ...formData, plannedQuantity: Number(e.target.value) })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Actual Produced Qty (pcs) <span className="text-rose-400">*</span>
                   </label>
                   <input
@@ -851,19 +851,19 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                     onChange={(e) =>
                       setFormData({ ...formData, actualQuantity: Number(e.target.value) })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
               </div>
 
               {/* Real-time Math Preview */}
-              <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 grid grid-cols-2 gap-4 text-xs font-medium">
+              <div className="p-3 rounded-lg bg-card border border-border grid grid-cols-2 gap-4 text-xs font-medium">
                 <div>
-                  <span className="text-slate-500 block text-[10px]">Calculated Achievement</span>
+                  <span className="text-muted-foreground block text-[10px]">Calculated Achievement</span>
                   <span className="text-amber-400 font-bold text-sm">{liveAchievement}%</span>
                 </div>
                 <div>
-                  <span className="text-slate-500 block text-[10px]">Daily Variance</span>
+                  <span className="text-muted-foreground block text-[10px]">Daily Variance</span>
                   <span
                     className={`font-bold text-sm ${
                       liveVariance.variance >= 0 ? 'text-emerald-400' : 'text-rose-400'
@@ -877,7 +877,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Floor Operational Remarks (Buyer-visible when published)
                 </label>
                 <textarea
@@ -885,12 +885,12 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                   placeholder="e.g. Line 3 operated at target efficiency. All seams verified."
                   value={formData.remarks}
                   onChange={(e) => setFormData({ ...formData, remarks: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 resize-none"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 resize-none"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Internal Issues / Stoppages (Internal Staff only)
                 </label>
                 <textarea
@@ -898,12 +898,12 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                   placeholder="e.g. 30-min power glitch on feeder station #2."
                   value={formData.issues}
                   onChange={(e) => setFormData({ ...formData, issues: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 resize-none"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 resize-none"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Attach Inspection Photo URL (Optional)
                 </label>
                 <input
@@ -911,11 +911,11 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                   placeholder="https://images.unsplash.com/..."
                   value={formData.photoUrl}
                   onChange={(e) => setFormData({ ...formData, photoUrl: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
-              <div className="flex flex-wrap items-center justify-end gap-2 pt-4 border-t border-slate-800">
+              <div className="flex flex-wrap items-center justify-end gap-2 pt-4 border-t border-border">
                 <Button
                   type="button"
                   variant="ghost"
@@ -930,7 +930,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                   size="sm"
                   disabled={isSubmitting}
                   onClick={() => handleSaveLog('draft')}
-                  className="text-slate-300 border-slate-700"
+                  className="text-muted-foreground border-border"
                 >
                   Save as Draft
                 </Button>
@@ -962,10 +962,10 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
 
       {/* Rejection Feedback Modal */}
       {rejectingId && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-card backdrop-blur-sm">
+          <Card className="max-w-md w-full p-6 bg-card border-border space-y-4">
             <h3 className="font-sans font-bold text-base text-white">Reject Production Submission</h3>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-muted-foreground">
               Provide feedback or instructions on why this daily production record cannot be published.
             </p>
             <textarea
@@ -973,7 +973,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
               placeholder="e.g. Quantity discrepancy on Line 5. Recount cutting bundles."
               value={rejectReason}
               onChange={(e) => setRejectReason(e.target.value)}
-              className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+              className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
             />
             <div className="flex justify-end gap-2 pt-2">
               <Button variant="ghost" size="sm" onClick={() => setRejectingId(null)}>
@@ -995,33 +995,33 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
 
       {/* Upload Photo Modal */}
       {isPhotoModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4">
-            <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-card backdrop-blur-sm">
+          <Card className="max-w-md w-full p-6 bg-card border-border space-y-4">
+            <div className="flex items-center justify-between pb-2 border-b border-border">
               <h3 className="font-sans font-bold text-base text-white">Attach Inspection Photo</h3>
-              <button onClick={() => setIsPhotoModalOpen(false)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setIsPhotoModalOpen(false)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
             <div className="space-y-3">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">Photo URL</label>
+                <label className="text-xs font-semibold text-muted-foreground">Photo URL</label>
                 <input
                   type="url"
                   placeholder="https://images.unsplash.com/..."
                   value={formData.photoUrl}
                   onChange={(e) => setFormData({ ...formData, photoUrl: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">Caption / Description</label>
+                <label className="text-xs font-semibold text-muted-foreground">Caption / Description</label>
                 <input
                   type="text"
                   placeholder="e.g. Seam tension check on garment assembly"
                   value={formData.photoCaption}
                   onChange={(e) => setFormData({ ...formData, photoCaption: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
             </div>
@@ -1058,14 +1058,14 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
 
       {/* Configure Pipeline Modal */}
       {isConfigureStagesModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <Card className="max-w-xl w-full p-6 bg-slate-900 border-slate-800 space-y-4 max-h-[85vh] overflow-y-auto">
-            <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-card backdrop-blur-sm">
+          <Card className="max-w-xl w-full p-6 bg-card border-border space-y-4 max-h-[85vh] overflow-y-auto">
+            <div className="flex items-center justify-between pb-2 border-b border-border">
               <div>
                 <h3 className="font-sans font-bold text-base text-white">Configure Production Pipeline</h3>
-                <p className="text-xs text-slate-400">Enable, disable, or adjust target volumes for this order.</p>
+                <p className="text-xs text-muted-foreground">Enable, disable, or adjust target volumes for this order.</p>
               </div>
-              <button onClick={() => setIsConfigureStagesModalOpen(false)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setIsConfigureStagesModalOpen(false)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -1074,10 +1074,10 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
               {stages.map((stage, idx) => (
                 <div
                   key={stage.id}
-                  className="p-3 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-between gap-4 text-xs font-medium"
+                  className="p-3 rounded-lg bg-card border border-border flex items-center justify-between gap-4 text-xs font-medium"
                 >
                   <div className="flex items-center gap-2">
-                    <span className="text-slate-500 font-bold">#{stage.sequence}</span>
+                    <span className="text-muted-foreground font-bold">#{stage.sequence}</span>
                     <span className="font-sans text-white font-semibold">{stage.stageName}</span>
                   </div>
                   <div className="flex items-center gap-3">
@@ -1090,9 +1090,9 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                           prev.map((s) => (s.id === stage.id ? { ...s, plannedQuantity: val } : s))
                         );
                       }}
-                      className="w-24 px-2 py-1 bg-slate-900 border border-slate-700 rounded text-right text-white"
+                      className="w-24 px-2 py-1 bg-card border border-border rounded text-right text-white"
                     />
-                    <span className="text-slate-500">pcs</span>
+                    <span className="text-muted-foreground">pcs</span>
                     <button
                       type="button"
                       onClick={() => {
@@ -1103,7 +1103,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
                       className={`px-2 py-1 rounded text-[11px] font-sans ${
                         stage.enabled
                           ? 'bg-emerald-950 text-emerald-400 border border-emerald-800'
-                          : 'bg-slate-800 text-slate-400'
+                          : 'bg-slate-800 text-muted-foreground'
                       }`}
                     >
                       {stage.enabled ? 'Active' : 'Disabled'}
@@ -1113,7 +1113,7 @@ export function ProductionFloorWorkspace({ order }: ProductionFloorWorkspaceProp
               ))}
             </div>
 
-            <div className="flex justify-end gap-2 pt-3 border-t border-slate-800">
+            <div className="flex justify-end gap-2 pt-3 border-t border-border">
               <Button variant="ghost" size="sm" onClick={() => setIsConfigureStagesModalOpen(false)}>
                 Cancel
               </Button>

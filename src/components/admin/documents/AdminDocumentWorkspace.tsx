@@ -387,7 +387,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
       )}
 
       {/* Header & Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border">
         <div>
           <span className="text-xs font-medium uppercase text-amber-400 font-bold">
             Document Repository &amp; Storage
@@ -413,34 +413,34 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
       {/* Dashboard KPI Summary Cards */}
       {!initialOrderId && (
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
-          <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold">Total Documents</span>
+          <Card className="p-4 bg-card border-border space-y-1">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold">Total Documents</span>
             <div className="text-xl font-bold text-white font-medium">{totalCount}</div>
-            <span className="text-[10px] text-slate-500 font-medium">In repository</span>
+            <span className="text-[10px] text-muted-foreground font-medium">In repository</span>
           </Card>
 
-          <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold">Active in Vault</span>
+          <Card className="p-4 bg-card border-border space-y-1">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold">Active in Vault</span>
             <div className="text-xl font-bold text-emerald-400 font-medium">{activeCount}</div>
             <span className="text-[10px] text-emerald-500/80 font-medium">Current records</span>
           </Card>
 
-          <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold">Buyer Visible</span>
+          <Card className="p-4 bg-card border-border space-y-1">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold">Buyer Visible</span>
             <div className="text-xl font-bold text-blue-400 font-medium">{buyerVisibleCount}</div>
             <span className="text-[10px] text-blue-400/80 font-medium">Portal accessible</span>
           </Card>
 
-          <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1">
-            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold">Archived</span>
+          <Card className="p-4 bg-card border-border space-y-1">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold">Archived</span>
             <div className="text-xl font-bold text-amber-400 font-medium">{archivedCount}</div>
             <span className="text-[10px] text-amber-500/80 font-medium">Historical records</span>
           </Card>
 
-          <Card className="p-4 bg-slate-900/90 border-slate-800 space-y-1 col-span-2 lg:col-span-1">
-            <span className="text-[11px] font-medium uppercase text-slate-400 font-semibold">Total Storage</span>
+          <Card className="p-4 bg-card border-border space-y-1 col-span-2 lg:col-span-1">
+            <span className="text-[11px] font-medium uppercase text-muted-foreground font-semibold">Total Storage</span>
             <div className="text-xl font-bold text-white font-medium">{formatBytes(totalBytes)}</div>
-            <span className="text-[10px] text-slate-500 font-medium">Encrypted volume</span>
+            <span className="text-[10px] text-muted-foreground font-medium">Encrypted volume</span>
           </Card>
         </div>
       )}
@@ -448,13 +448,13 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
       {/* Filters & Search Toolbar */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
         <div className="relative sm:col-span-2 lg:col-span-2">
-          <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+          <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
           <input
             type="text"
             placeholder="Search document title, filename, or PO #..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+            className="w-full pl-9 pr-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
           />
         </div>
 
@@ -462,7 +462,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
           <select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+            className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
           >
             <option value="ALL">All Categories</option>
             {DOCUMENT_CATEGORIES.map((cat) => (
@@ -477,7 +477,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
           <select
             value={visibilityFilter}
             onChange={(e) => setVisibilityFilter(e.target.value)}
-            className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+            className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
           >
             <option value="ALL">All Visibilities</option>
             <option value="buyer">Buyer Visible</option>
@@ -490,7 +490,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+            className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
           >
             <option value="ALL">All Statuses</option>
             <option value="active">Active Vault</option>
@@ -506,10 +506,10 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
           description="There are currently no document files matching your active search query or filter selection."
         />
       ) : (
-        <Card className="overflow-hidden bg-slate-900/90 border-slate-800">
+        <Card className="overflow-hidden bg-card border-border">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="bg-slate-950/80 border-b border-slate-800 font-medium text-[11px] text-slate-400 uppercase">
+              <thead className="bg-card border-b border-border font-medium text-[11px] text-muted-foreground uppercase">
                 <tr>
                   <th className="py-3 px-4">Document Title &amp; File</th>
                   <th className="py-3 px-4">Category</th>
@@ -521,7 +521,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                   <th className="py-3 px-4 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60 text-slate-300">
+              <tbody className="divide-y divide-slate-800/60 text-muted-foreground">
                 {filteredDocs.map((docItem) => {
                   const isArchived = docItem.status === 'archived';
                   const isBuyerVis = docItem.visibility === 'buyer';
@@ -531,19 +531,19 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                     <tr
                       key={docItem.id}
                       className={`hover:bg-slate-800/30 transition-colors ${
-                        isArchived ? 'opacity-60 bg-slate-950/40' : ''
+                        isArchived ? 'opacity-60 bg-card' : ''
                       }`}
                     >
                       <td className="py-3.5 px-4">
                         <div className="flex items-start gap-2.5">
-                          <div className="w-8 h-8 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
+                          <div className="w-8 h-8 rounded-lg bg-card border border-border flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
                             <FileText className="w-4 h-4" />
                           </div>
                           <div className="space-y-0.5">
                             <span className="font-semibold text-white block hover:text-amber-400 transition-colors">
                               {docItem.title}
                             </span>
-                            <div className="flex items-center gap-2 text-[11px] text-slate-400 font-medium">
+                            <div className="flex items-center gap-2 text-[11px] text-muted-foreground font-medium">
                               <span>{docItem.fileName}</span>
                               <span className="text-slate-700">|</span>
                               <span>{docItem.fileSizeFormatted}</span>
@@ -562,7 +562,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                         <div className="space-y-0.5 font-medium text-[11px]">
                           <span className="text-amber-400 font-bold block">{docItem.buyerOrganizationId}</span>
                           {docItem.orderNumber && (
-                            <span className="text-slate-400 block">PO: {docItem.orderNumber}</span>
+                            <span className="text-muted-foreground block">PO: {docItem.orderNumber}</span>
                           )}
                         </div>
                       </td>
@@ -575,7 +575,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                         >
                           <span>v{docItem.version}</span>
                           {(docItem.history?.length || 0) > 0 && (
-                            <span className="text-[10px] text-slate-400">
+                            <span className="text-[10px] text-muted-foreground">
                               (+{docItem.history?.length})
                             </span>
                           )}
@@ -598,9 +598,9 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                       </td>
 
                       <td className="py-3.5 px-4 whitespace-nowrap">
-                        <div className="space-y-0.5 text-[11px] font-medium text-slate-400">
-                          <span className="block text-slate-300">{docItem.createdAt.split('T')[0]}</span>
-                          <span className="text-[10px] text-slate-500 block truncate max-w-[100px]">
+                        <div className="space-y-0.5 text-[11px] font-medium text-muted-foreground">
+                          <span className="block text-muted-foreground">{docItem.createdAt.split('T')[0]}</span>
+                          <span className="text-[10px] text-muted-foreground block truncate max-w-[100px]">
                             {docItem.uploaderName || docItem.uploadedBy}
                           </span>
                         </div>
@@ -654,7 +654,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                                   description: docItem.description || '',
                                 });
                               }}
-                              className="text-slate-400 hover:text-white hover:bg-slate-800 p-1.5 h-7"
+                              className="text-muted-foreground hover:text-white hover:bg-slate-800 p-1.5 h-7"
                               title="Edit metadata"
                             >
                               <Edit className="w-3.5 h-3.5" />
@@ -695,7 +695,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                               variant="ghost"
                               size="sm"
                               onClick={() => handleDelete(docItem)}
-                              className="text-slate-500 hover:text-rose-400 hover:bg-slate-800 p-1.5 h-7"
+                              className="text-muted-foreground hover:text-rose-400 hover:bg-slate-800 p-1.5 h-7"
                               title="Delete permanently"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
@@ -714,16 +714,16 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
 
       {/* Upload Document Modal */}
       {isUploadModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm overflow-y-auto">
-          <Card className="max-w-xl w-full p-6 bg-slate-900 border-slate-800 space-y-5 shadow-2xl my-8">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-card backdrop-blur-sm overflow-y-auto">
+          <Card className="max-w-xl w-full p-6 bg-card border-border space-y-5 shadow-2xl my-8">
+            <div className="flex items-center justify-between pb-3 border-b border-border">
               <div>
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   File Ingestion Vault
                 </span>
                 <h3 className="font-sans font-bold text-lg text-white">Upload New Business Document</h3>
               </div>
-              <button onClick={() => setIsUploadModalOpen(false)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setIsUploadModalOpen(false)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -736,7 +736,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
 
             <form onSubmit={handleUploadSubmit} className="space-y-4">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Document Title <span className="text-rose-400">*</span>
                 </label>
                 <input
@@ -745,13 +745,13 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                   placeholder="e.g. Approved Tech Pack v2.1 - Organic Crewneck"
                   value={uploadFormData.title}
                   onChange={(e) => setUploadFormData({ ...uploadFormData, title: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Category <span className="text-rose-400">*</span>
                   </label>
                   <select
@@ -759,7 +759,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                     onChange={(e) =>
                       setUploadFormData({ ...uploadFormData, category: e.target.value as DocumentCategory })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                   >
                     {DOCUMENT_CATEGORIES.map((cat) => (
                       <option key={cat} value={cat}>
@@ -770,7 +770,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Visibility Scope <span className="text-rose-400">*</span>
                   </label>
                   <select
@@ -778,7 +778,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                     onChange={(e) =>
                       setUploadFormData({ ...uploadFormData, visibility: e.target.value as DocumentVisibility })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                   >
                     <option value="buyer">Buyer Visible (Portal Sync)</option>
                     <option value="internal">Internal Only (Staff Eyes)</option>
@@ -789,7 +789,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">
+                  <label className="text-xs font-semibold text-muted-foreground">
                     Buyer Organization Tenant <span className="text-rose-400">*</span>
                   </label>
                   <input
@@ -800,30 +800,30 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                     onChange={(e) =>
                       setUploadFormData({ ...uploadFormData, buyerOrganizationId: e.target.value })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">Linked Purchase Order ID (Optional)</label>
+                  <label className="text-xs font-semibold text-muted-foreground">Linked Purchase Order ID (Optional)</label>
                   <input
                     type="text"
                     placeholder="e.g. TEST-ORDER-001"
                     value={uploadFormData.orderId}
                     onChange={(e) => setUploadFormData({ ...uploadFormData, orderId: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                   />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">File Attachment (Simulated / Local)</label>
-                <div className="p-4 border-2 border-dashed border-slate-800 rounded-xl bg-slate-950/60 text-center space-y-2">
+                <label className="text-xs font-semibold text-muted-foreground">File Attachment (Simulated / Local)</label>
+                <div className="p-4 border-2 border-dashed border-border rounded-xl bg-card text-center space-y-2">
                   <Upload className="w-6 h-6 text-amber-400 mx-auto" />
-                  <div className="text-xs text-slate-300">
+                  <div className="text-xs text-muted-foreground">
                     <span className="font-semibold text-amber-400">Click to attach file</span> or drag &amp; drop
                   </div>
-                  <p className="text-[10px] text-slate-500 font-medium">
+                  <p className="text-[10px] text-muted-foreground font-medium">
                     PDF, DOCX, XLSX, CSV, PNG, JPG (Max 50MB)
                   </p>
                   <input
@@ -831,23 +831,23 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                     placeholder="File name (e.g. STY-KNIT-880_Specs.pdf)"
                     value={uploadFormData.fileName}
                     onChange={(e) => setUploadFormData({ ...uploadFormData, fileName: e.target.value })}
-                    className="w-full max-w-sm mx-auto px-3 py-1.5 text-xs bg-slate-900 rounded border border-slate-800 text-white font-medium text-center focus:outline-none focus:border-amber-400"
+                    className="w-full max-w-sm mx-auto px-3 py-1.5 text-xs bg-card rounded border border-border text-white font-medium text-center focus:outline-none focus:border-amber-400"
                   />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">Description &amp; Notes</label>
+                <label className="text-xs font-semibold text-muted-foreground">Description &amp; Notes</label>
                 <textarea
                   rows={2}
                   placeholder="Additional metadata, inspection dates, or version notes..."
                   value={uploadFormData.description}
                   onChange={(e) => setUploadFormData({ ...uploadFormData, description: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 resize-none"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 resize-none"
                 />
               </div>
 
-              <div className="flex justify-end gap-2 pt-3 border-t border-slate-800">
+              <div className="flex justify-end gap-2 pt-3 border-t border-border">
                 <Button type="button" variant="ghost" size="sm" onClick={() => setIsUploadModalOpen(false)}>
                   Cancel
                 </Button>
@@ -862,21 +862,21 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
 
       {/* Upload Revision Modal */}
       {revisingDoc && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4 shadow-2xl">
-            <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-card backdrop-blur-sm">
+          <Card className="max-w-md w-full p-6 bg-card border-border space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between pb-2 border-b border-border">
               <div>
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   Next Version: v{revisingDoc.version + 1}
                 </span>
                 <h3 className="font-sans font-bold text-base text-white">Upload Document Revision</h3>
               </div>
-              <button onClick={() => setRevisingDoc(null)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setRevisingDoc(null)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-muted-foreground">
               Updating: <strong className="text-white">{revisingDoc.title}</strong>. Previous version v{revisingDoc.version} will be preserved in immutable history.
             </p>
 
@@ -888,7 +888,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
 
             <form onSubmit={handleRevisionSubmit} className="space-y-3">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">
+                <label className="text-xs font-semibold text-muted-foreground">
                   Revision Change Note <span className="text-rose-400">*</span>
                 </label>
                 <textarea
@@ -897,22 +897,22 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                   placeholder="e.g. Updated chest tolerance specs per buyer comment."
                   value={revisionFormData.changeNote}
                   onChange={(e) => setRevisionFormData({ ...revisionFormData, changeNote: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 resize-none"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 resize-none"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">Updated File Name</label>
+                <label className="text-xs font-semibold text-muted-foreground">Updated File Name</label>
                 <input
                   type="text"
                   placeholder={`e.g. ${revisingDoc.fileName.replace(/\.pdf$/, '')}_v${revisingDoc.version + 1}.pdf`}
                   value={revisionFormData.fileName}
                   onChange={(e) => setRevisionFormData({ ...revisionFormData, fileName: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white font-medium focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white font-medium focus:outline-none focus:border-amber-400"
                 />
               </div>
 
-              <div className="flex justify-end gap-2 pt-3 border-t border-slate-800">
+              <div className="flex justify-end gap-2 pt-3 border-t border-border">
                 <Button type="button" variant="ghost" size="sm" onClick={() => setRevisingDoc(null)}>
                   Cancel
                 </Button>
@@ -927,9 +927,9 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
 
       {/* Revision History Drawer / Modal */}
       {historyDoc && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm overflow-y-auto">
-          <Card className="max-w-xl w-full p-6 bg-slate-900 border-slate-800 space-y-5 shadow-2xl my-8">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-card backdrop-blur-sm overflow-y-auto">
+          <Card className="max-w-xl w-full p-6 bg-card border-border space-y-5 shadow-2xl my-8">
+            <div className="flex items-center justify-between pb-3 border-b border-border">
               <div>
                 <span className="text-xs font-medium uppercase text-amber-400 font-bold">
                   Immutable Audit Chain
@@ -938,7 +938,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                   Version History: {historyDoc.title}
                 </h3>
               </div>
-              <button onClick={() => setHistoryDoc(null)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setHistoryDoc(null)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -954,40 +954,40 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                   Latest
                 </Badge>
               </div>
-              <div className="text-xs font-medium text-slate-300 flex justify-between">
+              <div className="text-xs font-medium text-muted-foreground flex justify-between">
                 <span>{historyDoc.fileName}</span>
                 <span>{historyDoc.fileSizeFormatted}</span>
               </div>
-              <p className="text-xs text-slate-400 font-medium">
+              <p className="text-xs text-muted-foreground font-medium">
                 Uploaded {historyDoc.updatedAt.split('T')[0]} by {historyDoc.uploaderName || historyDoc.uploadedBy}
               </p>
             </div>
 
             {/* Historical Predecessors */}
             <div className="space-y-3 pt-2">
-              <h4 className="text-xs font-medium uppercase text-slate-400 font-bold">
+              <h4 className="text-xs font-medium uppercase text-muted-foreground font-bold">
                 Archived Previous Versions
               </h4>
 
               {(historyDoc.history?.length || 0) === 0 ? (
-                <p className="text-xs text-slate-500 italic">No previous versions on record (initial v1 file).</p>
+                <p className="text-xs text-muted-foreground italic">No previous versions on record (initial v1 file).</p>
               ) : (
                 <div className="space-y-2">
                   {historyDoc.history?.map((hist) => (
                     <div
                       key={hist.id}
-                      className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-xs space-y-1.5"
+                      className="p-3.5 rounded-xl bg-card border border-border text-xs space-y-1.5"
                     >
                       <div className="flex items-center justify-between font-medium">
-                        <span className="font-bold text-slate-300">Version v{hist.version}</span>
-                        <span className="text-slate-500">{hist.createdAt.split('T')[0]}</span>
+                        <span className="font-bold text-muted-foreground">Version v{hist.version}</span>
+                        <span className="text-muted-foreground">{hist.createdAt.split('T')[0]}</span>
                       </div>
-                      <div className="flex justify-between text-slate-400 font-medium text-[11px]">
+                      <div className="flex justify-between text-muted-foreground font-medium text-[11px]">
                         <span>{hist.fileName}</span>
                         <span>{hist.fileSizeFormatted}</span>
                       </div>
                       {hist.changeNote && (
-                        <p className="text-amber-300/80 bg-slate-900/60 p-2 rounded text-[11px] font-medium">
+                        <p className="text-amber-300/80 bg-card p-2 rounded text-[11px] font-medium">
                           Note: {hist.changeNote}
                         </p>
                       )}
@@ -997,7 +997,7 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
               )}
             </div>
 
-            <div className="flex justify-end pt-3 border-t border-slate-800">
+            <div className="flex justify-end pt-3 border-t border-border">
               <Button variant="ghost" size="sm" onClick={() => setHistoryDoc(null)}>
                 Close History
               </Button>
@@ -1008,36 +1008,36 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
 
       {/* Edit Metadata Modal */}
       {editingDoc && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4 shadow-2xl">
-            <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-card backdrop-blur-sm">
+          <Card className="max-w-md w-full p-6 bg-card border-border space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between pb-2 border-b border-border">
               <h3 className="font-sans font-bold text-base text-white">Edit Document Metadata</h3>
-              <button onClick={() => setEditingDoc(null)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setEditingDoc(null)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             <form onSubmit={handleEditSubmit} className="space-y-3">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">Document Title</label>
+                <label className="text-xs font-semibold text-muted-foreground">Document Title</label>
                 <input
                   type="text"
                   required
                   value={editFormData.title}
                   onChange={(e) => setEditFormData({ ...editFormData, title: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">Category</label>
+                  <label className="text-xs font-semibold text-muted-foreground">Category</label>
                   <select
                     value={editFormData.category}
                     onChange={(e) =>
                       setEditFormData({ ...editFormData, category: e.target.value as DocumentCategory })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                   >
                     {DOCUMENT_CATEGORIES.map((cat) => (
                       <option key={cat} value={cat}>
@@ -1048,13 +1048,13 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">Visibility</label>
+                  <label className="text-xs font-semibold text-muted-foreground">Visibility</label>
                   <select
                     value={editFormData.visibility}
                     onChange={(e) =>
                       setEditFormData({ ...editFormData, visibility: e.target.value as DocumentVisibility })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 font-medium"
+                    className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 font-medium"
                   >
                     <option value="buyer">Buyer Visible</option>
                     <option value="internal">Internal Only</option>
@@ -1064,16 +1064,16 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-slate-300">Description</label>
+                <label className="text-xs font-semibold text-muted-foreground">Description</label>
                 <textarea
                   rows={2}
                   value={editFormData.description}
                   onChange={(e) => setEditFormData({ ...editFormData, description: e.target.value })}
-                  className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 resize-none"
+                  className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 resize-none"
                 />
               </div>
 
-              <div className="flex justify-end gap-2 pt-3 border-t border-slate-800">
+              <div className="flex justify-end gap-2 pt-3 border-t border-border">
                 <Button type="button" variant="ghost" size="sm" onClick={() => setEditingDoc(null)}>
                   Cancel
                 </Button>
@@ -1088,31 +1088,31 @@ export function AdminDocumentWorkspace({ initialOrderId, orderNumber }: AdminDoc
 
       {/* Archive Modal */}
       {archivingDoc && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <Card className="max-w-md w-full p-6 bg-slate-900 border-slate-800 space-y-4 shadow-2xl">
-            <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-card backdrop-blur-sm">
+          <Card className="max-w-md w-full p-6 bg-card border-border space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between pb-2 border-b border-border">
               <h3 className="font-sans font-bold text-base text-white">Archive Document</h3>
-              <button onClick={() => setArchivingDoc(null)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setArchivingDoc(null)} className="text-muted-foreground hover:text-white">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-muted-foreground">
               Archiving <strong className="text-white">{archivingDoc.title}</strong> will remove it from active circulation and hide it from buyer portals while preserving complete revision history and audit logs.
             </p>
 
             <div className="space-y-1">
-              <label className="text-xs font-semibold text-slate-300">Reason for Archiving</label>
+              <label className="text-xs font-semibold text-muted-foreground">Reason for Archiving</label>
               <textarea
                 rows={2}
                 placeholder="e.g. Superseded by newer tech pack version v2.0."
                 value={archiveReason}
                 onChange={(e) => setArchiveReason(e.target.value)}
-                className="w-full px-3 py-2 text-xs bg-slate-950 rounded-lg border border-slate-800 text-white focus:outline-none focus:border-amber-400 resize-none"
+                className="w-full px-3 py-2 text-xs bg-card rounded-lg border border-border text-white focus:outline-none focus:border-amber-400 resize-none"
               />
             </div>
 
-            <div className="flex justify-end gap-2 pt-3 border-t border-slate-800">
+            <div className="flex justify-end gap-2 pt-3 border-t border-border">
               <Button type="button" variant="ghost" size="sm" onClick={() => setArchivingDoc(null)}>
                 Cancel
               </Button>
